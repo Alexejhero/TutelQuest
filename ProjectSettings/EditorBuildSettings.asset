@@ -6,5 +6,4 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes: []
   m_configObjects:
-    com.unity.input.settings: {fileID: 11400000, guid: 6f4aa8013d074ba4e9ffa028d9ace2a5, type: 2}
-  m_UseUCBPForAssetBundles: 0
+    com.unity.input.settings: {fileID: 11400000, guid: 44965964921789e468a05899dc1f3d71, type: 2}
