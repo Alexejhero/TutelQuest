@@ -124,6 +124,13 @@ namespace Schizo.Audio
 			if (currentSfx > sfxTrackCount) { currentSfx = 0; }
 		}
 
+		/// <summary>
+		/// Play a clip from the main audio sources
+		/// Depending on clip type, the corresponding volume/track will be respected
+		/// Sfx can play with a certain amount of overlap
+		/// </summary>
+		/// <param name="clip">Clip to play</param>
+		/// <param name="at">Type of clip <see cref="ClipType"/></param>
 		public void Play(AudioClip clip, ClipType at)
 		{
 			AudioSource source = voiceTrack;
@@ -146,6 +153,13 @@ namespace Schizo.Audio
 			PlaySource(source, clip);
 		}
 
+		/// <summary>
+		/// Play a clip from a custom audio source
+		/// Good for when you want to play audio from your own audio source but want to respect volume settings
+		/// </summary>
+		/// <param name="source">Source to play from</param>
+		/// <param name="clip">Clip to play</param>
+		/// <param name="at">Audio type <see cref="ClipType"/></param>
 		public void PlayCustom(AudioSource source, AudioClip clip, ClipType at)
 		{
 			switch (at)
