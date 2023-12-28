@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7c9d9d2e850c954a9126d62962f6589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfxTrackCount: 3
+  sfxTrackCount: 5
   masterVolume: 1
   sfxVolume: 0.8
   voiceVolume: 1
