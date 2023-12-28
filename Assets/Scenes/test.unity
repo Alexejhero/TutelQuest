@@ -139,7 +139,6 @@ GameObject:
   - component: {fileID: 196864087}
   - component: {fileID: 196864086}
   - component: {fileID: 196864088}
-  - component: {fileID: 196864089}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -447,21 +446,6 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
---- !u!114 &196864089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 196864080}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0356781e0280bac46b64747d8e31b881, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  acceleration: 99
-  maxVelocity: 3
-  rb: {fileID: 196864081}
 --- !u!114 &319460068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -584,6 +568,7 @@ GameObject:
   m_Component:
   - component: {fileID: 636558203}
   - component: {fileID: 636558202}
+  - component: {fileID: 636558204}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -668,6 +653,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &636558204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636558201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!114 &654881816
 MonoBehaviour:
   m_ObjectHideFlags: 0
