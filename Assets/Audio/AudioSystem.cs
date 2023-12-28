@@ -4,6 +4,10 @@ using UnityEngine;
 
 namespace Schizo.Audio
 {
+	/// <summary>
+	/// Type of audio clip, corresponds to the track being used
+	/// Sfx exclusively can handle multiple sounds at once through its own set of tracks
+	/// </summary>
 	public enum ClipType { Sfx, Voice, Background, Music };
 	public class AudioSystem : MonoBehaviour
 	{
@@ -14,7 +18,7 @@ namespace Schizo.Audio
 		/// Count of main audio tracks (Sound effects)
 		/// </summary>
 		[SerializeField]
-		private int sfxTrackCount = 3;
+		private int sfxTrackCount = 5;
 
 		[SerializeField]
 		[Range(0f, 1.0f)]
@@ -117,9 +121,16 @@ namespace Schizo.Audio
 			sfxTracks[currentSfx].Play();
 
 			currentSfx++;
-			if (currentSfx > masterVolume) { currentSfx = 0; }
+			if (currentSfx > sfxTrackCount) { currentSfx = 0; }
 		}
 
+		/// <summary>
+		/// Play a clip from the main audio sources
+		/// Depending on clip type, the corresponding volume/track will be respected
+		/// Sfx can play with a certain amount of overlap
+		/// </summary>
+		/// <param name="clip">Clip to play</param>
+		/// <param name="at">Type of clip <see cref="ClipType"/></param>
 		public void Play(AudioClip clip, ClipType at)
 		{
 			AudioSource source = voiceTrack;
@@ -139,7 +150,44 @@ namespace Schizo.Audio
 					source = musicTrack;
 					break;
 			}
+			PlaySource(source, clip);
+		}
 
+		/// <summary>
+		/// Play a clip from a custom audio source
+		/// Good for when you want to play audio from your own audio source but want to respect volume settings
+		/// </summary>
+		/// <param name="source">Source to play from</param>
+		/// <param name="clip">Clip to play</param>
+		/// <param name="at">Audio type <see cref="ClipType"/></param>
+		public void PlayCustom(AudioSource source, AudioClip clip, ClipType at)
+		{
+			switch (at)
+			{
+				case ClipType.Sfx:
+					SetupSource(source, sfxVolume, false, false);
+					break;
+				case ClipType.Voice:
+					SetupSource(source, voiceVolume, false, false);
+					break;
+				case ClipType.Background:
+					SetupSource(source, backgroundVolume, false, false);
+					break;
+				case ClipType.Music:
+					SetupSource(source, musicVolume, false, false);
+					break;
+			}
+			PlaySource(source, clip);
+		}
+
+		/// <summary>
+		/// Warpper that stops an audio source, changes its current clip and plays
+		/// </summary>
+		/// <param name="source">Source to play from</param>
+		/// <param name="clip">Clip to play</param>
+		private void PlaySource(AudioSource source, AudioClip clip)
+		{
+			source.Stop();
 			source.clip = clip;
 			source.Play();
 		}
@@ -149,10 +197,10 @@ namespace Schizo.Audio
 		/// </summary>
 		/// <param name="audio">Source to affect</param>
 		/// <param name="volume">Value of this source's volume</param>
-		private void SetupSource(AudioSource audio, float volume, bool loop = false)
+		private void SetupSource(AudioSource audio, float volume, bool loop = false, bool force2d=true)
 		{
 			audio.volume = volume * masterVolume;
-			audio.spatialBlend = 0.0f;
+			if (force2d) audio.spatialBlend = 0.0f;
 			audio.loop = loop;
 		}
 
