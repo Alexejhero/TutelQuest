@@ -1,6 +1,7 @@
+using SchizoQuest.Game.Players;
 using UnityEngine;
 
-namespace SchizoQuest.Game
+namespace SchizoQuest.Game.Items
 {
     public sealed class Collectible : MonoBehaviour
     {
@@ -17,7 +18,7 @@ namespace SchizoQuest.Game
 
         private bool TryCollect(GameObject collector)
         {
-            Player.Player player = collector.GetComponent<Player.Player>();
+            Player player = collector.GetComponent<Player>();
             if (!player) return false;
             if (!collectibleBy.HasFlag(player.character)) return false;
 
@@ -26,7 +27,7 @@ namespace SchizoQuest.Game
             return true;
         }
 
-        public delegate void CollectedHandler(Collectible collectible, Player.Player player);
+        public delegate void CollectedHandler(Collectible collectible, Player player);
         public static CollectedHandler OnCollected;
     }
 }

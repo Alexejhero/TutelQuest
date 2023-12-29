@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace SchizoQuest.Game.Player
+namespace SchizoQuest.Game.Players
 {
     public class Living : MonoBehaviour
     {

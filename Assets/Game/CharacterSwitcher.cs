@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
+using SchizoQuest.Game.Players;
 using UnityEngine;
 
 namespace SchizoQuest.Game
 {
     public class CharacterSwitcher : MonoBehaviour
     {
-        public List<Player.Player> availablePlayers;
-        private Player.Player _currentPlayer;
+        public List<Player> availablePlayers;
+        private Player _currentPlayer;
 
         private void Start()
         {

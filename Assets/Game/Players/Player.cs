@@ -1,8 +1,9 @@
+using SchizoQuest.Game.Items;
 using TarodevController;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace SchizoQuest.Game.Player
+namespace SchizoQuest.Game.Players
 {
     public sealed class Player : MonoBehaviour
     {
@@ -11,6 +12,7 @@ namespace SchizoQuest.Game.Player
         public Character character;
         public Living living;
         [FormerlySerializedAs("movement")] public PlayerController controller;
+        public Inventory inventory;
 
         public void OnEnable()
         {
