@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{88018b04-8b4e-4334-bee4-13bccb270683}">
+		<property name="name">
+			<value>Character</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ed5b2d1a-af62-4d06-ac9c-c12c4ccfd9f5}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{25026d9d-887c-4660-8383-4c8f59937ca7}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{25026d9d-887c-4660-8383-4c8f59937ca7}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>3</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Vedal</value>
+			<value>Neuro</value>
+			<value>Evil</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

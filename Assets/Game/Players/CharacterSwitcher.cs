@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 
 namespace SchizoQuest.Game.Players
@@ -7,20 +9,28 @@ namespace SchizoQuest.Game.Players
     {
         public List<Player> availablePlayers;
         private Player _currentPlayer;
+        private int _currentIndex;
+        public StudioEventEmitter music;
 
         private void Start()
         {
-            _currentPlayer = availablePlayers[0];
-            _currentPlayer.enabled = true;
+            SwitchTo(_currentIndex);
         }
 
         public void OnSwitchCharacter()
         {
             _currentPlayer.enabled = false;
-            int index = availablePlayers.IndexOf(_currentPlayer) + 1;
-            if (index >= availablePlayers.Count) index = 0;
+            _currentIndex++;
+            _currentIndex %= availablePlayers.Count;
+            SwitchTo(_currentIndex);
+        }
+
+        private void SwitchTo(int index)
+        {
             _currentPlayer = availablePlayers[index];
             _currentPlayer.enabled = true;
+            if (music)
+                music.SetParameter("Character", _currentPlayer.playerType.ValueIndex());
         }
     }
 }

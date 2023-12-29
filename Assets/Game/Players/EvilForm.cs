@@ -1,3 +1,4 @@
+using FMODUnity;
 using UnityEngine;
 
 namespace SchizoQuest.Game.Players
@@ -6,9 +7,11 @@ namespace SchizoQuest.Game.Players
     {
         public ParticleSystem evilSwitchParticleEffect;
         private ParticleSystem _neuroSwitchParticleEffect;
+        private CharacterSwitcher switcher;
 
-        public void Start()
+        public void Awake()
         {
+            switcher = gameObject.GetComponentInParent<CharacterSwitcher>();
             _neuroSwitchParticleEffect = player.characterSwitchParticleEffect;
         }
         protected override void OnSwap(bool isAlt)
@@ -19,6 +22,7 @@ namespace SchizoQuest.Game.Players
             player.characterSwitchParticleEffect = isAlt
                 ? evilSwitchParticleEffect
                 : _neuroSwitchParticleEffect;
+            switcher.music.SetParameter("Character", isAlt ? 2 : 1);
         }
     }
 }

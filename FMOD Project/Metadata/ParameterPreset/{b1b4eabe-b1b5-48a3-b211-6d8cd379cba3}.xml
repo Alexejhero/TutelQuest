@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{b1b4eabe-b1b5-48a3-b211-6d8cd379cba3}">
+		<property name="name">
+			<value>Evil</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ed5b2d1a-af62-4d06-ac9c-c12c4ccfd9f5}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{4604d5f7-da60-4253-be97-ab5f7f65acdf}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{4604d5f7-da60-4253-be97-ab5f7f65acdf}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>2</value>
+		</property>
+		<relationship name="automators">
+			<destination>{321b447d-7700-4a8f-9f89-cd9a6eef70f5}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{321b447d-7700-4a8f-9f89-cd9a6eef70f5}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>cursorPosition</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{725c20a1-937c-4ad2-9fd6-03b2fbf8009b}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{725c20a1-937c-4ad2-9fd6-03b2fbf8009b}">
+		<relationship name="parameter">
+			<destination>{25026d9d-887c-4660-8383-4c8f59937ca7}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{7acae0b1-1278-420c-a258-47b6074f79a6}</destination>
+			<destination>{875dbe33-9ad9-4090-85d5-5aad29ed3724}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationPoint" id="{7acae0b1-1278-420c-a258-47b6074f79a6}">
+		<property name="position">
+			<value>2</value>
+		</property>
+		<property name="value">
+			<value>1</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{875dbe33-9ad9-4090-85d5-5aad29ed3724}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

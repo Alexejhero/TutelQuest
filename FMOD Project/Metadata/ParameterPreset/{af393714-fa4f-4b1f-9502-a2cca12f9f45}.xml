@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{af393714-fa4f-4b1f-9502-a2cca12f9f45}">
+		<property name="name">
+			<value>Vedal</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ed5b2d1a-af62-4d06-ac9c-c12c4ccfd9f5}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{a66af254-84bd-488a-a876-eee5483f4f47}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{a66af254-84bd-488a-a876-eee5483f4f47}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>2</value>
+		</property>
+		<relationship name="automators">
+			<destination>{8fb48fa5-8e2a-45e8-85f2-a6564d9ef894}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{8fb48fa5-8e2a-45e8-85f2-a6564d9ef894}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>cursorPosition</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{9cc3aca0-ba39-4570-b436-922a8b2266dc}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{9cc3aca0-ba39-4570-b436-922a8b2266dc}">
+		<relationship name="parameter">
+			<destination>{25026d9d-887c-4660-8383-4c8f59937ca7}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{518e506d-948e-4756-be9b-60688654a9b0}</destination>
+			<destination>{e457be9d-d5fc-451e-b664-0c3907b1e392}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationPoint" id="{518e506d-948e-4756-be9b-60688654a9b0}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>1</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{e457be9d-d5fc-451e-b664-0c3907b1e392}">
+		<property name="position">
+			<value>1</value>
+		</property>
+		<property name="value">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
