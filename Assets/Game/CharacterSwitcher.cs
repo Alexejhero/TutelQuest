@@ -21,7 +21,7 @@ public class CharacterSwitcher : MonoBehaviour
 
     private void Update()
     {
-        if (_input.Player.SwitchCharacter.WasPerformedThisFrame())
+        if (_input.Player.SwitchCharacter.triggered)
         {
             _currentPlayer.enabled = false;
             int index = availablePlayers.IndexOf(_currentPlayer) + 1;
