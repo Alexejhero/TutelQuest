@@ -140,8 +140,9 @@ GameObject:
   - component: {fileID: 196864086}
   - component: {fileID: 196864088}
   - component: {fileID: 196864089}
+  - component: {fileID: 196864091}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -427,9 +428,8 @@ MonoBehaviour:
   acceleration: 70
   runMultiplier: 1.5
   maxVelocity: 8
+  living: {fileID: 196864091}
   rb: {fileID: 196864081}
-  hurtCollider: {fileID: 0}
-  health: 100
   camSmooth: 0.35
 --- !u!70 &196864090
 CapsuleCollider2D:
@@ -466,6 +466,20 @@ CapsuleCollider2D:
   m_Offset: {x: -0.049025655, y: -0.6128204}
   m_Size: {x: 1.766393, y: 3.0303936}
   m_Direction: 0
+--- !u!114 &196864091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196864080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf45b4205d2d7894096df4b0109f1b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  maxHealth: 100
 --- !u!114 &319460068
 MonoBehaviour:
   m_ObjectHideFlags: 0
