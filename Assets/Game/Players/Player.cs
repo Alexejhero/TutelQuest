@@ -13,6 +13,7 @@ namespace SchizoQuest.Game.Players
         public Living living;
         [FormerlySerializedAs("movement")] public PlayerController controller;
         public Inventory inventory;
+        public ParticleSystem characterSwitchParticleEffect;
 
         public void OnEnable()
         {
@@ -20,10 +21,13 @@ namespace SchizoQuest.Game.Players
             controller.movementActive = true;
             GetComponent<SpriteRenderer>().sortingOrder = 1;
             ActivePlayer = this;
+            characterSwitchParticleEffect.Play();
         }
 
         public void OnDisable()
         {
+            characterSwitchParticleEffect.Stop();
+            characterSwitchParticleEffect.Clear();
             controller.movementActive = false;
             controller.
             GetComponent<SpriteRenderer>().sortingOrder = -1;
