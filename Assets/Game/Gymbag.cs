@@ -35,7 +35,7 @@ namespace SchizoQuest.Game
 
         public void OnInteract()
         {
-            if (!GetComponent<Player>().enabled) return;
+            if (!GetComponent<Player.Player>().enabled) return;
             if (item)
             {
                 Drop(item);

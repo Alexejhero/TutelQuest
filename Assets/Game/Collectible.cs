@@ -17,7 +17,7 @@ namespace SchizoQuest.Game
 
         private bool TryCollect(GameObject collector)
         {
-            Player player = collector.GetComponent<Player>();
+            Player.Player player = collector.GetComponent<Player.Player>();
             if (!player) return false;
             if (!collectibleBy.HasFlag(player.character)) return false;
 
@@ -26,7 +26,7 @@ namespace SchizoQuest.Game
             return true;
         }
 
-        public delegate void CollectedHandler(Collectible collectible, Player player);
+        public delegate void CollectedHandler(Collectible collectible, Player.Player player);
         public static CollectedHandler OnCollected;
     }
 }

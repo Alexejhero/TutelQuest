@@ -1,3 +1,4 @@
+using SchizoQuest.Game.Player;
 using UnityEngine;
 
 namespace SchizoQuest.Game

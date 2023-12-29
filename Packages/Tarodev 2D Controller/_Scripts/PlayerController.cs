@@ -13,6 +13,8 @@ namespace TarodevController
     [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
     public class PlayerController : MonoBehaviour, IPlayerController
     {
+        public bool movementActive = true;
+
         [SerializeField] private ScriptableStats _stats;
         private Rigidbody2D _rb;
         private CapsuleCollider2D _col;
@@ -46,12 +48,24 @@ namespace TarodevController
 
         private void GatherInput()
         {
-            _frameInput = new FrameInput
+            if (movementActive)
             {
-                JumpDown = Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.C),
-                JumpHeld = Input.GetButton("Jump") || Input.GetKey(KeyCode.C),
-                Move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"))
-            };
+                _frameInput = new FrameInput
+                {
+                    JumpDown = UnityEngine.Input.GetButtonDown("Jump") || UnityEngine.Input.GetKeyDown(KeyCode.C),
+                    JumpHeld = UnityEngine.Input.GetButton("Jump") || UnityEngine.Input.GetKey(KeyCode.C),
+                    Move = new Vector2(UnityEngine.Input.GetAxisRaw("Horizontal"), UnityEngine.Input.GetAxisRaw("Vertical"))
+                };
+            }
+            else
+            {
+                _frameInput = new FrameInput
+                {
+                    JumpDown = false,
+                    JumpHeld = false,
+                    Move = Vector2.zero,
+                };
+            }
 
             if (_stats.SnapInput)
             {
@@ -73,12 +87,12 @@ namespace TarodevController
             HandleJump();
             HandleDirection();
             HandleGravity();
-            
+
             ApplyMovement();
         }
 
         #region Collisions
-        
+
         private float _frameLeftGrounded = float.MinValue;
         private bool _grounded;
 

@@ -101,7 +101,7 @@ namespace TarodevController
         private void OnGroundedChanged(bool grounded, float impact)
         {
             _grounded = grounded;
-            
+
             if (grounded)
             {
                 DetectGroundColor();

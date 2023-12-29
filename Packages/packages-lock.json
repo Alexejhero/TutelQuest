@@ -1,9 +1,9 @@
 {
   "dependencies": {
     "com.unity.2d.sprite": {
-      "version": "1.0.0",
+      "version": "file:Tarodev 2D Controller",
       "depth": 0,
-      "source": "builtin",
+      "source": "embedded",
       "dependencies": {}
     },
     "com.unity.2d.tilemap": {
