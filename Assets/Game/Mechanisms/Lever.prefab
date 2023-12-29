@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2246328159500238005}
   - component: {fileID: 7656446852665161134}
+  - component: {fileID: 6080830026394956579}
   m_Layer: 0
   m_Name: Lever
   m_TagString: Untagged
@@ -47,12 +48,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123f158cd20b428da8edb93cede96b2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOn: 0
+  isOn: 1
   onSwitch:
     m_PersistentCalls:
       m_Calls: []
-  on: {fileID: 5140542197677954199}
-  off: {fileID: 8071195827345286528}
+  on: {fileID: 8071195827345286528}
+  off: {fileID: 5140542197677954199}
+--- !u!61 &6080830026394956579
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381264070031896345}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1178241492805003275
 GameObject:
   m_ObjectHideFlags: 0
