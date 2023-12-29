@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 478257553380852303}
   - component: {fileID: 3794102725898009367}
   - component: {fileID: 7886838460896299330}
+  - component: {fileID: -6607987779065989709}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -162,12 +163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0356781e0280bac46b64747d8e31b881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceleration: 70
-  runMultiplier: 1.5
-  maxVelocity: 8
   living: {fileID: 7886838460896299330}
-  rb: {fileID: 2974384647121567995}
-  camSmooth: 0.35
+  movement: {fileID: -6607987779065989709}
 --- !u!114 &7886838460896299330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,3 +179,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHealth: 100
+--- !u!114 &-6607987779065989709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8801004962465848453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d562f6f844ade6341949165d086a0861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 2974384647121567995}
+  acceleration: 70
+  runMultiplier: 1.5
+  maxVelocity: 5
