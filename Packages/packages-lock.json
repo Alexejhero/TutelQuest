@@ -1,9 +1,9 @@
 {
   "dependencies": {
     "com.unity.2d.sprite": {
-      "version": "file:Tarodev 2D Controller",
+      "version": "1.0.0",
       "depth": 0,
-      "source": "embedded",
+      "source": "builtin",
       "dependencies": {}
     },
     "com.unity.2d.tilemap": {
@@ -139,6 +139,12 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.unity.textmeshpro.essentials": {
+      "version": "file:TextMesh Pro",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.unity.timeline": {
       "version": "1.8.6",
       "depth": 0,
@@ -159,6 +165,18 @@
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
       }
+    },
+    "tarodevcontroller": {
+      "version": "file:Tarodev 2D Controller",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "twodhandcraftedart": {
+      "version": "file:Free Asset - 2D Handcrafted Art",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
