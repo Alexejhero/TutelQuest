@@ -1,9 +1,12 @@
 using System;
 
-[Flags]
-public enum Character
+namespace SchizoQuest.Game
 {
-    Vedal = 0x01,
-    Neuro = 0x02,
-    Evil = 0x04,
+    [Flags]
+    public enum Character
+    {
+        Vedal = 0x01,
+        Neuro = 0x02,
+        Evil = 0x04,
+    }
 }

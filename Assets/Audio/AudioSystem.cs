@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace Schizo.Audio
+namespace SchizoQuest.Audio
 {
 	/// <summary>
 	/// Type of audio clip, corresponds to the track being used
@@ -81,8 +79,8 @@ namespace Schizo.Audio
 
 			for (int i = 0; i < sfxTrackCount; i++)
 			{
-				AudioSource audio = gameObject.AddComponent<AudioSource>();
-				sfxTracks[i] = audio;
+				AudioSource audioSource = gameObject.AddComponent<AudioSource>();
+				sfxTracks[i] = audioSource;
 			}
 
 			voiceTrack = gameObject.AddComponent<AudioSource>();
@@ -133,24 +131,21 @@ namespace Schizo.Audio
 		/// <param name="at">Type of clip <see cref="ClipType"/></param>
 		public void Play(AudioClip clip, ClipType at)
 		{
-			AudioSource source = voiceTrack;
 			switch (at)
 			{
 				case ClipType.Sfx:
 					PlaySfx(clip);
 					return;
-					break;
 				case ClipType.Voice:
-					source = voiceTrack;
+					PlaySource(voiceTrack, clip);
 					break;
 				case ClipType.Background:
-					source = backgroundTrack;
+					PlaySource(backgroundTrack, clip);
 					break;
 				case ClipType.Music:
-					source = musicTrack;
+					PlaySource(musicTrack, clip);
 					break;
 			}
-			PlaySource(source, clip);
 		}
 
 		/// <summary>
@@ -250,13 +245,15 @@ namespace Schizo.Audio
 		/// <summary>
 		/// Compounds a desired volume by the value of <see cref="masterVolume"/>
 		/// </summary>
-		/// <param name="audio">Source to affect</param>
+		/// <param name="audioSource">Source to affect</param>
 		/// <param name="volume">Value of this source's volume</param>
-		private void SetupSource(AudioSource audio, float volume, bool loop = false, bool force2d=true)
+		/// <param name="loop"></param>
+		/// <param name="force2d"></param>
+		private void SetupSource(AudioSource audioSource, float volume, bool loop = false, bool force2d=true)
 		{
-			audio.volume = volume * masterVolume;
-			if (force2d) audio.spatialBlend = 0.0f;
-			audio.loop = loop;
+			audioSource.volume = volume * masterVolume;
+			if (force2d) audioSource.spatialBlend = 0.0f;
+			audioSource.loop = loop;
 		}
 
 	}

@@ -1,17 +1,20 @@
 using UnityEngine;
 
-public class LavaPool : MonoBehaviour
+namespace SchizoQuest.Game
 {
-    public float damage;
-    
-    public void OnTriggerEnter2D(Collider2D other)
+    public class LavaPool : MonoBehaviour
     {
-        var living = other.GetComponent<Living>();
-        if (living)
+        public float damage;
+    
+        public void OnTriggerEnter2D(Collider2D other)
         {
-            living.health -= damage;
-            Debug.LogWarning($"{name} damaged {living.name} for {damage} ({living.health} health remaining)");
+            var living = other.GetComponent<Living>();
+            if (living)
+            {
+                living.health -= damage;
+                Debug.LogWarning($"{name} damaged {living.name} for {damage} ({living.health} health remaining)");
+            }
         }
-    }
 
+    }
 }

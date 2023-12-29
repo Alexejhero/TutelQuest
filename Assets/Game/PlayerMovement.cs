@@ -1,29 +1,33 @@
+using SchizoQuest.Input;
 using UnityEngine;
 
-public sealed class PlayerMovement : MonoBehaviour
+namespace SchizoQuest.Game
 {
-    public Rigidbody2D rb;
-
-    public float acceleration;
-    public float runMultiplier = 1.5f;
-    public float maxVelocity = 10f;
-
-    public InputActions input;
-
-    public void Awake()
+    public sealed class PlayerMovement : MonoBehaviour
     {
-        input = new InputActions();
-    }
+        public Rigidbody2D rb;
 
-    private Vector3 _accel;
-    public void Update()
-    {
-        Vector2 moveInput = input.Player.Move.ReadValue<Vector2>();
-        
-        var maxVel = maxVelocity;
-        var running = input.Player.Run.IsPressed();
-        if (running)
-            maxVel *= runMultiplier;
-        rb.velocity = Vector3.SmoothDamp(rb.velocity, moveInput * maxVel, ref _accel, 1f / acceleration);
+        public float acceleration;
+        public float runMultiplier = 1.5f;
+        public float maxVelocity = 10f;
+
+        public InputActions input;
+
+        public void Awake()
+        {
+            input = new InputActions();
+        }
+
+        private Vector3 _accel;
+        public void Update()
+        {
+            Vector2 moveInput = input.Player.Move.ReadValue<Vector2>();
+
+            var maxVel = maxVelocity;
+            var running = input.Player.Run.IsPressed();
+            if (running)
+                maxVel *= runMultiplier;
+            rb.velocity = Vector3.SmoothDamp(rb.velocity, moveInput * maxVel, ref _accel, 1f / acceleration);
+        }
     }
 }

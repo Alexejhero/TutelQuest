@@ -1,23 +1,26 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterSwitcher : MonoBehaviour
+namespace SchizoQuest.Game
 {
-    public List<Player> availablePlayers;
-    private Player _currentPlayer;
-
-    private void Start()
+    public class CharacterSwitcher : MonoBehaviour
     {
-        _currentPlayer = availablePlayers[0];
-        _currentPlayer.enabled = true;
-    }
+        public List<Player> availablePlayers;
+        private Player _currentPlayer;
 
-    public void OnSwitchCharacter()
-    {
-        _currentPlayer.enabled = false;
-        int index = availablePlayers.IndexOf(_currentPlayer) + 1;
-        if (index >= availablePlayers.Count) index = 0;
-        _currentPlayer = availablePlayers[index];
-        _currentPlayer.enabled = true;
+        private void Start()
+        {
+            _currentPlayer = availablePlayers[0];
+            _currentPlayer.enabled = true;
+        }
+
+        public void OnSwitchCharacter()
+        {
+            _currentPlayer.enabled = false;
+            int index = availablePlayers.IndexOf(_currentPlayer) + 1;
+            if (index >= availablePlayers.Count) index = 0;
+            _currentPlayer = availablePlayers[index];
+            _currentPlayer.enabled = true;
+        }
     }
 }

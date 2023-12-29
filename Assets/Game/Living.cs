@@ -1,28 +1,31 @@
 using UnityEngine;
 
-public class Living : MonoBehaviour
+namespace SchizoQuest.Game
 {
-    public float health;
-    public float maxHealth = 100f;
-
-    protected virtual void Awake()
+    public class Living : MonoBehaviour
     {
-        ResetHealth();
-    }
+        public float health;
+        public float maxHealth = 100f;
 
-    private void Update()
-    {
-        if (!IsAlive())
+        protected virtual void Awake()
         {
-            Debug.LogWarning($"{name} died");
             ResetHealth();
         }
-    }
 
-    private void ResetHealth()
-    {
-        health = maxHealth;
-    }
+        private void Update()
+        {
+            if (!IsAlive())
+            {
+                Debug.LogWarning($"{name} died");
+                ResetHealth();
+            }
+        }
 
-    public bool IsAlive() => health > 0;
+        private void ResetHealth()
+        {
+            health = maxHealth;
+        }
+
+        public bool IsAlive() => health > 0;
+    }
 }

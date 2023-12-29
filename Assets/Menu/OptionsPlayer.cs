@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 
-public class OptionsPlayer : MonoBehaviour
+namespace SchizoQuest.Menu
 {
+    public class OptionsPlayer : MonoBehaviour
+    {
 
+    }
 }

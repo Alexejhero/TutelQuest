@@ -3,19 +3,22 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class MenuBorderPlayer : MonoBehaviour
+namespace SchizoQuest.Menu
 {
-    public TMP_Text borderText;
-    public MenuPlayer menuPlayer;
-
-    private IEnumerator Start()
+    public class MenuBorderPlayer : MonoBehaviour
     {
-        while (borderText.text.StartsWith("\n") || borderText.text.StartsWith("+"))
-        {
-            borderText.text = borderText.text[(borderText.text.IndexOf("\n", StringComparison.Ordinal) + 1)..];
-            yield return new WaitForSecondsRealtime(0.25f);
-        }
+        public TMP_Text borderText;
+        public MenuPlayer menuPlayer;
 
-        menuPlayer.enabled = true;
+        private IEnumerator Start()
+        {
+            while (borderText.text.StartsWith("\n") || borderText.text.StartsWith("+"))
+            {
+                borderText.text = borderText.text[(borderText.text.IndexOf("\n", StringComparison.Ordinal) + 1)..];
+                yield return new WaitForSecondsRealtime(0.25f);
+            }
+
+            menuPlayer.enabled = true;
+        }
     }
 }

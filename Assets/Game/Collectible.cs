@@ -1,20 +1,23 @@
 using UnityEngine;
 
-public sealed class Collectible : MonoBehaviour
+namespace SchizoQuest.Game
 {
-    public Character collectibleBy;
-    public void OnTriggerEnter2D(Collider2D other)
+    public sealed class Collectible : MonoBehaviour
     {
-        Debug.Log($"entered {other}");
-        var player = other.GetComponent<Player>();
-        if (!player) return;
-        if (collectibleBy.HasFlag(player.character))
+        public Character collectibleBy;
+        public void OnTriggerEnter2D(Collider2D other)
         {
-            OnCollected?.Invoke(this, player);
-            gameObject.SetActive(false);
+            Debug.Log($"entered {other}");
+            var player = other.GetComponent<Player>();
+            if (!player) return;
+            if (collectibleBy.HasFlag(player.character))
+            {
+                OnCollected?.Invoke(this, player);
+                gameObject.SetActive(false);
+            }
         }
-    }
 
-    public delegate void CollectedHandler(Collectible collectible, Player player);
-    public static CollectedHandler OnCollected;
+        public delegate void CollectedHandler(Collectible collectible, Player player);
+        public static CollectedHandler OnCollected;
+    }
 }
