@@ -1,19 +1,21 @@
+using SchizoQuest.Game.Items;
 using SchizoQuest.Game.Players;
 using SchizoQuest.Interaction;
 using UnityEngine;
 
 namespace SchizoQuest.Game
 {
-    public class ItemDoor : MonoBehaviour, IInteractable
+    public class ItemDoor : MonoBehaviour, ICompoundInteractable<Carryable>
     {
-        public bool CanInteract(Player player)
+        public bool CanCompoundInteract(Player player, Carryable other)
         {
-            throw new System.NotImplementedException();
+            return player.inventory.item == other && other.itemType == ItemType.Key;
         }
 
-        public void Interact(Player player)
+        public void CompoundInteract(Player player, Carryable other)
         {
-            throw new System.NotImplementedException();
+            gameObject.SetActive(false);
+            Destroy(player.inventory.item);
         }
     }
 }

@@ -7,6 +7,7 @@ namespace SchizoQuest.Game.Items
 {
     public sealed class Carryable : MonoBehaviour, IInteractable
     {
+        public ItemType itemType;
         public Transform plug;
         private Collider2D _collider;
         private SpriteRenderer[] _renderers;
@@ -38,11 +39,6 @@ namespace SchizoQuest.Game.Items
             player.inventory.Pickup(this);
         }
 
-        public bool CanCompoundInteract(Player player, IInteractable interactable)
-        {
-            return false;
-        }
-
         public void OnPickedUp()
         {
             _isTrigger = _collider.isTrigger;
@@ -55,7 +51,7 @@ namespace SchizoQuest.Game.Items
 
         public void OnDropped()
         {
-            _collider.isTrigger = false;
+            _collider.isTrigger = _isTrigger;
             for (int i = 0; i < _renderers.Length; i++)
             {
                 SpriteRenderer rend = _renderers[i];

@@ -22,10 +22,29 @@ namespace SchizoQuest.Interaction
                 useTriggers = true
             };
             Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), 5f, filter, _collisionResults);
-            _collisionResults.OrderBy(coll => Vector2.Distance(transform.position, coll.transform.position))
+
+            IEnumerable<IInteractable> ordered = _collisionResults
+                .OrderBy(coll => Vector2.Distance(transform.position, coll.transform.position))
                 .Select(coll => coll.GetComponent<IInteractable>())
-                .FirstOrDefault(comp => comp != null && comp.CanInteract(player))?
-                .Interact(player);
+                .Where(comp => comp != null && comp.CanInteract(player))
+                .ToList();
+
+            foreach (IInteractable interactable in ordered)
+            {
+                if (interactable is ICompoundInteractable compound)
+                {
+                    foreach (IInteractable other in ordered)
+                    {
+                        if (compound.GetOtherType().IsInstanceOfType(other) && compound.CanCompoundInteract(player, other))
+                        {
+                            compound.CompoundInteract(player, other);
+                            return;
+                        }
+                    }
+                }
+            }
+
+            ordered.FirstOrDefault()?.Interact(player);
         }
     }
 }
