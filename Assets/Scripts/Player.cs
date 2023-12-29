@@ -4,7 +4,7 @@ using UnityEngine;
 public sealed class Player : MonoBehaviour
 {
     public static Player main;
-    
+
     public float acceleration;
     public float runMultiplier = 1.5f;
     public float maxVelocity = 5f;
@@ -13,7 +13,14 @@ public sealed class Player : MonoBehaviour
     public float health = 100f;
     private Vector2 _moveInput;
     private Vector3 _desiredCamOffset;
-    private void Awake()
+
+	private Vector3 camVelocity = Vector3.zero;
+
+	[SerializeField]
+	[Range(0.01f,0.9f)]
+	private float camSmooth = 0.35f;
+
+	private void Awake()
     {
         main = this;
         _input = new InputActions();
@@ -54,9 +61,11 @@ public sealed class Player : MonoBehaviour
 
     private void LerpCamera()
     {
-        var desiredCamPos = transform.position + _desiredCamOffset;
+		var desiredCamPos = transform.position;
         var camPos = Camera.main.transform.position;
-        Camera.main.transform.position = Vector3.Lerp(camPos, desiredCamPos, Time.deltaTime * (desiredCamPos - camPos).magnitude);
+		desiredCamPos.z = camPos.z;
+		camPos = Vector3.SmoothDamp(camPos, desiredCamPos, ref camVelocity, camSmooth);
+		Camera.main.transform.position = camPos;
     }
 
     public void OnEnable()
