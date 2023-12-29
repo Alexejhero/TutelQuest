@@ -117,9 +117,9 @@ TextureImporter:
         y: 1333.3333
         width: 1000
         height: 666.6667
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      alignment: 9
+      pivot: {x: 0.5779312, y: 0.48228845}
+      border: {x: 187, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -159,9 +159,9 @@ TextureImporter:
         y: 1333.3333
         width: 1000
         height: 666.6667
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      alignment: 9
+      pivot: {x: 0.4126223, y: 0.49645787}
+      border: {x: 0, y: 0, z: 182, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -176,13 +176,13 @@ TextureImporter:
       name: smoke_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 667.3333
+        x: 5
+        y: 667
         width: 1000
-        height: 666.6667
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+        height: 667
+      alignment: 9
+      pivot: {x: 0.56140035, y: 0.4964577}
+      border: {x: 135, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -222,9 +222,9 @@ TextureImporter:
         y: 667.3333
         width: 1000
         height: 666.6667
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      alignment: 9
+      pivot: {x: 0.41083497, y: 0.48513892}
+      border: {x: 0, y: 0, z: 160, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -243,9 +243,9 @@ TextureImporter:
         y: 1.333313
         width: 1000
         height: 666.6667
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      alignment: 9
+      pivot: {x: 0.560418, y: 0.50503474}
+      border: {x: 121, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0

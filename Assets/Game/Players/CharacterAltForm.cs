@@ -15,7 +15,7 @@ namespace SchizoQuest.Game.Players
         [Range(0f, 5f)]
         public float swapCooldown = 1;
         protected float nextSwapTime;
-        public float swapDelay = 0.050f;
+        public float swapDelay = 0.100f;
         
         public IEnumerator OnSwapForm()
         {
