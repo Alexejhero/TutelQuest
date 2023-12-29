@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using FMODUnity;
 using UnityEngine;
@@ -11,6 +12,9 @@ namespace SchizoQuest.Game.Players
         private Player _currentPlayer;
         private int _currentIndex;
         public StudioEventEmitter music;
+        public float switchCooldown;
+        public float switchDelay;
+        private float _nextSwitchTime;
 
         private void Start()
         {
@@ -19,6 +23,8 @@ namespace SchizoQuest.Game.Players
 
         public void OnSwitchCharacter()
         {
+            if (Time.time < _nextSwitchTime) return;
+
             _currentPlayer.enabled = false;
             _currentIndex++;
             _currentIndex %= availablePlayers.Count;
@@ -29,6 +35,7 @@ namespace SchizoQuest.Game.Players
         {
             _currentPlayer = availablePlayers[index];
             _currentPlayer.enabled = true;
+            _nextSwitchTime = Time.time + switchCooldown;
             if (music)
                 music.SetParameter("Character", _currentPlayer.playerType.ValueIndex());
         }
