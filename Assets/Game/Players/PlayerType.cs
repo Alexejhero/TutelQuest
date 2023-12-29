@@ -1,9 +1,9 @@
 using System;
 
-namespace SchizoQuest.Game
+namespace SchizoQuest.Game.Players
 {
     [Flags]
-    public enum Character
+    public enum PlayerType
     {
         Vedal = 0x01,
         Neuro = 0x02,

@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using SchizoQuest.Game.Players;
 using UnityEngine;
 
-namespace SchizoQuest.Game
+namespace SchizoQuest.Game.Players
 {
     public class CharacterSwitcher : MonoBehaviour
     {

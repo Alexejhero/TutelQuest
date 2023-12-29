@@ -5,7 +5,7 @@ namespace SchizoQuest.Game.Items
 {
     public sealed class Collectible : MonoBehaviour
     {
-        public Character collectibleBy;
+        public PlayerType collectibleBy;
         public void OnTriggerEnter2D(Collider2D other)
         {
             TryCollect(other.gameObject);
@@ -20,7 +20,7 @@ namespace SchizoQuest.Game.Items
         {
             Player player = collector.GetComponent<Player>();
             if (!player) return false;
-            if (!collectibleBy.HasFlag(player.character)) return false;
+            if (!collectibleBy.HasFlag(player.playerType)) return false;
 
             OnCollected?.Invoke(this, player);
             gameObject.SetActive(false);

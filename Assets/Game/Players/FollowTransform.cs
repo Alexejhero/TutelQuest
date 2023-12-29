@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace SchizoQuest.Game
+namespace SchizoQuest.Game.Players
 {
     public sealed class FollowTransform : MonoBehaviour
     {

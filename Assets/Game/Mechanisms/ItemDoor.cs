@@ -3,7 +3,7 @@ using SchizoQuest.Game.Players;
 using SchizoQuest.Interaction;
 using UnityEngine;
 
-namespace SchizoQuest.Game
+namespace SchizoQuest.Game.Mechanisms
 {
     public class ItemDoor : MonoBehaviour, ICompoundInteractable<Carryable>
     {

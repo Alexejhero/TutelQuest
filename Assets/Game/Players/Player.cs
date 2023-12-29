@@ -9,7 +9,7 @@ namespace SchizoQuest.Game.Players
     {
         public static Player ActivePlayer;
 
-        public Character character;
+        [FormerlySerializedAs("character")] public PlayerType playerType;
         public Living living;
         [FormerlySerializedAs("movement")] public PlayerController controller;
         public Inventory inventory;

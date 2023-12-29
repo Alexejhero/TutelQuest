@@ -21,13 +21,17 @@ namespace SchizoQuest.Interaction
                 useLayerMask = true,
                 useTriggers = true
             };
-            Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), 5f, filter, _collisionResults);
+            Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), 3f, filter, _collisionResults);
+
+            Debug.Log($"Found {_collisionResults.Count} colliders");
 
             IEnumerable<IInteractable> ordered = _collisionResults
                 .OrderBy(coll => Vector2.Distance(transform.position, coll.transform.position))
                 .Select(coll => coll.GetComponent<IInteractable>())
                 .Where(comp => comp != null && comp.CanInteract(player))
                 .ToList();
+
+            Debug.Log($"Found {ordered.Count()} usable interactables");
 
             foreach (IInteractable interactable in ordered)
             {
