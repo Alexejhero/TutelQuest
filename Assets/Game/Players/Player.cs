@@ -15,13 +15,19 @@ namespace SchizoQuest.Game.Players
         public Inventory inventory;
         public ParticleSystem characterSwitchParticleEffect;
 
+        private SpriteRenderer[] _renderers;
+        private void Awake()
+        {
+            _renderers = GetComponentsInChildren<SpriteRenderer>();
+        }
+
         public void OnEnable()
         {
             Camera.main!.GetComponent<FollowTransform>().target = transform;
             controller.movementActive = true;
-            GetComponent<SpriteRenderer>().sortingOrder = 1;
             ActivePlayer = this;
             characterSwitchParticleEffect.Play();
+            SetSortOrder(1);
         }
 
         public void OnDisable()
@@ -29,8 +35,13 @@ namespace SchizoQuest.Game.Players
             characterSwitchParticleEffect.Stop();
             characterSwitchParticleEffect.Clear();
             controller.movementActive = false;
-            controller.
-            GetComponent<SpriteRenderer>().sortingOrder = -1;
+            SetSortOrder(-1);
+        }
+
+        private void SetSortOrder(int order)
+        {
+            foreach (var spriteRenderer in _renderers)
+                spriteRenderer.sortingOrder = order;
         }
     }
 }
