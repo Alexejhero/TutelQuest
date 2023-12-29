@@ -137,6 +137,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Asset: {fileID: -944628639613478452, guid: a9ebaca35d319eb4d9cc65b669943db3, type: 3}
   m_ActionId: d9137081-e4b6-4f2d-994d-bb782411e184
+--- !u!114 &61936710 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3794102725898009367, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
+  m_PrefabInstance: {fileID: 1118083770}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0356781e0280bac46b64747d8e31b881, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &128961982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,7 +206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   availablePlayers:
   - {fileID: 196864089}
-  - {fileID: 0}
+  - {fileID: 61936710}
 --- !u!4 &265934079
 Transform:
   m_ObjectHideFlags: 0
@@ -1598,14 +1609,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7829008132965033309, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1901891329}
-    - target: {fileID: 7829008132965033309, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
-      propertyPath: m_UIInputModule
-      value: 
-      objectReference: {fileID: 265934080}
     - target: {fileID: 8801004962465848453, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1622,6 +1625,6 @@ SceneRoots:
   - {fileID: 1901891330}
   - {fileID: 636558203}
   - {fileID: 1123551448}
-  - {fileID: 1118083770}
   - {fileID: 2568704557672474724}
+  - {fileID: 1118083770}
   - {fileID: 265934079}
