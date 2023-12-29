@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Vedal
+  - Neuro
+  - Evil
+  - VedalOnly
+  - NoVedal
+  - NeuroOnly
+  - NoNeuro
+  - EvilOnly
+  - NoEvil
   layers:
   - Default
   - TransparentFX
@@ -15,19 +24,19 @@ TagManager:
   - 
   - 
   - 
+  - VedalOnly
+  - NoVedal
+  - NeuroOnly
+  - NoNeuro
+  - EvilOnly
+  - NoEvil
   - 
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Vedal
+  - Neuro
+  - Evil
   - 
   - 
   - 
@@ -38,15 +47,24 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Bg
+  - name: Background
     uniqueID: 3661444853
+    locked: 0
+  - name: Ground
+    uniqueID: 1607219517
     locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Interactables
+    uniqueID: 2947554623
+    locked: 0
   - name: Player
     uniqueID: 1056585295
     locked: 0
-  - name: Fg
+  - name: InFrontOfPlayer
+    uniqueID: 2183309485
+    locked: 0
+  - name: Foreground
     uniqueID: 1709444009
     locked: 0

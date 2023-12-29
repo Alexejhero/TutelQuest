@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4281764129697944395}
   - component: {fileID: 3133943622501068480}
-  - component: {fileID: 2974384647121567995}
+  - component: {fileID: 2994542948100938228}
   - component: {fileID: 478257553380852303}
   - component: {fileID: 3794102725898009367}
   - component: {fileID: 7886838460896299330}
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1056585295
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 997a2023b9ca0854fb44b7727857bc89, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -89,7 +89,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &2974384647121567995
+--- !u!50 &2994542948100938228
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -101,10 +101,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
-  m_LinearDrag: 2
+  m_Mass: 1
+  m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -114,7 +114,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &478257553380852303
 CapsuleCollider2D:
@@ -148,8 +148,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.049025655, y: -0.6128204}
-  m_Size: {x: 1.766393, y: 3.0303936}
+  m_Offset: {x: 0, y: -1.2664531}
+  m_Size: {x: 1.6427329, y: 1.7231281}
   m_Direction: 0
 --- !u!114 &3794102725898009367
 MonoBehaviour:
@@ -163,6 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0356781e0280bac46b64747d8e31b881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: 0
   living: {fileID: 7886838460896299330}
   movement: {fileID: -6607987779065989709}
 --- !u!114 &7886838460896299330
@@ -191,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d562f6f844ade6341949165d086a0861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 2974384647121567995}
+  rb: {fileID: 2994542948100938228}
   acceleration: 70
   runMultiplier: 1.5
-  maxVelocity: 5
+  maxVelocity: 10

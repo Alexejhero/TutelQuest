@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
 public sealed class Player : MonoBehaviour
 {
     public static Player activePlayer;
