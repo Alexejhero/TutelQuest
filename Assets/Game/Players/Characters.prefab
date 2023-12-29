@@ -460,6 +460,9 @@ MonoBehaviour:
   availablePlayers:
   - {fileID: 6789368642089492847}
   - {fileID: 4206252254551930202}
+  music: {fileID: 0}
+  switchCooldown: 1
+  switchDelay: 0
 --- !u!114 &332734605170439082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -688,7 +691,9 @@ MonoBehaviour:
   player: {fileID: 4206252254551930202}
   regularForm: {fileID: 3224388269276892655}
   altForm: {fileID: 1130499802097221157}
+  smokePoof: {fileID: 4635165659735915814, guid: ecf4f11eb204d5d43841a47894315a6a, type: 3}
   swapCooldown: 1
+  swapDelay: 0.1
   evilSwitchParticleEffect: {fileID: 2472505819947592442, guid: 8d325820475c9b347ac37753db9b2634, type: 3}
 --- !u!1001 &1630657656458750010
 PrefabInstance:
@@ -982,7 +987,9 @@ MonoBehaviour:
   player: {fileID: 6789368642089492847}
   regularForm: {fileID: 7256098532487215345}
   altForm: {fileID: 7124210658378447907}
+  smokePoof: {fileID: 4635165659735915814, guid: ecf4f11eb204d5d43841a47894315a6a, type: 3}
   swapCooldown: 1
+  swapDelay: 0.1
   tutelCollider: {fileID: 1148481757124967933}
 --- !u!4 &5905366277789157683 stripped
 Transform:
@@ -1014,7 +1021,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100903760930339461, guid: 8d325820475c9b347ac37753db9b2634, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.28
       objectReference: {fileID: 0}
     - target: {fileID: 100903760930339461, guid: 8d325820475c9b347ac37753db9b2634, type: 3}
       propertyPath: m_LocalPosition.z
