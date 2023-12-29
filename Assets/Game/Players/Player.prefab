@@ -201,6 +201,7 @@ MonoBehaviour:
   living: {fileID: 7886838460896299330}
   controller: {fileID: 2387018308218317640}
   inventory: {fileID: 6931515259517804241}
+  characterSwitchParticleEffect: {fileID: 0}
 --- !u!114 &7886838460896299330
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -38,6 +38,11 @@ namespace SchizoQuest.Game.Items
             player.inventory.Pickup(this);
         }
 
+        public bool CanCompoundInteract(Player player, IInteractable interactable)
+        {
+            return false;
+        }
+
         public void OnPickedUp()
         {
             _isTrigger = _collider.isTrigger;
