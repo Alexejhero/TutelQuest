@@ -82,6 +82,15 @@ namespace SchizoQuest.Input
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Character Action"",
+                    ""type"": ""Button"",
+                    ""id"": ""61c49d79-0c50-4610-a6f8-3b9a2dc2c285"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -335,6 +344,17 @@ namespace SchizoQuest.Input
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""90edb917-faf2-4afe-bc6a-5a21606b521b"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Character Action"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -928,6 +948,7 @@ namespace SchizoQuest.Input
             m_Player_Run = m_Player.FindAction("Run", throwIfNotFound: true);
             m_Player_SwitchCharacter = m_Player.FindAction("SwitchCharacter", throwIfNotFound: true);
             m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
+            m_Player_CharacterAction = m_Player.FindAction("Character Action", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
             m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1007,6 +1028,7 @@ namespace SchizoQuest.Input
         private readonly InputAction m_Player_Run;
         private readonly InputAction m_Player_SwitchCharacter;
         private readonly InputAction m_Player_Interact;
+        private readonly InputAction m_Player_CharacterAction;
         public struct PlayerActions
         {
             private @InputActions m_Wrapper;
@@ -1017,6 +1039,7 @@ namespace SchizoQuest.Input
             public InputAction @Run => m_Wrapper.m_Player_Run;
             public InputAction @SwitchCharacter => m_Wrapper.m_Player_SwitchCharacter;
             public InputAction @Interact => m_Wrapper.m_Player_Interact;
+            public InputAction @CharacterAction => m_Wrapper.m_Player_CharacterAction;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -1044,6 +1067,9 @@ namespace SchizoQuest.Input
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
+                @CharacterAction.started += instance.OnCharacterAction;
+                @CharacterAction.performed += instance.OnCharacterAction;
+                @CharacterAction.canceled += instance.OnCharacterAction;
             }
 
             private void UnregisterCallbacks(IPlayerActions instance)
@@ -1066,6 +1092,9 @@ namespace SchizoQuest.Input
                 @Interact.started -= instance.OnInteract;
                 @Interact.performed -= instance.OnInteract;
                 @Interact.canceled -= instance.OnInteract;
+                @CharacterAction.started -= instance.OnCharacterAction;
+                @CharacterAction.performed -= instance.OnCharacterAction;
+                @CharacterAction.canceled -= instance.OnCharacterAction;
             }
 
             public void RemoveCallbacks(IPlayerActions instance)
@@ -1254,6 +1283,7 @@ namespace SchizoQuest.Input
             void OnRun(InputAction.CallbackContext context);
             void OnSwitchCharacter(InputAction.CallbackContext context);
             void OnInteract(InputAction.CallbackContext context);
+            void OnCharacterAction(InputAction.CallbackContext context);
         }
         public interface IUIActions
         {
