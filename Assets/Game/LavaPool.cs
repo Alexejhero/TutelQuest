@@ -8,7 +8,7 @@ namespace SchizoQuest.Game
     
         public void OnTriggerEnter2D(Collider2D other)
         {
-            var living = other.GetComponent<Living>();
+            Living living = other.GetComponent<Living>();
             if (living)
             {
                 living.health -= damage;

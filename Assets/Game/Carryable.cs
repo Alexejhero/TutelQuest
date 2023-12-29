@@ -1,38 +1,40 @@
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public sealed class Carryable : MonoBehaviour
+namespace SchizoQuest.Game
 {
-    public Transform plug;
-    private SpriteRenderer[] _renderers;
-    private int[] _savedLayers;
-
-    private void Awake()
+    public sealed class Carryable : MonoBehaviour
     {
-        _renderers = GetComponentsInChildren<SpriteRenderer>();
-        _savedLayers = _renderers
-            .Select(rend => rend.sortingLayerID)
-            .ToArray();
-    }
+        public Transform plug;
+        private SpriteRenderer[] _renderers;
+        private int[] _savedLayers;
 
-    public void OnPickedUp()
-    {
-        GetComponent<Collider2D>().enabled = false;
-        for (var i = 0; i < _renderers.Length; i++)
+        private void Awake()
         {
-            var renderer = _renderers[i];
-            renderer.sortingLayerName = "InFrontOfPlayer";
+            _renderers = GetComponentsInChildren<SpriteRenderer>();
+            _savedLayers = _renderers
+                .Select(rend => rend.sortingLayerID)
+                .ToArray();
         }
-    }
 
-    public void OnDropped()
-    {
-        GetComponent<Collider2D>().enabled = true;
-        for (var i = 0; i < _renderers.Length; i++)
+        public void OnPickedUp()
         {
-            var renderer = _renderers[i];
-            renderer.sortingLayerID = _savedLayers[i];
+            GetComponent<Collider2D>().enabled = false;
+            for (int i = 0; i < _renderers.Length; i++)
+            {
+                SpriteRenderer rend = _renderers[i];
+                rend.sortingLayerName = "InFrontOfPlayer";
+            }
+        }
+
+        public void OnDropped()
+        {
+            GetComponent<Collider2D>().enabled = true;
+            for (int i = 0; i < _renderers.Length; i++)
+            {
+                SpriteRenderer rend = _renderers[i];
+                rend.sortingLayerID = _savedLayers[i];
+            }
         }
     }
 }

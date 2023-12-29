@@ -13,8 +13,8 @@ namespace SchizoQuest.Game
 
         public void Update()
         {
-            var desiredCamPos = target.position;
-            var camPos = transform.position;
+            Vector3 desiredCamPos = target.position;
+            Vector3 camPos = transform.position;
             desiredCamPos.z = camPos.z;
             camPos = Vector3.SmoothDamp(camPos, desiredCamPos, ref currVelocity, smoothTime);
             transform.position = camPos;

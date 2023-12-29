@@ -23,8 +23,8 @@ namespace SchizoQuest.Game
         {
             Vector2 moveInput = input.Player.Move.ReadValue<Vector2>();
 
-            var maxVel = maxVelocity;
-            var running = input.Player.Run.IsPressed();
+            float maxVel = maxVelocity;
+            bool running = input.Player.Run.IsPressed();
             if (running)
                 maxVel *= runMultiplier;
             rb.velocity = Vector3.SmoothDamp(rb.velocity, moveInput * maxVel, ref _accel, 1f / acceleration);
