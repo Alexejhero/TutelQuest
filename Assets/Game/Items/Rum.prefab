@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7996040863485765874}
   - component: {fileID: 1555932284450263813}
-  - component: {fileID: 2763193400194826058}
+  - component: {fileID: -8130480643762904690}
   m_Layer: 0
   m_Name: Rum
   m_TagString: Untagged
@@ -238,7 +238,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.33, y: 2.1}
   m_Direction: 0
---- !u!114 &2763193400194826058
+--- !u!114 &-8130480643762904690
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -247,7 +247,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7382475017500014330}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fccd7eb300634b942925fd9485e0b1c8, type: 3}
+  m_Script: {fileID: 11500000, guid: 77a10b119cad402448fd4ca64ec523bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectibleBy: 1
+  itemType: 0
+  plug: {fileID: 0}

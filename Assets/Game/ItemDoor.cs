@@ -15,7 +15,7 @@ namespace SchizoQuest.Game
         public void CompoundInteract(Player player, Carryable other)
         {
             gameObject.SetActive(false);
-            Destroy(player.inventory.item);
+            Destroy(player.inventory.item.gameObject);
         }
     }
 }
