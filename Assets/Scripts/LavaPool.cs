@@ -3,24 +3,14 @@ using UnityEngine;
 public class LavaPool : MonoBehaviour
 {
     public float damage;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other == Player.main.GetComponent<Collider2D>())
+        var living = other.GetComponent<Living>();
+        if (living)
         {
-            Player.main.health -= damage;
-            Debug.LogWarning($"{damage} {Player.main.health}");
+            living.health -= damage;
+            Debug.LogWarning($"{name} damaged {living.name} for {damage} ({living.health} health remaining)");
         }
     }
 

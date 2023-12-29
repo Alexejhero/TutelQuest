@@ -181,6 +181,61 @@ namespace Schizo.Audio
 		}
 
 		/// <summary>
+		/// Get the volume for a given clip type, or the master volume
+		/// </summary>
+		/// <param name="clipType">Optional, Type of clip <see cref="ClipType"/> you want volume for, pass nothing for master volume</param>
+		/// <returns></returns>
+		public float GetVolume(ClipType? clipType = null)
+		{
+			float rv = masterVolume;
+			switch (clipType)
+			{
+				case ClipType.Sfx:
+					rv = sfxVolume;
+					break;
+				case ClipType.Voice:
+					rv = voiceVolume;
+					break;
+				case ClipType.Background:
+					rv = backgroundVolume;
+					break;
+				case ClipType.Music:
+					rv = musicVolume;
+					break;
+			}
+			return rv;
+		}
+
+		/// <summary>
+		/// Set the volume of a given clip type or set the master volume
+		/// </summary>
+		/// <param name="volume">New volume to set</param>
+		/// <param name="clipType">Optional, Type of clip <see cref="ClipType"/> to set volume for, none for master volume</param>
+		public void SetVolume(float volume, ClipType? clipType = null)
+		{
+			switch (clipType)
+			{
+				default:
+					masterVolume = volume;
+					break;
+				case ClipType.Sfx:
+					sfxVolume = volume;
+					break;
+				case ClipType.Voice:
+					voiceVolume = volume;
+					break;
+				case ClipType.Background:
+					backgroundVolume = volume;
+					break;
+				case ClipType.Music:
+					musicVolume = volume;
+					break;
+			}
+
+			ResetVolumes();
+		}
+
+		/// <summary>
 		/// Warpper that stops an audio source, changes its current clip and plays
 		/// </summary>
 		/// <param name="source">Source to play from</param>
