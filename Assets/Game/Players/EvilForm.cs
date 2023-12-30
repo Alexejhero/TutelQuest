@@ -1,5 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
 using FMODUnity;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace SchizoQuest.Game.Players
 {
@@ -10,6 +13,8 @@ namespace SchizoQuest.Game.Players
         private CharacterSwitcher switcher;
         public NeuroEvilTransitionManager neuroEvilTransitionManager;
         public float switchTransitionDuration = 0.5f;
+        public Volume evilVolume;
+        public CameraController cameraController;
 
         public void Awake()
         {
@@ -18,6 +23,11 @@ namespace SchizoQuest.Game.Players
         }
 
         protected override void OnSwap(bool isAlt)
+        {
+            StartCoroutine(CoOnSwap(isAlt));
+        }
+
+        private IEnumerator CoOnSwap(bool isAlt)
         {
             player.playerType = isAlt
                 ? PlayerType.Evil
@@ -30,8 +40,19 @@ namespace SchizoQuest.Game.Players
                 ? evilSwitchParticleEffect
                 : _neuroSwitchParticleEffect;
 
-            player.gameObject.layer = LayerMask.NameToLayer(player.playerType.ToString());
             switcher.music.SetParameter("Character", isAlt ? 2 : 1);
+
+            float startWeight = isAlt ? 0 : 1;
+            float endWeight = isAlt ? 1 : 0;
+
+            for (float t = 0; t < switchTransitionDuration / 2; t += Time.deltaTime)
+            {
+                evilVolume.weight = Mathf.Lerp(startWeight, endWeight, t / switchTransitionDuration / 2);
+                yield return null;
+            }
+
+            evilVolume.weight = endWeight;
+            cameraController.SetNeuroState(isAlt ? NeuroState.Evil : NeuroState.Neuro);
         }
     }
 }
