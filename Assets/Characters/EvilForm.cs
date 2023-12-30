@@ -8,17 +8,21 @@ namespace SchizoQuest.Characters
     public sealed class EvilForm : CharacterAltForm
     {
         public ParticleSystem evilSwitchParticleEffect;
-        private ParticleSystem _neuroSwitchParticleEffect;
-        private CharacterSwitcher switcher;
         public NeuroEvilTransitionManager neuroEvilTransitionManager;
+        private ParticleSystem _neuroSwitchParticleEffect;
+        private CharacterSwitcher _switcher;
         public float switchTransitionDuration = 0.5f;
-        public Volume evilVolume;
-        public CameraController cameraController;
+
+        private Volume _evilVolume;
+        private CameraController _cameraController;
 
         public void Awake()
         {
-            switcher = gameObject.GetComponentInParent<CharacterSwitcher>();
+            _switcher = gameObject.GetComponentInParent<CharacterSwitcher>();
             _neuroSwitchParticleEffect = player.characterSwitchParticleEffect;
+
+            _evilVolume = Camera.main!.GetComponent<Volume>();
+            _cameraController = Camera.main!.GetComponent<CameraController>();
         }
 
         protected override void OnSwap(bool isAlt)
@@ -39,19 +43,19 @@ namespace SchizoQuest.Characters
                 ? evilSwitchParticleEffect
                 : _neuroSwitchParticleEffect;
 
-            switcher.music.SetParameter("Character", isAlt ? 2 : 1);
+            _switcher._music.SetParameter("Character", isAlt ? 2 : 1);
 
             float startWeight = isAlt ? 0 : 1;
             float endWeight = isAlt ? 1 : 0;
 
             for (float t = 0; t < switchTransitionDuration / 2; t += Time.deltaTime)
             {
-                evilVolume.weight = Mathf.Lerp(startWeight, endWeight, t / switchTransitionDuration / 2);
+                _evilVolume.weight = Mathf.Lerp(startWeight, endWeight, t / switchTransitionDuration / 2);
                 yield return null;
             }
 
-            evilVolume.weight = endWeight;
-            cameraController.SetNeuroState(isAlt ? NeuroState.Evil : NeuroState.Neuro);
+            _evilVolume.weight = endWeight;
+            _cameraController.SetNeuroState(isAlt ? NeuroState.Evil : NeuroState.Neuro);
         }
     }
 }

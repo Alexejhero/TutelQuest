@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace SchizoQuest.Characters
 {
@@ -10,13 +11,8 @@ namespace SchizoQuest.Characters
     {
         public Transform target;
 
-		private NeuroState currentPlayerState;
-		/// <summary>
-		///  Gives the current state of the player toggle <see cref="NeuroState"/>
-		/// </summary>
-		public NeuroState CurrentPlayerState => currentPlayerState;
+		public NeuroState CurrentPlayerState { get; set; }
 
-		[SerializeField]
 		public List<CameraLayerMask> masks;
 
 		[SerializeField]
@@ -46,7 +42,7 @@ namespace SchizoQuest.Characters
 		/// <param name="ls">Neuro's state <see cref="NeuroState"/></param>
 		public void SetNeuroState(NeuroState ls)
 		{
-			currentPlayerState = ls;
+			CurrentPlayerState = ls;
 
 			foreach (CameraLayerMask cm in masks)
 			{

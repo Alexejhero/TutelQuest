@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using FMODUnity;
 using UnityEngine;
 
@@ -9,10 +10,16 @@ namespace SchizoQuest.Characters
         public List<Player> availablePlayers;
         private Player _currentPlayer;
         private int _currentIndex;
-        public StudioEventEmitter music;
+        [NonSerialized]
+        public StudioEventEmitter _music;
         public float switchCooldown;
         public float switchDelay;
         private float _nextSwitchTime;
+
+        private void Awake()
+        {
+            _music = Camera.main!.GetComponent<StudioEventEmitter>();
+        }
 
         private void Start()
         {
@@ -34,8 +41,8 @@ namespace SchizoQuest.Characters
             _currentPlayer = availablePlayers[index];
             _currentPlayer.enabled = true;
             _nextSwitchTime = Time.time + switchCooldown;
-            if (music)
-                music.SetParameter("Character", _currentPlayer.playerType.ValueIndex());
+            if (_music)
+                _music.SetParameter("Character", _currentPlayer.playerType.ValueIndex());
         }
     }
 }
