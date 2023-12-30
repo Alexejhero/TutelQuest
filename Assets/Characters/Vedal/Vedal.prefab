@@ -506,6 +506,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4281764129697944395, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
   m_PrefabInstance: {fileID: 1390113893569232819}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3632937848152495355 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2387018308218317640, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
+  m_PrefabInstance: {fileID: 1390113893569232819}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7595846727379018550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f61c64124c8575748994f087b9dc1b8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &4234630266564535879 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 2994542948100938228, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
@@ -542,7 +553,8 @@ MonoBehaviour:
   itemSlot: {fileID: 8316011149754893122}
   vedalItemYPos: 2
   tutelItemYPos: -0.1
-  controller: {fileID: 0}
+  controller: {fileID: 3632937848152495355}
+  rb: {fileID: 0}
 --- !u!4 &8316011149754893122 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6927315970538306801, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}

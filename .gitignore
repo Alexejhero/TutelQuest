@@ -99,3 +99,5 @@ Packages/PowerSpriteAnimator/*
 !Packages/PowerSpriteAnimator/package.json
 !Packages/PowerSpriteAnimator/package.json.meta
 !Packages/PowerSpriteAnimator/README.txt
+!Packages/PowerSpriteAnimator/PowerTools.asmdef
+!Packages/PowerSpriteAnimator/PowerTools.asmdef.meta
