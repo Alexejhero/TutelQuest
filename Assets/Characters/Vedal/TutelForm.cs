@@ -1,11 +1,13 @@
 using TarodevController;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.GameCenter;
 
 namespace SchizoQuest.Characters.Vedal
 {
     public sealed class TutelForm : CharacterAltForm
     {
         public CapsuleCollider2D tutelCollider;
+        public CapsuleCollider2D swapCollider;
         private CapsuleCollider2D _humanCollider;
         public ScriptableStats tutelStats;
         private ScriptableStats _humanStats;
@@ -16,23 +18,36 @@ namespace SchizoQuest.Characters.Vedal
         public float tutelItemYPos = -0.1f;
 
         private bool _grounded;
+        private int _collMask;
+        private ContactFilter2D _filter;
+        private RaycastHit2D[] _raycasts;
         private void Awake()
         {
             _humanCollider = player.controller.collider_;
             _humanStats = player.controller.stats;
             player.controller.GroundedChanged += (isGrounded, _)
                 => _grounded = isGrounded;
+            _collMask = Physics2D.GetLayerCollisionMask(gameObject.layer) & ~(1 << gameObject.layer);
+            _filter = new ContactFilter2D()
+            {
+                layerMask = _collMask,
+                useLayerMask = true,
+                useTriggers = false,
+            };
+            _raycasts = new RaycastHit2D[1];
         }
+
         protected override bool CanSwap(bool toAlt)
         {
             // swap to tutel - only on the ground
             if (toAlt) return _grounded;
             // swap to human - only when there's space above
-            RaycastHit2D rc = Physics2D.CapsuleCast(_humanCollider.bounds.center, _humanCollider.size, _humanCollider.direction, 0, Vector2.up, 0.05f, ~LayerMask.GetMask("Player"));
-            Debug.Log($"Swap human raycast {rc.collider}");
-            return !rc.collider;
+            
+            int rays = swapCollider.Raycast(Vector2.up, _filter, _raycasts, 0.05f);
+            Debug.Log($"Swap human raycast {rays} {_raycasts[0].collider}");
+            return rays == 0;
         }
-        protected override void OnSwap(bool isAlt)
+        protected override void OnSwap()
         {
             if (isAlt)
             {
@@ -45,6 +60,18 @@ namespace SchizoQuest.Characters.Vedal
                 player.controller.collider_ = _humanCollider;
                 player.controller.stats = _humanStats;
                 itemSlot.localPosition = new Vector3(0, vedalItemYPos, 0);
+            }
+        }
+
+        public void Update()
+        {
+            if (isAlt) return;
+
+            int rays = swapCollider.Raycast(Vector2.up, _filter, _raycasts, 0.05f);
+            if (rays > 0)
+            {
+                Debug.Log($"Autoswap tutel raycast {_raycasts[0].collider}");
+                StartCoroutine(PerformSwap());
             }
         }
     }

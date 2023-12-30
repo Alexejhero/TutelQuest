@@ -330,6 +330,73 @@ MonoBehaviour:
   moveRightAnim: {fileID: 7400000, guid: 9ad6a46240ea64e48aa1c1ab514efd0d, type: 2}
   flipLeftAnims: 1
   flipRightAnims: 0
+--- !u!1 &5328240545296025836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 737971389251757163}
+  - component: {fileID: 4221869057994858319}
+  m_Layer: 20
+  m_Name: tutel autoswap collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &737971389251757163
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5328240545296025836}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.020000458, y: 1.4099998, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2891677041724271864}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &4221869057994858319
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5328240545296025836}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 1048576
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 0
 --- !u!1001 &1390113893569232819
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -415,6 +482,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4281764129697944395, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8332932230417272836}
+    - targetCorrespondingSourceObject: {fileID: 4281764129697944395, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 737971389251757163}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8801004962465848453, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
       insertIndex: -1
@@ -465,6 +535,7 @@ MonoBehaviour:
   smokePoof: {fileID: 4635165659735915814, guid: ecf4f11eb204d5d43841a47894315a6a, type: 3}
   swapDelay: 0.1
   tutelCollider: {fileID: 9060981612997884456}
+  swapCollider: {fileID: 4221869057994858319}
   tutelStats: {fileID: 11400000, guid: c1fa0c4c90abaed4a9c1ecdc45bc452f, type: 2}
   itemSlot: {fileID: 8316011149754893122}
   vedalItemYPos: 2
