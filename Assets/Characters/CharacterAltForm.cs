@@ -5,7 +5,7 @@ namespace SchizoQuest.Characters
 {
     public abstract class CharacterAltForm : MonoBehaviour
     {
-        private bool isAlt;
+        protected bool isAlt;
 
         public CharacterSwitcher characterSwitcher;
         public Player player;
@@ -14,13 +14,20 @@ namespace SchizoQuest.Characters
         public GameObject smokePoof;
 
         public float swapDelay = 0.100f;
-
-        public IEnumerator OnSwapForm()
+        private bool _swapping;
+        
+        public void OnSwapForm()
         {
-            if (!player.enabled) yield break;
-            if (characterSwitcher.GlobalTransformCooldown > 0) yield break;
-            if (!CanSwap(!isAlt))
-                yield break;
+            if (!player.enabled) return;
+            if (!CanSwap(!isAlt)) return;
+            if (characterSwitcher.GlobalTransformCooldown > 0) return;
+            
+            StartCoroutine(PerformSwap());
+        }
+        public IEnumerator PerformSwap()
+        {
+            if (_swapping) yield break;
+            _swapping = true;
             characterSwitcher.GlobalTransformCooldown = 0.75f;
 
             Instantiate(smokePoof, transform);
@@ -29,9 +36,10 @@ namespace SchizoQuest.Characters
             isAlt = !isAlt;
             altForm.SetActive(isAlt);
             regularForm.SetActive(!isAlt);
-            OnSwap(isAlt);
+            _swapping = false;
+            OnSwap();
         }
         protected abstract bool CanSwap(bool toAlt);
-        protected abstract void OnSwap(bool isAlt);
+        protected abstract void OnSwap();
     }
 }

@@ -27,12 +27,12 @@ namespace SchizoQuest.Characters
 
         protected override bool CanSwap(bool toAlt) => true;
 
-        protected override void OnSwap(bool isAlt)
+        protected override void OnSwap()
         {
-            StartCoroutine(CoOnSwap(isAlt));
+            StartCoroutine(CoOnSwap());
         }
 
-        private IEnumerator CoOnSwap(bool isAlt)
+        private IEnumerator CoOnSwap()
         {
             player.playerType = isAlt
                 ? PlayerType.Evil
