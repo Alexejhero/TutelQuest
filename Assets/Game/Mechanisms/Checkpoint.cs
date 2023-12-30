@@ -19,7 +19,7 @@ namespace SchizoQuest.Game.Mechanisms
 
         public void Activate(Player player)
         {
-            player.checkpoint = transform.position;
+            player.respawn.SetCheckpoint(transform.position);
             available.SetActive(false);
             taken.SetActive(true);
         }

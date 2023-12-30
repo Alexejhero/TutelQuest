@@ -1,3 +1,4 @@
+using SchizoQuest.Game;
 using SchizoQuest.Game.Items;
 using TarodevController;
 using UnityEngine;
@@ -9,16 +10,23 @@ namespace SchizoQuest.Characters
         public static Player ActivePlayer;
 
         public PlayerType playerType;
+        public Respawnable respawn;
         public PlayerController controller;
         public Inventory inventory;
         public ParticleSystem characterSwitchParticleEffect;
-        public Vector3 checkpoint;
 
         private SpriteRenderer[] _renderers;
         private void Awake()
         {
             _renderers = GetComponentsInChildren<SpriteRenderer>();
-            checkpoint = transform.position;
+            respawn.OnReset += (r) =>
+            {
+                if (!inventory.item) return;
+                Carryable item = inventory.item;
+                inventory.Drop(item);
+                Respawnable itemRespawn = item.GetComponent<Respawnable>();
+                itemRespawn.Respawn();
+            };
         }
 
         public void OnEnable()
@@ -42,16 +50,6 @@ namespace SchizoQuest.Characters
         {
             foreach (var spriteRenderer in _renderers)
                 spriteRenderer.sortingOrder = order;
-        }
-
-        private void OnDeath()
-        {
-            Reset();
-        }
-
-        public void Reset()
-        {
-            transform.position = checkpoint;
         }
     }
 }

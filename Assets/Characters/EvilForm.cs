@@ -25,6 +25,8 @@ namespace SchizoQuest.Characters
             _cameraController = Camera.main!.GetComponent<CameraController>();
         }
 
+        protected override bool CanSwap(bool toAlt) => true;
+
         protected override void OnSwap(bool isAlt)
         {
             StartCoroutine(CoOnSwap(isAlt));

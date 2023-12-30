@@ -21,6 +21,8 @@ namespace SchizoQuest.Characters
         {
             if (!player.enabled) yield break;
             if (Time.time < nextSwapTime) yield break;
+            if (!CanSwap(!isAlt))
+                yield break;
             nextSwapTime = Time.time + swapCooldown;
 
             Instantiate(smokePoof, transform);
@@ -31,6 +33,7 @@ namespace SchizoQuest.Characters
             regularForm.SetActive(!isAlt);
             OnSwap(isAlt);
         }
+        protected abstract bool CanSwap(bool toAlt);
         protected abstract void OnSwap(bool isAlt);
     }
 }

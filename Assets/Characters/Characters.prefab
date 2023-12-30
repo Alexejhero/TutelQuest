@@ -442,10 +442,6 @@ PrefabInstance:
       value: Neuro
       objectReference: {fileID: 0}
     - target: {fileID: 8801004962465848453, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
-      propertyPath: m_Layer
-      value: 21
-      objectReference: {fileID: 0}
-    - target: {fileID: 8801004962465848453, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
       propertyPath: m_TagString
       value: Neuro
       objectReference: {fileID: 0}

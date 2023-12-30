@@ -6,7 +6,7 @@ namespace SchizoQuest.Game.Mechanisms
     {
         protected override void OnEnter(Player target)
         {
-            target.Reset();
+            target.respawn.Respawn();
         }
 
         protected override void OnExit(Player target)
