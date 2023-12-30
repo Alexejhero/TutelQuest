@@ -1,4 +1,5 @@
 using System.Collections;
+using SchizoQuest.Game;
 using SchizoQuest.Transition_effects;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -57,7 +58,7 @@ namespace SchizoQuest.Characters
             }
 
             _evilVolume.weight = endWeight;
-            _cameraController.SetNeuroState(isAlt ? NeuroState.Evil : NeuroState.Neuro);
+            _cameraController.SetNeuroState(isAlt);
         }
     }
 }

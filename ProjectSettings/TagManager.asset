@@ -37,9 +37,9 @@ TagManager:
   - Player
   - 
   - 
-  - InFrontOfPlayer
-  - InFrontOfPlayer-NeuroOnly
-  - InFrontOfPlayer-EvilOnly
+  - AbovePlayer
+  - AbovePlayer-NeuroOnly
+  - AbovePlayer-EvilOnly
   - 
   - 
   - 

@@ -1,19 +1,14 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace SchizoQuest.Characters
+namespace SchizoQuest.Game
 {
-	public enum NeuroState { Neuro, Evil };
-
     public sealed class CameraController : MonoBehaviour
     {
         public Transform target;
 
-		public NeuroState CurrentPlayerState { get; set; }
-
-		public List<CameraLayerMask> masks;
+        public LayerMask neuroMask;
+        public LayerMask evilMask;
 
 		[SerializeField]
         [Range(0.01f, 0.9f)]
@@ -25,6 +20,7 @@ namespace SchizoQuest.Characters
 		private void Awake()
 		{
 			cam = GetComponent<Camera>();
+			SetNeuroState(false);
 		}
 
 		public void Update()
@@ -36,29 +32,15 @@ namespace SchizoQuest.Characters
             transform.position = camPos;
         }
 
-		/// <summary>
-		/// Call SetLayer externally to change camera layer set
-		/// </summary>
-		/// <param name="ls">Neuro's state <see cref="NeuroState"/></param>
-		public void SetNeuroState(NeuroState ls)
+		public void SetNeuroState(bool isEvil)
 		{
-			CurrentPlayerState = ls;
-
-			foreach (CameraLayerMask cm in masks)
-			{
-				if (cm.set == ls)
-				{
-					cam.cullingMask = cm.layers;
-					break;
-				}
-			}
+			cam.cullingMask = isEvil ? evilMask : neuroMask;
 		}
 	}
 
 	[Serializable]
 	public struct CameraLayerMask
 	{
-		public NeuroState set;
 		public LayerMask layers;
 	}
 
