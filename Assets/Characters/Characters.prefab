@@ -343,10 +343,10 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8836820512864581585}
-  m_Enabled: 0
-  m_CastShadows: 1
+  m_Enabled: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -356,7 +356,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1321307d1fd53ce439bcc8a4e44c03d7, type: 2}
+  - {fileID: -876546973899608171, guid: a9c882f811e843740ab6727c941063ef, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -524,6 +524,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   neuroToEvilTransitonMaterial: {fileID: -876546973899608171, guid: a9c882f811e843740ab6727c941063ef, type: 3}
   rr: {fileID: 7250567328183000093}
+  mask: {fileID: 0}
+  maskMaxSize: 100
   phase: 0
   phaseCurve:
     serializedVersion: 2
@@ -549,10 +551,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  middleStripSize: 0.286
+  middleStripSize: 0.209
   centerGradientStrength: 0
   centerColorNeuro: {r: 0.6886792, g: 0.57270825, b: 0.48402455, a: 1}
-  middleColorNeruo: {r: 0, g: 1, b: 1, a: 0.40392157}
+  middleColorNeruo: {r: 0, g: 1, b: 1, a: 0.22745098}
   outsideColorNeuro: {r: 0, g: 0, b: 0, a: 0}
   centerColorEvil: {r: 0.3301887, g: 0.08425539, b: 0.07320221, a: 1}
   middleColorEvil: {r: 1, g: 0, b: 0, a: 0.54509807}

@@ -15,7 +15,7 @@ namespace SchizoQuest.Characters
         public float switchTransitionDuration = 0.5f;
 
         private Volume _evilVolume;
-        private CameraController _cameraController;
+        //private CameraController _cameraController;
 
         public void Awake()
         {
@@ -23,7 +23,7 @@ namespace SchizoQuest.Characters
             _neuroSwitchParticleEffect = player.characterSwitchParticleEffect;
 
             _evilVolume = Camera.main!.GetComponent<Volume>();
-            _cameraController = Camera.main!.GetComponent<CameraController>();
+            //_cameraController = Camera.main!.GetComponent<CameraController>();
         }
 
         protected override bool CanSwap(bool toAlt) => true;
@@ -58,7 +58,7 @@ namespace SchizoQuest.Characters
             }
 
             _evilVolume.weight = endWeight;
-            _cameraController.SetNeuroState(isAlt);
+            //_cameraController.SetNeuroState(isAlt);
         }
     }
 }

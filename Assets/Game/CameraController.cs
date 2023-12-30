@@ -20,7 +20,7 @@ namespace SchizoQuest.Game
 		private void Awake()
 		{
 			cam = GetComponent<Camera>();
-			SetNeuroState(false);
+			//SetNeuroState(false);
 		}
 
 		public void Update()

@@ -9,6 +9,8 @@ namespace SchizoQuest.Transition_effects
 
         public Material neuroToEvilTransitonMaterial;
         public Renderer rr;
+        public SpriteMask mask;
+        public float maskMaxSize = 100f;
 
         [Range(0f, 1f)]
         public float phase;
@@ -37,7 +39,7 @@ namespace SchizoQuest.Transition_effects
 
         private float _playEndTime;
         private float _playStartTime;
-        private float _duration;
+        private float _duration = 0.1f;
 
         private void Awake()
         {
@@ -62,22 +64,23 @@ namespace SchizoQuest.Transition_effects
         public void Play(float duration = 1f)
         {
             _playStartTime = Time.time;
-            _duration = Mathf.Max(0.05f, duration);
+            _duration = duration;
             _playEndTime = _playStartTime + _duration;
-            rr.enabled = true;
         }
 
         private void Update()
         {
-            if (Time.time > _playEndTime) { phase = 0; rr.enabled = false; }
-            else
+            if (Time.time < _playEndTime)
             {
                 phase = (Time.time - _playStartTime) / _duration;
+                phase = isEvil ? phase : 1 - phase;
+                _phase = phaseCurve.Evaluate(phase + float.Epsilon);
+                mask.transform.localScale = Mathf.Abs(Mathf.Clamp01(_phase)) * maskMaxSize * Vector3.one;
+                _evilToNeuroTransitionMaterial.SetFloat(_phaseID, _phase);
+                neuroToEvilTransitonMaterial.SetFloat(_phaseID, _phase);
+                _materials[0] = isEvil ? _evilToNeuroTransitionMaterial : neuroToEvilTransitonMaterial;
+                rr.SetMaterials(_materials);
             }
-            _materials[0] = isEvil ? _evilToNeuroTransitionMaterial : neuroToEvilTransitonMaterial;
-            _phase = phaseCurve.Evaluate(phase);
-            _materials[0].SetFloat(_phaseID, _phase);
-            rr.SetMaterials(_materials);
         }
     }
 }
