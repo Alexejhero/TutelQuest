@@ -1316,6 +1316,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AssemblyRight04
       objectReference: {fileID: 0}
+    - target: {fileID: 2070726929305656416, guid: 0b62717693e9f6344a8947c07fbc6238, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7526480000774247180, guid: 0b62717693e9f6344a8947c07fbc6238, type: 3}
       propertyPath: m_LocalPosition.x
       value: 85.99989
@@ -1792,6 +1796,10 @@ PrefabInstance:
     - target: {fileID: 7245411245484112218, guid: 7ad3c702f07c2824fb5b5da8f6f476c8, type: 3}
       propertyPath: m_Name
       value: AssemblyLeft04
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245411245484112218, guid: 7ad3c702f07c2824fb5b5da8f6f476c8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
