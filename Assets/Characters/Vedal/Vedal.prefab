@@ -458,14 +458,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73d4daff4a7a91449b7c5a1857b1c092, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterSwitcher: {fileID: 0}
   player: {fileID: 2877221180265890980}
   regularForm: {fileID: 2118812293590621498}
   altForm: {fileID: 3934357359261474321}
   smokePoof: {fileID: 4635165659735915814, guid: ecf4f11eb204d5d43841a47894315a6a, type: 3}
-  swapCooldown: 1
   swapDelay: 0.1
   tutelCollider: {fileID: 9060981612997884456}
   tutelStats: {fileID: 11400000, guid: c1fa0c4c90abaed4a9c1ecdc45bc452f, type: 2}
+  itemSlot: {fileID: 8316011149754893122}
+  vedalItemYPos: 2
+  tutelItemYPos: -0.1
+--- !u!4 &8316011149754893122 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6927315970538306801, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
+  m_PrefabInstance: {fileID: 1390113893569232819}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3214714824465839952
 PrefabInstance:
   m_ObjectHideFlags: 0

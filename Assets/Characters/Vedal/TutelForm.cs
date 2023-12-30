@@ -10,6 +10,11 @@ namespace SchizoQuest.Characters.Vedal
         public ScriptableStats tutelStats;
         private ScriptableStats _humanStats;
 
+        public Transform itemSlot;
+
+        public float vedalItemYPos = 2;
+        public float tutelItemYPos = -0.1f;
+
         private bool _grounded;
         private void Awake()
         {
@@ -29,15 +34,18 @@ namespace SchizoQuest.Characters.Vedal
         }
         protected override void OnSwap(bool isAlt)
         {
-            player.controller.collider_ = isAlt
-                ? tutelCollider
-                : _humanCollider;
-            
-            // todo: dash stats
-            player.controller.stats = isAlt
-                ? tutelStats
-                : _humanStats;
-
+            if (isAlt)
+            {
+                player.controller.collider_ = tutelCollider;
+                player.controller.stats = tutelStats;
+                itemSlot.localPosition = new Vector3(0, tutelItemYPos, 0);
+            }
+            else
+            {
+                player.controller.collider_ = _humanCollider;
+                player.controller.stats = _humanStats;
+                itemSlot.localPosition = new Vector3(0, vedalItemYPos, 0);
+            }
         }
     }
 }
