@@ -534,12 +534,15 @@ MonoBehaviour:
   altForm: {fileID: 3934357359261474321}
   smokePoof: {fileID: 4635165659735915814, guid: ecf4f11eb204d5d43841a47894315a6a, type: 3}
   swapDelay: 0.1
+  humanCollider: {fileID: 1756580890270707731}
   tutelCollider: {fileID: 9060981612997884456}
-  swapCollider: {fileID: 4221869057994858319}
+  humanStats: {fileID: 11400000, guid: a96127d8e62622d4f87704a0f4a3dcbe, type: 2}
   tutelStats: {fileID: 11400000, guid: c1fa0c4c90abaed4a9c1ecdc45bc452f, type: 2}
+  swapCollider: {fileID: 4221869057994858319}
   itemSlot: {fileID: 8316011149754893122}
   vedalItemYPos: 2
   tutelItemYPos: -0.1
+  controller: {fileID: 0}
 --- !u!4 &8316011149754893122 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6927315970538306801, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}

@@ -16,6 +16,14 @@ namespace SchizoQuest.Characters
         public bool flipLeftAnims;
         public bool flipRightAnims;
 
+        public virtual AnimationClip IdleFrontAnim => idleFrontAnim;
+        public virtual AnimationClip IdleLeftAnim => idleLeftAnim;
+        public virtual AnimationClip IdleRightAnim => idleRightAnim;
+        public virtual AnimationClip MoveLeftAnim => moveLeftAnim;
+        public virtual AnimationClip MoveRightAnim => moveRightAnim;
+        public virtual bool FlipLeftAnims => flipLeftAnims;
+        public virtual bool FlipRightAnims => flipRightAnims;
+
         private bool _flipped;
         private int _lastMoveDirection = 0;
         private AnimationClip _currentClip;
@@ -39,18 +47,18 @@ namespace SchizoQuest.Characters
                 switch (_lastMoveDirection)
                 {
                     case 0:
-                        CurrentClip = idleFrontAnim;
+                        CurrentClip = IdleFrontAnim;
                         _flipped = false;
                         break;
 
                     case < 0:
-                        CurrentClip = idleLeftAnim;
-                        DoFlip(flipLeftAnims);
+                        CurrentClip = IdleLeftAnim;
+                        DoFlip(FlipLeftAnims);
                         break;
 
                     case > 0:
-                        CurrentClip = idleRightAnim;
-                        DoFlip(flipRightAnims);
+                        CurrentClip = IdleRightAnim;
+                        DoFlip(FlipRightAnims);
                         break;
                 }
             }
@@ -58,15 +66,15 @@ namespace SchizoQuest.Characters
             {
                 if (velocity.x < 0)
                 {
-                    CurrentClip = moveLeftAnim;
+                    CurrentClip = MoveLeftAnim;
                     _lastMoveDirection = -1;
-                    DoFlip(flipLeftAnims);
+                    DoFlip(FlipLeftAnims);
                 }
                 else
                 {
-                    CurrentClip = moveRightAnim;
+                    CurrentClip = MoveRightAnim;
                     _lastMoveDirection = 1;
-                    DoFlip(flipRightAnims);
+                    DoFlip(FlipRightAnims);
                 }
             }
         }

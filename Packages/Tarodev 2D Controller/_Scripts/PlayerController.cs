@@ -19,7 +19,7 @@ namespace TarodevController
         private Rigidbody2D _rb;
         public CapsuleCollider2D collider_;
         private FrameInput _frameInput;
-        private Vector2 _frameVelocity;
+        [NonSerialized] public Vector2 _frameVelocity;
         private bool _cachedQueryStartInColliders;
 
         #region Interface

@@ -1,21 +1,27 @@
+using System.Collections;
 using TarodevController;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.GameCenter;
 
 namespace SchizoQuest.Characters.Vedal
 {
     public sealed class TutelForm : CharacterAltForm
     {
+        public CapsuleCollider2D humanCollider;
         public CapsuleCollider2D tutelCollider;
-        public CapsuleCollider2D swapCollider;
-        private CapsuleCollider2D _humanCollider;
+        public ScriptableStats humanStats;
         public ScriptableStats tutelStats;
-        private ScriptableStats _humanStats;
+
+        public CapsuleCollider2D swapCollider;
 
         public Transform itemSlot;
 
         public float vedalItemYPos = 2;
         public float tutelItemYPos = -0.1f;
+
+        public PlayerController controller;
+        public Rigidbody2D rb;
+
+        public bool IsDashing { get; private set; }
 
         private bool _grounded;
         private int _collMask;
@@ -23,8 +29,6 @@ namespace SchizoQuest.Characters.Vedal
         private RaycastHit2D[] _raycasts;
         private void Awake()
         {
-            _humanCollider = player.controller.collider_;
-            _humanStats = player.controller.stats;
             player.controller.GroundedChanged += (isGrounded, _)
                 => _grounded = isGrounded;
             _collMask = Physics2D.GetLayerCollisionMask(gameObject.layer) & ~(1 << gameObject.layer);
@@ -42,7 +46,9 @@ namespace SchizoQuest.Characters.Vedal
             // swap to tutel - only on the ground
             if (toAlt) return _grounded;
             // swap to human - only when there's space above
-            
+
+            if (IsDashing) return false; // cannot swap while dashing
+
             int rays = swapCollider.Raycast(Vector2.up, _filter, _raycasts, 0.05f);
             Debug.Log($"Swap human raycast {rays} {_raycasts[0].collider}");
             return rays == 0;
@@ -51,19 +57,33 @@ namespace SchizoQuest.Characters.Vedal
         {
             if (isAlt)
             {
+                IsDashing = Mathf.Abs(Mathf.Abs(controller._frameVelocity.x) - controller.stats.MaxSpeed) <= 0.5f;
+
                 player.controller.collider_ = tutelCollider;
                 player.controller.stats = tutelStats;
                 itemSlot.localPosition = new Vector3(0, tutelItemYPos, 0);
+
+                if (IsDashing) StartCoroutine(CoDash()); // TODO: prevent swap to neuro
             }
             else
             {
-                player.controller.collider_ = _humanCollider;
-                player.controller.stats = _humanStats;
+                player.controller.collider_ = humanCollider;
+                player.controller.stats = humanStats;
                 itemSlot.localPosition = new Vector3(0, vedalItemYPos, 0);
             }
         }
 
-        public void Update()
+        private IEnumerator CoDash()
+        {
+            player.controller.enabled = false;
+
+            yield return new WaitUntil(() => Mathf.Abs(rb.velocity.x) < 0.1f);
+
+            player.controller.enabled = true;
+            IsDashing = false;
+        }
+
+        private void Update()
         {
             if (isAlt) return;
 
