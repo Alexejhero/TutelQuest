@@ -141,6 +141,8 @@ GameObject:
   - component: {fileID: 2111254803349446327}
   - component: {fileID: 2431171306280276337}
   - component: {fileID: 7690381241746988472}
+  - component: {fileID: 6019366632912661529}
+  - component: {fileID: 7285160197352675618}
   m_Layer: 0
   m_Name: LavaSegment (1)
   m_TagString: Untagged
@@ -246,7 +248,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.27}
@@ -262,6 +264,50 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 0.46}
   m_EdgeRadius: 0
+--- !u!114 &6019366632912661529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251718960399861573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2042d99252a0374bb4432dff44df2d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerInterval: 0
+--- !u!114 &7285160197352675618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251718960399861573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1016339360
+      Data2: 1253274355
+      Data3: 1780902582
+      Data4: 743990325
+    Path: event:/sfx/interactive/pit/plant
+  Event: 
+  PlayEvent: 5
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1727745108148637410
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,6 +533,8 @@ GameObject:
   - component: {fileID: 5646078706237296228}
   - component: {fileID: 857154183666716591}
   - component: {fileID: 5928733669308672798}
+  - component: {fileID: 1655609306481196035}
+  - component: {fileID: 197045370916046446}
   m_Layer: 0
   m_Name: Moving Block V (1)
   m_TagString: Untagged
@@ -503,7 +551,7 @@ Transform:
   m_GameObject: {fileID: 2543540110184964992}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.27, y: -25.92, z: 0}
+  m_LocalPosition: {x: 19.27, y: -25.66, z: 0}
   m_LocalScale: {x: 2, y: 12, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -523,10 +571,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOn: 1
-  offset: {x: 0, y: -11.5, z: 0}
+  offset: {x: 0, y: 10, z: 0}
   speed: 3
-  scrapeSound: {fileID: 0}
-  makeSound: 0
+  moveSound: {fileID: 197045370916046446}
+  makeSound: 1
 --- !u!61 &5928733669308672798
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -572,6 +620,56 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3, y: 0.11}
   m_EdgeRadius: 0
+--- !u!114 &1655609306481196035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2543540110184964992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccce68115fe63f04a85acf977632aeba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOn: 0
+  activates:
+  - {fileID: 857154183666716591}
+  isTimerOn: 1
+  intervalOn: 3
+  intervalOff: 3
+  offset: 0
+--- !u!114 &197045370916046446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2543540110184964992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1001440897
+      Data2: 1117990623
+      Data3: -1215981650
+      Data4: 1472901738
+    Path: event:/sfx/interactive/movingblock/fountain
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &2814333126191212082
 GameObject:
   m_ObjectHideFlags: 0
@@ -1038,6 +1136,69 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
+--- !u!1 &3946540501780970991
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6357313156000042667}
+  - component: {fileID: 1474051649906049678}
+  m_Layer: 0
+  m_Name: Water
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6357313156000042667
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3946540501780970991}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 21.53, y: -14.17, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4578878583425135445}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1474051649906049678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3946540501780970991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -52293305
+      Data2: 1272456988
+      Data3: 1630199740
+      Data4: 1101976362
+    Path: event:/sfx/ambient/water
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &3979543627853608824
 GameObject:
   m_ObjectHideFlags: 0
@@ -1722,6 +1883,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &4946946505682452682
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4578878583425135445}
+  m_Layer: 0
+  m_Name: Sfx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4578878583425135445
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4946946505682452682}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6357313156000042667}
+  m_Father: {fileID: 8421702370447043087}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5006909336181670390
 GameObject:
   m_ObjectHideFlags: 0
@@ -1765,6 +1958,7 @@ Transform:
   - {fileID: 3383959701608530651}
   - {fileID: 2111254803349446327}
   - {fileID: 2141727401912869885}
+  - {fileID: 4578878583425135445}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5015436667139845571
@@ -2720,6 +2914,8 @@ GameObject:
   - component: {fileID: 7573469592862669877}
   - component: {fileID: 5434168563279914278}
   - component: {fileID: 8410159267068003708}
+  - component: {fileID: 7459223588476050701}
+  - component: {fileID: 3425916448564531006}
   m_Layer: 0
   m_Name: Moving Block V
   m_TagString: Untagged
@@ -2736,7 +2932,7 @@ Transform:
   m_GameObject: {fileID: 8144939641479855522}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.65, y: -21.76, z: 0}
+  m_LocalPosition: {x: 15.65, y: -18.47, z: 0}
   m_LocalScale: {x: 2, y: 12, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2756,10 +2952,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOn: 1
-  offset: {x: 0, y: -11.5, z: 0}
+  offset: {x: 0, y: -8, z: 0}
   speed: 3
-  scrapeSound: {fileID: 0}
-  makeSound: 0
+  moveSound: {fileID: 3425916448564531006}
+  makeSound: 1
 --- !u!61 &8410159267068003708
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2805,6 +3001,56 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3, y: 0.11}
   m_EdgeRadius: 0
+--- !u!114 &7459223588476050701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8144939641479855522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccce68115fe63f04a85acf977632aeba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOn: 0
+  activates:
+  - {fileID: 5434168563279914278}
+  isTimerOn: 1
+  intervalOn: 3
+  intervalOff: 3
+  offset: 0
+--- !u!114 &3425916448564531006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8144939641479855522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1001440897
+      Data2: 1117990623
+      Data3: -1215981650
+      Data4: 1472901738
+    Path: event:/sfx/interactive/movingblock/fountain
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &8258608813518124627
 GameObject:
   m_ObjectHideFlags: 0

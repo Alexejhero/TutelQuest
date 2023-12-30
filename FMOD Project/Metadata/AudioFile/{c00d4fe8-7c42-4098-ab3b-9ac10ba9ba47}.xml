@@ -5,7 +5,7 @@
 			<value>Sound Effect by Mikhail from Pixabay</value>
 		</property>
 		<property name="assetPath">
-			<value>calm-river-ambience-loop-125071.mp3</value>
+			<value>sfx/ambient/calm-river-ambience-loop-125071.mp3</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

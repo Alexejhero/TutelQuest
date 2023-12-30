@@ -652,7 +652,7 @@ MonoBehaviour:
       Data2: 1213686242
       Data3: 1463616159
       Data4: 596193549
-    Path: event:/sfx/interactive/block
+    Path: event:/sfx/interactive/movingblock/stone
   Event: 
   PlayEvent: 1
   StopEvent: 0

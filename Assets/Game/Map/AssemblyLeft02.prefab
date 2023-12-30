@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 8947922771347676078}
   - component: {fileID: 8462898480594655915}
   - component: {fileID: 7055550871182193102}
+  - component: {fileID: 3130797127706788004}
   m_Layer: 0
   m_Name: Moving Block V
   m_TagString: Untagged
@@ -133,8 +134,8 @@ MonoBehaviour:
   isOn: 0
   offset: {x: 0, y: -11.5, z: 0}
   speed: 3
-  scrapeSound: {fileID: 0}
-  makeSound: 0
+  moveSound: {fileID: 3130797127706788004}
+  makeSound: 1
 --- !u!61 &7055550871182193102
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -180,6 +181,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.7615008, y: 1.15093}
   m_EdgeRadius: 0
+--- !u!114 &3130797127706788004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120569656014757273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1001440897
+      Data2: 1117990623
+      Data3: -1215981650
+      Data4: 1472901738
+    Path: event:/sfx/interactive/movingblock/fountain
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &228057823133633186
 GameObject:
   m_ObjectHideFlags: 0
@@ -1936,6 +1968,7 @@ GameObject:
   - component: {fileID: 8186156254888885339}
   - component: {fileID: 3512325182895215540}
   - component: {fileID: 2634252603152309891}
+  - component: {fileID: 8470055197058145471}
   m_Layer: 0
   m_Name: DEATH ZONE
   m_TagString: Untagged
@@ -2016,6 +2049,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8470055197058145471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4475248730913198278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1016339360
+      Data2: 1253274355
+      Data3: 1780902582
+      Data4: 743990325
+    Path: event:/sfx/interactive/pit/plant
+  Event: 
+  PlayEvent: 5
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &4762686120349109288
 GameObject:
   m_ObjectHideFlags: 0
@@ -3785,6 +3849,7 @@ GameObject:
   - component: {fileID: 8622463741687508405}
   - component: {fileID: 3837973750040396466}
   - component: {fileID: 384737107159727205}
+  - component: {fileID: 4790524408468285959}
   m_Layer: 0
   m_Name: PlatformSegment04 (3)
   m_TagString: Untagged
@@ -3823,8 +3888,8 @@ MonoBehaviour:
   isOn: 0
   offset: {x: 0, y: -11.75, z: 0}
   speed: 2
-  scrapeSound: {fileID: 0}
-  makeSound: 0
+  moveSound: {fileID: 4790524408468285959}
+  makeSound: 1
 --- !u!61 &384737107159727205
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3870,6 +3935,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.8746126, y: 1.1580019}
   m_EdgeRadius: 0
+--- !u!114 &4790524408468285959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8737370556511560389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1001440897
+      Data2: 1117990623
+      Data3: -1215981650
+      Data4: 1472901738
+    Path: event:/sfx/interactive/movingblock/fountain
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &8957368777156156776
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{1d7e9d9f-1fa6-45d4-9bc7-fc789adfdbd9}">
+		<property name="assetPath">
+			<value>sfx/interactive/plant/branch 3.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>24</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.63795833333333329</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{3bd57463-a52d-409f-ae3e-3406e94e72ba}</destination>
+		</relationship>
+	</object>
+</objects>
