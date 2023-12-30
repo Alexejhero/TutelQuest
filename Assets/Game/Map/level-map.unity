@@ -1396,19 +1396,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   masks:
-  - name: vedal
-    layers:
-      serializedVersion: 2
-      m_Bits: 7403583
-  - name: tutel
-    layers:
-      serializedVersion: 2
-      m_Bits: 7403583
-  - name: neuro
+  - set: 0
     layers:
       serializedVersion: 2
       m_Bits: 7367743
-  - name: evil
+  - set: 1
     layers:
       serializedVersion: 2
       m_Bits: 7380031

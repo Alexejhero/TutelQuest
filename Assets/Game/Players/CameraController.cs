@@ -4,11 +4,17 @@ using UnityEngine;
 
 namespace SchizoQuest.Game.Players
 {
-	public enum LayerSet { Vedal, Tutel, Neuro, Evil };
+	public enum NeuroState { Neuro, Evil };
 
     public sealed class CameraController : MonoBehaviour
     {
         public Transform target;
+
+		private NeuroState currentPlayerState;
+		/// <summary>
+		///  Gives the current state of the player toggle <see cref="NeuroState"/>
+		/// </summary>
+		public NeuroState CurrentPlayerState => currentPlayerState;
 
 		[SerializeField]
 		public List<CameraLayerMask> masks;
@@ -37,9 +43,11 @@ namespace SchizoQuest.Game.Players
 		/// <summary>
 		/// Call SetLayer externally to change camera layer set
 		/// </summary>
-		/// <param name="ls">Type of layer set <see cref="LayerSet"/></param>
-		public void SetLayer(LayerSet ls)
+		/// <param name="ls">Neuro's state <see cref="NeuroState"/></param>
+		public void SetNeuroState(NeuroState ls)
 		{
+			currentPlayerState = ls;
+
 			foreach (CameraLayerMask cm in masks)
 			{
 				if (cm.set == ls)
@@ -54,7 +62,7 @@ namespace SchizoQuest.Game.Players
 	[Serializable]
 	public struct CameraLayerMask
 	{
-		public LayerSet set;
+		public NeuroState set;
 		public LayerMask layers;
 	}
 
