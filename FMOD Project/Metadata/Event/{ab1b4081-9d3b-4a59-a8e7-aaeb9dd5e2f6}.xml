@@ -5,7 +5,7 @@
 			<value>center</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{24e2269b-ec11-4d9c-abb1-d5a02792cf25}</destination>
@@ -140,6 +140,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{3f9347ef-db20-4e70-a425-f3c978f1521c}">
+		<property name="volume">
+			<value>-20</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{27559b53-9d77-4fbe-b157-c513629e9b76}</destination>
 		</relationship>
@@ -161,7 +164,7 @@
 			<value>54.857062499999998</value>
 		</property>
 		<relationship name="audioFile">
-			<destination>{08b8c4bb-04bd-47df-a7d4-370bc7286534}</destination>
+			<destination>{988cee20-4a36-4054-ace3-155c74def499}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{ed5544f2-0462-4f9c-a83e-3e4b5382d2bf}">
@@ -188,7 +191,7 @@
 			<value>54.857062499999998</value>
 		</property>
 		<relationship name="audioFile">
-			<destination>{c8da1c47-927a-4508-971f-24c0968b5dbb}</destination>
+			<destination>{746e064c-7654-49ea-b7fd-dadf971eab89}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{2d9c78ed-37e1-46b6-a579-2b6aa9c7a002}">
@@ -218,7 +221,7 @@
 			<value>54.857062499999998</value>
 		</property>
 		<relationship name="audioFile">
-			<destination>{fd9d116f-5c55-48d3-8d64-f83164eff7c0}</destination>
+			<destination>{fee819f5-1257-494a-8344-11d6ddaef8f3}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{bcb2f122-3c7d-4636-8761-98d37c650524}">
@@ -248,7 +251,7 @@
 			<value>54.857062499999998</value>
 		</property>
 		<relationship name="audioFile">
-			<destination>{ad38c907-ecac-42ef-bcfb-049f8fc40568}</destination>
+			<destination>{0594668b-bd0e-4746-babf-462b16838797}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{f33d72a0-8325-46ad-8773-97b3dbd98b80}">
