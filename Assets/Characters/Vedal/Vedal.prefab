@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 6036642315463163288}
   - component: {fileID: 8367673575781083876}
   - component: {fileID: 7551729679973657502}
-  - component: {fileID: 2096586392548710138}
+  - component: {fileID: 6618195980140557025}
   m_Layer: 20
   m_Name: everything but collider
   m_TagString: Untagged
@@ -309,7 +309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_defaultAnim: {fileID: 7400000, guid: e8b2be2dc55b0a54f99eaf955625e64b, type: 2}
---- !u!114 &2096586392548710138
+--- !u!114 &6618195980140557025
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -318,7 +318,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3949740709267052627}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8408024877564daab24dd8dd3dfcf475, type: 3}
+  m_Script: {fileID: 11500000, guid: ba6af14b948445d6a9b1d21bc8154c42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 4234630266564535879}
@@ -330,6 +330,10 @@ MonoBehaviour:
   moveRightAnim: {fileID: 7400000, guid: 9ad6a46240ea64e48aa1c1ab514efd0d, type: 2}
   flipLeftAnims: 1
   flipRightAnims: 0
+  tutelSlideAnim: {fileID: 7400000, guid: 8ca91d4672c5e6a459bea37b5bb41964, type: 2}
+  tutelForm: {fileID: 6237045314539720047}
+  slideFlipLeft: 0
+  slideFlipRight: 1
 --- !u!1 &5328240545296025836
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,7 +558,7 @@ MonoBehaviour:
   vedalItemYPos: 2
   tutelItemYPos: -0.1
   controller: {fileID: 3632937848152495355}
-  rb: {fileID: 0}
+  rb: {fileID: 4234630266564535879}
 --- !u!4 &8316011149754893122 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6927315970538306801, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
