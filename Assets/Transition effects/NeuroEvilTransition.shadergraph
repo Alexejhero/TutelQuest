@@ -3417,10 +3417,10 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "r": 0.4433962106704712,
-        "g": 0.043921321630477908,
-        "b": 0.043921321630477908,
-        "a": 1.0
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
     },
     "isMainColor": false,
     "m_ColorMode": 0
@@ -4373,7 +4373,7 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
-    "m_Value": 0.49000000953674319,
+    "m_Value": 0.0,
     "m_FloatType": 0,
     "m_RangeValues": {
         "x": 0.0,
@@ -5109,10 +5109,10 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "r": 0.6188440322875977,
-        "g": 0.8301886916160584,
-        "b": 0.5991455912590027,
-        "a": 0.6823529601097107
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
     },
     "isMainColor": false,
     "m_ColorMode": 0
@@ -5488,10 +5488,10 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "r": 0.6698113083839417,
-        "g": 0.6662378907203674,
-        "b": 0.24959948658943177,
-        "a": 0.5607843399047852
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
     },
     "isMainColor": false,
     "m_ColorMode": 0
