@@ -1,8 +1,7 @@
-using SchizoQuest.Game.Mechanisms;
-using SchizoQuest.Game.Players;
+using SchizoQuest.Characters;
 using UnityEngine;
 
-namespace SchizoQuest
+namespace SchizoQuest.Game.Mechanisms
 {
     public class Checkpoint : Trigger<Player>
     {

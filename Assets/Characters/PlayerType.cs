@@ -1,6 +1,6 @@
 using System;
 
-namespace SchizoQuest.Game.Players
+namespace SchizoQuest.Characters
 {
     [Flags]
     public enum PlayerType

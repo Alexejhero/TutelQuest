@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SchizoQuest.Game.Players
+namespace SchizoQuest.Characters
 {
 	public enum NeuroState { Neuro, Evil };
 

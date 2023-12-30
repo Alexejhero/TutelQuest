@@ -166,6 +166,12 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
+    "powerspriteanimator": {
+      "version": "file:PowerSpriteAnimator",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "tarodevcontroller": {
       "version": "file:Tarodev 2D Controller",
       "depth": 0,

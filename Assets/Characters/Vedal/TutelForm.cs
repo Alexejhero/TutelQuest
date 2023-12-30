@@ -1,7 +1,7 @@
 using TarodevController;
 using UnityEngine;
 
-namespace SchizoQuest.Game.Players
+namespace SchizoQuest.Characters.Vedal
 {
     public sealed class TutelForm : CharacterAltForm
     {

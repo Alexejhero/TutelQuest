@@ -2,14 +2,13 @@ using SchizoQuest.Game.Items;
 using TarodevController;
 using UnityEngine;
 
-namespace SchizoQuest.Game.Players
+namespace SchizoQuest.Characters
 {
     public sealed class Player : MonoBehaviour
     {
         public static Player ActivePlayer;
 
         public PlayerType playerType;
-        public Living living;
         public PlayerController controller;
         public Inventory inventory;
         public ParticleSystem characterSwitchParticleEffect;

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SchizoQuest
+namespace SchizoQuest.Transition_effects
 {
     public class NeuroEvilTransitionManager : MonoBehaviour
     {

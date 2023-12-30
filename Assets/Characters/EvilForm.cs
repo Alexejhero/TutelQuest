@@ -1,10 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
-using FMODUnity;
+using SchizoQuest.Transition_effects;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-namespace SchizoQuest.Game.Players
+namespace SchizoQuest.Characters
 {
     public sealed class EvilForm : CharacterAltForm
     {

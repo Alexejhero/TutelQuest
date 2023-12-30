@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using FMODUnity;
 using UnityEngine;
 
-namespace SchizoQuest.Game.Players
+namespace SchizoQuest.Characters
 {
     public class CharacterSwitcher : MonoBehaviour
     {

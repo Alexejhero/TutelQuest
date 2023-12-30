@@ -93,4 +93,9 @@ crashlytics-build.properties
 # Log files can be ignored.
 fmod_editor.log
 
-FMOD*Project/.cache
+FMOD Project/.cache
+
+Packages/PowerSpriteAnimator/*
+!Packages/PowerSpriteAnimator/package.json
+!Packages/PowerSpriteAnimator/package.json.meta
+!Packages/PowerSpriteAnimator/README.txt

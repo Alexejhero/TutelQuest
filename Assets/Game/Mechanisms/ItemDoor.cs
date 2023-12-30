@@ -1,5 +1,5 @@
+using SchizoQuest.Characters;
 using SchizoQuest.Game.Items;
-using SchizoQuest.Game.Players;
 using SchizoQuest.Interaction;
 using UnityEngine;
 

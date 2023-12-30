@@ -1,4 +1,4 @@
-using SchizoQuest.Game.Players;
+using SchizoQuest.Characters;
 using UnityEngine;
 
 namespace SchizoQuest.Game.Items

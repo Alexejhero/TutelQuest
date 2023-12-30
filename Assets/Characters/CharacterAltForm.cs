@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace SchizoQuest.Game.Players
+namespace SchizoQuest.Characters
 {
     public abstract class CharacterAltForm : MonoBehaviour
     {

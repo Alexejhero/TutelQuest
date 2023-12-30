@@ -1,5 +1,5 @@
 ﻿using System;
-using SchizoQuest.Game.Players;
+using SchizoQuest.Characters;
 
 namespace SchizoQuest.Interaction
 {

@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 2994542948100938228}
   - component: {fileID: 478257553380852303}
   - component: {fileID: 3794102725898009367}
-  - component: {fileID: 7886838460896299330}
   - component: {fileID: 2387018308218317640}
   - component: {fileID: 2069896818738633901}
   - component: {fileID: 6931515259517804241}
@@ -145,25 +144,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerType: 0
-  living: {fileID: 7886838460896299330}
+  living: {fileID: 0}
   controller: {fileID: 2387018308218317640}
   inventory: {fileID: 6931515259517804241}
   characterSwitchParticleEffect: {fileID: 0}
   checkpoint: {x: 0, y: 0, z: 0}
---- !u!114 &7886838460896299330
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8801004962465848453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf45b4205d2d7894096df4b0109f1b78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  maxHealth: 100
 --- !u!114 &2387018308218317640
 MonoBehaviour:
   m_ObjectHideFlags: 0
