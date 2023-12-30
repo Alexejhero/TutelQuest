@@ -13,6 +13,5 @@ namespace SchizoQuest.Game.Mechanisms
             on.SetActive(isOn);
             off.SetActive(!isOn);
         }
-
     }
 }

@@ -129,8 +129,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -1.2664531}
-  m_Size: {x: 1.6427329, y: 1.7231281}
+  m_Offset: {x: 0, y: -0.40018475}
+  m_Size: {x: 1.6427329, y: 3.4556649}
   m_Direction: 0
 --- !u!114 &3794102725898009367
 MonoBehaviour:
@@ -144,11 +144,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0356781e0280bac46b64747d8e31b881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: 0
+  playerType: 0
   living: {fileID: 7886838460896299330}
   controller: {fileID: 2387018308218317640}
   inventory: {fileID: 6931515259517804241}
   characterSwitchParticleEffect: {fileID: 0}
+  checkpoint: {x: 0, y: 0, z: 0}
 --- !u!114 &7886838460896299330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,6 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementActive: 0
   _stats: {fileID: 11400000, guid: a96127d8e62622d4f87704a0f4a3dcbe, type: 2}
+  collider_: {fileID: 0}
 --- !u!114 &2069896818738633901
 MonoBehaviour:
   m_ObjectHideFlags: 0

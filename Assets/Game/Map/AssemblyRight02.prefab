@@ -417,6 +417,7 @@ GameObject:
   - component: {fileID: 735891781346418572}
   - component: {fileID: 3590481887582136863}
   - component: {fileID: 5768211215593917496}
+  - component: {fileID: 8962166296345091830}
   m_Layer: 0
   m_Name: Switch (1)
   m_TagString: Untagged
@@ -536,7 +537,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
---- !u!1 &4388470264550351750
+--- !u!114 &8962166296345091830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3386784826902072680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 123f158cd20b428da8edb93cede96b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOn: 0
+  activates:
+  - {fileID: 2270235998329449871}
+  - {fileID: 0}
+--- !u!1 &4612278635819945242
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -677,6 +694,7 @@ GameObject:
   - component: {fileID: 8575573120317250116}
   - component: {fileID: 4126357082734475899}
   - component: {fileID: 7448211291267243488}
+  - component: {fileID: 2270235998329449871}
   m_Layer: 0
   m_Name: PlatformSegment04 (1)
   m_TagString: Untagged
@@ -796,6 +814,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
+--- !u!114 &2270235998329449871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6162097321606848122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a92b77997c3b7fc45afea83723583d96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOn: 0
+  offset: {x: 0, y: 10.08, z: 0}
+  speed: 2.5
 --- !u!1 &6891820080268492283
 GameObject:
   m_ObjectHideFlags: 0
