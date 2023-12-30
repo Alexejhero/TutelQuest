@@ -991,6 +991,7 @@ MonoBehaviour:
   swapCooldown: 1
   swapDelay: 0.1
   tutelCollider: {fileID: 1148481757124967933}
+  tutelStats: {fileID: 11400000, guid: c1fa0c4c90abaed4a9c1ecdc45bc452f, type: 2}
 --- !u!4 &5905366277789157683 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4281764129697944395, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}

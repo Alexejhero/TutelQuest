@@ -401,6 +401,7 @@ GameObject:
   - component: {fileID: 7970453392853938325}
   - component: {fileID: 3146336580567300992}
   - component: {fileID: 4609783332780538870}
+  - component: {fileID: 6839142472579261442}
   m_Layer: 0
   m_Name: PlatformLava
   m_TagString: Untagged
@@ -504,7 +505,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -520,6 +521,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
+--- !u!114 &6839142472579261442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856074013591524418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2042d99252a0374bb4432dff44df2d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerInterval: 0
 --- !u!1 &1397150658835176324
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,6 +805,7 @@ GameObject:
   - component: {fileID: 7021453335827853163}
   - component: {fileID: 6948351897808957476}
   - component: {fileID: 6592510348754307656}
+  - component: {fileID: 1919388186214516861}
   m_Layer: 0
   m_Name: PlatformLava (1)
   m_TagString: Untagged
@@ -894,7 +909,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -910,6 +925,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
+--- !u!114 &1919388186214516861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2439289463142232982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2042d99252a0374bb4432dff44df2d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerInterval: 0
 --- !u!1 &3089852179189050528
 GameObject:
   m_ObjectHideFlags: 0
@@ -1181,6 +1209,7 @@ GameObject:
   - component: {fileID: 3889735012725944266}
   - component: {fileID: 5281897257945859935}
   - component: {fileID: 3027565531417750522}
+  - component: {fileID: 6030313800102478563}
   m_Layer: 0
   m_Name: Item
   m_TagString: Untagged
@@ -1300,6 +1329,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
+--- !u!114 &6030313800102478563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4587528103728037329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77a10b119cad402448fd4ca64ec523bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemType: 0
+  plug: {fileID: 0}
 --- !u!1 &4714856945261484436
 GameObject:
   m_ObjectHideFlags: 0
@@ -1701,6 +1744,7 @@ GameObject:
   - component: {fileID: 5060445786937460260}
   - component: {fileID: 792407986408942657}
   - component: {fileID: 1710694794420328879}
+  - component: {fileID: 3821339550948650884}
   m_Layer: 0
   m_Name: PlatformLava
   m_TagString: Untagged
@@ -1804,7 +1848,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1820,6 +1864,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
+--- !u!114 &3821339550948650884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5151650026147012604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2042d99252a0374bb4432dff44df2d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerInterval: 0
 --- !u!1 &5963246363846061199
 GameObject:
   m_ObjectHideFlags: 0
@@ -1961,6 +2018,7 @@ GameObject:
   - component: {fileID: 2718529376512543677}
   - component: {fileID: 8239346409780266181}
   - component: {fileID: 1502384198278240306}
+  - component: {fileID: 3149539633743059270}
   m_Layer: 0
   m_Name: PlatformSegment04
   m_TagString: Untagged
@@ -2080,6 +2138,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
+--- !u!114 &3149539633743059270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6022694607348622903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5de7bf7a23ee2c047a0147e7b4b1be49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6065752990567003545
 GameObject:
   m_ObjectHideFlags: 0
@@ -2871,6 +2941,7 @@ GameObject:
   - component: {fileID: 4882853039202270213}
   - component: {fileID: 6110642682554188777}
   - component: {fileID: 3632015222398400132}
+  - component: {fileID: 1230851065774595635}
   m_Layer: 0
   m_Name: PlatformSegment04 (1)
   m_TagString: Untagged
@@ -2990,6 +3061,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
+--- !u!114 &1230851065774595635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7861241431303392408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a92b77997c3b7fc45afea83723583d96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOn: 0
+  offset: {x: 0, y: -10.24, z: 0}
+  speed: 2
 --- !u!1 &7999565576599323331
 GameObject:
   m_ObjectHideFlags: 0

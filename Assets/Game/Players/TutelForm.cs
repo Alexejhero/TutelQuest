@@ -7,20 +7,22 @@ namespace SchizoQuest.Game.Players
     {
         public CapsuleCollider2D tutelCollider;
         private CapsuleCollider2D _humanCollider;
+        public ScriptableStats tutelStats;
+        private ScriptableStats _humanStats;
         private void Awake()
         {
-            _humanCollider = GetComponent<PlayerController>().collider_;
+            _humanCollider = player.controller.collider_;
+            _humanStats = player.controller.stats;
         }
         protected override void OnSwap(bool isAlt)
         {
             player.controller.collider_ = isAlt
                 ? tutelCollider
                 : _humanCollider;
-            // bruh moment in the controller
-            if (isAlt)
-            {
-                //player.controller
-            }
+            
+            player.controller.stats = isAlt
+                ? tutelStats
+                : _humanStats;
         }
     }
 }

@@ -177,8 +177,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementActive: 0
-  _stats: {fileID: 11400000, guid: a96127d8e62622d4f87704a0f4a3dcbe, type: 2}
-  collider_: {fileID: 0}
+  stats: {fileID: 11400000, guid: a96127d8e62622d4f87704a0f4a3dcbe, type: 2}
+  collider_: {fileID: 478257553380852303}
 --- !u!114 &2069896818738633901
 MonoBehaviour:
   m_ObjectHideFlags: 0
