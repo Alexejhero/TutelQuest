@@ -43,6 +43,7 @@ namespace SchizoQuest.Transition_effects
 
         private void Awake()
         {
+            rr.enabled = false;
             _materials = new List<Material>
             {
                 neuroToEvilTransitonMaterial
@@ -66,10 +67,12 @@ namespace SchizoQuest.Transition_effects
             _playStartTime = Time.time;
             _duration = Mathf.Max(0.05f, duration);
             _playEndTime = _playStartTime + _duration;
+            rr.enabled = true;
         }
 
         private void Update()
         {
+
             if (Time.time < _playEndTime)
             {
                 phase = (Time.time - _playStartTime) / _duration;
@@ -81,6 +84,7 @@ namespace SchizoQuest.Transition_effects
                 _materials[0] = isEvil ? _evilToNeuroTransitionMaterial : neuroToEvilTransitonMaterial;
                 rr.SetMaterials(_materials);
             }
+            else { rr. enabled = false; }
         }
     }
 }
