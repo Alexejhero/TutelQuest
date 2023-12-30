@@ -453,6 +453,15 @@ namespace SchizoQuest.Input
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MainMenuAdvance"",
+                    ""type"": ""Button"",
+                    ""id"": ""e3de621b-ecba-4b6d-86d7-3f0bb91eea21"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -873,6 +882,28 @@ namespace SchizoQuest.Input
                     ""action"": ""TrackedDeviceOrientation"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f56d77ee-72ec-4e9e-963a-1f97e787c051"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""MainMenuAdvance"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bd679330-d90e-45b7-a988-9f89b513751b"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""MainMenuAdvance"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -961,6 +992,7 @@ namespace SchizoQuest.Input
             m_UI_RightClick = m_UI.FindAction("RightClick", throwIfNotFound: true);
             m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
             m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
+            m_UI_MainMenuAdvance = m_UI.FindAction("MainMenuAdvance", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -1126,6 +1158,7 @@ namespace SchizoQuest.Input
         private readonly InputAction m_UI_RightClick;
         private readonly InputAction m_UI_TrackedDevicePosition;
         private readonly InputAction m_UI_TrackedDeviceOrientation;
+        private readonly InputAction m_UI_MainMenuAdvance;
         public struct UIActions
         {
             private @InputActions m_Wrapper;
@@ -1140,6 +1173,7 @@ namespace SchizoQuest.Input
             public InputAction @RightClick => m_Wrapper.m_UI_RightClick;
             public InputAction @TrackedDevicePosition => m_Wrapper.m_UI_TrackedDevicePosition;
             public InputAction @TrackedDeviceOrientation => m_Wrapper.m_UI_TrackedDeviceOrientation;
+            public InputAction @MainMenuAdvance => m_Wrapper.m_UI_MainMenuAdvance;
             public InputActionMap Get() { return m_Wrapper.m_UI; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -1179,6 +1213,9 @@ namespace SchizoQuest.Input
                 @TrackedDeviceOrientation.started += instance.OnTrackedDeviceOrientation;
                 @TrackedDeviceOrientation.performed += instance.OnTrackedDeviceOrientation;
                 @TrackedDeviceOrientation.canceled += instance.OnTrackedDeviceOrientation;
+                @MainMenuAdvance.started += instance.OnMainMenuAdvance;
+                @MainMenuAdvance.performed += instance.OnMainMenuAdvance;
+                @MainMenuAdvance.canceled += instance.OnMainMenuAdvance;
             }
 
             private void UnregisterCallbacks(IUIActions instance)
@@ -1213,6 +1250,9 @@ namespace SchizoQuest.Input
                 @TrackedDeviceOrientation.started -= instance.OnTrackedDeviceOrientation;
                 @TrackedDeviceOrientation.performed -= instance.OnTrackedDeviceOrientation;
                 @TrackedDeviceOrientation.canceled -= instance.OnTrackedDeviceOrientation;
+                @MainMenuAdvance.started -= instance.OnMainMenuAdvance;
+                @MainMenuAdvance.performed -= instance.OnMainMenuAdvance;
+                @MainMenuAdvance.canceled -= instance.OnMainMenuAdvance;
             }
 
             public void RemoveCallbacks(IUIActions instance)
@@ -1297,6 +1337,7 @@ namespace SchizoQuest.Input
             void OnRightClick(InputAction.CallbackContext context);
             void OnTrackedDevicePosition(InputAction.CallbackContext context);
             void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
+            void OnMainMenuAdvance(InputAction.CallbackContext context);
         }
     }
 }
