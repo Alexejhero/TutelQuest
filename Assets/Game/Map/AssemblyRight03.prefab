@@ -141,9 +141,9 @@ GameObject:
   - component: {fileID: 6055690845779840024}
   - component: {fileID: 2228816611415588739}
   - component: {fileID: 4427229652350180435}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: PlatformNeuro
-  m_TagString: Untagged
+  m_TagString: NoNeuro
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -661,9 +661,9 @@ GameObject:
   - component: {fileID: 3806482231109321466}
   - component: {fileID: 7371266488150254605}
   - component: {fileID: 6100578921254017033}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: PlatformEvil
-  m_TagString: Untagged
+  m_TagString: NoEvil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1831,9 +1831,9 @@ GameObject:
   - component: {fileID: 5074345454816219522}
   - component: {fileID: 7334727623910891614}
   - component: {fileID: 2888511316265612669}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: PlatformNeuro
-  m_TagString: Untagged
+  m_TagString: NoNeuro
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2741,9 +2741,9 @@ GameObject:
   - component: {fileID: 4720380664943605149}
   - component: {fileID: 2225098677755065433}
   - component: {fileID: 419815931981023335}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: PlatformEvil
-  m_TagString: Untagged
+  m_TagString: NoEvil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3001,9 +3001,9 @@ GameObject:
   - component: {fileID: 3492342187955770094}
   - component: {fileID: 8572564459986859954}
   - component: {fileID: 8182891553013065214}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: PlatformNeuro
-  m_TagString: Untagged
+  m_TagString: NoNeuro
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3713,9 +3713,9 @@ GameObject:
   - component: {fileID: 4084212108848617272}
   - component: {fileID: 8297186753008510364}
   - component: {fileID: 8109575447798585945}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: PlatformEvil
-  m_TagString: Untagged
+  m_TagString: NoEvil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

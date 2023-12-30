@@ -10,7 +10,7 @@ namespace SchizoQuest.Game.Mechanisms
     
         public void OnTriggerEnter2D(Collider2D other)
         {
-            TTarget target = other.GetComponent<TTarget>();
+            TTarget target = other.GetComponentInParent<TTarget>();
             if (!target) return;
 
             if (Time.time < nextTriggerTime) return;
@@ -21,7 +21,7 @@ namespace SchizoQuest.Game.Mechanisms
 
         public void OnTriggerExit2D(Collider2D other)
         {
-            TTarget target = other.GetComponent<TTarget>();
+            TTarget target = other.GetComponentInParent<TTarget>();
             if (!target) return;
 
             OnExit(target);

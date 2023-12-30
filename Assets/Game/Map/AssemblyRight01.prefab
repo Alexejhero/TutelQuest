@@ -141,9 +141,9 @@ GameObject:
   - component: {fileID: 6414120497627428168}
   - component: {fileID: 6393093322964278847}
   - component: {fileID: 1600752122092272681}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: PlatformSegmentEvil
-  m_TagString: Untagged
+  m_TagString: NoEvil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -271,6 +271,7 @@ GameObject:
   - component: {fileID: 7783656753825586570}
   - component: {fileID: 483428068005785440}
   - component: {fileID: 9179878721008995620}
+  - component: {fileID: 8896686871491803312}
   m_Layer: 0
   m_Name: LavaSegment (2)
   m_TagString: Untagged
@@ -331,8 +332,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2111657811
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8749e58ebf2358348b78199a75f706f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -374,7 +375,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -390,6 +391,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
+--- !u!114 &8896686871491803312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3119476178144644174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2042d99252a0374bb4432dff44df2d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerInterval: 0
 --- !u!1 &3622353730739373541
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,9 +415,9 @@ GameObject:
   - component: {fileID: 1678221700222642300}
   - component: {fileID: 3728237113572972377}
   - component: {fileID: 2202442961354977554}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: PlatformSegmentNeuro
-  m_TagString: Untagged
+  m_TagString: NoNeuro
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -835,9 +849,9 @@ GameObject:
   - component: {fileID: 2027752925275446503}
   - component: {fileID: 4820509235198859700}
   - component: {fileID: 4947415814135027310}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: PlatformSegmentEvil
-  m_TagString: Untagged
+  m_TagString: NoEvil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -965,6 +979,7 @@ GameObject:
   - component: {fileID: 392583802959003844}
   - component: {fileID: 4173205581714064964}
   - component: {fileID: 2322627142993044087}
+  - component: {fileID: 4497742935617397382}
   m_Layer: 0
   m_Name: LavaSegment (3)
   m_TagString: Untagged
@@ -1025,8 +1040,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2111657811
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8749e58ebf2358348b78199a75f706f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1068,7 +1083,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1084,6 +1099,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
+--- !u!114 &4497742935617397382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7758208913016297692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2042d99252a0374bb4432dff44df2d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerInterval: 0
 --- !u!1 &8377224363388095869
 GameObject:
   m_ObjectHideFlags: 0
@@ -1095,9 +1123,9 @@ GameObject:
   - component: {fileID: 2448661408454948593}
   - component: {fileID: 2961650129007132770}
   - component: {fileID: 3049210741850562310}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: PlatformSegmentEvil
-  m_TagString: Untagged
+  m_TagString: NoEvil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1485,9 +1513,9 @@ GameObject:
   - component: {fileID: 258723624121180355}
   - component: {fileID: 680752855674712259}
   - component: {fileID: 3756314321261567238}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: PlatformSegmentEvil
-  m_TagString: Untagged
+  m_TagString: NoEvil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

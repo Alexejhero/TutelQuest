@@ -1316,10 +1316,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AssemblyRight04
       objectReference: {fileID: 0}
-    - target: {fileID: 2070726929305656416, guid: 0b62717693e9f6344a8947c07fbc6238, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7526480000774247180, guid: 0b62717693e9f6344a8947c07fbc6238, type: 3}
       propertyPath: m_LocalPosition.x
       value: 85.99989
@@ -1692,6 +1688,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3860466389485280518, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 315.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860466389485280518, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5905366277789157683, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -305
+      objectReference: {fileID: 0}
+    - target: {fileID: 5905366277789157683, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7470432330437033608, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
       propertyPath: music
       value: 
@@ -1702,11 +1714,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8337613622537684320, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -323.51
+      value: -5.43
       objectReference: {fileID: 0}
     - target: {fileID: 8337613622537684320, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.38
+      value: 1.43
       objectReference: {fileID: 0}
     - target: {fileID: 8337613622537684320, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1797,10 +1809,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AssemblyLeft04
       objectReference: {fileID: 0}
-    - target: {fileID: 7245411245484112218, guid: 7ad3c702f07c2824fb5b5da8f6f476c8, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1817,10 +1825,6 @@ PrefabInstance:
     - target: {fileID: 232614699740331499, guid: 3440ae8709de6374d864ced2be17bdd7, type: 3}
       propertyPath: m_Name
       value: AssemblyLeft02
-      objectReference: {fileID: 0}
-    - target: {fileID: 232614699740331499, guid: 3440ae8709de6374d864ced2be17bdd7, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3850856319035828686, guid: 3440ae8709de6374d864ced2be17bdd7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1867,6 +1871,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3440ae8709de6374d864ced2be17bdd7, type: 3}
+--- !u!114 &778991833118571539 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6524729946269822684, guid: 3440ae8709de6374d864ced2be17bdd7, type: 3}
+  m_PrefabInstance: {fileID: 778991833118571535}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a92b77997c3b7fc45afea83723583d96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1330837344368403858
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2033,6 +2048,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AssemblyRight02
       objectReference: {fileID: 0}
+    - target: {fileID: 9046064872948380857, guid: be7ed91b54aa1aa499c14542325d9caf, type: 3}
+      propertyPath: activates.Array.data[0]
+      value: 
+      objectReference: {fileID: 778991833118571539}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -22,6 +22,7 @@ namespace SchizoQuest.Game.Players
             player.characterSwitchParticleEffect = isAlt
                 ? evilSwitchParticleEffect
                 : _neuroSwitchParticleEffect;
+            player.gameObject.layer = LayerMask.NameToLayer(player.playerType.ToString());
             switcher.music.SetParameter("Character", isAlt ? 2 : 1);
         }
     }

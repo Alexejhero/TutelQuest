@@ -709,9 +709,9 @@ GameObject:
   - component: {fileID: 3027797141843934895}
   - component: {fileID: 536102641082811023}
   - component: {fileID: 8161014193143434794}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: PlatformSegmentEvil
-  m_TagString: Untagged
+  m_TagString: NoEvil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -969,9 +969,9 @@ GameObject:
   - component: {fileID: 1993795753704414875}
   - component: {fileID: 2937172901254098085}
   - component: {fileID: 6870755732798439833}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: PlatformSegmentEvil
-  m_TagString: Untagged
+  m_TagString: NoEvil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1619,9 +1619,9 @@ GameObject:
   - component: {fileID: 4941379211203836739}
   - component: {fileID: 8088857618069015962}
   - component: {fileID: 9046400298938744373}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: LiftEvil
-  m_TagString: Untagged
+  m_TagString: NoEvil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1749,9 +1749,9 @@ GameObject:
   - component: {fileID: 7523901145516870147}
   - component: {fileID: 6049363675309033018}
   - component: {fileID: 937768426953014491}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: PlatformSegmentNeuro
-  m_TagString: Untagged
+  m_TagString: NoNeuro
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1879,9 +1879,9 @@ GameObject:
   - component: {fileID: 1284492469301267750}
   - component: {fileID: 85413952374643511}
   - component: {fileID: 578166938861684511}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: PlatformSegmentNeuro
-  m_TagString: Untagged
+  m_TagString: NoNeuro
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

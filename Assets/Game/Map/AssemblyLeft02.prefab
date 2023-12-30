@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 8947922771347676078}
   - component: {fileID: 6109717595593773917}
   - component: {fileID: 4911965757949754901}
+  - component: {fileID: 8462898480594655915}
   m_Layer: 0
-  m_Name: PlatformSegment04 (1)
+  m_Name: Moving Block V
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,6 +131,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
+--- !u!114 &8462898480594655915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120569656014757273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a92b77997c3b7fc45afea83723583d96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOn: 1
+  offset: {x: 0, y: -11.5, z: 0}
+  speed: 3
 --- !u!1 &228057823133633186
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,6 +157,7 @@ GameObject:
   - component: {fileID: 5940010504254861019}
   - component: {fileID: 6233261218723568229}
   - component: {fileID: 3870885900214899629}
+  - component: {fileID: 6036536870443905062}
   m_Layer: 0
   m_Name: Switch
   m_TagString: Untagged
@@ -260,6 +277,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
+--- !u!114 &6036536870443905062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228057823133633186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 123f158cd20b428da8edb93cede96b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOn: 1
+  activates:
+  - {fileID: 8462898480594655915}
 --- !u!1 &232614699740331499
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,6 +868,7 @@ GameObject:
   - component: {fileID: 5536650574727081476}
   - component: {fileID: 983892766185354308}
   - component: {fileID: 8409623354358254270}
+  - component: {fileID: 8125899912664181690}
   m_Layer: 0
   m_Name: LavaSegment (1)
   m_TagString: Untagged
@@ -955,6 +988,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
+--- !u!114 &8125899912664181690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5762435356009825812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2042d99252a0374bb4432dff44df2d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerInterval: 0
 --- !u!1 &5808996693125985593
 GameObject:
   m_ObjectHideFlags: 0
@@ -1486,8 +1532,9 @@ GameObject:
   - component: {fileID: 5866506526677493967}
   - component: {fileID: 4695030766675931037}
   - component: {fileID: 6949117945172294693}
+  - component: {fileID: 6524729946269822684}
   m_Layer: 0
-  m_Name: PlatformSegment04
+  m_Name: Moving Block N
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1605,6 +1652,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
+--- !u!114 &6524729946269822684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6381688327820204458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a92b77997c3b7fc45afea83723583d96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOn: 0
+  offset: {x: 0, y: -9.87, z: 0}
+  speed: 4
 --- !u!1 &8283377000038956698
 GameObject:
   m_ObjectHideFlags: 0
