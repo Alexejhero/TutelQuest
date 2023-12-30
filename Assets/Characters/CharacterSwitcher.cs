@@ -7,14 +7,13 @@ namespace SchizoQuest.Characters
 {
     public class CharacterSwitcher : MonoBehaviour
     {
+        public float GlobalTransformCooldown { get; set; } = 1;
+
         public List<Player> availablePlayers;
         private Player _currentPlayer;
         private int _currentIndex;
         [NonSerialized]
         public StudioEventEmitter _music;
-        public float switchCooldown;
-        public float switchDelay;
-        private float _nextSwitchTime;
 
         private void Awake()
         {
@@ -26,9 +25,14 @@ namespace SchizoQuest.Characters
             SwitchTo(_currentIndex);
         }
 
+        private void Update()
+        {
+            GlobalTransformCooldown -= Time.deltaTime;
+        }
+
         public void OnSwitchCharacter()
         {
-            if (Time.time < _nextSwitchTime) return;
+            if (GlobalTransformCooldown > 0) return;
 
             _currentPlayer.enabled = false;
             _currentIndex++;
@@ -40,7 +44,7 @@ namespace SchizoQuest.Characters
         {
             _currentPlayer = availablePlayers[index];
             _currentPlayer.enabled = true;
-            _nextSwitchTime = Time.time + switchCooldown;
+            GlobalTransformCooldown = 0.75f;
             if (_music)
                 _music.SetParameter("Character", _currentPlayer.playerType.ValueIndex());
         }

@@ -288,11 +288,11 @@ MonoBehaviour:
   - set: 0
     layers:
       serializedVersion: 2
-      m_Bits: 25174079
+      m_Bits: 25174071
   - set: 1
     layers:
       serializedVersion: 2
-      m_Bits: 41975871
+      m_Bits: 41975863
   smoothTime: 0.35
 --- !u!114 &6940602351926568195
 MonoBehaviour:

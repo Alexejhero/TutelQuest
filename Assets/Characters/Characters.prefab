@@ -220,9 +220,6 @@ MonoBehaviour:
   availablePlayers:
   - {fileID: 5580527245097492188}
   - {fileID: 4206252254551930202}
-  music: {fileID: 0}
-  switchCooldown: 1
-  switchDelay: 0
 --- !u!114 &332734605170439082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,17 +501,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38834af34ab134b418ec224d5a482e9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterSwitcher: {fileID: 7470432330437033608}
   player: {fileID: 4206252254551930202}
   regularForm: {fileID: 3224388269276892655}
   altForm: {fileID: 1130499802097221157}
   smokePoof: {fileID: 4635165659735915814, guid: ecf4f11eb204d5d43841a47894315a6a, type: 3}
-  swapCooldown: 1
   swapDelay: 0.1
   evilSwitchParticleEffect: {fileID: 2472505819947592442, guid: 8d325820475c9b347ac37753db9b2634, type: 3}
   neuroEvilTransitionManager: {fileID: 9019952877335944736}
   switchTransitionDuration: 0.5
-  evilVolume: {fileID: 0}
-  cameraController: {fileID: 0}
 --- !u!114 &9019952877335944736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -678,6 +673,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6237045314539720047, guid: c3fc4b60d9cc12c4cab95878ac4103a1, type: 3}
+      propertyPath: characterSwitcher
+      value: 
+      objectReference: {fileID: 7470432330437033608}
     - target: {fileID: 7595846727379018550, guid: c3fc4b60d9cc12c4cab95878ac4103a1, type: 3}
       propertyPath: m_Name
       value: Vedal
