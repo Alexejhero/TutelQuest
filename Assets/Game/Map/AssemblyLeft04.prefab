@@ -2716,7 +2716,7 @@ MonoBehaviour:
   isOn: 0
   activates:
   - {fileID: 2965807147107711258}
-  isTimerOn: 0
+  isTimerOn: 1
   intervalOn: 2
   intervalOff: 3
   offset: 0
