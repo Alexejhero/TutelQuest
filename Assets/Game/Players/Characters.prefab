@@ -538,6 +538,89 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!1 &8836820512864581585
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5363053443077623234}
+  - component: {fileID: 8454714619514489954}
+  - component: {fileID: 7250567328183000093}
+  m_Layer: 21
+  m_Name: neuro evil transition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5363053443077623234
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8836820512864581585}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 50, y: 50, z: 50}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 3860466389485280518}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &8454714619514489954
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8836820512864581585}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &7250567328183000093
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8836820512864581585}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 1321307d1fd53ce439bcc8a4e44c03d7, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1001 &1078823698262986317
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -645,10 +728,16 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4281764129697944395, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
       insertIndex: -1
       addedObject: {fileID: 831987953150845474}
+    - targetCorrespondingSourceObject: {fileID: 4281764129697944395, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5363053443077623234}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8801004962465848453, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3567806638647021726}
+    - targetCorrespondingSourceObject: {fileID: 8801004962465848453, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9019952877335944736}
   m_SourcePrefab: {fileID: 100100000, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
 --- !u!70 &602317717916404738 stripped
 CapsuleCollider2D:
@@ -695,6 +784,56 @@ MonoBehaviour:
   swapCooldown: 1
   swapDelay: 0.1
   evilSwitchParticleEffect: {fileID: 2472505819947592442, guid: 8d325820475c9b347ac37753db9b2634, type: 3}
+  neuroEvilTransitionManager: {fileID: 9019952877335944736}
+  switchTransitionDuration: 0.5
+--- !u!114 &9019952877335944736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8420520819130045128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47a28ba9c40493b4991834101c624b54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  neuroToEvilTransitonMaterial: {fileID: -876546973899608171, guid: a9c882f811e843740ab6727c941063ef, type: 3}
+  rr: {fileID: 7250567328183000093}
+  phase: 0
+  phaseCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  middleStripSize: 0.286
+  centerGradientStrength: 0
+  centerColorNeuro: {r: 0.6886792, g: 0.57270825, b: 0.48402455, a: 1}
+  middleColorNeruo: {r: 0, g: 1, b: 1, a: 0.40392157}
+  outsideColorNeuro: {r: 0, g: 0, b: 0, a: 0}
+  centerColorEvil: {r: 0.3301887, g: 0.08425539, b: 0.07320221, a: 1}
+  middleColorEvil: {r: 1, g: 0, b: 0, a: 0.54509807}
+  outsideColorEvil: {r: 0, g: 0, b: 0, a: 0}
+  isEvil: 1
 --- !u!1001 &1630657656458750010
 PrefabInstance:
   m_ObjectHideFlags: 0
