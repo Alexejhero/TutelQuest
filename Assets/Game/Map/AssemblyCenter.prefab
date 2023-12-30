@@ -792,7 +792,7 @@ GameObject:
   - component: {fileID: 1203648814623510876}
   - component: {fileID: 6540596231152869266}
   m_Layer: 13
-  m_Name: PlatformSegmentNeuro (6)
+  m_Name: PlatformSegmentEvil
   m_TagString: NoNeuro
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -854,7 +854,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ceb3e4dced5726f45953974be92be163, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7327993c0aa27bc47b7df7decb34043c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4392,9 +4392,9 @@ GameObject:
   - component: {fileID: 3613757295462897556}
   - component: {fileID: 1436106422736684905}
   - component: {fileID: 5001771187774526763}
-  m_Layer: 15
-  m_Name: PlatformSegmentEvil (4)
-  m_TagString: NoEvil
+  m_Layer: 13
+  m_Name: PlatformSegmentNeuro
+  m_TagString: NoNeuro
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4455,7 +4455,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7327993c0aa27bc47b7df7decb34043c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ceb3e4dced5726f45953974be92be163, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5302,9 +5302,9 @@ GameObject:
   - component: {fileID: 2386329942607693749}
   - component: {fileID: 7090832751929620022}
   - component: {fileID: 7077582444023612262}
-  m_Layer: 15
-  m_Name: PlatformSegmentEvil (5)
-  m_TagString: NoEvil
+  m_Layer: 13
+  m_Name: PlatformSegmentNeuro
+  m_TagString: NoNeuro
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5365,7 +5365,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7327993c0aa27bc47b7df7decb34043c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ceb3e4dced5726f45953974be92be163, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
