@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 9187109277173092303}
   - component: {fileID: 6208708446911496434}
   - component: {fileID: 9060981612997884456}
+  - component: {fileID: 4622985156944786678}
   m_Layer: 20
   m_Name: tutel new
   m_TagString: Untagged
@@ -273,9 +274,30 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.01}
+  m_Offset: {x: 0, y: 0.07}
   m_Size: {x: 1.2, y: 1.2}
   m_Direction: 0
+--- !u!114 &4622985156944786678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3934357359261474321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8408024877564daab24dd8dd3dfcf475, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 4234630266564535879}
+  animator: {fileID: 6208708446911496434}
+  idleFrontAnim: {fileID: 7400000, guid: e8b2be2dc55b0a54f99eaf955625e64b, type: 2}
+  idleLeftAnim: {fileID: 7400000, guid: 41aa2bbcfeeb9d244b9fdbaff78d564f, type: 2}
+  idleRightAnim: {fileID: 7400000, guid: 41aa2bbcfeeb9d244b9fdbaff78d564f, type: 2}
+  moveLeftAnim: {fileID: 7400000, guid: 9ad6a46240ea64e48aa1c1ab514efd0d, type: 2}
+  moveRightAnim: {fileID: 7400000, guid: 9ad6a46240ea64e48aa1c1ab514efd0d, type: 2}
+  flipLeftAnims: 1
+  flipRightAnims: 0
 --- !u!1001 &1390113893569232819
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -380,6 +402,11 @@ MonoBehaviour:
 --- !u!4 &2891677041724271864 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4281764129697944395, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
+  m_PrefabInstance: {fileID: 1390113893569232819}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &4234630266564535879 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 2994542948100938228, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
   m_PrefabInstance: {fileID: 1390113893569232819}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &7595846727379018550 stripped

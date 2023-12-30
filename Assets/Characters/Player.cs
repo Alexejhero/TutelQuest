@@ -19,7 +19,6 @@ namespace SchizoQuest.Characters
         {
             _renderers = GetComponentsInChildren<SpriteRenderer>();
             checkpoint = transform.position;
-            living.OnDeath += OnDeath;
         }
 
         public void OnEnable()
@@ -53,7 +52,6 @@ namespace SchizoQuest.Characters
         public void Reset()
         {
             transform.position = checkpoint;
-            living.ResetHealth();
         }
     }
 }
