@@ -25,7 +25,7 @@ namespace SchizoQuest.Game.Players
 
         public void OnEnable()
         {
-            Camera.main!.GetComponent<FollowTransform>().target = transform;
+            Camera.main!.GetComponent<CameraController>().target = transform;
             controller.movementActive = true;
             ActivePlayer = this;
             characterSwitchParticleEffect.Play();

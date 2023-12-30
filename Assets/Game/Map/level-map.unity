@@ -1395,6 +1395,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  masks:
+  - name: vedal
+    layers:
+      serializedVersion: 2
+      m_Bits: 7403583
+  - name: tutel
+    layers:
+      serializedVersion: 2
+      m_Bits: 7403583
+  - name: neuro
+    layers:
+      serializedVersion: 2
+      m_Bits: 7367743
+  - name: evil
+    layers:
+      serializedVersion: 2
+      m_Bits: 7380031
   smoothTime: 0.35
 --- !u!114 &1114197522
 MonoBehaviour:
