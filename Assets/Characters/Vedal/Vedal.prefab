@@ -554,7 +554,7 @@ MonoBehaviour:
   vedalItemYPos: 2
   tutelItemYPos: -0.1
   controller: {fileID: 3632937848152495355}
-  rb: {fileID: 0}
+  rb: {fileID: 4234630266564535879}
 --- !u!4 &8316011149754893122 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6927315970538306801, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}

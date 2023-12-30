@@ -568,6 +568,7 @@ GameObject:
   - component: {fileID: 760237204281078110}
   - component: {fileID: 1566959748471156186}
   - component: {fileID: 3598715636389785526}
+  - component: {fileID: 8912150711233590312}
   m_Layer: 0
   m_Name: DeathPillar
   m_TagString: Untagged
@@ -610,6 +611,7 @@ MonoBehaviour:
   isOn: 0
   offset: {x: 0, y: 6.7, z: 0}
   speed: 5
+  scrapeSound: {fileID: 8912150711233590312}
 --- !u!114 &3598715636389785526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -630,6 +632,37 @@ MonoBehaviour:
   intervalOn: 2
   intervalOff: 1
   offset: 0
+--- !u!114 &8912150711233590312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7200044476835458186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1446011462
+      Data2: 1213686242
+      Data3: 1463616159
+      Data4: 596193549
+    Path: event:/sfx/interactive/block
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &8107121459296716823
 GameObject:
   m_ObjectHideFlags: 0

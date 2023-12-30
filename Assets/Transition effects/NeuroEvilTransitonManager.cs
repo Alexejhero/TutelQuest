@@ -64,7 +64,7 @@ namespace SchizoQuest.Transition_effects
         public void Play(float duration = 1f)
         {
             _playStartTime = Time.time;
-            _duration = duration;
+            _duration = Mathf.Max(0.05f, duration);
             _playEndTime = _playStartTime + _duration;
         }
 

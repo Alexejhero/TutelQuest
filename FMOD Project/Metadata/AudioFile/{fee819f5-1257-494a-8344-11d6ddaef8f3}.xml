@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{fee819f5-1257-494a-8344-11d6ddaef8f3}">
 		<property name="assetPath">
-			<value>2nd Music - Neuro Track Stereo.wav</value>
+			<value>music/2nd Music - Neuro Track Stereo.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

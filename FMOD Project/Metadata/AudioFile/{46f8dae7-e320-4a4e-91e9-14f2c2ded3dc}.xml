@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{46f8dae7-e320-4a4e-91e9-14f2c2ded3dc}">
 		<property name="assetPath">
-			<value>1st Song Vedal Track Stereo.wav</value>
+			<value>music/1st Song Vedal Track Stereo.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>
