@@ -24,12 +24,12 @@ TagManager:
   - 
   - 
   - 
-  - VedalOnly
   - NoVedal
-  - NeuroOnly
+  - VedalOnly
   - NoNeuro
-  - EvilOnly
+  - NeuroOnly
   - NoEvil
+  - EvilOnly
   - 
   - 
   - 
