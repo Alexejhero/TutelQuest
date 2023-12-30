@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 namespace SchizoQuest.Game.Mechanisms
 {
-    public class PressurePlate : MonoBehaviour
+    public class PressurePlate : Trigger<Player>
     {
         public bool flipped = false;
         [HideInInspector] public bool isOn = false;
@@ -13,30 +13,24 @@ namespace SchizoQuest.Game.Mechanisms
         public GameObject on;
         public GameObject off;
 
-        private void OnTriggerEnter2D(Collider2D other)
+        protected override void OnEnter(Player target)
         {
-            if (other.GetComponent<Player>())
-            {
-                isOn = !flipped;
-
-                on.SetActive(isOn);
-                off.SetActive(!isOn);
-
-                onSwitch?.Invoke(isOn);
-            }
+            isOn = !flipped;
+            OnFlip();
         }
 
-        private void OnTriggerExit2D(Collider2D other)
+        protected override void OnExit(Player target)
         {
-            if (other.GetComponent<Player>())
-            {
-                isOn = flipped;
+            isOn = flipped;
+            OnFlip();
+        }
 
-                on.SetActive(isOn);
-                off.SetActive(!isOn);
+        private void OnFlip()
+        {
+            on.SetActive(isOn);
+            off.SetActive(!isOn);
 
-                onSwitch?.Invoke(isOn);
-            }
+            onSwitch?.Invoke(isOn);
         }
     }
 }

@@ -1,7 +1,6 @@
 using SchizoQuest.Game.Items;
 using TarodevController;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace SchizoQuest.Game.Players
 {
@@ -9,16 +8,19 @@ namespace SchizoQuest.Game.Players
     {
         public static Player ActivePlayer;
 
-        [FormerlySerializedAs("character")] public PlayerType playerType;
+        public PlayerType playerType;
         public Living living;
-        [FormerlySerializedAs("movement")] public PlayerController controller;
+        public PlayerController controller;
         public Inventory inventory;
         public ParticleSystem characterSwitchParticleEffect;
+        public Vector3 checkpoint;
 
         private SpriteRenderer[] _renderers;
         private void Awake()
         {
             _renderers = GetComponentsInChildren<SpriteRenderer>();
+            checkpoint = transform.position;
+            living.OnDeath += OnDeath;
         }
 
         public void OnEnable()
@@ -42,6 +44,17 @@ namespace SchizoQuest.Game.Players
         {
             foreach (var spriteRenderer in _renderers)
                 spriteRenderer.sortingOrder = order;
+        }
+
+        private void OnDeath()
+        {
+            Reset();
+        }
+
+        public void Reset()
+        {
+            transform.position = checkpoint;
+            living.ResetHealth();
         }
     }
 }
