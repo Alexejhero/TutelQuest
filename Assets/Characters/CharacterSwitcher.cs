@@ -16,6 +16,7 @@ namespace SchizoQuest.Characters
         private int _currentIndex;
         [NonSerialized]
         public StudioEventEmitter _music;
+        public bool enableSwitching = true;
 
         private bool _hintHidden;
 
@@ -38,6 +39,7 @@ namespace SchizoQuest.Characters
         public void OnSwitchCharacter()
         {
             if (GlobalTransformCooldown > 0) return;
+            if (!enableSwitching) return;
 
             if (!_hintHidden)
             {

@@ -10118,6 +10118,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeathPillar
       objectReference: {fileID: 0}
+    - target: {fileID: 8912150711233590312, guid: 661e035a15f071144887be0c083bb13f, type: 3}
+      propertyPath: OverrideAttenuation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8912150711233590312, guid: 661e035a15f071144887be0c083bb13f, type: 3}
+      propertyPath: OverrideMaxDistance
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
