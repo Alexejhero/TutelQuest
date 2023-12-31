@@ -46,6 +46,8 @@ namespace SchizoQuest.Characters
             Vector2 velocity = rb.velocity;
             if (Math.Abs(velocity.x) < 0.1 && Math.Abs(velocity.y) < 0.1)
             {
+                if (UnityEngine.Input.GetKey(KeyCode.S) || UnityEngine.Input.GetKey(KeyCode.DownArrow)) _lastMoveDirection = 0;
+
                 switch (_lastMoveDirection)
                 {
                     case 0:
@@ -72,7 +74,7 @@ namespace SchizoQuest.Characters
                     _lastMoveDirection = -1;
                     DoFlip(FlipLeftAnims);
                 }
-                else
+                else if (velocity.x > 0)
                 {
                     CurrentClip = playerController._grounded ? MoveRightAnim : IdleRightAnim;
                     _lastMoveDirection = 1;
