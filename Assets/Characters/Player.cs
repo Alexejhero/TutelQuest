@@ -22,7 +22,8 @@ namespace SchizoQuest.Characters
             _renderers = GetComponentsInChildren<SpriteRenderer>();
             respawn.OnReset += (r) =>
             {
-                EffectsManager.Instance.PlayEffect(EffectsManager.Effects.death, 0.3f);
+                if (this == ActivePlayer)
+                    EffectsManager.Instance.PlayEffect(EffectsManager.Effects.death, 0.3f);
                 if (!inventory.item) return;
                 Item item = inventory.item;
                 inventory.DetachItem();
@@ -42,8 +43,7 @@ namespace SchizoQuest.Characters
 
         public IEnumerator WaitUntilCameraIsClose()
         {
-            yield return new WaitUntil(() => CameraController.currVelocity.magnitude < 0.1f);
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitUntil(() => CameraController.currVelocity.magnitude < 1f);
             controller.movementActive = true;
             characterSwitchParticleEffect.Play();
         }
