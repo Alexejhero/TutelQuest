@@ -1851,6 +1851,7 @@ GameObject:
   - component: {fileID: 5770986016229522453}
   - component: {fileID: 6332740829412070718}
   - component: {fileID: 144766051522932853}
+  - component: {fileID: 2665972171334935947}
   - component: {fileID: 3492664025367350713}
   - component: {fileID: 2695901884971087320}
   m_Layer: 15
@@ -1923,9 +1924,9 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: -0.069114685, y: 6.8531017}
+  m_Offset: {x: -0.069114685, y: 7.4336777}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1936,8 +1937,27 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.0263824, y: 1.9637489}
+  m_Size: {x: 4.0263824, y: 0.80259705}
   m_EdgeRadius: 0
+--- !u!251 &2665972171334935947
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4703843293179752422}
+  m_Enabled: 1
+  m_UseColliderMask: 0
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 1048576
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!114 &3492664025367350713
 MonoBehaviour:
   m_ObjectHideFlags: 0
