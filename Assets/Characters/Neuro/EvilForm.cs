@@ -1,4 +1,5 @@
 using System.Collections;
+using SchizoQuest.Game;
 using SchizoQuest.Transition_effects;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -20,6 +21,8 @@ namespace SchizoQuest.Characters
         private int _neuroLayer;
         private int _playerLayer;
         public bool enableSwitching = true;
+
+        private bool _hintHidden;
 
         public void Awake()
         {
@@ -43,6 +46,12 @@ namespace SchizoQuest.Characters
 
         private IEnumerator CoOnSwap()
         {
+            if (!_hintHidden)
+            {
+                _hintHidden = true;
+                player.SendMessage("HideHint", HintType.F2, SendMessageOptions.DontRequireReceiver);
+            }
+
             player.playerType = isAlt
                 ? PlayerType.Evil
                 : PlayerType.Neuro;

@@ -10,7 +10,8 @@ namespace SchizoQuest.Game
         Space,
         F,
         E,
-        C
+        C,
+        F2
     }
 
     public class HintShower : Trigger<Player>
