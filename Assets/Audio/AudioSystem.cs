@@ -1,5 +1,7 @@
 using FMOD.Studio;
 using FMODUnity;
+using SchizoQuest.Characters;
+using SchizoQuest.Game;
 using UnityEngine;
 
 namespace SchizoQuest.Audio
@@ -66,6 +68,13 @@ namespace SchizoQuest.Audio
 			Initialize();
 			voiceVCA.setVolume(volume);
 			SavedVoiceVolume = volume;
+		}
+
+		public static void UpdateSfxMuteWhileSwitchingCharacters(Player currentPlayer)
+		{
+			var dist = (Camera.main.transform.position - currentPlayer.transform.position)
+                .magnitude;
+            RuntimeManager.StudioSystem.setParameterByName("Distance to Active Character", dist);
 		}
 	}
 }

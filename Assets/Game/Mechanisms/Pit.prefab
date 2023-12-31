@@ -252,7 +252,7 @@ MonoBehaviour:
       Data4: 743990325
     Path: event:/sfx/interactive/pit/thorns
   Event: 
-  PlayEvent: 1
+  PlayEvent: 5
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
