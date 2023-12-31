@@ -31,6 +31,7 @@ namespace SchizoQuest.Characters
             _evilLayer = LayerMask.NameToLayer("EvilOnly");
             _neuroLayer = LayerMask.NameToLayer("NeuroOnly");
             _playerLayer = LayerMask.NameToLayer("Player");
+            UpdateLayerCollision();
         }
 
         protected override bool CanSwap(bool toAlt) => enableSwitching;
@@ -72,8 +73,6 @@ namespace SchizoQuest.Characters
 
         private void UpdateLayerCollision()
         {
-            // TODO: expand the switch radially
-
             Physics2D.IgnoreLayerCollision(_evilLayer, _playerLayer, !isAlt);
             Physics2D.IgnoreLayerCollision(_neuroLayer, _playerLayer, isAlt);
         }
