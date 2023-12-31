@@ -1,5 +1,4 @@
 using SchizoQuest.Game.Mechanisms;
-using UnityEngine;
 
 namespace SchizoQuest.Characters
 {
@@ -7,7 +6,7 @@ namespace SchizoQuest.Characters
     {
         protected override void OnEnter(Player target)
         {
-            Debug.LogWarning("touched");
+            EffectsManager.Instance.PlayEffect(EffectsManager.Effects.gameFinish, 2f);
         }
 
         protected override void OnExit(Player target)
