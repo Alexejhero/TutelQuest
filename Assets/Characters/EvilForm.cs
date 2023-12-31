@@ -1,5 +1,4 @@
 using System.Collections;
-using SchizoQuest.Game;
 using SchizoQuest.Transition_effects;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -20,6 +19,7 @@ namespace SchizoQuest.Characters
         private int _evilLayer;
         private int _neuroLayer;
         private int _playerLayer;
+        public bool enableSwitching = true;
 
         public void Awake()
         {
@@ -33,7 +33,7 @@ namespace SchizoQuest.Characters
             _playerLayer = LayerMask.NameToLayer("Player");
         }
 
-        protected override bool CanSwap(bool toAlt) => true;
+        protected override bool CanSwap(bool toAlt) => enableSwitching;
 
         protected override void OnSwap()
         {
