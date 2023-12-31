@@ -223,6 +223,10 @@ PrefabInstance:
       propertyPath: switcher
       value: 
       objectReference: {fileID: 1625013828}
+    - target: {fileID: 6279692575602189106, guid: 9f8b947821c8d644dabe396e2f77588b, type: 3}
+      propertyPath: trackToStop
+      value: 
+      objectReference: {fileID: 1308998201}
     - target: {fileID: 9074672386057322595, guid: 9f8b947821c8d644dabe396e2f77588b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 304.56
@@ -700,7 +704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4809490840050660992, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.69
+      value: 22.7
       objectReference: {fileID: 0}
     - target: {fileID: 7528141543748926353, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
       propertyPath: m_Name
