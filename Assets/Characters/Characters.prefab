@@ -658,7 +658,7 @@ MonoBehaviour:
   centerColorEvil: {r: 0.3301887, g: 0.08425539, b: 0.07320221, a: 1}
   middleColorEvil: {r: 1, g: 0, b: 0, a: 0.54509807}
   outsideColorEvil: {r: 0, g: 0, b: 0, a: 0}
-  isEvil: 1
+  isEvil: 0
 --- !u!1001 &1630657656458750010
 PrefabInstance:
   m_ObjectHideFlags: 0

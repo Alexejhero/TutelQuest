@@ -84,7 +84,11 @@ namespace SchizoQuest.Transition_effects
                 _materials[0] = isEvil ? _evilToNeuroTransitionMaterial : neuroToEvilTransitonMaterial;
                 rr.SetMaterials(_materials);
             }
-            else { rr. enabled = false; }
+            else
+            {
+                rr.enabled = false;
+                if (isEvil) mask.transform.localScale = 1000 * maskMaxSize * Vector3.one;
+            }
         }
     }
 }

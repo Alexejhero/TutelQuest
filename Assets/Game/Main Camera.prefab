@@ -457,10 +457,10 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 825986363
-      Data2: 1291954700
-      Data3: 1157493393
-      Data4: -11398943
+      Data1: -1424277375
+      Data2: 1247386939
+      Data3: -341121112
+      Data4: -152906339
     Path: event:/music/separated
   Event: 
   PlayEvent: 1
