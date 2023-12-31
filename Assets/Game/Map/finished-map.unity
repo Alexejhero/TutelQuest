@@ -686,6 +686,22 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1114197524}
+    - target: {fileID: 3860466389485280518, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 614.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860466389485280518, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 38.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809490840050660992, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -22.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809490840050660992, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.69
+      objectReference: {fileID: 0}
     - target: {fileID: 7528141543748926353, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
       propertyPath: m_Name
       value: Characters
