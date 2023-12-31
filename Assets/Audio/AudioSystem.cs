@@ -5,7 +5,7 @@ using UnityEngine;
 namespace SchizoQuest.Audio
 {
 	public static class AudioSystem
-	{		
+	{
 		public static float SavedMasterVolume
 		{
 			get => PlayerPrefs.GetFloat("MasterVolume", 1f);

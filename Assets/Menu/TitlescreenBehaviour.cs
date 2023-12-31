@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Runtime.CompilerServices;
 using SchizoQuest.Input;
 using TMPro;
@@ -11,11 +12,15 @@ namespace SchizoQuest.Menu
 {
     public class TitlescreenBehaviour : MonoBehaviour
     {
+        public Transform rotationTransform;
         public Image titleScreenImage;
         public TMP_Text titleText;
         public float targetY;
         public AnimationCurve movementCurve;
         public AnimationCurve fadeInCurve;
+
+        public GameObject optionsObject;
+        public GameObject creditsObject;
 
         private float _timeout;
         private bool _ready = false;
@@ -95,23 +100,23 @@ namespace SchizoQuest.Menu
         {
             _ready = false;
 
-            float oldYPos = titleScreenImage.transform.localPosition.y;
+            float oldYPos = rotationTransform.localPosition.y;
 
             Vector3 position = default;
 
             for (float t = 0; t < 1; t += Time.deltaTime)
             {
                 // Move storyboard
-                position = titleScreenImage.transform.localPosition;
+                position = rotationTransform.localPosition;
                 position.y = Mathf.Lerp(oldYPos, targetY, movementCurve.Evaluate(t));
-                titleScreenImage.transform.localPosition = position;
+                rotationTransform.localPosition = position;
 
                 yield return null;
             }
 
             position.y = targetY;
 
-            titleScreenImage.transform.localPosition = position;
+            rotationTransform.localPosition = position;
 
             _timeout = 0.5f;
             _ready = true;
@@ -124,12 +129,49 @@ namespace SchizoQuest.Menu
 
         public void SettingsPressed()
         {
-            SceneManager.LoadScene("Settings", LoadSceneMode.Additive);
+            if (!_ready) return;
+            _ready = false;
+            creditsObject.SetActive(false);
+            optionsObject.SetActive(true);
+            StartCoroutine(FlipRoutine(0, 89.9f));
+        }
+
+        public void CreditsPressed()
+        {
+            if (!_ready) return;
+            _ready = false;
+            optionsObject.SetActive(false);
+            creditsObject.SetActive(true);
+            StartCoroutine(FlipRoutine(0, 89.9f));
+        }
+
+        public void BackPressed()
+        {
+            if (_ready) return;
+            _ready = true;
+            StartCoroutine(FlipRoutine(89.9f, 0));
         }
 
         public void QuitPressed()
         {
             Application.Quit();
+        }
+
+        private IEnumerator FlipRoutine(float from, float to)
+        {
+            Vector3 angles = default;
+
+            for (float t = 0; t < 1; t += Time.deltaTime)
+            {
+                angles = rotationTransform.transform.eulerAngles;
+                angles.y = Mathf.Lerp(from, to, t);
+                rotationTransform.transform.eulerAngles = angles;
+
+                yield return null;
+            }
+
+            angles.y = to;
+            rotationTransform.transform.eulerAngles = angles;
         }
     }
 }
