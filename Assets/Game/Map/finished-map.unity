@@ -999,10 +999,6 @@ PrefabInstance:
       propertyPath: switcher
       value: 
       objectReference: {fileID: 1625013828}
-    - target: {fileID: 5926935304583919047, guid: c9cd348d94c22aa48a712e13279bed4f, type: 3}
-      propertyPath: switcher
-      value: 
-      objectReference: {fileID: 1625013828}
     - target: {fileID: 8513634248435685752, guid: c9cd348d94c22aa48a712e13279bed4f, type: 3}
       propertyPath: m_Name
       value: AssemblyLeft01
@@ -1051,8 +1047,7 @@ PrefabInstance:
       propertyPath: switcher
       value: 
       objectReference: {fileID: 1625013828}
-    m_RemovedComponents:
-    - {fileID: 5926935304583919047, guid: c9cd348d94c22aa48a712e13279bed4f, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
