@@ -7401,7 +7401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOn: 0
-  offset: {x: 0, y: -10.24, z: 0}
+  offset: {x: 0, y: -16, z: 0}
   speed: 2
   moveSound: {fileID: 0}
   makeSound: 0
