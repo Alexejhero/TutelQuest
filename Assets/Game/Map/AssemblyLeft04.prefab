@@ -2716,7 +2716,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1607219517
   m_SortingLayer: -1
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 5ca60532a735e504981b4e2d81f50a97, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -8154,6 +8154,10 @@ PrefabInstance:
     - target: {fileID: 3835933700026546326, guid: 19797f4d2d85b3d4584132ccfd578d39, type: 3}
       propertyPath: m_Name
       value: Plate
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026609256010599841, guid: 19797f4d2d85b3d4584132ccfd578d39, type: 3}
+      propertyPath: activates.Array.size
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

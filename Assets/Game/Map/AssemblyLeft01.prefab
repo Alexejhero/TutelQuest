@@ -3909,6 +3909,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 0
   plug: {fileID: 0}
+  rb: {fileID: 0}
 --- !u!61 &8080064237701912188
 BoxCollider2D:
   m_ObjectHideFlags: 0
