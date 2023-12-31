@@ -1807,8 +1807,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1607219517
-  m_SortingLayer: -1
+  m_SortingLayerID: -633522443
+  m_SortingLayer: -2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 58804bae196297a4791a50cde26f98b4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4195,7 +4195,7 @@ Transform:
   m_GameObject: {fileID: 4522677014212029229}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 24.61, y: 8.61, z: 0}
+  m_LocalPosition: {x: 23.81, y: 8.61, z: 0}
   m_LocalScale: {x: 2.7, y: 2.7, z: 2.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6152,15 +6152,13 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 21.427553, y: 6.883786}
-  - {x: 22.94545, y: 13.274841}
-  - {x: 22.00129, y: 13.371166}
+  - {x: 29.4209, y: 13.417677}
+  - {x: 23.208145, y: 13.4062}
+  - {x: 22.307793, y: 13.502525}
   - {x: 21.729088, y: 13.676146}
   - {x: 21.250725, y: 13.722473}
   - {x: 20.581993, y: 13.8208275}
   - {x: 19.859818, y: 13.5344715}
-  - {x: 19.372322, y: 13.272615}
-  - {x: 18.20546, y: 13.328789}
   - {x: 17.849594, y: 13.526871}
   - {x: 17.140816, y: 13.832077}
   - {x: 15.754578, y: 13.877838}
@@ -7492,7 +7490,7 @@ Transform:
   m_GameObject: {fileID: 6862342670123430581}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.839916, y: 20.18, z: 0}
+  m_LocalPosition: {x: 15.7, y: 20.18, z: 0}
   m_LocalScale: {x: 2, y: 16, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7583,7 +7581,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.1880455, y: -0.04577434}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -7594,7 +7592,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.28, y: 1.28}
+  m_Size: {x: 1.2206192, y: 1.1884513}
   m_EdgeRadius: 0
 --- !u!114 &5579879056871249543
 MonoBehaviour:
