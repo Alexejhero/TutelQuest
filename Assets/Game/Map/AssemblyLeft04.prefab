@@ -1419,7 +1419,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5419902333463975533}
+  m_Father: {fileID: 8702198677623140369}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6994971965684045655
 SpriteRenderer:
@@ -1459,9 +1459,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1607219517
+  m_SortingLayer: -1
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 29dce6b4c71c3954c9bf4246255c57ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2442,7 +2442,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.013057649, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2453,7 +2453,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.28, y: 1.28}
+  m_Size: {x: 1.2538847, y: 1.28}
   m_EdgeRadius: 0
 --- !u!1 &2583166810950127989
 GameObject:
@@ -8153,7 +8153,6 @@ Transform:
   - {fileID: 7980635762080622238}
   - {fileID: 2764777278540523869}
   - {fileID: 8317824861006661369}
-  - {fileID: 5101069093906196537}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7337237435340543276
@@ -8228,7 +8227,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2111657811
   m_SortingLayer: 3
-  m_SortingOrder: 50
+  m_SortingOrder: 49
   m_Sprite: {fileID: 21300000, guid: 98744afa869a0934d8fec7d915375dd3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -8655,6 +8654,7 @@ Transform:
   - {fileID: 4505401407624329907}
   - {fileID: 210129114970181868}
   - {fileID: 6788558838350402810}
+  - {fileID: 5101069093906196537}
   m_Father: {fileID: 8317824861006661369}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7958071194676790258

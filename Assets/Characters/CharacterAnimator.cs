@@ -26,7 +26,7 @@ namespace SchizoQuest.Characters
         public virtual bool FlipLeftAnims => flipLeftAnims;
         public virtual bool FlipRightAnims => flipRightAnims;
 
-        private bool _flipped;
+        private float _originalScaleX;
         private int _lastMoveDirection = 0;
         private AnimationClip _currentClip;
 
@@ -41,10 +41,15 @@ namespace SchizoQuest.Characters
             }
         }
 
+        private void Start()
+        {
+            _originalScaleX = animator.transform.localScale.x;
+        }
+
         protected virtual void Update()
         {
             Vector2 velocity = rb.velocity;
-            if (Math.Abs(velocity.x) < 0.1 && Math.Abs(velocity.y) < 0.1)
+            if (Math.Abs(velocity.x) < 1 && Math.Abs(velocity.y) < 1)
             {
                 if (UnityEngine.Input.GetKey(KeyCode.S) || UnityEngine.Input.GetKey(KeyCode.DownArrow)) _lastMoveDirection = 0;
 
@@ -52,17 +57,17 @@ namespace SchizoQuest.Characters
                 {
                     case 0:
                         CurrentClip = IdleFrontAnim;
-                        _flipped = false;
+                        SetFlip(false);
                         break;
 
                     case < 0:
                         CurrentClip = IdleLeftAnim;
-                        DoFlip(FlipLeftAnims);
+                        SetFlip(FlipLeftAnims);
                         break;
 
                     case > 0:
                         CurrentClip = IdleRightAnim;
-                        DoFlip(FlipRightAnims);
+                        SetFlip(FlipRightAnims);
                         break;
                 }
             }
@@ -72,24 +77,20 @@ namespace SchizoQuest.Characters
                 {
                     CurrentClip = playerController._grounded ? MoveLeftAnim : IdleLeftAnim;
                     _lastMoveDirection = -1;
-                    DoFlip(FlipLeftAnims);
+                    SetFlip(FlipLeftAnims);
                 }
                 else if (velocity.x > 0)
                 {
                     CurrentClip = playerController._grounded ? MoveRightAnim : IdleRightAnim;
                     _lastMoveDirection = 1;
-                    DoFlip(FlipRightAnims);
+                    SetFlip(FlipRightAnims);
                 }
             }
         }
 
-        protected void DoFlip(bool check)
+        protected void SetFlip(bool flip)
         {
-            if (check != _flipped)
-            {
-                _flipped = !_flipped;
-                animator.transform.localScale = new Vector3(-animator.transform.localScale.x, animator.transform.localScale.y, animator.transform.localScale.z);
-            }
+            animator.transform.localScale = new Vector3(_originalScaleX * (flip ? -1 : 1), animator.transform.localScale.y, animator.transform.localScale.z);
         }
     }
 }
