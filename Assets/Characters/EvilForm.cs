@@ -17,6 +17,10 @@ namespace SchizoQuest.Characters
         private Volume _evilVolume;
         //private CameraController _cameraController;
 
+        private int _evilLayer;
+        private int _neuroLayer;
+        private int _playerLayer;
+
         public void Awake()
         {
             _switcher = gameObject.GetComponentInParent<CharacterSwitcher>();
@@ -24,6 +28,9 @@ namespace SchizoQuest.Characters
 
             _evilVolume = Camera.main!.GetComponent<Volume>();
             //_cameraController = Camera.main!.GetComponent<CameraController>();
+            _evilLayer = LayerMask.NameToLayer("EvilOnly");
+            _neuroLayer = LayerMask.NameToLayer("NeuroOnly");
+            _playerLayer = LayerMask.NameToLayer("Player");
         }
 
         protected override bool CanSwap(bool toAlt) => true;
@@ -59,6 +66,16 @@ namespace SchizoQuest.Characters
 
             _evilVolume.weight = endWeight;
             //_cameraController.SetNeuroState(isAlt);
+            UpdateLayerCollision();
+        }
+
+
+        private void UpdateLayerCollision()
+        {
+            // TODO: expand the switch radially
+
+            Physics2D.IgnoreLayerCollision(_evilLayer, _playerLayer, !isAlt);
+            Physics2D.IgnoreLayerCollision(_neuroLayer, _playerLayer, isAlt);
         }
     }
 }
