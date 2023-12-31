@@ -52,6 +52,7 @@ MonoBehaviour:
   availablePlayers:
   - {fileID: 5580527245097492188}
   - {fileID: 4206252254551930202}
+  enableSwitching: 1
 --- !u!114 &332734605170439082
 MonoBehaviour:
   m_ObjectHideFlags: 0
