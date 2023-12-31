@@ -121,18 +121,106 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: nero_walk_left_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eca1449a2b490eb429aaea17c91f75b7
+      internalID: -648494670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nero_walk_left_1
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 0
+        width: 160
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e659a8f995ac0541a3824b33da4f90f
+      internalID: 801450801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nero_walk_left_2
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 0
+        width: 160
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7953f4a2ee6691f44bdbe6b15e2a6b96
+      internalID: -451756076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nero_walk_left_3
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 0
+        width: 160
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a09aa4b23bd1ed4b8f1493469245034
+      internalID: -1698111324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: bd65bf3ca49c98b47936305322b7c22d
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      nero_walk_left_0: -648494670
+      nero_walk_left_1: 801450801
+      nero_walk_left_2: -451756076
+      nero_walk_left_3: -1698111324
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -121,18 +121,106 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: evil_nero_walk_left_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3d48a5875c906643ae61dda9895319f
+      internalID: -1216402494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil_nero_walk_left_1
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 0
+        width: 160
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9dfb4a37f8a55841bc52b668047ceef
+      internalID: 1411151337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil_nero_walk_left_2
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 0
+        width: 160
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd63c75650d52f1459ac792568c86d9e
+      internalID: -1755440061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil_nero_walk_left_3
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 0
+        width: 160
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fac79484b2ac63f4a90b411c15de0965
+      internalID: 430503131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 37dd64af3c619004a8de9c805fec4897
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      evil_nero_walk_left_0: -1216402494
+      evil_nero_walk_left_1: 1411151337
+      evil_nero_walk_left_2: -1755440061
+      evil_nero_walk_left_3: 430503131
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
