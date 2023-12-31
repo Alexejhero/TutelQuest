@@ -3,6 +3,7 @@ using SchizoQuest.Input;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace SchizoQuest.Menu
@@ -121,7 +122,7 @@ namespace SchizoQuest.Menu
 
         public void PlayPressed()
         {
-            // SceneManager.LoadScene("Main");
+            SceneManager.LoadScene("finished-map");
         }
 
         public void SettingsPressed()
