@@ -623,6 +623,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3567806638647021726, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
+      propertyPath: neuroEvilTransitionManager
+      value: 
+      objectReference: {fileID: 1757051278}
     - target: {fileID: 3587967052397777974, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
       propertyPath: m_Camera
       value: 
@@ -696,6 +700,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
+--- !u!331 &1625013827 stripped
+SpriteMask:
+  m_CorrespondingSourceObject: {fileID: 4579083039951660849, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
+  m_PrefabInstance: {fileID: 1625013826}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1757051277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -744,6 +753,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2558179411842711402, guid: 6cd711bffc7853747add21223e2a9f03, type: 3}
+      propertyPath: mask
+      value: 
+      objectReference: {fileID: 1625013827}
+    - target: {fileID: 2558179411842711402, guid: 6cd711bffc7853747add21223e2a9f03, type: 3}
+      propertyPath: maskMaxSize
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 3034014833658745916, guid: 6cd711bffc7853747add21223e2a9f03, type: 3}
       propertyPath: m_Name
       value: EffectsManager
@@ -753,6 +770,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cd711bffc7853747add21223e2a9f03, type: 3}
+--- !u!114 &1757051278 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2558179411842711402, guid: 6cd711bffc7853747add21223e2a9f03, type: 3}
+  m_PrefabInstance: {fileID: 1757051277}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47a28ba9c40493b4991834101c624b54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1904522322
 PrefabInstance:
   m_ObjectHideFlags: 0
