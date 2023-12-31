@@ -50,7 +50,7 @@ namespace SchizoQuest.Characters
 
         private void FrameBothPlayers()
         {
-            Bounds bounds = new();
+            Bounds bounds = new(Player.ActivePlayer.transform.position, Vector3.zero);
 
             foreach (var player in switcher.availablePlayers)
             {

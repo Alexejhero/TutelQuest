@@ -24,18 +24,22 @@ namespace SchizoQuest.Characters
             _renderers = GetComponentsInChildren<SpriteRenderer>();
             respawn.OnReset += (r) =>
             {
-                rb.simulated = false;
-                controller.enabled = false;
-                dying = true;
+                if (this == ActivePlayer)
+                {
+                    rb.simulated = false;
+                    controller.enabled = false;
+                    dying = true;
+                    EffectsManager.Instance.PlayEffect(EffectsManager.Effects.death, 1f);
+                }
 
-                EffectsManager.Instance.PlayEffect(EffectsManager.Effects.death, 1f);
+                if (this == ActivePlayer) StartCoroutine(Coroutine());
+
                 if (!inventory.item) return;
                 Item item = inventory.item;
                 inventory.DetachItem();
                 Respawnable itemRespawn = item.GetComponent<Respawnable>();
                 if (itemRespawn) itemRespawn.Respawn();
 
-                StartCoroutine(Coroutine());
                 return;
 
                 IEnumerator Coroutine()
@@ -59,8 +63,7 @@ namespace SchizoQuest.Characters
 
         public IEnumerator WaitUntilCameraIsClose()
         {
-            yield return new WaitUntil(() => CameraController.currVelocity.magnitude < 0.1f);
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitUntil(() => CameraController.currVelocity.magnitude < 1f);
             controller.movementActive = true;
             characterSwitchParticleEffect.Play();
         }
