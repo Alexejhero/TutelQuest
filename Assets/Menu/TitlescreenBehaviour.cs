@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Runtime.CompilerServices;
+﻿using System.Collections;
 using SchizoQuest.Input;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace SchizoQuest.Menu
@@ -13,7 +10,7 @@ namespace SchizoQuest.Menu
     public class TitlescreenBehaviour : MonoBehaviour
     {
         public Transform rotationTransform;
-        public Image titleScreenImage;
+        public Graphic titleScreenImage;
         public TMP_Text titleText;
         public float targetY;
         public AnimationCurve movementCurve;
