@@ -39,14 +39,21 @@ namespace SchizoQuest.Game.Items
                 Debug.LogWarning("Drop raycast hit nothing even though we're grounded");
                 return;
             }
-            item = null;
-            carryable.transform.SetParent(null, true);
+            
+            DetachItem();
             RaycastHit2D rc = _raycasts[0];
             Debug.Log($"Drop raycast {rc.collider} {rc.point}");
             Vector2 dropPoint = rc.point;
             dropPoint.y += 0.5f * carryable.GetComponent<Collider2D>().bounds.size.y;
             carryable.transform.position = dropPoint;
             carryable.OnDropped();
+        }
+
+        public void DetachItem()
+        {
+            if (!item) return;
+            item.transform.SetParent(null, true);
+            item = null;
         }
     }
 }

@@ -1,4 +1,5 @@
 using System.Collections;
+using SchizoQuest.Game;
 using TarodevController;
 using UnityEngine;
 
@@ -36,6 +37,10 @@ namespace SchizoQuest.Characters.Vedal
                 useTriggers = false,
             };
             _raycasts = new RaycastHit2D[1];
+            GetComponent<Respawnable>().OnReset += (r) => {
+                // respawn as vedal
+                if (isAlt) SwapImmediate();
+            };
         }
 
         protected override bool CanSwap(bool toAlt)
