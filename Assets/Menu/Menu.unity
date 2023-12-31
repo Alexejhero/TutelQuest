@@ -772,7 +772,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1258,9 +1258,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Development by AlexejheroDev, budwheizzah, Govorunb
-
-    VFX by w1n7er
+  m_text: 'Development by AlexejheroDev, budwheizzah, Govorunb and w1n7er
 
     Environment
     art by SADecsSs
@@ -1270,11 +1268,13 @@ MonoBehaviour:
     Character animations
     by AshenGlister
 
+    Title screen animation by happikoi
+
     Music by DarthRael
 
 
-    <b>CREATED FOR NEURO-SAMA BIRTHDAY
-    GAMEJAM</b>
+    <b>CREATED
+    FOR NEURO-SAMA BIRTHDAY GAMEJAM</b>
 
     <size=60%>28.12.2023 - 31.12.2023</size>'
   m_isRightToLeft: 0

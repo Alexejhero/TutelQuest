@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dedebe4899209f140b4b8f51f58ce3f8
+guid: ad783664dcc19354da17d8b30ff9082d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lift new_0
+      name: waterfall_1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 349
-        height: 1384
+        width: 242
+        height: 1047
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c81c1e955fde081488d7f0335c78a7e7
-      internalID: 1171837052
+      spriteID: 61148058043731447a151eea541ad6c5
+      internalID: 2037740328
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lift new_1
+      name: waterfall_1_1
       rect:
         serializedVersion: 2
-        x: 354
+        x: 242
         y: 0
-        width: 349
-        height: 1384
+        width: 242
+        height: 1047
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,8 +158,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29618dd4ee51c174bb7033536a605c07
-      internalID: -1723093019
+      spriteID: bcd08994883757d47a18a8cd4626ba9e
+      internalID: -775736088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waterfall_1_2
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 0
+        width: 242
+        height: 1047
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a99a6906511a15e489aee1b1f1664d05
+      internalID: -35201352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waterfall_1_3
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 0
+        width: 242
+        height: 1047
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 926692802ea914c4196a445f79c7a842
+      internalID: -1890601531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waterfall_1_4
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 0
+        width: 242
+        height: 1047
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2229437a5554add4985752261da6b7e4
+      internalID: 1695825907
       vertices: []
       indices: 
       edges: []
@@ -167,7 +230,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 1f6eae665c140e44ab2137cf91d65196
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -175,8 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      lift new_0: 1171837052
-      lift new_1: -1723093019
+      waterfall_1_0: 2037740328
+      waterfall_1_1: -775736088
+      waterfall_1_2: -35201352
+      waterfall_1_3: -1890601531
+      waterfall_1_4: 1695825907
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
