@@ -134,10 +134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47a28ba9c40493b4991834101c624b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  neuroToEvilTransitonMaterial: {fileID: -876546973899608171, guid: a9c882f811e843740ab6727c941063ef, type: 3}
-  rr: {fileID: 0}
   mask: {fileID: 0}
-  maskMaxSize: 100
+  maskMaxSize: 50
   phase: 0
   phaseCurve:
     serializedVersion: 2
@@ -166,7 +164,7 @@ MonoBehaviour:
   middleStripSize: 0.209
   centerGradientStrength: 0
   centerColorNeuro: {r: 0.6886792, g: 0.57270825, b: 0.48402455, a: 1}
-  middleColorNeruo: {r: 0, g: 1, b: 1, a: 0.22745098}
+  middleColorNeuro: {r: 0, g: 1, b: 1, a: 1}
   outsideColorNeuro: {r: 0, g: 0, b: 0, a: 0}
   centerColorEvil: {r: 0.3301887, g: 0.08425539, b: 0.07320221, a: 1}
   middleColorEvil: {r: 1, g: 0, b: 0, a: 0.54509807}
