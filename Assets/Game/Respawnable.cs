@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using SchizoQuest.Characters;
 using UnityEngine;
 
 namespace SchizoQuest.Game
@@ -21,7 +22,8 @@ namespace SchizoQuest.Game
 
             IEnumerator Coroutine()
             {
-                yield return new WaitForSeconds(1f);
+                Player pl = GetComponent<Player>();
+                yield return new WaitForSeconds(pl && pl == Player.ActivePlayer ? 1 : 0);
                 transform.position = checkpoint;
             }
         }
