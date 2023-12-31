@@ -4055,7 +4055,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 0
   plug: {fileID: 0}
-  rb: {fileID: 0}
 --- !u!1 &4663759431854534089
 GameObject:
   m_ObjectHideFlags: 0
