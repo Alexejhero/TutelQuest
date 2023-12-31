@@ -40,6 +40,7 @@ namespace SchizoQuest.Characters
         {
             if (GlobalTransformCooldown > 0) return;
             if (!enableSwitching) return;
+            if (Player.ActivePlayer.dying) return;
 
             if (!_hintHidden)
             {

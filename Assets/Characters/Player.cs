@@ -15,6 +15,8 @@ namespace SchizoQuest.Characters
         public PlayerController controller;
         public Inventory inventory;
         public ParticleSystem characterSwitchParticleEffect;
+        public Rigidbody2D rb;
+        public bool dying;
 
         private SpriteRenderer[] _renderers;
         private void Awake()
@@ -22,12 +24,27 @@ namespace SchizoQuest.Characters
             _renderers = GetComponentsInChildren<SpriteRenderer>();
             respawn.OnReset += (r) =>
             {
-                EffectsManager.Instance.PlayEffect(EffectsManager.Effects.death, 0.3f);
+                rb.simulated = false;
+                controller.enabled = false;
+                dying = true;
+
+                EffectsManager.Instance.PlayEffect(EffectsManager.Effects.death, 1f);
                 if (!inventory.item) return;
                 Item item = inventory.item;
                 inventory.DetachItem();
                 Respawnable itemRespawn = item.GetComponent<Respawnable>();
                 if (itemRespawn) itemRespawn.Respawn();
+
+                StartCoroutine(Coroutine());
+                return;
+
+                IEnumerator Coroutine()
+                {
+                    yield return new WaitForSeconds(1);
+                    rb.simulated = true;
+                    controller.enabled = true;
+                    dying = false;
+                }
             };
         }
 

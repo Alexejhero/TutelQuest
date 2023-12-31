@@ -149,6 +149,7 @@ MonoBehaviour:
   controller: {fileID: 2387018308218317640}
   inventory: {fileID: 6931515259517804241}
   characterSwitchParticleEffect: {fileID: 0}
+  rb: {fileID: 2994542948100938228}
 --- !u!114 &2307560814186585820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,6 +177,7 @@ MonoBehaviour:
   movementActive: 0
   stats: {fileID: 11400000, guid: a96127d8e62622d4f87704a0f4a3dcbe, type: 2}
   collider_: {fileID: 478257553380852303}
+  _timeJumpWasPressed: 0
 --- !u!114 &2069896818738633901
 MonoBehaviour:
   m_ObjectHideFlags: 0

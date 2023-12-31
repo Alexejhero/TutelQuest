@@ -37,7 +37,7 @@ namespace SchizoQuest.Characters
             UpdateLayerCollision();
         }
 
-        protected override bool CanSwap(bool toAlt) => enableSwitching;
+        protected override bool CanSwap(bool toAlt) => enableSwitching && !player.dying;
 
         protected override void OnSwap()
         {

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 namespace SchizoQuest.Game
@@ -15,7 +16,14 @@ namespace SchizoQuest.Game
         public void Respawn()
         {
             OnReset?.Invoke(this);
-            transform.position = checkpoint;
+            StartCoroutine(Coroutine());
+            return;
+
+            IEnumerator Coroutine()
+            {
+                yield return new WaitForSeconds(1f);
+                transform.position = checkpoint;
+            }
         }
         public void SetCheckpoint(Vector3 pos)
             => checkpoint = pos;

@@ -47,6 +47,8 @@ namespace SchizoQuest.Characters.Vedal
 
         protected override bool CanSwap(bool toAlt)
         {
+            if (player.dying) return false;
+
             // swap to tutel - only on the ground
             if (toAlt) return controller._grounded;
             // swap to human - only when there's space above
