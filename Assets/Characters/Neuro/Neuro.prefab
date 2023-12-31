@@ -106,6 +106,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5393493286334341808}
   - component: {fileID: 5617432022757711298}
+  - component: {fileID: 5139102770463784754}
+  - component: {fileID: 2405337119709435250}
+  - component: {fileID: 4949265687634105370}
   m_Layer: 20
   m_Name: eliv
   m_TagString: Untagged
@@ -169,8 +172,8 @@ SpriteRenderer:
   m_SortingLayerID: 1056585295
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 997a2023b9ca0854fb44b7727857bc89, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 249481684, guid: ac0b8d767ef943f4d9fff328ac48ebd4, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -180,6 +183,62 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &5139102770463784754
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5684121791463374519}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2405337119709435250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5684121791463374519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89a8ca009b14008429f621808bba2086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_defaultAnim: {fileID: 7400000, guid: c119c13f3fa72b04192b808f21a8638b, type: 2}
+--- !u!114 &4949265687634105370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5684121791463374519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8408024877564daab24dd8dd3dfcf475, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 7360106311038818091}
+  animator: {fileID: 2405337119709435250}
+  idleFrontAnim: {fileID: 7400000, guid: c119c13f3fa72b04192b808f21a8638b, type: 2}
+  idleLeftAnim: {fileID: 7400000, guid: bb714455f5cc6364392c064244f89dca, type: 2}
+  idleRightAnim: {fileID: 7400000, guid: c119c13f3fa72b04192b808f21a8638b, type: 2}
+  moveLeftAnim: {fileID: 7400000, guid: bb714455f5cc6364392c064244f89dca, type: 2}
+  moveRightAnim: {fileID: 7400000, guid: c119c13f3fa72b04192b808f21a8638b, type: 2}
+  flipLeftAnims: 0
+  flipRightAnims: 0
+  playerController: {fileID: 7965457904131483031}
 --- !u!1 &7898439499675372773
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,6 +334,7 @@ GameObject:
   - component: {fileID: 6901806795032190127}
   - component: {fileID: 4535481315686714748}
   - component: {fileID: 4006096251098555599}
+  - component: {fileID: 7626182894319527369}
   m_Layer: 20
   m_Name: nuro
   m_TagString: Untagged
@@ -338,7 +398,7 @@ SpriteRenderer:
   m_SortingLayerID: 1056585295
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 997a2023b9ca0854fb44b7727857bc89, type: 3}
+  m_Sprite: {fileID: -1564660857, guid: 9a3f9ba7e88e7cc419bdc7c8c9e93376, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -382,7 +442,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89a8ca009b14008429f621808bba2086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_defaultAnim: {fileID: 0}
+  m_defaultAnim: {fileID: 7400000, guid: b56675484fd961f4ab9a8e64622f9a22, type: 2}
+--- !u!114 &7626182894319527369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7921001887652105597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8408024877564daab24dd8dd3dfcf475, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 7360106311038818091}
+  animator: {fileID: 4006096251098555599}
+  idleFrontAnim: {fileID: 7400000, guid: b56675484fd961f4ab9a8e64622f9a22, type: 2}
+  idleLeftAnim: {fileID: 7400000, guid: b37a9c12591130d4583c0fa017dbc18f, type: 2}
+  idleRightAnim: {fileID: 7400000, guid: b56675484fd961f4ab9a8e64622f9a22, type: 2}
+  moveLeftAnim: {fileID: 7400000, guid: b37a9c12591130d4583c0fa017dbc18f, type: 2}
+  moveRightAnim: {fileID: 7400000, guid: b56675484fd961f4ab9a8e64622f9a22, type: 2}
+  flipLeftAnims: 0
+  flipRightAnims: 0
+  playerController: {fileID: 7965457904131483031}
 --- !u!1001 &3506668514171159377
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -615,6 +697,22 @@ MonoBehaviour:
   middleColorEvil: {r: 1, g: 0, b: 0, a: 0.54509807}
   outsideColorEvil: {r: 0, g: 0, b: 0, a: 0}
   isEvil: 0
+--- !u!50 &7360106311038818091 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 2994542948100938228, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
+  m_PrefabInstance: {fileID: 5740569191512100575}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7965457904131483031 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2387018308218317640, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
+  m_PrefabInstance: {fileID: 5740569191512100575}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3857871987478843994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f61c64124c8575748994f087b9dc1b8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8413138110959230356 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4281764129697944395, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
