@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using SchizoQuest.Input;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -12,7 +13,9 @@ namespace SchizoQuest.Menu
         public Transform storyboard;
         public List<Image> panels;
         public List<float> storyboardYPositions;
+        public float transitionLength;
         public AnimationCurve movementCurve;
+        public AnimationCurve fadeCurve;
         public TitlescreenBehaviour titleScreen;
 
         private float _timeout = 0;
@@ -25,14 +28,27 @@ namespace SchizoQuest.Menu
         {
             _input = new InputActions();
 
-            _input.UI.Submit.performed += TryAdvance;
-            _input.UI.Submit.Enable();
+            // _input.UI.Submit.performed += TryAdvance;
+            // _input.UI.Submit.Enable();
+            //
+            // _input.UI.Click.performed += TryAdvance;
+            // _input.UI.Click.Enable();
+            //
+            // _input.UI.MainMenuAdvance.performed += TryAdvance;
+            // _input.UI.MainMenuAdvance.Enable();
+        }
 
-            _input.UI.Click.performed += TryAdvance;
-            _input.UI.Click.Enable();
+        private IEnumerator Start()
+        {
+            yield return new WaitForSeconds(3);
 
-            _input.UI.MainMenuAdvance.performed += TryAdvance;
-            _input.UI.MainMenuAdvance.Enable();
+            for (int i = 0; i < panels.Count; i++)
+            {
+                yield return CoAdvance();
+                yield return new WaitForSeconds(2);
+            }
+
+            yield return CoSwitchToTitleScreen();
         }
 
         private void Update()
@@ -67,16 +83,16 @@ namespace SchizoQuest.Menu
             Color color = default;
             Vector3 position = default;
 
-            for (float t = 0; t < 1; t += Time.deltaTime)
+            for (float t = 0; t < transitionLength; t += Time.deltaTime)
             {
                 // Fade in panel
                 color = panel.color;
-                color.a = Mathf.Lerp(0, 1, t);
+                color.a = Mathf.Lerp(0, 1, fadeCurve.Evaluate(t / transitionLength));
                 panel.color = color;
 
                 // Move storyboard
                 position = storyboard.localPosition;
-                position.y = Mathf.Lerp(oldYPos, storyboardYPositions[_currentPanel], movementCurve.Evaluate(t));
+                position.y = Mathf.Lerp(oldYPos, storyboardYPositions[_currentPanel], movementCurve.Evaluate(t / transitionLength));
                 storyboard.localPosition = position;
 
                 yield return null;

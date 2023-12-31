@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Runtime.CompilerServices;
 using SchizoQuest.Input;
 using TMPro;
 using UnityEngine;
@@ -16,9 +17,8 @@ namespace SchizoQuest.Menu
         public AnimationCurve movementCurve;
         public AnimationCurve fadeInCurve;
 
-        private bool _imageShown;
         private float _timeout;
-        private bool _ready = true;
+        private bool _ready = false;
         private InputActions _input;
         private bool _isMainMenuDisplayed;
 
@@ -26,14 +26,19 @@ namespace SchizoQuest.Menu
         {
             _input = new InputActions();
 
-            _input.UI.Submit.performed += TryDisplayMainMenu;
+            /*_input.UI.Submit.performed += TryDisplayMainMenu;
             _input.UI.Submit.Enable();
 
             _input.UI.Click.performed += TryDisplayMainMenu;
             _input.UI.Click.Enable();
 
             _input.UI.MainMenuAdvance.performed += TryDisplayMainMenu;
-            _input.UI.MainMenuAdvance.Enable();
+            _input.UI.MainMenuAdvance.Enable();*/
+        }
+
+        private void Start()
+        {
+            StartCoroutine(CoFadeIn());
         }
 
         private void Update()
@@ -45,12 +50,7 @@ namespace SchizoQuest.Menu
         {
             if (_ready && _timeout <= 0)
             {
-                if (!_imageShown)
-                {
-                    _imageShown = true;
-                    StartCoroutine(CoFadeIn());
-                }
-                else if (!_isMainMenuDisplayed)
+                if (!_isMainMenuDisplayed)
                 {
                     _isMainMenuDisplayed = true;
                     StartCoroutine(CoDisplayMainMenu());
@@ -87,6 +87,8 @@ namespace SchizoQuest.Menu
 
             _timeout = 0.5f;
             _ready = true;
+
+            yield return CoDisplayMainMenu();
         }
 
         private IEnumerator CoDisplayMainMenu()

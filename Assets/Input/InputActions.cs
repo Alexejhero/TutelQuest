@@ -462,6 +462,15 @@ namespace SchizoQuest.Input
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""AnyKey"",
+                    ""type"": ""Button"",
+                    ""id"": ""6dcf9bc7-c114-4718-8399-1b661a85e30b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -904,6 +913,61 @@ namespace SchizoQuest.Input
                     ""action"": ""MainMenuAdvance"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""65f55db0-e659-4f4e-a00f-c6f85ce5a0eb"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""AnyKey"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""980fc96a-9011-44c7-b770-088a08840e15"",
+                    ""path"": ""<Mouse>/middleButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""AnyKey"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""54c369ca-53f0-4ced-802d-ab93f04a5eb3"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""AnyKey"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""924b17b3-f620-48e4-b0bd-6a281e4ef507"",
+                    ""path"": ""<Mouse>/press"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""AnyKey"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f7c2affc-8ad0-4e52-93fd-0c76e4679aa9"",
+                    ""path"": ""<Keyboard>/anyKey"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""AnyKey"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -993,6 +1057,7 @@ namespace SchizoQuest.Input
             m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
             m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
             m_UI_MainMenuAdvance = m_UI.FindAction("MainMenuAdvance", throwIfNotFound: true);
+            m_UI_AnyKey = m_UI.FindAction("AnyKey", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -1159,6 +1224,7 @@ namespace SchizoQuest.Input
         private readonly InputAction m_UI_TrackedDevicePosition;
         private readonly InputAction m_UI_TrackedDeviceOrientation;
         private readonly InputAction m_UI_MainMenuAdvance;
+        private readonly InputAction m_UI_AnyKey;
         public struct UIActions
         {
             private @InputActions m_Wrapper;
@@ -1174,6 +1240,7 @@ namespace SchizoQuest.Input
             public InputAction @TrackedDevicePosition => m_Wrapper.m_UI_TrackedDevicePosition;
             public InputAction @TrackedDeviceOrientation => m_Wrapper.m_UI_TrackedDeviceOrientation;
             public InputAction @MainMenuAdvance => m_Wrapper.m_UI_MainMenuAdvance;
+            public InputAction @AnyKey => m_Wrapper.m_UI_AnyKey;
             public InputActionMap Get() { return m_Wrapper.m_UI; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -1216,6 +1283,9 @@ namespace SchizoQuest.Input
                 @MainMenuAdvance.started += instance.OnMainMenuAdvance;
                 @MainMenuAdvance.performed += instance.OnMainMenuAdvance;
                 @MainMenuAdvance.canceled += instance.OnMainMenuAdvance;
+                @AnyKey.started += instance.OnAnyKey;
+                @AnyKey.performed += instance.OnAnyKey;
+                @AnyKey.canceled += instance.OnAnyKey;
             }
 
             private void UnregisterCallbacks(IUIActions instance)
@@ -1253,6 +1323,9 @@ namespace SchizoQuest.Input
                 @MainMenuAdvance.started -= instance.OnMainMenuAdvance;
                 @MainMenuAdvance.performed -= instance.OnMainMenuAdvance;
                 @MainMenuAdvance.canceled -= instance.OnMainMenuAdvance;
+                @AnyKey.started -= instance.OnAnyKey;
+                @AnyKey.performed -= instance.OnAnyKey;
+                @AnyKey.canceled -= instance.OnAnyKey;
             }
 
             public void RemoveCallbacks(IUIActions instance)
@@ -1338,6 +1411,7 @@ namespace SchizoQuest.Input
             void OnTrackedDevicePosition(InputAction.CallbackContext context);
             void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
             void OnMainMenuAdvance(InputAction.CallbackContext context);
+            void OnAnyKey(InputAction.CallbackContext context);
         }
     }
 }

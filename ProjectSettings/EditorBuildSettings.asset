@@ -8,11 +8,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Menu/Menu.unity
     guid: b6e6ad4bfd47b5e46825ca580b9a5727
-  - enabled: 0
-    path: Assets/Game/test.unity
-    guid: 40c6cb7cc480f0948819045ecb8258ce
-  - enabled: 1
-    path: Assets/Game/Map/level-map.unity
-    guid: 44509a1944e510d44bec34be6c785244
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 44965964921789e468a05899dc1f3d71, type: 2}

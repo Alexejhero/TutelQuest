@@ -99,5 +99,11 @@ Packages/PowerSpriteAnimator/*
 !Packages/PowerSpriteAnimator/package.json
 !Packages/PowerSpriteAnimator/package.json.meta
 !Packages/PowerSpriteAnimator/README.txt
-!Packages/PowerSpriteAnimator/PowerTools.asmdef
-!Packages/PowerSpriteAnimator/PowerTools.asmdef.meta
+Packages/PowerSpriteAnimator/Scripts/*
+!Packages/PowerSpriteAnimator/Scripts/
+!Packages/PowerSpriteAnimator/Scripts/PowerTools.asmdef
+!Packages/PowerSpriteAnimator/Scripts/PowerTools.asmdef.meta
+Packages/PowerSpriteAnimator/Scripts/Editor/*
+!Packages/PowerSpriteAnimator/Scripts/Editor/
+!Packages/PowerSpriteAnimator/Scripts/Editor/PowerTools.Editor.asmdef
+!Packages/PowerSpriteAnimator/Scripts/Editor/PowerTools.Editor.asmdef.meta
