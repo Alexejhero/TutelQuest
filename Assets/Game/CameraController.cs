@@ -1,4 +1,5 @@
 using System;
+using SchizoQuest.Characters;
 using UnityEngine;
 
 namespace SchizoQuest.Game
@@ -16,6 +17,7 @@ namespace SchizoQuest.Game
 
         private Vector3 currVelocity = Vector3.zero;
 		private Camera cam;
+		public static float DistanceToActivePlayer => (Camera.main.transform.position - Player.ActivePlayer.transform.position).magnitude;
 
 		private void Awake()
 		{

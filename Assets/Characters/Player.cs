@@ -1,3 +1,4 @@
+using System.Collections;
 using SchizoQuest.Game;
 using SchizoQuest.Game.Items;
 using TarodevController;
@@ -33,10 +34,18 @@ namespace SchizoQuest.Characters
         public void OnEnable()
         {
             Camera.main!.GetComponent<CameraController>().target = transform;
-            controller.movementActive = true;
             ActivePlayer = this;
-            characterSwitchParticleEffect.Play();
+            controller.movementActive = false;
+            StartCoroutine(WaitUntilCameraIsClose());
             SetSortOrder(1);
+        }
+
+        public IEnumerator WaitUntilCameraIsClose()
+        {
+            yield return new WaitUntil(() => CameraController.DistanceToActivePlayer < 30f);
+            yield return new WaitForSeconds(0.2f);
+            controller.movementActive = true;
+            characterSwitchParticleEffect.Play();
         }
 
         public void OnDisable()
