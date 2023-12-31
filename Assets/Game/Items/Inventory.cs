@@ -4,10 +4,10 @@ namespace SchizoQuest.Game.Items
 {
     public class Inventory : MonoBehaviour
     {
-        public Carryable item;
+        public Item item;
         public Transform socket;
 
-        public void Pickup(Carryable carryable)
+        public void Pickup(Item carryable)
         {
             item = carryable;
             Transform attachPoint = carryable.plug ? carryable.plug : carryable.transform;
@@ -15,7 +15,7 @@ namespace SchizoQuest.Game.Items
             attachPoint.localPosition = Vector3.zero;
             carryable.OnPickedUp();
         }
-        public void Drop(Carryable carryable)
+        public void Drop(Item carryable)
         {
             item = null;
             // TODO: set down on the ground nearby

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace SchizoQuest.Game.Items
 {
-    public sealed class Carryable : MonoBehaviour, IInteractable
+    public sealed class Item : MonoBehaviour, IInteractable
     {
         public ItemType itemType;
         public Transform plug;

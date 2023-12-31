@@ -23,7 +23,7 @@ namespace SchizoQuest.Characters
             {
                 EffectsManager.Instance.PlayEffect(EffectsManager.Effects.death, 0.3f);
                 if (!inventory.item) return;
-                Carryable item = inventory.item;
+                Item item = inventory.item;
                 inventory.Drop(item);
                 Respawnable itemRespawn = item.GetComponent<Respawnable>();
                 itemRespawn.Respawn();
