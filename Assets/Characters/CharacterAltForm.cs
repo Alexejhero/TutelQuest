@@ -33,12 +33,18 @@ namespace SchizoQuest.Characters
             Instantiate(smokePoof, transform);
             yield return new WaitForSeconds(swapDelay);
 
+            SwapImmediate();
+        }
+
+        protected void SwapImmediate()
+        {
             isAlt = !isAlt;
             altForm.SetActive(isAlt);
             regularForm.SetActive(!isAlt);
             _swapping = false;
             OnSwap();
         }
+
         protected abstract bool CanSwap(bool toAlt);
         protected abstract void OnSwap();
     }
