@@ -725,6 +725,17 @@ SpriteMask:
   m_CorrespondingSourceObject: {fileID: 4579083039951660849, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
   m_PrefabInstance: {fileID: 1625013826}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1625013828 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7470432330437033608, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
+  m_PrefabInstance: {fileID: 1625013826}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13356e74df5c4a8486bc954d2ca4055c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1757051277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -984,6 +995,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2291332061708474922, guid: c9cd348d94c22aa48a712e13279bed4f, type: 3}
+      propertyPath: switcher
+      value: 
+      objectReference: {fileID: 1625013828}
+    - target: {fileID: 5926935304583919047, guid: c9cd348d94c22aa48a712e13279bed4f, type: 3}
+      propertyPath: switcher
+      value: 
+      objectReference: {fileID: 1625013828}
     - target: {fileID: 8513634248435685752, guid: c9cd348d94c22aa48a712e13279bed4f, type: 3}
       propertyPath: m_Name
       value: AssemblyLeft01
@@ -1028,7 +1047,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8987204088471224313, guid: c9cd348d94c22aa48a712e13279bed4f, type: 3}
+      propertyPath: switcher
+      value: 
+      objectReference: {fileID: 1625013828}
+    m_RemovedComponents:
+    - {fileID: 5926935304583919047, guid: c9cd348d94c22aa48a712e13279bed4f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

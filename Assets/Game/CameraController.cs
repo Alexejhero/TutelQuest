@@ -15,9 +15,8 @@ namespace SchizoQuest.Game
         [Range(0.01f, 0.9f)]
         private float smoothTime = 0.35f;
 
-        private Vector3 currVelocity = Vector3.zero;
+        internal static Vector3 currVelocity = Vector3.zero;
 		private Camera cam;
-		public static float DistanceToActivePlayer => (Camera.main.transform.position - Player.ActivePlayer.transform.position).magnitude;
 
 		private void Awake()
 		{
