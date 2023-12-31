@@ -231,9 +231,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 7360106311038818091}
   animator: {fileID: 2405337119709435250}
-  idleFrontAnim: {fileID: 7400000, guid: c119c13f3fa72b04192b808f21a8638b, type: 2}
-  idleLeftAnim: {fileID: 7400000, guid: bb714455f5cc6364392c064244f89dca, type: 2}
-  idleRightAnim: {fileID: 7400000, guid: c119c13f3fa72b04192b808f21a8638b, type: 2}
+  idleFrontAnim: {fileID: 7400000, guid: d4e44eaed3805df4fbb47c38a5e73742, type: 2}
+  idleLeftAnim: {fileID: 7400000, guid: ee77523154d912942b3a57217b52e89a, type: 2}
+  idleRightAnim: {fileID: 7400000, guid: fb59703e87dcda14c9718acaf3bdcdd2, type: 2}
   moveLeftAnim: {fileID: 7400000, guid: bb714455f5cc6364392c064244f89dca, type: 2}
   moveRightAnim: {fileID: 7400000, guid: c119c13f3fa72b04192b808f21a8638b, type: 2}
   flipLeftAnims: 0
@@ -457,9 +457,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 7360106311038818091}
   animator: {fileID: 4006096251098555599}
-  idleFrontAnim: {fileID: 7400000, guid: b56675484fd961f4ab9a8e64622f9a22, type: 2}
-  idleLeftAnim: {fileID: 7400000, guid: b37a9c12591130d4583c0fa017dbc18f, type: 2}
-  idleRightAnim: {fileID: 7400000, guid: b56675484fd961f4ab9a8e64622f9a22, type: 2}
+  idleFrontAnim: {fileID: 7400000, guid: 51eb0de56c86aeb409c8fbd9823880a3, type: 2}
+  idleLeftAnim: {fileID: 7400000, guid: 5187d83e88e454045899a5c93f8bcf66, type: 2}
+  idleRightAnim: {fileID: 7400000, guid: eff281d0073df9444852c2107065dc43, type: 2}
   moveLeftAnim: {fileID: 7400000, guid: b37a9c12591130d4583c0fa017dbc18f, type: 2}
   moveRightAnim: {fileID: 7400000, guid: b56675484fd961f4ab9a8e64622f9a22, type: 2}
   flipLeftAnims: 0
@@ -659,8 +659,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47a28ba9c40493b4991834101c624b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  neuroToEvilTransitonMaterial: {fileID: -876546973899608171, guid: a9c882f811e843740ab6727c941063ef, type: 3}
-  rr: {fileID: 2723949494721502351}
   mask: {fileID: 9141870669997926307}
   maskMaxSize: 100
   phase: 0
@@ -691,7 +689,7 @@ MonoBehaviour:
   middleStripSize: 0.209
   centerGradientStrength: 0
   centerColorNeuro: {r: 0.6886792, g: 0.57270825, b: 0.48402455, a: 1}
-  middleColorNeruo: {r: 0, g: 1, b: 1, a: 0.22745098}
+  middleColorNeuro: {r: 0, g: 1, b: 1, a: 1}
   outsideColorNeuro: {r: 0, g: 0, b: 0, a: 0}
   centerColorEvil: {r: 0.3301887, g: 0.08425539, b: 0.07320221, a: 1}
   middleColorEvil: {r: 1, g: 0, b: 0, a: 0.54509807}
