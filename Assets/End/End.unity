@@ -505,11 +505,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -591745910
-      Data2: 1271503985
-      Data3: -1002978378
-      Data4: -1810885965
-    Path: event:/music/menu
+      Data1: 1279901323
+      Data2: 1330470030
+      Data3: 675584417
+      Data4: -906372030
+    Path: event:/music/end
   Event: 
   PlayEvent: 1
   StopEvent: 2
