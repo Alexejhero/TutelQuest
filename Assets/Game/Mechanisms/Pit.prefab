@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1663099015860328101}
   - component: {fileID: 9074945645181718071}
-  m_Layer: 15
+  m_Layer: 25
   m_Name: evil
   m_TagString: NoEvil
   m_Icon: {fileID: 0}
@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1607219517
-  m_SortingLayer: -1
+  m_SortingLayerID: -2111657811
+  m_SortingLayer: 3
   m_SortingOrder: -5
   m_Sprite: {fileID: 21300000, guid: 78ea29f9773050848a2b9e4f79c595b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -272,7 +272,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7735211145134821391}
   - component: {fileID: 2923621379451968379}
-  m_Layer: 13
+  m_Layer: 24
   m_Name: neuro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,8 +332,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1607219517
-  m_SortingLayer: -1
+  m_SortingLayerID: -2111657811
+  m_SortingLayer: 3
   m_SortingOrder: -4
   m_Sprite: {fileID: 21300000, guid: 71dd995776b6e0648b9ac7d2f9745a10, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
