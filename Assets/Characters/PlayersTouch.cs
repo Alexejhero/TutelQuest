@@ -1,4 +1,7 @@
+using System.Collections;
 using SchizoQuest.Game.Mechanisms;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace SchizoQuest.Characters
 {
@@ -7,6 +10,13 @@ namespace SchizoQuest.Characters
         protected override void OnEnter(Player target)
         {
             EffectsManager.Instance.PlayEffect(EffectsManager.Effects.gameFinish, 2f);
+            StartCoroutine(Coroutine());
+
+            IEnumerator Coroutine()
+            {
+                yield return new WaitForSeconds(1.8f);
+                SceneManager.LoadScene("End");
+            }
         }
 
         protected override void OnExit(Player target)
