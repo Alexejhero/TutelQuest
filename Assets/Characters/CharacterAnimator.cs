@@ -1,5 +1,6 @@
 ﻿using System;
 using PowerTools;
+using SchizoQuest.Game;
 using TarodevController;
 using UnityEngine;
 
@@ -29,6 +30,8 @@ namespace SchizoQuest.Characters
         private float _originalScaleX;
         private int _lastMoveDirection = 0;
         private AnimationClip _currentClip;
+
+        private bool _hintHidden;
 
         protected AnimationClip CurrentClip
         {
@@ -75,12 +78,24 @@ namespace SchizoQuest.Characters
             {
                 if (velocity.x < 0)
                 {
+                    if (!_hintHidden)
+                    {
+                        _hintHidden = true;
+                        playerController.SendMessage("HideHint", HintType.WASD, SendMessageOptions.DontRequireReceiver);
+                    }
+
                     CurrentClip = playerController._grounded ? MoveLeftAnim : IdleLeftAnim;
                     _lastMoveDirection = -1;
                     SetFlip(FlipLeftAnims);
                 }
                 else if (velocity.x > 0)
                 {
+                    if (!_hintHidden)
+                    {
+                        _hintHidden = true;
+                        playerController.SendMessage("HideHint", HintType.WASD, SendMessageOptions.DontRequireReceiver);
+                    }
+
                     CurrentClip = playerController._grounded ? MoveRightAnim : IdleRightAnim;
                     _lastMoveDirection = 1;
                     SetFlip(FlipRightAnims);

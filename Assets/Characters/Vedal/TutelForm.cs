@@ -24,6 +24,8 @@ namespace SchizoQuest.Characters.Vedal
 
         public bool IsDashing { get; private set; }
 
+        private bool _hintHidden = false;
+
         private int _collMask;
         private ContactFilter2D _filter;
         private RaycastHit2D[] _raycasts;
@@ -57,6 +59,12 @@ namespace SchizoQuest.Characters.Vedal
         }
         protected override void OnSwap()
         {
+            if (!_hintHidden)
+            {
+                _hintHidden = true;
+                controller.SendMessage("HideHint", HintType.F, SendMessageOptions.DontRequireReceiver);
+            }
+
             if (isAlt)
             {
                 IsDashing = Mathf.Abs(Mathf.Abs(controller._frameVelocity.x) - controller.stats.MaxSpeed) <= 0.5f;

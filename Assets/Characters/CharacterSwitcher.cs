@@ -17,6 +17,8 @@ namespace SchizoQuest.Characters
         [NonSerialized]
         public StudioEventEmitter _music;
 
+        private bool _hintHidden;
+
         private void Awake()
         {
             _music = Camera.main!.GetComponent<StudioEventEmitter>();
@@ -36,6 +38,12 @@ namespace SchizoQuest.Characters
         public void OnSwitchCharacter()
         {
             if (GlobalTransformCooldown > 0) return;
+
+            if (!_hintHidden)
+            {
+                _hintHidden = true;
+                _currentPlayer.SendMessage("HideHint", HintType.C, SendMessageOptions.DontRequireReceiver);
+            }
 
             _currentPlayer.enabled = false;
             _currentIndex++;

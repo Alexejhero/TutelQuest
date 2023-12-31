@@ -308,8 +308,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: AssemblyRight00
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7571834825474638344, guid: 7132d4610724b8c4386f1d62f1cdc9a3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -655,19 +654,19 @@ PrefabInstance:
       objectReference: {fileID: 1114197524}
     - target: {fileID: 3860466389485280518, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 385.3
+      value: 614.76
       objectReference: {fileID: 0}
     - target: {fileID: 3860466389485280518, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11
+      value: 38.19
       objectReference: {fileID: 0}
     - target: {fileID: 4809490840050660992, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 244.7
+      value: -19.72
       objectReference: {fileID: 0}
     - target: {fileID: 4809490840050660992, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.8
+      value: 4.52
       objectReference: {fileID: 0}
     - target: {fileID: 7528141543748926353, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
       propertyPath: m_Name
@@ -716,7 +715,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 340478801235069919, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
 --- !u!331 &1625013827 stripped
 SpriteMask:
@@ -868,14 +870,6 @@ PrefabInstance:
       propertyPath: activates.Array.data[1]
       value: 
       objectReference: {fileID: 1072930137}
-    - target: {fileID: 4561388700920392288, guid: 7ad3c702f07c2824fb5b5da8f6f476c8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -8.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4561388700920392288, guid: 7ad3c702f07c2824fb5b5da8f6f476c8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.8
-      objectReference: {fileID: 0}
     - target: {fileID: 5419902333463975533, guid: 7ad3c702f07c2824fb5b5da8f6f476c8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 215.12764

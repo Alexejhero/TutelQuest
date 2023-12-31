@@ -10,6 +10,9 @@ namespace SchizoQuest.Game.Items
 
         private ContactFilter2D _filter;
         private RaycastHit2D[] _raycasts;
+
+        private bool _hintHidden;
+
         private void Awake()
         {
             _raycasts = new RaycastHit2D[1];
@@ -23,6 +26,12 @@ namespace SchizoQuest.Game.Items
 
         public void Pickup(Item carryable)
         {
+            if (!_hintHidden)
+            {
+                _hintHidden = true;
+                Player.ActivePlayer.SendMessage("HideHint", HintType.E, SendMessageOptions.DontRequireReceiver);
+            }
+
             item = carryable;
             Transform attachPoint = carryable.plug ? carryable.plug : carryable.transform;
             attachPoint.SetParent(socket, false);
@@ -39,7 +48,7 @@ namespace SchizoQuest.Game.Items
                 Debug.LogWarning("Drop raycast hit nothing even though we're grounded");
                 return;
             }
-            
+
             DetachItem();
             RaycastHit2D rc = _raycasts[0];
             Debug.Log($"Drop raycast {rc.collider} {rc.point}");
