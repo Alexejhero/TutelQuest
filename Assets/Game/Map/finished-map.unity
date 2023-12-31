@@ -123,37 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &11438356 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8737370556511560389, guid: 3440ae8709de6374d864ced2be17bdd7, type: 3}
-  m_PrefabInstance: {fileID: 1595127177}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &11438360 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3837973750040396466, guid: 3440ae8709de6374d864ced2be17bdd7, type: 3}
-  m_PrefabInstance: {fileID: 1595127177}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 11438356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a92b77997c3b7fc45afea83723583d96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11438361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 11438356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 123f158cd20b428da8edb93cede96b2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isOn: 0
-  activates:
-  - {fileID: 11438360}
 --- !u!20 &1114197524 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 7626023813121972985, guid: 17b17f348fcb4104bb2e52d8d82bb18a, type: 3}
@@ -328,10 +297,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8737370556511560389, guid: 3440ae8709de6374d864ced2be17bdd7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 11438361}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3440ae8709de6374d864ced2be17bdd7, type: 3}
 --- !u!1001 &1625013826
 PrefabInstance:
@@ -408,10 +374,6 @@ PrefabInstance:
     - target: {fileID: 8420520819130045128, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
       propertyPath: m_Layer
       value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 9019952877335944736, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
-      propertyPath: mask
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -112,7 +112,7 @@ Transform:
   m_GameObject: {fileID: 120569656014757273}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.91, y: -10.26, z: -0.10164547}
+  m_LocalPosition: {x: -13.12, y: -10.26, z: -0.10164547}
   m_LocalScale: {x: 2, y: 12, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3127,8 +3127,8 @@ EdgeCollider2D:
   m_EdgeRadius: 0
   m_Points:
   - {x: -0.52745223, y: -1.5329272}
-  - {x: -0.65762705, y: 0.42129233}
-  - {x: -0.6272381, y: 0.59282434}
+  - {x: -0.6715847, y: 0.37392014}
+  - {x: -0.6869133, y: 0.6232836}
   - {x: -0.5065642, y: 0.62424254}
   - {x: -0.4956839, y: 0.70846087}
   - {x: -0.36820245, y: 0.70269525}
@@ -4164,6 +4164,7 @@ GameObject:
   - component: {fileID: 3837973750040396466}
   - component: {fileID: 384737107159727205}
   - component: {fileID: 4790524408468285959}
+  - component: {fileID: 70732849332949625}
   m_Layer: 0
   m_Name: PlatformSegment04 (3)
   m_TagString: Untagged
@@ -4280,6 +4281,21 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!114 &70732849332949625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8737370556511560389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 123f158cd20b428da8edb93cede96b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOn: 0
+  activates:
+  - {fileID: 3837973750040396466}
 --- !u!1 &8957368777156156776
 GameObject:
   m_ObjectHideFlags: 0

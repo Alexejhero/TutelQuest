@@ -1,5 +1,6 @@
 ﻿using System;
 using PowerTools;
+using TarodevController;
 using UnityEngine;
 
 namespace SchizoQuest.Characters
@@ -15,6 +16,7 @@ namespace SchizoQuest.Characters
         public AnimationClip moveRightAnim;
         public bool flipLeftAnims;
         public bool flipRightAnims;
+        public PlayerController playerController;
 
         public virtual AnimationClip IdleFrontAnim => idleFrontAnim;
         public virtual AnimationClip IdleLeftAnim => idleLeftAnim;
@@ -66,13 +68,13 @@ namespace SchizoQuest.Characters
             {
                 if (velocity.x < 0)
                 {
-                    CurrentClip = MoveLeftAnim;
+                    CurrentClip = playerController._grounded ? MoveLeftAnim : IdleLeftAnim;
                     _lastMoveDirection = -1;
                     DoFlip(FlipLeftAnims);
                 }
                 else
                 {
-                    CurrentClip = MoveRightAnim;
+                    CurrentClip = playerController._grounded ? MoveRightAnim : IdleRightAnim;
                     _lastMoveDirection = 1;
                     DoFlip(FlipRightAnims);
                 }

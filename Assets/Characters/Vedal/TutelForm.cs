@@ -23,14 +23,11 @@ namespace SchizoQuest.Characters.Vedal
 
         public bool IsDashing { get; private set; }
 
-        private bool _grounded;
         private int _collMask;
         private ContactFilter2D _filter;
         private RaycastHit2D[] _raycasts;
         private void Awake()
         {
-            player.controller.GroundedChanged += (isGrounded, _)
-                => _grounded = isGrounded;
             _collMask = Physics2D.GetLayerCollisionMask(gameObject.layer) & ~(1 << gameObject.layer);
             _filter = new ContactFilter2D()
             {
@@ -44,7 +41,7 @@ namespace SchizoQuest.Characters.Vedal
         protected override bool CanSwap(bool toAlt)
         {
             // swap to tutel - only on the ground
-            if (toAlt) return _grounded;
+            if (toAlt) return controller._grounded;
             // swap to human - only when there's space above
 
             if (IsDashing) return false; // cannot swap while dashing
