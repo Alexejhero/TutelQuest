@@ -16,6 +16,7 @@ namespace SchizoQuest.Characters
         private int _currentIndex;
         [NonSerialized]
         public StudioEventEmitter _music;
+        public bool enableSwitching = true;
 
         private void Awake()
         {
@@ -36,6 +37,7 @@ namespace SchizoQuest.Characters
         public void OnSwitchCharacter()
         {
             if (GlobalTransformCooldown > 0) return;
+            if (!enableSwitching) return;
 
             _currentPlayer.enabled = false;
             _currentIndex++;
