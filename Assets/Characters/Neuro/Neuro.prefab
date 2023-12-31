@@ -273,6 +273,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3483891910907884511}
   - component: {fileID: 6901806795032190127}
+  - component: {fileID: 4535481315686714748}
+  - component: {fileID: 4006096251098555599}
   m_Layer: 20
   m_Name: nuro
   m_TagString: Untagged
@@ -337,7 +339,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 997a2023b9ca0854fb44b7727857bc89, type: 3}
-  m_Color: {r: 1, g: 0.59289265, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -347,6 +349,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &4535481315686714748
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7921001887652105597}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4006096251098555599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7921001887652105597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89a8ca009b14008429f621808bba2086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_defaultAnim: {fileID: 0}
 --- !u!1001 &3506668514171159377
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -467,7 +503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8801004962465848453, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
       propertyPath: m_Name
-      value: Neuro Variant
+      value: Neuro
       objectReference: {fileID: 0}
     - target: {fileID: 8801004962465848453, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
       propertyPath: m_TagString
@@ -528,6 +564,7 @@ MonoBehaviour:
   evilSwitchParticleEffect: {fileID: 2472505819947592442, guid: 8d325820475c9b347ac37753db9b2634, type: 3}
   neuroEvilTransitionManager: {fileID: 4359227608483978930}
   switchTransitionDuration: 0.5
+  enableSwitching: 1
 --- !u!114 &4359227608483978930
 MonoBehaviour:
   m_ObjectHideFlags: 0
