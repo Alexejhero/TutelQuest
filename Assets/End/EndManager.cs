@@ -19,7 +19,7 @@ namespace SchizoQuest.End
 
             image.color = Color.white;
 
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(4.5f);
 
             Application.Quit();
         }
