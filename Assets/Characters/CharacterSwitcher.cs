@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using FMODUnity;
+using SchizoQuest.Audio;
+using SchizoQuest.Game;
 using UnityEngine;
 
 namespace SchizoQuest.Characters
@@ -28,6 +30,7 @@ namespace SchizoQuest.Characters
         private void Update()
         {
             GlobalTransformCooldown -= Time.deltaTime;
+            AudioSystem.UpdateSfxMuteWhileSwitchingCharacters(_currentPlayer);
         }
 
         public void OnSwitchCharacter()

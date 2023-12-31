@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{2a019402-e1e6-4578-9bae-4a08dd9f21f6}">
+		<property name="name">
+			<value>Distance to Active Character</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ed5b2d1a-af62-4d06-ac9c-c12c4ccfd9f5}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{0a79ca84-9b8e-4a5c-842e-79002bbc26e0}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{0a79ca84-9b8e-4a5c-842e-79002bbc26e0}">
+		<property name="maximum">
+			<value>200</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>100</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>
