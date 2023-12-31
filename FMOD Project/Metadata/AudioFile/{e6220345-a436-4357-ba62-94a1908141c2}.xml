@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{e6220345-a436-4357-ba62-94a1908141c2}">
 		<property name="assetPath">
-			<value>New Menu Theme Loop.wav</value>
+			<value>music/New Menu Theme Loop.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>
