@@ -1,16 +1,17 @@
 using UnityEngine;
 using SchizoQuest.Characters;
+using System.Collections;
+
+#if UNITY_EDITOR
+
+using UnityEditor;
+
+#endif
 
 namespace SchizoQuest.Transition_effects
 {
     public class NeuroEvilTransitionManager : MonoBehaviour
     {
-        private enum EvilNeuro
-        {
-            neuro = 0,
-            evil = 1,
-        }
-
         public SpriteMask mask;
         public float maskMaxSize = 100f;
 
@@ -36,10 +37,6 @@ namespace SchizoQuest.Transition_effects
 
         public bool isEvil = false;
 
-        private float _playEndTime;
-        private float _playStartTime;
-        private float _duration = 0.1f;
-
         #region ids
 
         private static readonly int playerPos = Shader.PropertyToID("_TRAN_PlayerPos");
@@ -52,51 +49,74 @@ namespace SchizoQuest.Transition_effects
 
         #endregion ids
 
-        private void SetProps(EvilNeuro en)
+        private void Awake()
+        {
+#if UNITY_EDITOR
+            EditorApplication.playModeStateChanged += ClearEffectOnStopIfPausedMidEffect;
+#endif
+            Shader.SetGlobalFloat(phaseID, 0f);
+        }
+
+#if UNITY_EDITOR
+
+        private void ClearEffectOnStopIfPausedMidEffect(PlayModeStateChange state)
+        {
+            if (state == PlayModeStateChange.ExitingPlayMode)
+            {
+                Shader.SetGlobalFloat(phaseID, 0f);
+            }
+        }
+
+#endif
+
+        private void SetProps(bool isEvil)
         {
             Shader.SetGlobalFloat(midThicknessID, middleStripSize);
             Shader.SetGlobalFloat(gradCenterID, centerGradientStrength);
 
-            switch (en)
+            if (isEvil)
             {
-                case EvilNeuro.evil:
-                    Shader.SetGlobalColor(centerColorID, centerColorEvil);
-                    Shader.SetGlobalColor(midColorID, middleColorEvil);
-                    Shader.SetGlobalColor(outsideColorID, outsideColorEvil);
-                    return;
-
-                case EvilNeuro.neuro:
-                    Shader.SetGlobalColor(centerColorID, centerColorNeuro);
-                    Shader.SetGlobalColor(midColorID, middleColorNeuro);
-                    Shader.SetGlobalColor(outsideColorID, outsideColorNeuro);
-                    return;
+                Shader.SetGlobalColor(centerColorID, centerColorEvil);
+                Shader.SetGlobalColor(midColorID, middleColorEvil);
+                Shader.SetGlobalColor(outsideColorID, outsideColorEvil);
+            }
+            else
+            {
+                Shader.SetGlobalColor(centerColorID, centerColorNeuro);
+                Shader.SetGlobalColor(midColorID, middleColorNeuro);
+                Shader.SetGlobalColor(outsideColorID, outsideColorNeuro);
             }
         }
 
         public void Play(float duration = 1f)
         {
-            _playStartTime = Time.time;
-            _duration = Mathf.Max(float.Epsilon, duration);
-            _playEndTime = _playStartTime + _duration;
+            StartCoroutine(PlayRoutine(duration, isEvil));
+        }
+
+        private IEnumerator PlayRoutine(float duration, bool isEvil)
+        {
+            for (float t = 0; t < duration; t += Time.deltaTime)
+            {
+                _phase = t / duration;
+                _phase = isEvil ? _phase : 1 - _phase;
+                _phase = phaseCurve.Evaluate(_phase);
+                mask.transform.localScale = Mathf.Abs(Mathf.Clamp01(_phase)) * maskMaxSize * Vector3.one;
+
+                SetProps(isEvil);
+                Shader.SetGlobalFloat(phaseID, _phase);
+                yield return null;
+            }
+            Shader.SetGlobalFloat(phaseID, isEvil ? 1f : 0f);
+            if (isEvil)
+            {
+                mask.transform.localScale = 1000 * maskMaxSize * Vector3.one;
+            }
+            else { mask.transform.localScale = Vector3.zero; } // reset if application was frozen mid - expansion.
         }
 
         private void Update()
         {
-            if (Time.time < _playEndTime)
-            {
-                phase = (Time.time - _playStartTime) / _duration;
-                phase = isEvil ? phase : 1 - phase;
-                _phase = phaseCurve.Evaluate(phase + float.Epsilon);
-                mask.transform.localScale = Mathf.Abs(Mathf.Clamp01(_phase)) * maskMaxSize * Vector3.one;
-
-                SetProps(isEvil ? EvilNeuro.evil : EvilNeuro.neuro);
-                Shader.SetGlobalVector(playerPos, Camera.main.WorldToScreenPoint(Player.ActivePlayer.transform.position));
-                Shader.SetGlobalFloat(phaseID, _phase);
-            }
-            else
-            {
-                if (isEvil) mask.transform.localScale = 1000 * maskMaxSize * Vector3.one;
-            }
+            Shader.SetGlobalVector(playerPos, Camera.main.WorldToScreenPoint(Player.ActivePlayer.transform.position));
         }
     }
 }
