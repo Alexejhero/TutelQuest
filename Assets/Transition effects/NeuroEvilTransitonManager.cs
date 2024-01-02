@@ -64,6 +64,7 @@ namespace SchizoQuest.Transition_effects
             if (state == PlayModeStateChange.ExitingPlayMode)
             {
                 Shader.SetGlobalFloat(phaseID, 0f);
+                EditorApplication.playModeStateChanged -= ClearEffectOnStopIfPausedMidEffect;
             }
         }
 
