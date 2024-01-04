@@ -63,7 +63,10 @@ namespace SchizoQuest.Characters
 
         public IEnumerator WaitUntilCameraIsClose()
         {
-            yield return new WaitUntil(() => CameraController.currVelocity.magnitude < 1f);
+            yield return new WaitUntil(() => CameraController.DistanceToActivePlayer < 50f);
+            yield return new WaitUntil(() => CameraController.currVelocity.magnitude < 5f);
+            if (ActivePlayer != this) yield break;
+
             controller.movementActive = true;
             characterSwitchParticleEffect.Play();
         }

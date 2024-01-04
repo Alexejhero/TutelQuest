@@ -429,7 +429,7 @@ MonoBehaviour:
   evilMask:
     serializedVersion: 2
     m_Bits: 43024439
-  smoothTime: 0.35
+  smoothTime: 0.25
 --- !u!114 &6940602351926568195
 MonoBehaviour:
   m_ObjectHideFlags: 0
