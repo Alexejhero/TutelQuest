@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace SchizoQuest
@@ -20,23 +21,16 @@ namespace SchizoQuest
         [Range(0f, 2f)]
         public float deathEffectDistplacement = 1f;
 
-        private float _deathEffectStart;
-        private float _deathEffectDuration = 0.5f;
-
         [Space]
         public AnimationCurve gameFinishCurve;
 
         public Color gameFinishEffectColor = Color.white;
-        private float _gameFinishEffectStart;
-        private float _gameFinishEffectDuration = 5f;
 
         [Space]
         public AnimationCurve gameStartCurve;
 
         public Color gameStartEffectColor = Color.white;
-        private float _gameStartEffectStart;
         public float gameStartEffectDuration = 5f;
-        private float _gameStartEffectDuration;
 
         #region ids
 
@@ -57,8 +51,6 @@ namespace SchizoQuest
         {
             if (Instance == null) { Instance = this; } else { Destroy(this); }
             ResetValues(Effects.all);
-            _deathEffectStart = Time.time - _deathEffectDuration;
-            _gameFinishEffectStart = Time.time - _gameFinishEffectDuration;
         }
 
         private void Start()
@@ -93,64 +85,57 @@ namespace SchizoQuest
 
         public void PlayEffect(Effects effect, float duration = 1f)
         {
-            duration = Mathf.Max(0.005f, duration);
             switch (effect)
             {
                 case Effects.death:
-                    _deathEffectDuration = duration;
-                    _deathEffectStart = Time.time;
+                    StartCoroutine(DoDeathEffect(duration));
                     break;
 
                 case Effects.gameFinish:
-                    _gameFinishEffectDuration = duration;
-                    _gameFinishEffectStart = Time.time;
+                    StartCoroutine(DoGameFinishEffect(duration));
                     break;
 
                 case Effects.gameStart:
-                    _gameStartEffectDuration = duration;
-                    _gameStartEffectStart = Time.time;
+                    StartCoroutine(DoGameStartEffect(duration));
                     break;
             }
         }
 
-        private void DoDeathEffect()
+        private IEnumerator DoDeathEffect(float duration)
         {
-            if (Time.time < _deathEffectStart + _deathEffectDuration)
+            for (float t = 0f; t < duration; t += Time.deltaTime)
             {
-                float deathEffectValue = ((_deathEffectStart + _deathEffectDuration) - Time.time) / _deathEffectDuration;
+                float deathEffectValue = 1 - (t / duration);
                 Shader.SetGlobalColor(deathFadeColor, Color.Lerp(deathEffectFadeColor, Color.white, deathEffectCurve.Evaluate(deathEffectValue)));
                 Shader.SetGlobalFloat(deathFade, deathEffectCurve.Evaluate(deathEffectValue));
                 Shader.SetGlobalFloat(deathFadeOffset, deathEffectCurve.Evaluate(deathEffectValue) * deathEffectDistplacement + (1 - deathEffectDistplacement));
+                yield return null;
             }
-            else { ResetValues(Effects.death); }
+            ResetValues(Effects.death);
         }
 
-        private void DoGameFinishEffect()
+        private IEnumerator DoGameFinishEffect(float duration)
         {
-            if (Time.time < _gameFinishEffectStart + _gameFinishEffectDuration)
+            for (float t = 0; t < duration; t += Time.deltaTime)
             {
-                float gameFinishValue = ((_gameFinishEffectStart + _gameFinishEffectDuration) - Time.time) / _gameFinishEffectDuration;
+                float gameFinishValue = 1 - (t / duration);
                 Shader.SetGlobalColor(gameFinishColor, gameFinishEffectColor);
                 Shader.SetGlobalFloat(gameFinish, 1 - gameFinishCurve.Evaluate(gameFinishValue));
+                yield return null;
             }
-            else { ResetValues(Effects.gameFinish); }
+            ResetValues(Effects.gameFinish);
         }
 
-        private void DoGameStartEffect()
+        private IEnumerator DoGameStartEffect(float duration)
         {
-            if (Time.time < _gameStartEffectStart + _gameStartEffectDuration)
+            for (float t = 0f; t < duration; t += Time.deltaTime)
             {
-                float gameStartValue = ((_gameStartEffectStart + _gameStartEffectDuration) - Time.time) / _gameStartEffectDuration;
+                float gameStartValue = 1 - (t / duration);
                 Shader.SetGlobalColor(gameFinishColor, gameStartEffectColor);
                 Shader.SetGlobalFloat(gameFinish, gameStartCurve.Evaluate(gameStartValue));
+                yield return null;
             }
-            else { DoGameFinishEffect(); }
-        }
-
-        private void Update()
-        {
-            DoGameStartEffect();
-            DoDeathEffect();
+            ResetValues(Effects.gameFinish);
         }
     }
 }
