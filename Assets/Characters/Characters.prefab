@@ -9,10 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8337613622537684320}
-  - component: {fileID: 7470432330437033608}
-  - component: {fileID: 332734605170439082}
-  - component: {fileID: 5545220551775325470}
-  - component: {fileID: 3587967052397777974}
+  - component: {fileID: 4205522132642057608}
+  - component: {fileID: 7589676436413931465}
   m_Layer: 0
   m_Name: Characters
   m_TagString: Untagged
@@ -37,68 +35,7 @@ Transform:
   - {fileID: 3860466389485280518}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7470432330437033608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7528141543748926353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13356e74df5c4a8486bc954d2ca4055c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  availablePlayers:
-  - {fileID: 5580527245097492188}
-  - {fileID: 4206252254551930202}
-  enableSwitching: 1
---- !u!114 &332734605170439082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7528141543748926353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!114 &5545220551775325470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7528141543748926353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_MoveRepeatDelay: 0.5
-  m_MoveRepeatRate: 0.1
-  m_XRTrackingOrigin: {fileID: 0}
-  m_ActionsAsset: {fileID: -944628639613478452, guid: a9ebaca35d319eb4d9cc65b669943db3, type: 3}
-  m_PointAction: {fileID: 0}
-  m_MoveAction: {fileID: 0}
-  m_SubmitAction: {fileID: 0}
-  m_CancelAction: {fileID: 0}
-  m_LeftClickAction: {fileID: 0}
-  m_MiddleClickAction: {fileID: 0}
-  m_RightClickAction: {fileID: 0}
-  m_ScrollWheelAction: {fileID: 0}
-  m_TrackedDevicePositionAction: {fileID: 0}
-  m_TrackedDeviceOrientationAction: {fileID: 0}
-  m_DeselectOnBackgroundClick: 1
-  m_PointerBehavior: 0
-  m_CursorLockBehavior: 0
---- !u!114 &3587967052397777974
+--- !u!114 &4205522132642057608
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: a9ebaca35d319eb4d9cc65b669943db3, type: 3}
-  m_NotificationBehavior: 1
-  m_UIInputModule: {fileID: 5545220551775325470}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -128,6 +65,22 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &7589676436413931465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7528141543748926353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13356e74df5c4a8486bc954d2ca4055c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  availablePlayers:
+  - {fileID: 5580527245097492188}
+  - {fileID: 4206252254551930202}
+  enableSwitching: 1
 --- !u!1001 &4706922639398813842
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -140,10 +93,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Neuro
       objectReference: {fileID: 0}
-    - target: {fileID: 8129344841148157964, guid: ecd49f0896f80a64abdea63df3eebb87, type: 3}
-      propertyPath: characterSwitcher
-      value: 
-      objectReference: {fileID: 7470432330437033608}
     - target: {fileID: 8129344841148157964, guid: ecd49f0896f80a64abdea63df3eebb87, type: 3}
       propertyPath: evilSwitchParticleEffect
       value: 
@@ -268,10 +217,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6237045314539720047, guid: c3fc4b60d9cc12c4cab95878ac4103a1, type: 3}
-      propertyPath: characterSwitcher
-      value: 
-      objectReference: {fileID: 7470432330437033608}
     - target: {fileID: 7595846727379018550, guid: c3fc4b60d9cc12c4cab95878ac4103a1, type: 3}
       propertyPath: m_Name
       value: Vedal
