@@ -145,6 +145,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7470432330437033608}
     - target: {fileID: 8129344841148157964, guid: ecd49f0896f80a64abdea63df3eebb87, type: 3}
+      propertyPath: evilSwitchParticleEffect
+      value: 
+      objectReference: {fileID: 6028195290277456185}
+    - target: {fileID: 8129344841148157964, guid: ecd49f0896f80a64abdea63df3eebb87, type: 3}
       propertyPath: neuroEvilTransitionManager
       value: 
       objectReference: {fileID: 0}
@@ -211,6 +215,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0356781e0280bac46b64747d8e31b881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!198 &6028195290277456185 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1367452296081303979, guid: ecd49f0896f80a64abdea63df3eebb87, type: 3}
+  m_PrefabInstance: {fileID: 4706922639398813842}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7683126246289857144
 PrefabInstance:
   m_ObjectHideFlags: 0
