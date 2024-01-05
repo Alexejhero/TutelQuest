@@ -13,8 +13,9 @@ namespace SchizoQuest.Characters
         public StudioEventEmitter switchTo;
         private StudioEventEmitter _switchedFrom;
 
-        [Tooltip("How many players must be inside the collider to trigger the music swap. 0 = all players")]
-        public int requiredPlayers;
+        [Tooltip("How many players must be inside the collider to trigger the music swap.")]
+        [Min(1)]
+        public int requiredPlayers = 1;
         private int _playersInCollider;
         [Tooltip("If true, when the number of players inside falls below the requirement, the music is swapped back")]
         public bool revertOnExit = false;
