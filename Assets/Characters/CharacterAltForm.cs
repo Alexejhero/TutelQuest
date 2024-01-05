@@ -1,4 +1,5 @@
 using System.Collections;
+using SchizoQuest.Helpers;
 using UnityEngine;
 
 namespace SchizoQuest.Characters
@@ -7,7 +8,7 @@ namespace SchizoQuest.Characters
     {
         protected bool isAlt;
 
-        public CharacterSwitcher characterSwitcher;
+        protected CharacterSwitcher switcher;
         public Player player;
         public GameObject regularForm;
         public GameObject altForm;
@@ -15,12 +16,17 @@ namespace SchizoQuest.Characters
 
         public float swapDelay = 0.100f;
         private bool _swapping;
+
+        protected virtual void Start()
+        {
+            switcher = MonoSingleton<CharacterSwitcher>.Instance;
+        }
         
         public void OnSwapForm()
         {
             if (!player.enabled) return;
             if (!CanSwap(!isAlt)) return;
-            if (characterSwitcher.GlobalTransformCooldown > 0) return;
+            if (switcher.GlobalTransformCooldown > 0) return;
             
             StartCoroutine(PerformSwap());
         }
@@ -28,7 +34,7 @@ namespace SchizoQuest.Characters
         {
             if (_swapping) yield break;
             _swapping = true;
-            characterSwitcher.GlobalTransformCooldown = 0.75f;
+            switcher.GlobalTransformCooldown = 0.75f;
 
             Instantiate(smokePoof, transform);
             yield return new WaitForSeconds(swapDelay);

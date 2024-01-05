@@ -1,10 +1,12 @@
 using System;
+using FMODUnity;
 using SchizoQuest.Characters;
+using SchizoQuest.Helpers;
 using UnityEngine;
 
 namespace SchizoQuest.Game
 {
-    public sealed class CameraController : MonoBehaviour
+    public sealed class CameraController : MonoSingleton<CameraController>
     {
         public Transform target;
 
@@ -19,13 +21,6 @@ namespace SchizoQuest.Game
 
         internal static Vector3 currVelocity = Vector3.zero;
         internal static float DistanceToActivePlayer => Vector3.Distance(Player.ActivePlayer.transform.position, Camera.main.transform.position);
-        private Camera cam;
-
-        private void Awake()
-        {
-            cam = GetComponent<Camera>();
-            //SetNeuroState(false);
-        }
 
         public void Update()
         {
@@ -37,11 +32,6 @@ namespace SchizoQuest.Game
                 camPos = desiredCamPos - direction.normalized * maxDistance;
             camPos = Vector3.SmoothDamp(camPos, desiredCamPos, ref currVelocity, smoothTime);
             transform.position = camPos;
-        }
-
-        public void SetNeuroState(bool isEvil)
-        {
-            cam.cullingMask = isEvil ? evilMask : neuroMask;
         }
     }
 

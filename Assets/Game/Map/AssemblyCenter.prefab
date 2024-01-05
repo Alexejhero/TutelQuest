@@ -4484,10 +4484,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a3422b068ca0894ca2a5b125ff36205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerInterval: 0
+  ignoreTriggers: 1
   collider_: {fileID: 6979815606897483087}
-  switcher: {fileID: 0}
-  track1: {fileID: 0}
-  track2: {fileID: 0}
+  switchTo: {fileID: 0}
+  requiredPlayers: 2
+  revertOnExit: 0
 --- !u!1 &4251471051269376878
 GameObject:
   m_ObjectHideFlags: 0
@@ -5281,8 +5283,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4989038151227309161}
-  - component: {fileID: 6279692575602189106}
   - component: {fileID: 8218625234156020487}
+  - component: {fileID: 9131898269733690790}
   m_Layer: 0
   m_Name: StopMusic
   m_TagString: Untagged
@@ -5305,20 +5307,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 9074672386057322595}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6279692575602189106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4889857797413111536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef2715167c6001f40a35f81148fde0da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerInterval: 0
-  trackToStop: {fileID: 0}
 --- !u!61 &8218625234156020487
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5364,6 +5352,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.279144, y: 10.222893}
   m_EdgeRadius: 0
+--- !u!114 &9131898269733690790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4889857797413111536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a3422b068ca0894ca2a5b125ff36205, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerInterval: 0
+  ignoreTriggers: 1
+  collider_: {fileID: 8218625234156020487}
+  switchTo: {fileID: 0}
+  requiredPlayers: 2
+  revertOnExit: 0
 --- !u!1 &5116324453937309139
 GameObject:
   m_ObjectHideFlags: 0
@@ -5915,6 +5921,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerInterval: 0
+  ignoreTriggers: 0
 --- !u!1 &5590365534996446211
 GameObject:
   m_ObjectHideFlags: 0

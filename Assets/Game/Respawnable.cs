@@ -10,7 +10,7 @@ namespace SchizoQuest.Game
         private Vector3 checkpoint;
         public Action<Respawnable> OnReset;
 
-        public void Awake()
+        private void Awake()
         {
             SetCheckpoint(transform.position);
         }

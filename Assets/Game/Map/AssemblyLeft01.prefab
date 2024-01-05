@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerInterval: 0
+  ignoreTriggers: 0
   hintType: 3
 --- !u!1 &477817931652063535
 GameObject:
@@ -647,6 +648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerInterval: 0
+  ignoreTriggers: 0
   hintType: 1
 --- !u!1 &1061650088131350546
 GameObject:
@@ -1507,6 +1509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerInterval: 0
+  ignoreTriggers: 0
   switcher: {fileID: 0}
   disablesSwitching: 0
 --- !u!61 &1618179308364714761
@@ -1964,6 +1967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerInterval: 0
+  ignoreTriggers: 0
 --- !u!61 &3633032920486491170
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2952,6 +2956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerInterval: 0
+  ignoreTriggers: 0
   hintType: 2
 --- !u!1 &5583752381166138943
 GameObject:
@@ -3044,6 +3049,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerInterval: 0
+  ignoreTriggers: 0
   switcher: {fileID: 0}
   disablesSwitching: 1
 --- !u!1 &5706479522421115453
@@ -3757,6 +3763,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerInterval: 0
+  ignoreTriggers: 0
   hintType: 1
 --- !u!1 &7106146731163238315
 GameObject:

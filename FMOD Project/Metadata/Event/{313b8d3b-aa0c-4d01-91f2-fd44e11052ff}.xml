@@ -427,7 +427,7 @@
 	<object class="MixerBusFader" id="{13d95fbb-cf0f-4f74-8fc0-d723f6f2f561}" />
 	<object class="AutomationPoint" id="{a697f2fa-4505-49cd-89ab-4d89a8bd4b87}">
 		<property name="position">
-			<value>99.576271186440678</value>
+			<value>1</value>
 		</property>
 		<property name="value">
 			<value>-10</value>

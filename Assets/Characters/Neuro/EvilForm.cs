@@ -11,7 +11,6 @@ namespace SchizoQuest.Characters
         public ParticleSystem evilSwitchParticleEffect;
         public NeuroEvilTransitionManager neuroEvilTransitionManager;
         private ParticleSystem _neuroSwitchParticleEffect;
-        private CharacterSwitcher _switcher;
         public float switchTransitionDuration = 0.5f;
 
         private Volume _evilVolume;
@@ -24,9 +23,8 @@ namespace SchizoQuest.Characters
 
         private bool _hintHidden;
 
-        public void Awake()
+        private void Awake()
         {
-            _switcher = gameObject.GetComponentInParent<CharacterSwitcher>();
             _neuroSwitchParticleEffect = player.characterSwitchParticleEffect;
 
             _evilVolume = Camera.main!.GetComponent<Volume>();
@@ -63,7 +61,7 @@ namespace SchizoQuest.Characters
                 ? evilSwitchParticleEffect
                 : _neuroSwitchParticleEffect;
 
-            _switcher._music.SetParameter("Character", isAlt ? 2 : 1);
+            switcher.music.SetCharacter(player.playerType);
 
             float startWeight = isAlt ? 0 : 1;
             float endWeight = isAlt ? 1 : 0;

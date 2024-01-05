@@ -3323,6 +3323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerInterval: 0
+  ignoreTriggers: 0
 --- !u!61 &2492902329782263836
 BoxCollider2D:
   m_ObjectHideFlags: 0

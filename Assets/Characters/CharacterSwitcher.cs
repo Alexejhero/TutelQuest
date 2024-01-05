@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using FMODUnity;
 using SchizoQuest.Audio;
 using SchizoQuest.Game;
+using SchizoQuest.Helpers;
 using UnityEngine;
 
 namespace SchizoQuest.Characters
 {
-    public class CharacterSwitcher : MonoBehaviour
+    public class CharacterSwitcher : MonoSingleton<CharacterSwitcher>
     {
         public float GlobalTransformCooldown { get; set; } = 1;
 
@@ -15,14 +16,15 @@ namespace SchizoQuest.Characters
         private Player _currentPlayer;
         private int _currentIndex;
         [NonSerialized]
-        public StudioEventEmitter _music;
+        public BackgroundMusic music;
         public bool enableSwitching = true;
 
         private bool _hintHidden;
 
-        private void Awake()
+        protected override void Awake()
         {
-            _music = Camera.main!.GetComponent<StudioEventEmitter>();
+            base.Awake();
+            music = MonoSingleton<BackgroundMusic>.Instance;
         }
 
         private void Start()
@@ -59,8 +61,7 @@ namespace SchizoQuest.Characters
             _currentPlayer = availablePlayers[index];
             _currentPlayer.enabled = true;
             GlobalTransformCooldown = 0.75f;
-            if (_music)
-                _music.SetParameter("Character", _currentPlayer.playerType.ValueIndex());
+            music.SetCharacter(_currentPlayer.playerType);
         }
     }
 }
