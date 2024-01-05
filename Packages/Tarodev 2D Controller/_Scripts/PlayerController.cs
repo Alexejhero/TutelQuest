@@ -34,6 +34,7 @@ namespace TarodevController
 
         private void Awake()
         {
+            _surfaceRaycasts = new RaycastHit2D[1];
             _rb = GetComponent<Rigidbody2D>();
             if (!collider_)
                 collider_ = GetComponent<CapsuleCollider2D>();
@@ -96,14 +97,25 @@ namespace TarodevController
 
         private float _frameLeftGrounded = float.MinValue;
         [NonSerialized] public bool _grounded;
+        private RaycastHit2D[] _surfaceRaycasts;
 
         private void CheckCollisions()
         {
-            Physics2D.queriesStartInColliders = false;
-
             // Ground and Ceiling
-            bool groundHit = Physics2D.CapsuleCast(collider_.bounds.center, collider_.size, collider_.direction, 0, Vector2.down, stats.GrounderDistance, ~stats.PlayerLayer);
-            bool ceilingHit = Physics2D.CapsuleCast(collider_.bounds.center, collider_.size, collider_.direction, 0, Vector2.up, stats.GrounderDistance, ~stats.PlayerLayer);
+            ContactFilter2D filter = new()
+            {
+                layerMask = Physics2D.GetLayerCollisionMask(collider_.gameObject.layer),
+                useTriggers = false,
+                useLayerMask = true,
+            };
+
+            // Ground
+            bool groundHit = collider_.Cast(Vector2.down, filter, _surfaceRaycasts, stats.GrounderDistance) > 0
+                && !PassThroughPlatform(_surfaceRaycasts[0]); // Handle platform effectors
+
+            // Ceiling
+            bool ceilingHit = collider_.Cast(Vector2.up, filter, _surfaceRaycasts, stats.GrounderDistance) > 0
+                && !PassThroughPlatform(_surfaceRaycasts[0]); // Handle platform effectors
 
             // Hit a Ceiling
             if (ceilingHit) _frameVelocity.y = Mathf.Min(0, _frameVelocity.y);
@@ -126,6 +138,16 @@ namespace TarodevController
             }
 
             Physics2D.queriesStartInColliders = _cachedQueryStartInColliders;
+        }
+
+        private bool PassThroughPlatform(RaycastHit2D rc)
+        {
+            var platform = rc.collider.GetComponent<PlatformEffector2D>();
+            if (!platform) return false;
+            if (!platform.useOneWay) return false;
+            
+            Vector2 platformUp = RotateVector2(platform.transform.up, platform.rotationalOffset);
+            return Vector2.Angle(platformUp, _rb.velocity) < (platform.surfaceArc * 0.5f);
         }
 
         #endregion
@@ -208,6 +230,14 @@ namespace TarodevController
             if (stats == null) Debug.LogWarning("Please assign a ScriptableStats asset to the Player Controller's Stats slot", this);
         }
 #endif
+        private Vector2 RotateVector2(Vector2 v, float eulerAngle)
+        {
+            float radian = eulerAngle * Mathf.Deg2Rad;
+            float sin = Mathf.Sin(radian);
+            float cos = Mathf.Cos(radian);
+
+            return new Vector2(v.x * cos - v.y * sin, v.x * sin + v.y * cos);
+        }
     }
 
     public struct FrameInput
