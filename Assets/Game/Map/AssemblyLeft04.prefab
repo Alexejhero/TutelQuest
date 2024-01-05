@@ -9721,6 +9721,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 1490224105109833689, guid: 661e035a15f071144887be0c083bb13f, type: 3}
+      propertyPath: m_Size.x
+      value: 1.0931721
+      objectReference: {fileID: 0}
+    - target: {fileID: 1490224105109833689, guid: 661e035a15f071144887be0c083bb13f, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.05095327
+      objectReference: {fileID: 0}
     - target: {fileID: 1566959748471156186, guid: 661e035a15f071144887be0c083bb13f, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -9740,6 +9748,22 @@ PrefabInstance:
     - target: {fileID: 7200044476835458186, guid: 661e035a15f071144887be0c083bb13f, type: 3}
       propertyPath: m_Name
       value: DeathPillar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8494663859555999913, guid: 661e035a15f071144887be0c083bb13f, type: 3}
+      propertyPath: m_Size.x
+      value: 0.64780486
+      objectReference: {fileID: 0}
+    - target: {fileID: 8494663859555999913, guid: 661e035a15f071144887be0c083bb13f, type: 3}
+      propertyPath: m_Size.y
+      value: 1.0558121
+      objectReference: {fileID: 0}
+    - target: {fileID: 8494663859555999913, guid: 661e035a15f071144887be0c083bb13f, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.08020413
+      objectReference: {fileID: 0}
+    - target: {fileID: 8494663859555999913, guid: 661e035a15f071144887be0c083bb13f, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.38679492
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
