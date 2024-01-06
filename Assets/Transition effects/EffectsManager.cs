@@ -14,6 +14,8 @@ namespace SchizoQuest
         }
 
         public static EffectsManager Instance;
+
+        [Header("Death")]
         public AnimationCurve deathEffectCurve;
 
         public Color deathEffectFadeColor = Color.black;
@@ -21,24 +23,40 @@ namespace SchizoQuest
         [Range(0f, 2f)]
         public float deathEffectDistplacement = 1f;
 
-        [Space]
+        [Space, Header("Game Finish")]
         public AnimationCurve gameFinishCurve;
 
         public Color gameFinishEffectColor = Color.white;
 
-        [Space]
+        [Space, Header("Game Start")]
         public AnimationCurve gameStartCurve;
 
         public Color gameStartEffectColor = Color.white;
         public float gameStartEffectDuration = 5f;
 
+        [Space, Header("SKY")]
+        public Texture2D sunTexture;
+        public Vector2 sunPosition = new(0.13f, 0.46f);
+        public float sunScale = 0.5f;
+        public Color nightSkyColor;
+        public Color daySkyColor;
+        public Color daySkyColor2;
+        public Color starColor;
+
         #region ids
 
-        private static readonly int deathFade = Shader.PropertyToID("_DeathFade");
-        private static readonly int deathFadeColor = Shader.PropertyToID("_DeathFadeColor");
-        private static readonly int deathFadeOffset = Shader.PropertyToID("_DeathFadeOffset");
-        private static readonly int gameFinish = Shader.PropertyToID("_GameFinish");
-        private static readonly int gameFinishColor = Shader.PropertyToID("_GameFinishColor");
+        private static readonly int deathFadeID = Shader.PropertyToID("_DeathFade");
+        private static readonly int deathFadeColorID = Shader.PropertyToID("_DeathFadeColor");
+        private static readonly int deathFadeOffsetID = Shader.PropertyToID("_DeathFadeOffset");
+        private static readonly int gameFinishID = Shader.PropertyToID("_GameFinish");
+        private static readonly int gameFinishColorID = Shader.PropertyToID("_GameFinishColor");
+        private static readonly int skySunTexID = Shader.PropertyToID("_SKY_SunTex");
+        private static readonly int skySunPosID = Shader.PropertyToID("_SKY_SunPos");
+        private static readonly int skySunScaleID = Shader.PropertyToID("_SKY_SunScale");
+        private static readonly int skyNightSkyColorID = Shader.PropertyToID("_SKY_NightSkyColor");
+        private static readonly int skyDaySkyColorID = Shader.PropertyToID("_SKY_DaySkyColor");
+        private static readonly int skyDaySkyColor2ID = Shader.PropertyToID("_SKY_DaySkyColor2");
+        private static readonly int skyStarColorID = Shader.PropertyToID("_SKY_StarColor");
 
         #endregion ids
 
@@ -63,22 +81,29 @@ namespace SchizoQuest
             switch (effect)
             {
                 case Effects.all:
-                    Shader.SetGlobalColor(deathFadeColor, Color.white);
-                    Shader.SetGlobalFloat(deathFade, 1f);
-                    Shader.SetGlobalFloat(deathFadeOffset, 1f);
-                    Shader.SetGlobalColor(gameFinishColor, Color.black);
-                    Shader.SetGlobalFloat(gameFinish, 0f);
+                    Shader.SetGlobalColor(deathFadeColorID, Color.white);
+                    Shader.SetGlobalFloat(deathFadeID, 1f);
+                    Shader.SetGlobalFloat(deathFadeOffsetID, 1f);
+                    Shader.SetGlobalColor(gameFinishColorID, Color.black);
+                    Shader.SetGlobalFloat(gameFinishID, 0f);
+                    Shader.SetGlobalTexture(skySunTexID, sunTexture);
+                    Shader.SetGlobalVector(skySunPosID, sunPosition);
+                    Shader.SetGlobalFloat(skySunScaleID, sunScale);
+                    Shader.SetGlobalColor(skyNightSkyColorID, nightSkyColor);
+                    Shader.SetGlobalColor(skyDaySkyColorID, daySkyColor);
+                    Shader.SetGlobalColor(skyDaySkyColor2ID, daySkyColor2);
+                    Shader.SetGlobalColor(skyStarColorID, starColor);
                     break;
 
                 case Effects.death:
-                    Shader.SetGlobalColor(deathFadeColor, Color.white);
-                    Shader.SetGlobalFloat(deathFade, 1f);
-                    Shader.SetGlobalFloat(deathFadeOffset, 1f);
+                    Shader.SetGlobalColor(deathFadeColorID, Color.white);
+                    Shader.SetGlobalFloat(deathFadeID, 1f);
+                    Shader.SetGlobalFloat(deathFadeOffsetID, 1f);
                     break;
 
                 case Effects.gameFinish:
-                    Shader.SetGlobalColor(gameFinishColor, Color.black);
-                    Shader.SetGlobalFloat(gameFinish, 0f);
+                    Shader.SetGlobalColor(gameFinishColorID, Color.black);
+                    Shader.SetGlobalFloat(gameFinishID, 0f);
                     break;
             }
         }
@@ -106,9 +131,9 @@ namespace SchizoQuest
             for (float t = 0f; t < duration; t += Time.deltaTime)
             {
                 float deathEffectValue = 1 - (t / duration);
-                Shader.SetGlobalColor(deathFadeColor, Color.Lerp(deathEffectFadeColor, Color.white, deathEffectCurve.Evaluate(deathEffectValue)));
-                Shader.SetGlobalFloat(deathFade, deathEffectCurve.Evaluate(deathEffectValue));
-                Shader.SetGlobalFloat(deathFadeOffset, deathEffectCurve.Evaluate(deathEffectValue) * deathEffectDistplacement + (1 - deathEffectDistplacement));
+                Shader.SetGlobalColor(deathFadeColorID, Color.Lerp(deathEffectFadeColor, Color.white, deathEffectCurve.Evaluate(deathEffectValue)));
+                Shader.SetGlobalFloat(deathFadeID, deathEffectCurve.Evaluate(deathEffectValue));
+                Shader.SetGlobalFloat(deathFadeOffsetID, deathEffectCurve.Evaluate(deathEffectValue) * deathEffectDistplacement + (1 - deathEffectDistplacement));
                 yield return null;
             }
             ResetValues(Effects.death);
@@ -119,8 +144,8 @@ namespace SchizoQuest
             for (float t = 0; t < duration; t += Time.deltaTime)
             {
                 float gameFinishValue = 1 - (t / duration);
-                Shader.SetGlobalColor(gameFinishColor, gameFinishEffectColor);
-                Shader.SetGlobalFloat(gameFinish, 1 - gameFinishCurve.Evaluate(gameFinishValue));
+                Shader.SetGlobalColor(gameFinishColorID, gameFinishEffectColor);
+                Shader.SetGlobalFloat(gameFinishID, 1 - gameFinishCurve.Evaluate(gameFinishValue));
                 yield return null;
             }
             ResetValues(Effects.gameFinish);
@@ -131,8 +156,8 @@ namespace SchizoQuest
             for (float t = 0f; t < duration; t += Time.deltaTime)
             {
                 float gameStartValue = 1 - (t / duration);
-                Shader.SetGlobalColor(gameFinishColor, gameStartEffectColor);
-                Shader.SetGlobalFloat(gameFinish, gameStartCurve.Evaluate(gameStartValue));
+                Shader.SetGlobalColor(gameFinishColorID, gameStartEffectColor);
+                Shader.SetGlobalFloat(gameFinishID, gameStartCurve.Evaluate(gameStartValue));
                 yield return null;
             }
             ResetValues(Effects.gameFinish);
