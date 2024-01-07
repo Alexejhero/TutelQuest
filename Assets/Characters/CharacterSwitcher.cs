@@ -24,11 +24,11 @@ namespace SchizoQuest.Characters
         protected override void Awake()
         {
             base.Awake();
-            music = MonoSingleton<BackgroundMusic>.Instance;
         }
 
         private void Start()
         {
+            music = MonoSingleton<BackgroundMusic>.Instance;
             SwitchTo(_currentIndex);
         }
 
