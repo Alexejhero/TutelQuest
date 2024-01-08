@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d613f08f173d4dd895bb07b3230baa9, type: 3}
-  m_Name: FullScreenPassRendererFeature
+  m_Name: Sky
   m_EditorClassIdentifier: 
   m_Active: 1
   injectionPoint: 450
@@ -30,7 +30,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d613f08f173d4dd895bb07b3230baa9, type: 3}
-  m_Name: FullScreenPassRendererFeature
+  m_Name: Game finish effect
   m_EditorClassIdentifier: 
   m_Active: 1
   injectionPoint: 600
@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d613f08f173d4dd895bb07b3230baa9, type: 3}
-  m_Name: FullScreenPassRendererFeature
+  m_Name: Neuro Evil Transition
   m_EditorClassIdentifier: 
   m_Active: 1
   injectionPoint: 600
@@ -80,7 +80,8 @@ MonoBehaviour:
   - {fileID: 7693954571494296148}
   - {fileID: -2767902270745776736}
   - {fileID: -4479351932862192030}
-  m_RendererFeatureMap: cb833fe9c12c6efb540ae91feb6ac66aa06d33bb8c6f96d96226ca512625d6c1
+  - {fileID: 6559877406458743422}
+  m_RendererFeatureMap: cb833fe9c12c6efb540ae91feb6ac66aa06d33bb8c6f96d96226ca512625d6c17e8a15d6be5d095b
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   shaders:
@@ -118,6 +119,26 @@ MonoBehaviour:
   m_CopyDepthMode: 1
   m_AccurateGbufferNormals: 0
   m_IntermediateTextureMode: 1
+--- !u!114 &6559877406458743422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d613f08f173d4dd895bb07b3230baa9, type: 3}
+  m_Name: evil world
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  injectionPoint: 550
+  fetchColorBuffer: 1
+  requirements: 0
+  passMaterial: {fileID: -876546973899608171, guid: 89956e7f2c31d5c40b8ee207e2fea3cf, type: 3}
+  passIndex: 0
+  bindDepthStencilAttachment: 0
+  m_Version: 1
 --- !u!114 &7693954571494296148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,7 +149,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d613f08f173d4dd895bb07b3230baa9, type: 3}
-  m_Name: FullScreenPassRendererFeature
+  m_Name: Death effect
   m_EditorClassIdentifier: 
   m_Active: 1
   injectionPoint: 600

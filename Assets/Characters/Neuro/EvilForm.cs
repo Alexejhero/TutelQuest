@@ -13,7 +13,7 @@ namespace SchizoQuest.Characters
         private ParticleSystem _neuroSwitchParticleEffect;
         public float switchTransitionDuration = 0.5f;
 
-        private Volume _evilVolume;
+        //private Volume _evilVolume;
         //private CameraController _cameraController;
 
         private int _evilLayer;
@@ -27,7 +27,7 @@ namespace SchizoQuest.Characters
         {
             _neuroSwitchParticleEffect = player.characterSwitchParticleEffect;
 
-            _evilVolume = Camera.main!.GetComponent<Volume>();
+            //_evilVolume = Camera.main!.GetComponent<Volume>();
             //_cameraController = Camera.main!.GetComponent<CameraController>();
             _evilLayer = LayerMask.NameToLayer("EvilOnly");
             _neuroLayer = LayerMask.NameToLayer("NeuroOnly");
@@ -68,11 +68,11 @@ namespace SchizoQuest.Characters
 
             for (float t = 0; t < switchTransitionDuration / 2; t += Time.deltaTime)
             {
-                _evilVolume.weight = Mathf.Lerp(startWeight, endWeight, t / switchTransitionDuration / 2);
+                //_evilVolume.weight = Mathf.Lerp(startWeight, endWeight, t / switchTransitionDuration / 2);
                 yield return null;
             }
 
-            _evilVolume.weight = endWeight;
+            //_evilVolume.weight = endWeight;
             //_cameraController.SetNeuroState(isAlt);
             UpdateLayerCollision();
         }
