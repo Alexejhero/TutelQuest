@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 1381629473935932086}
   m_Layer: 15
   m_Name: PlatformSegmentEvil (3)
-  m_TagString: NoEvil
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 331961773401316884}
   m_Layer: 13
   m_Name: PlatformSegmentNeuro
-  m_TagString: NoNeuro
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1234,7 +1234,7 @@ GameObject:
   - component: {fileID: 6540596231152869266}
   m_Layer: 15
   m_Name: PlatformSegmentEvil
-  m_TagString: NoNeuro
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1459,7 +1459,7 @@ GameObject:
   - component: {fileID: 4248512880528901627}
   m_Layer: 15
   m_Name: StairsEvil
-  m_TagString: NoEvil
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1495,7 +1495,7 @@ GameObject:
   - component: {fileID: 3677149905059729773}
   m_Layer: 13
   m_Name: PlatformSegmentNeuro (5)
-  m_TagString: NoNeuro
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1979,7 +1979,7 @@ GameObject:
   - component: {fileID: 3903532386215094029}
   m_Layer: 15
   m_Name: PlatformSegmentEvil
-  m_TagString: NoEvil
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2230,7 +2230,7 @@ GameObject:
   - component: {fileID: 1496692083003707616}
   m_Layer: 15
   m_Name: StairsEvil
-  m_TagString: NoEvil
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2706,7 +2706,7 @@ GameObject:
   - component: {fileID: 2321787547421195947}
   m_Layer: 15
   m_Name: PlatformSegmentEvil (2)
-  m_TagString: NoEvil
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2869,7 +2869,7 @@ GameObject:
   - component: {fileID: 6349917493993719008}
   m_Layer: 13
   m_Name: PlatformSegmentNeuro (4)
-  m_TagString: NoNeuro
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3299,7 +3299,7 @@ GameObject:
   - component: {fileID: 2570257848573206842}
   m_Layer: 13
   m_Name: PlatformSegmentNeuro (2)
-  m_TagString: NoNeuro
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4174,7 +4174,7 @@ GameObject:
   - component: {fileID: 2708788403277905226}
   m_Layer: 15
   m_Name: PlatformSegmentEvil (1)
-  m_TagString: NoEvil
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4626,7 +4626,7 @@ GameObject:
   - component: {fileID: 7066633628415834852}
   m_Layer: 15
   m_Name: Moving Block V
-  m_TagString: EvilOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5048,7 +5048,7 @@ GameObject:
   - component: {fileID: 2703389873589811127}
   m_Layer: 15
   m_Name: evil_block_02
-  m_TagString: NoEvil
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5549,7 +5549,7 @@ GameObject:
   - component: {fileID: 8914341345266386817}
   m_Layer: 13
   m_Name: StairsNeuro
-  m_TagString: NoNeuro
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5669,7 +5669,7 @@ GameObject:
   - component: {fileID: 288014014075079884}
   m_Layer: 13
   m_Name: neuro_block_02
-  m_TagString: NoNeuro
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6231,7 +6231,7 @@ GameObject:
   - component: {fileID: 5309462758373558697}
   m_Layer: 13
   m_Name: PlatformSegmentNeuro
-  m_TagString: NoNeuro
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6380,7 +6380,7 @@ GameObject:
   - component: {fileID: 177772674178483378}
   m_Layer: 13
   m_Name: PlatformSegmentNeuro (1)
-  m_TagString: NoNeuro
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6763,7 +6763,7 @@ GameObject:
   - component: {fileID: 5001771187774526763}
   m_Layer: 13
   m_Name: PlatformSegmentNeuro
-  m_TagString: NoNeuro
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7769,7 +7769,7 @@ GameObject:
   - component: {fileID: 8604734550233908562}
   m_Layer: 13
   m_Name: small_platforml_04
-  m_TagString: NoNeuro
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8152,7 +8152,7 @@ GameObject:
   - component: {fileID: 2748410294877651576}
   m_Layer: 13
   m_Name: StairsNeuro
-  m_TagString: NoNeuro
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8577,7 +8577,7 @@ GameObject:
   - component: {fileID: 7946799449904310489}
   m_Layer: 13
   m_Name: LiftSegmentNeuro
-  m_TagString: NoNeuro
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8964,7 +8964,7 @@ GameObject:
   - component: {fileID: 5634935595083253595}
   m_Layer: 0
   m_Name: small_platforml_04 (1)
-  m_TagString: NoNeuro
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9264,7 +9264,7 @@ GameObject:
   - component: {fileID: 919561527669520550}
   m_Layer: 15
   m_Name: PlatformSegmentEvil
-  m_TagString: NoEvil
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9580,7 +9580,7 @@ GameObject:
   - component: {fileID: 5245815821108515545}
   m_Layer: 13
   m_Name: PlatformSegmentNeuro (3)
-  m_TagString: NoNeuro
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10129,14 +10129,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3257290521613841755, guid: 44d836c2594b1c54cbe25e1d857d6227, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9207720816734337069, guid: 44d836c2594b1c54cbe25e1d857d6227, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9207720816734337069, guid: 44d836c2594b1c54cbe25e1d857d6227, type: 3}
-      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

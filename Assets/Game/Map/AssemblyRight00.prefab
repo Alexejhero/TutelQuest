@@ -1895,7 +1895,7 @@ GameObject:
   - component: {fileID: 2695901884971087320}
   m_Layer: 15
   m_Name: Moving Block
-  m_TagString: EvilOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -1492,10 +1492,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 20
       objectReference: {fileID: 0}
-    - target: {fileID: 8801004962465848453, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
-      propertyPath: m_TagString
-      value: Vedal
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 478257553380852303, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
     m_RemovedGameObjects: []
@@ -1572,7 +1568,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73d4daff4a7a91449b7c5a1857b1c092, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterSwitcher: {fileID: 0}
   player: {fileID: 2877221180265890980}
   regularForm: {fileID: 2118812293590621498}
   altForm: {fileID: 3934357359261474321}

@@ -773,6 +773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerInterval: 0
+  ignoreTriggers: 0
 --- !u!1001 &3506668514171159377
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -907,10 +908,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Neuro
       objectReference: {fileID: 0}
-    - target: {fileID: 8801004962465848453, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
-      propertyPath: m_TagString
-      value: Neuro
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -966,7 +963,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38834af34ab134b418ec224d5a482e9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterSwitcher: {fileID: 0}
   player: {fileID: 8866959914121868744}
   regularForm: {fileID: 7921001887652105597}
   altForm: {fileID: 5684121791463374519}

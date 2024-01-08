@@ -1510,7 +1510,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerInterval: 0
   ignoreTriggers: 0
-  switcher: {fileID: 0}
   disablesSwitching: 0
 --- !u!61 &1618179308364714761
 BoxCollider2D:
@@ -3050,7 +3049,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerInterval: 0
   ignoreTriggers: 0
-  switcher: {fileID: 0}
   disablesSwitching: 1
 --- !u!1 &5706479522421115453
 GameObject:

@@ -309,7 +309,7 @@ GameObject:
   - component: {fileID: 2742846196421569941}
   m_Layer: 15
   m_Name: spikes_03
-  m_TagString: NoEvil
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1018,7 +1018,7 @@ GameObject:
   - component: {fileID: 1600752122092272681}
   m_Layer: 15
   m_Name: Evil2
-  m_TagString: NoEvil
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2407,7 +2407,7 @@ GameObject:
   - component: {fileID: 8717544555081716134}
   m_Layer: 13
   m_Name: PlatformSegmentNeuro
-  m_TagString: NoNeuro
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3013,7 +3013,7 @@ GameObject:
   - component: {fileID: 1373416354811839806}
   m_Layer: 15
   m_Name: tall_platform_11
-  m_TagString: NoEvil
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3301,7 +3301,7 @@ GameObject:
   - component: {fileID: 4026719938648542287}
   m_Layer: 13
   m_Name: small_platforml_12
-  m_TagString: NoNeuro
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3386,7 +3386,7 @@ GameObject:
   - component: {fileID: 8841641087775113755}
   m_Layer: 15
   m_Name: Evil1
-  m_TagString: NoEvil
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3648,7 +3648,7 @@ GameObject:
   - component: {fileID: 5131288205842342644}
   m_Layer: 15
   m_Name: small_platforml_15
-  m_TagString: NoEvil
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3900,7 +3900,7 @@ GameObject:
   - component: {fileID: 3041285598933431628}
   m_Layer: 15
   m_Name: Layer 35
-  m_TagString: NoEvil
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4441,7 +4441,7 @@ GameObject:
   - component: {fileID: 3049210741850562310}
   m_Layer: 15
   m_Name: Evil3
-  m_TagString: NoEvil
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5175,7 +5175,7 @@ GameObject:
   - component: {fileID: 3756314321261567238}
   m_Layer: 15
   m_Name: PlatformSegmentEvil
-  m_TagString: NoEvil
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5556,7 +5556,7 @@ GameObject:
   - component: {fileID: 184236963122938548}
   m_Layer: 15
   m_Name: Layer 37
-  m_TagString: NoEvil
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

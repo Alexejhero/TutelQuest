@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1689167886267507455}
   m_Layer: 15
   m_Name: neuro_block_05
-  m_TagString: NoEvil
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1487,7 +1487,7 @@ GameObject:
   - component: {fileID: 8161014193143434794}
   m_Layer: 15
   m_Name: PlatformSegmentEvil
-  m_TagString: NoEvil
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2372,7 +2372,7 @@ GameObject:
   - component: {fileID: 6870755732798439833}
   m_Layer: 15
   m_Name: PlatformSegmentEvil
-  m_TagString: NoEvil
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2992,7 +2992,7 @@ GameObject:
   - component: {fileID: 8832570963227155367}
   m_Layer: 13
   m_Name: neuro_block_04
-  m_TagString: NoNeuro
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3749,7 +3749,7 @@ GameObject:
   - component: {fileID: 4557911187290936337}
   m_Layer: 15
   m_Name: neuro_block_05 (1)
-  m_TagString: NoEvil
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4761,7 +4761,7 @@ GameObject:
   - component: {fileID: 244872934361615460}
   m_Layer: 15
   m_Name: LiftEvil
-  m_TagString: NoEvil
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5115,7 +5115,7 @@ GameObject:
   - component: {fileID: 937768426953014491}
   m_Layer: 0
   m_Name: PlatformSegment02
-  m_TagString: NoNeuro
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5330,7 +5330,7 @@ GameObject:
   - component: {fileID: 578166938861684511}
   m_Layer: 13
   m_Name: PlatformSegmentNeuro
-  m_TagString: NoNeuro
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5590,7 +5590,7 @@ GameObject:
   - component: {fileID: 4752569820499987057}
   m_Layer: 15
   m_Name: neuro_lift
-  m_TagString: NoEvil
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6048,10 +6048,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3257290521613841755, guid: 44d836c2594b1c54cbe25e1d857d6227, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9207720816734337069, guid: 44d836c2594b1c54cbe25e1d857d6227, type: 3}
-      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

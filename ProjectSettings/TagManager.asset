@@ -3,16 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Vedal
-  - Neuro
-  - Evil
-  - VedalOnly
-  - NoVedal
-  - NeuroOnly
-  - NoNeuro
-  - EvilOnly
-  - NoEvil
+  tags: []
   layers:
   - Default
   - TransparentFX
