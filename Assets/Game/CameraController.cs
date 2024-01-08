@@ -10,12 +10,10 @@ namespace SchizoQuest.Game
     {
         public Transform target;
 
-        public LayerMask neuroMask;
-        public LayerMask evilMask;
-
         [SerializeField]
         [Range(0.01f, 0.9f)]
         private float smoothTime = 0.35f;
+
         [Min(0)]
         public float maxDistance = 200f;
 
@@ -33,11 +31,5 @@ namespace SchizoQuest.Game
             camPos = Vector3.SmoothDamp(camPos, desiredCamPos, ref currVelocity, smoothTime);
             transform.position = camPos;
         }
-    }
-
-    [Serializable]
-    public struct CameraLayerMask
-    {
-        public LayerMask layers;
     }
 }

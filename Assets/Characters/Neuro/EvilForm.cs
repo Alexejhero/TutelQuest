@@ -14,7 +14,6 @@ namespace SchizoQuest.Characters
         public float switchTransitionDuration = 0.5f;
 
         //private Volume _evilVolume;
-        //private CameraController _cameraController;
 
         private int _evilLayer;
         private int _neuroLayer;
@@ -28,7 +27,6 @@ namespace SchizoQuest.Characters
             _neuroSwitchParticleEffect = player.characterSwitchParticleEffect;
 
             //_evilVolume = Camera.main!.GetComponent<Volume>();
-            //_cameraController = Camera.main!.GetComponent<CameraController>();
             _evilLayer = LayerMask.NameToLayer("EvilOnly");
             _neuroLayer = LayerMask.NameToLayer("NeuroOnly");
             _playerLayer = LayerMask.NameToLayer("Player");
@@ -38,11 +36,6 @@ namespace SchizoQuest.Characters
         protected override bool CanSwap(bool toAlt) => enableSwitching && !player.dying;
 
         protected override void OnSwap()
-        {
-            StartCoroutine(CoOnSwap());
-        }
-
-        private IEnumerator CoOnSwap()
         {
             if (!_hintHidden)
             {
@@ -63,20 +56,23 @@ namespace SchizoQuest.Characters
 
             switcher.music.SetCharacter(player.playerType);
 
-            float startWeight = isAlt ? 0 : 1;
-            float endWeight = isAlt ? 1 : 0;
-
-            for (float t = 0; t < switchTransitionDuration / 2; t += Time.deltaTime)
-            {
-                //_evilVolume.weight = Mathf.Lerp(startWeight, endWeight, t / switchTransitionDuration / 2);
-                yield return null;
-            }
-
-            //_evilVolume.weight = endWeight;
-            //_cameraController.SetNeuroState(isAlt);
             UpdateLayerCollision();
+            //StartCoroutine(CoOnSwap());
         }
 
+        //private IEnumerator CoOnSwap()
+        //{
+        //    float startWeight = isAlt ? 0 : 1;
+        //    float endWeight = isAlt ? 1 : 0;
+
+        //    for (float t = 0; t < switchTransitionDuration / 2; t += Time.deltaTime)
+        //    {
+        //        _evilVolume.weight = Mathf.Lerp(startWeight, endWeight, t / switchTransitionDuration / 2);
+        //        yield return null;
+        //    }
+
+        //    _evilVolume.weight = endWeight;
+        //}
 
         private void UpdateLayerCollision()
         {
