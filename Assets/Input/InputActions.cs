@@ -39,36 +39,9 @@ namespace SchizoQuest.Input
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Look"",
-                    ""type"": ""Value"",
-                    ""id"": ""7e00dd55-23d4-43f3-94e4-0339d2af99d3"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Fire"",
+                    ""name"": ""Jump"",
                     ""type"": ""Button"",
-                    ""id"": ""b56b6e1a-0c61-4595-b8e9-95a58de6e0c2"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Run"",
-                    ""type"": ""Button"",
-                    ""id"": ""f25370ab-3eea-467d-9639-35750979a428"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""SwitchCharacter"",
-                    ""type"": ""Button"",
-                    ""id"": ""b4efab17-407d-4483-af1d-f3d282541c28"",
+                    ""id"": ""01f0ec62-5134-4113-802e-d7b026221771"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -78,6 +51,15 @@ namespace SchizoQuest.Input
                     ""name"": ""Interact"",
                     ""type"": ""Button"",
                     ""id"": ""e67ede01-3b45-437a-8bf9-a127ff17f23c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Switch Character"",
+                    ""type"": ""Button"",
+                    ""id"": ""b4efab17-407d-4483-af1d-f3d282541c28"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -99,14 +81,14 @@ namespace SchizoQuest.Input
                     ""id"": ""978bfe49-cc26-4a3d-ab7b-7d7a29327403"",
                     ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""StickDeadzone"",
                     ""groups"": "";Gamepad"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""WASD"",
+                    ""name"": ""WASD + Arrow Keys"",
                     ""id"": ""00ca640b-d935-4593-8157-c05846ea39b3"",
                     ""path"": ""Dpad"",
                     ""interactions"": """",
@@ -209,7 +191,7 @@ namespace SchizoQuest.Input
                     ""id"": ""1635d3fe-58b6-4ba9-a4e2-f4b964f6b5c8"",
                     ""path"": ""<XRController>/{Primary2DAxis}"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""StickDeadzone"",
                     ""groups"": ""XR"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
@@ -220,108 +202,9 @@ namespace SchizoQuest.Input
                     ""id"": ""3ea4d645-4504-4529-b061-ab81934c3752"",
                     ""path"": ""<Joystick>/stick"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""StickDeadzone"",
                     ""groups"": ""Joystick"",
                     ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""c1f7a91b-d0fd-4a62-997e-7fb9b69bf235"",
-                    ""path"": ""<Gamepad>/rightStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Gamepad"",
-                    ""action"": ""Look"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8c8e490b-c610-4785-884f-f04217b23ca4"",
-                    ""path"": ""<Pointer>/delta"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse;Touch"",
-                    ""action"": ""Look"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""3e5f5442-8668-4b27-a940-df99bad7e831"",
-                    ""path"": ""<Joystick>/{Hatswitch}"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Joystick"",
-                    ""action"": ""Look"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""143bb1cd-cc10-4eca-a2f0-a3664166fe91"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Gamepad"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""05f6913d-c316-48b2-a6bb-e225f14c7960"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""886e731e-7071-4ae4-95c0-e61739dad6fd"",
-                    ""path"": ""<Touchscreen>/primaryTouch/tap"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Touch"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""ee3d0cd2-254e-47a7-a8cb-bc94d9658c54"",
-                    ""path"": ""<Joystick>/trigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Joystick"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8255d333-5683-4943-a58a-ccb207ff1dce"",
-                    ""path"": ""<XRController>/{PrimaryAction}"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""XR"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""4c373f1f-7240-4a67-bcdf-c23b6f0f3d13"",
-                    ""path"": ""<Keyboard>/shift"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Run"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -332,7 +215,84 @@ namespace SchizoQuest.Input
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""SwitchCharacter"",
+                    ""action"": ""Switch Character"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""26a44a3c-7289-402a-bfd0-4df9ef544abe"",
+                    ""path"": ""<Keyboard>/rightCtrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Switch Character"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7bfa7ef9-d847-43fd-bb06-07ff420f41a7"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Switch Character"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a9980301-f8e1-4d6d-aaa6-e6251a303d3e"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Swap Form"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""46aeb9ae-3795-4d86-ad8b-c20e8de0133c"",
+                    ""path"": ""<Keyboard>/rightShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Swap Form"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4e15d8cc-1a47-4ee9-9e69-cc85da99b501"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Swap Form"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fb467d1c-81b9-40f9-8203-8697ba6cc6a0"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d655bd1f-3e2a-4d26-b7a4-4a2a497b3364"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -349,12 +309,23 @@ namespace SchizoQuest.Input
                 },
                 {
                     ""name"": """",
-                    ""id"": ""a9980301-f8e1-4d6d-aaa6-e6251a303d3e"",
-                    ""path"": ""<Keyboard>/f"",
+                    ""id"": ""e3a8f485-4e8a-428c-9f65-9b9a3a63829e"",
+                    ""path"": ""<Keyboard>/enter"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Swap Form"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3b74171c-47bb-4d7c-92e8-1df5dbfcff4b"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1038,11 +1009,9 @@ namespace SchizoQuest.Input
             // Player
             m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
             m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
-            m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
-            m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
-            m_Player_Run = m_Player.FindAction("Run", throwIfNotFound: true);
-            m_Player_SwitchCharacter = m_Player.FindAction("SwitchCharacter", throwIfNotFound: true);
+            m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
             m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
+            m_Player_SwitchCharacter = m_Player.FindAction("Switch Character", throwIfNotFound: true);
             m_Player_SwapForm = m_Player.FindAction("Swap Form", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
@@ -1120,22 +1089,18 @@ namespace SchizoQuest.Input
         private readonly InputActionMap m_Player;
         private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
         private readonly InputAction m_Player_Move;
-        private readonly InputAction m_Player_Look;
-        private readonly InputAction m_Player_Fire;
-        private readonly InputAction m_Player_Run;
-        private readonly InputAction m_Player_SwitchCharacter;
+        private readonly InputAction m_Player_Jump;
         private readonly InputAction m_Player_Interact;
+        private readonly InputAction m_Player_SwitchCharacter;
         private readonly InputAction m_Player_SwapForm;
         public struct PlayerActions
         {
             private @InputActions m_Wrapper;
             public PlayerActions(@InputActions wrapper) { m_Wrapper = wrapper; }
             public InputAction @Move => m_Wrapper.m_Player_Move;
-            public InputAction @Look => m_Wrapper.m_Player_Look;
-            public InputAction @Fire => m_Wrapper.m_Player_Fire;
-            public InputAction @Run => m_Wrapper.m_Player_Run;
-            public InputAction @SwitchCharacter => m_Wrapper.m_Player_SwitchCharacter;
+            public InputAction @Jump => m_Wrapper.m_Player_Jump;
             public InputAction @Interact => m_Wrapper.m_Player_Interact;
+            public InputAction @SwitchCharacter => m_Wrapper.m_Player_SwitchCharacter;
             public InputAction @SwapForm => m_Wrapper.m_Player_SwapForm;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
@@ -1149,21 +1114,15 @@ namespace SchizoQuest.Input
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
-                @Look.started += instance.OnLook;
-                @Look.performed += instance.OnLook;
-                @Look.canceled += instance.OnLook;
-                @Fire.started += instance.OnFire;
-                @Fire.performed += instance.OnFire;
-                @Fire.canceled += instance.OnFire;
-                @Run.started += instance.OnRun;
-                @Run.performed += instance.OnRun;
-                @Run.canceled += instance.OnRun;
-                @SwitchCharacter.started += instance.OnSwitchCharacter;
-                @SwitchCharacter.performed += instance.OnSwitchCharacter;
-                @SwitchCharacter.canceled += instance.OnSwitchCharacter;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
+                @SwitchCharacter.started += instance.OnSwitchCharacter;
+                @SwitchCharacter.performed += instance.OnSwitchCharacter;
+                @SwitchCharacter.canceled += instance.OnSwitchCharacter;
                 @SwapForm.started += instance.OnSwapForm;
                 @SwapForm.performed += instance.OnSwapForm;
                 @SwapForm.canceled += instance.OnSwapForm;
@@ -1174,21 +1133,15 @@ namespace SchizoQuest.Input
                 @Move.started -= instance.OnMove;
                 @Move.performed -= instance.OnMove;
                 @Move.canceled -= instance.OnMove;
-                @Look.started -= instance.OnLook;
-                @Look.performed -= instance.OnLook;
-                @Look.canceled -= instance.OnLook;
-                @Fire.started -= instance.OnFire;
-                @Fire.performed -= instance.OnFire;
-                @Fire.canceled -= instance.OnFire;
-                @Run.started -= instance.OnRun;
-                @Run.performed -= instance.OnRun;
-                @Run.canceled -= instance.OnRun;
-                @SwitchCharacter.started -= instance.OnSwitchCharacter;
-                @SwitchCharacter.performed -= instance.OnSwitchCharacter;
-                @SwitchCharacter.canceled -= instance.OnSwitchCharacter;
+                @Jump.started -= instance.OnJump;
+                @Jump.performed -= instance.OnJump;
+                @Jump.canceled -= instance.OnJump;
                 @Interact.started -= instance.OnInteract;
                 @Interact.performed -= instance.OnInteract;
                 @Interact.canceled -= instance.OnInteract;
+                @SwitchCharacter.started -= instance.OnSwitchCharacter;
+                @SwitchCharacter.performed -= instance.OnSwitchCharacter;
+                @SwitchCharacter.canceled -= instance.OnSwitchCharacter;
                 @SwapForm.started -= instance.OnSwapForm;
                 @SwapForm.performed -= instance.OnSwapForm;
                 @SwapForm.canceled -= instance.OnSwapForm;
@@ -1391,11 +1344,9 @@ namespace SchizoQuest.Input
         public interface IPlayerActions
         {
             void OnMove(InputAction.CallbackContext context);
-            void OnLook(InputAction.CallbackContext context);
-            void OnFire(InputAction.CallbackContext context);
-            void OnRun(InputAction.CallbackContext context);
-            void OnSwitchCharacter(InputAction.CallbackContext context);
+            void OnJump(InputAction.CallbackContext context);
             void OnInteract(InputAction.CallbackContext context);
+            void OnSwitchCharacter(InputAction.CallbackContext context);
             void OnSwapForm(InputAction.CallbackContext context);
         }
         public interface IUIActions

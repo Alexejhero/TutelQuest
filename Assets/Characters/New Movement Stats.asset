@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeeed865184b7a8408b0c6f9580fd2ac, type: 3}
+  m_Name: New Movement Stats
+  m_EditorClassIdentifier: 
+  maxHorizontalSpeed: 12
+  groundAcceleration: 60
+  idleDeceleration: 30
+  turnDecelerationMulti: 2
+  airAccelerationMulti: 0.5
+  peakHeight: 4
+  timeToPeak: 0.5
+  extraJumps: 0
+  terminalVelocity: 0
+  jumpUpwardsGravityMulti: 2
+  earlyCutoffGravityMulti: 2
+  fallGravityMulti: 2
+  airJumpOverrideFallVelocity: 1
+  airJumpOverrideRiseVelocity: 1
+  coyoteTime: 0.15
+  bunnyhopBuffer: 0.15

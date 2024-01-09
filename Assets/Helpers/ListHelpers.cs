@@ -1,24 +1,10 @@
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace SchizoQuest.Helpers
 {
-    public static class ExtensionHelpers
+    public static class ListHelpers
     {
-        public static T EnsureComponent<T>(this GameObject gameObject)
-            where T : Component
-        {
-            T comp = gameObject.GetComponent<T>();
-            if (!comp) comp = gameObject.AddComponent<T>();
-            
-            return comp;
-        }
-
-        public static T EnsureComponent<T>(this Component component)
-            where T : Component
-            => component.gameObject.EnsureComponent<T>();
-
         /// <summary>
         /// Remove an element from the list by swapping it with the last element and removing the last element instead.<br/>
         /// This method is O(1), which is faster than the O(n) of <see cref="List.Remove(T)"/> and <see cref="List.RemoveAt(int)"/>.
