@@ -745,6 +745,7 @@ GameObject:
   - component: {fileID: 7448211291267243488}
   - component: {fileID: 2270235998329449871}
   - component: {fileID: 680151306396562397}
+  - component: {fileID: 7703773763519491541}
   m_Layer: 0
   m_Name: Pillar
   m_TagString: Untagged
@@ -878,6 +879,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOn: 0
+  rb: {fileID: 7703773763519491541}
   offset: {x: 0, y: -10, z: 0}
   speed: 0.8
   moveSound: {fileID: 680151306396562397}
@@ -913,6 +915,33 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!50 &7703773763519491541
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6162097321606848122}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &6294583094561160007
 GameObject:
   m_ObjectHideFlags: 0

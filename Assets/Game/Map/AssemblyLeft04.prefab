@@ -3933,6 +3933,7 @@ GameObject:
   - component: {fileID: 1636342847963516864}
   - component: {fileID: 5485810855387685867}
   - component: {fileID: 8724289209424527459}
+  - component: {fileID: 1115090179037960785}
   m_Layer: 0
   m_Name: Gateway
   m_TagString: Untagged
@@ -4027,6 +4028,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOn: 0
+  rb: {fileID: 1115090179037960785}
   offset: {x: -5, y: 0, z: 0}
   speed: 0.5
   moveSound: {fileID: 8724289209424527459}
@@ -4062,6 +4064,33 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!50 &1115090179037960785
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4182060269191215130}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &4266979363425350765
 GameObject:
   m_ObjectHideFlags: 0
@@ -5187,6 +5216,7 @@ GameObject:
   - component: {fileID: 8713457713404059500}
   - component: {fileID: 549521807926818064}
   - component: {fileID: 7431475035810805908}
+  - component: {fileID: 540243374165889837}
   m_Layer: 0
   m_Name: Moving Block V
   m_TagString: Untagged
@@ -5268,6 +5298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOn: 0
+  rb: {fileID: 540243374165889837}
   offset: {x: 0, y: 4, z: 0}
   speed: 3
   moveSound: {fileID: 8713457713404059500}
@@ -5341,6 +5372,33 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!50 &540243374165889837
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5081099785800782668}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &5333981693792047537
 GameObject:
   m_ObjectHideFlags: 0
@@ -6086,6 +6144,7 @@ GameObject:
   - component: {fileID: 5257305816697769588}
   - component: {fileID: 2965807147107711258}
   - component: {fileID: 6481607217691457712}
+  - component: {fileID: 3659850710830564514}
   m_Layer: 0
   m_Name: PlatformSegment04 (1)
   m_TagString: Untagged
@@ -6218,6 +6277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOn: 0
+  rb: {fileID: 3659850710830564514}
   offset: {x: 0, y: 6, z: 0}
   speed: 1.5
   moveSound: {fileID: 0}
@@ -6241,6 +6301,33 @@ MonoBehaviour:
   intervalOn: 2
   intervalOff: 3
   offset: 0
+--- !u!50 &3659850710830564514
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5775997873739943643}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &5904900692130244757
 GameObject:
   m_ObjectHideFlags: 0
@@ -7763,6 +7850,7 @@ GameObject:
   - component: {fileID: 3373875728078515794}
   - component: {fileID: 5579879056871249543}
   - component: {fileID: 1687680005578294824}
+  - component: {fileID: 9080355131835533371}
   m_Layer: 0
   m_Name: EndPillar
   m_TagString: Untagged
@@ -7896,6 +7984,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOn: 0
+  rb: {fileID: 9080355131835533371}
   offset: {x: 0, y: -16.28, z: 0}
   speed: 0.8
   moveSound: {fileID: 0}
@@ -7931,6 +8020,33 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!50 &9080355131835533371
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6862342670123430581}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &6914082153352458006
 GameObject:
   m_ObjectHideFlags: 0
