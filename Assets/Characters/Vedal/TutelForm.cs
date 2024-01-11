@@ -17,7 +17,7 @@ namespace SchizoQuest.Characters.Vedal
         public float vedalItemYPos = 2;
         public float tutelItemYPos = -0.1f;
 
-        public PlayerController2 controller;
+        public PlayerController controller;
         public GroundTracker groundTracker;
         public Rigidbody2D rb;
 

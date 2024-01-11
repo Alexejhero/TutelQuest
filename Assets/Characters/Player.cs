@@ -12,7 +12,7 @@ namespace SchizoQuest.Characters
 
         public PlayerType playerType;
         public Respawnable respawn;
-        public PlayerController2 controller;
+        public PlayerController controller;
         public Inventory inventory;
         public ParticleSystem characterSwitchParticleEffect;
         public Rigidbody2D rb;

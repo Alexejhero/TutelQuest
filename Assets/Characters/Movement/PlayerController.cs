@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 namespace SchizoQuest.Characters.Movement
 {
-    public class PlayerController2 : MonoBehaviour
+    public class PlayerController : MonoBehaviour
     {
         public MovementStats stats;
         public Rigidbody2D rb;
