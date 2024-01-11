@@ -1,10 +1,9 @@
-using System;
 using UnityEngine;
 
 namespace SchizoQuest.Characters.Movement
 {
     [CreateAssetMenu]
-    public class Stats : ScriptableObject
+    public class MovementStats : ScriptableObject
     {
         [Header("Horizontal Movement")]
         

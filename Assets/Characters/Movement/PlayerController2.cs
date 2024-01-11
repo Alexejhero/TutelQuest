@@ -7,7 +7,7 @@ namespace SchizoQuest.Characters.Movement
 {
     public class PlayerController2 : MonoBehaviour
     {
-        public Stats stats;
+        public MovementStats stats;
         public Rigidbody2D rb;
         public Collider2D groundTestCollider;
         public GroundTracker groundTracker;
