@@ -529,31 +529,6 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
---- !u!1 &973420401 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 285464862063802702, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
-  m_PrefabInstance: {fileID: 1625013826}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &973420405 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 5790396944797154367, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
-  m_PrefabInstance: {fileID: 1625013826}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &973420411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 973420401}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e76a1dbbc79053b41b59a9b03534fe39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: 3eda00987f6e9c841b09666c8efd0021, type: 2}
-  rb: {fileID: 973420405}
-  groundTestCollider: {fileID: 1509361068}
 --- !u!114 &1072930137 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1230851065774595635, guid: daa063611f5f304479ee1de2aff94c45, type: 3}
@@ -816,11 +791,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a92b77997c3b7fc45afea83723583d96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!70 &1509361068 stripped
-CapsuleCollider2D:
-  m_CorrespondingSourceObject: {fileID: 8286433779556641387, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
-  m_PrefabInstance: {fileID: 1625013826}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1581438659
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1011,9 +981,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 285464862063802702, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
-      insertIndex: 5
-      addedObject: {fileID: 973420411}
     - targetCorrespondingSourceObject: {fileID: 340478801235069919, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}

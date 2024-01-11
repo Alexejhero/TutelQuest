@@ -18,10 +18,10 @@ MonoBehaviour:
   turnDecelerationMulti: 1
   airAcceleration: 120
   idleAirDeceleration: 30
-  peakHeight: 0.25
-  timeToPeak: 0.1
+  peakHeight: 0.625
+  timeToPeak: 0.125
   extraJumps: 0
-  earlyCutoffGravityMulti: 1
+  earlyCutoffGravityMulti: 3
   airResetFallVelocity: 1
   airResetRiseVelocity: 1
   coyoteTime: 0.15

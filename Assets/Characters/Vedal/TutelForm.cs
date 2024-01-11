@@ -83,11 +83,13 @@ namespace SchizoQuest.Characters.Vedal
 
         private IEnumerator CoDash()
         {
-            controller.canMove = controller.canJump = false;
+            // "temporary" hack to match previous controller behaviour (no extra gravity while disabled)
+            controller.enabled = false;
+            rb.gravityScale = 1;
 
             yield return new WaitUntil(() => Mathf.Abs(rb.velocity.x) < 0.1f);
 
-            controller.canMove = controller.canJump = true;
+            controller.enabled = true;
             IsDashing = false;
         }
 
