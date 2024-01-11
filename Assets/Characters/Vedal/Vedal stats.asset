@@ -18,8 +18,8 @@ MonoBehaviour:
   turnDecelerationMulti: 1.5
   airAcceleration: 120
   idleAirDeceleration: 60
-  peakHeight: 5
-  timeToPeak: 0.3
+  peakHeight: 5.5682
+  timeToPeak: 0.3182
   extraJumps: 0
   earlyCutoffGravityMulti: 3
   airResetFallVelocity: 1

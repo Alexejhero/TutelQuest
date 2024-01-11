@@ -43,8 +43,9 @@ GameObject:
   - component: {fileID: 2994542948100938228}
   - component: {fileID: 478257553380852303}
   - component: {fileID: 3794102725898009367}
+  - component: {fileID: 5187882562295365998}
+  - component: {fileID: 3423007431658043641}
   - component: {fileID: 2307560814186585820}
-  - component: {fileID: 2387018308218317640}
   - component: {fileID: 2069896818738633901}
   - component: {fileID: 6931515259517804241}
   - component: {fileID: 3317676237879881096}
@@ -147,11 +148,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerType: 0
   respawn: {fileID: 2307560814186585820}
-  controller: {fileID: 2387018308218317640}
+  controller: {fileID: 5187882562295365998}
   inventory: {fileID: 6931515259517804241}
   characterSwitchParticleEffect: {fileID: 0}
   rb: {fileID: 2994542948100938228}
   dying: 0
+--- !u!114 &5187882562295365998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8801004962465848453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e76a1dbbc79053b41b59a9b03534fe39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: 3eda00987f6e9c841b09666c8efd0021, type: 2}
+  rb: {fileID: 2994542948100938228}
+  groundTracker: {fileID: 3423007431658043641}
+  canMove: 0
+  canJump: 0
+  timescale: 1
+--- !u!114 &3423007431658043641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8801004962465848453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a07fabb75586441938179ddefcc824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSurfaceAngle: 60
+  isOnGround: 0
+  lastSurfacePoint: {x: 0, y: 0}
+  surfaceNormal: {x: 0, y: 0}
+  surfaceCollider: {fileID: 0}
+  debug: 0
 --- !u!114 &2307560814186585820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,22 +201,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 785f47124e6b08342922e3994e097c1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2387018308218317640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8801004962465848453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f61c64124c8575748994f087b9dc1b8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementActive: 0
-  stats: {fileID: 11400000, guid: a96127d8e62622d4f87704a0f4a3dcbe, type: 2}
-  collider_: {fileID: 478257553380852303}
-  _timeJumpWasPressed: 0
 --- !u!114 &2069896818738633901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,6 +228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 0}
   socket: {fileID: 6927315970538306801}
+  groundTracker: {fileID: 3423007431658043641}
 --- !u!114 &3317676237879881096
 MonoBehaviour:
   m_ObjectHideFlags: 0

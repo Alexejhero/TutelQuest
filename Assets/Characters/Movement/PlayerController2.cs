@@ -229,7 +229,7 @@ namespace SchizoQuest.Characters.Movement
             float calcPeakHeight = jumpSpeed * jumpSpeed / (2 * gravity);
             // ut = 0.5at^2
             // u = 0.5at
-            // t = 
+            // t = 2ua
             float calcTimeToPeak = 2 * jumpSpeed / gravity;
             Debug.Log($"Jumping with gravity {gravity} (scale {gravScale}) (calc peak {calcPeakHeight})");
             Debug.Log($"velocity {rb.velocity.y} ({jumpSpeed} added); calc time to peak {calcTimeToPeak}");
@@ -243,7 +243,7 @@ namespace SchizoQuest.Characters.Movement
             _bhopTimer = float.PositiveInfinity;
         }
 
-        // todo cache and check stats for changes
+        // todo cache and check stats for changes (god i miss RxNet)
         private float GetJumpGravityMulti()
         {
             // s = u*t + 0.5*a*t^2
