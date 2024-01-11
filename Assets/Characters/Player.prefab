@@ -48,7 +48,6 @@ GameObject:
   - component: {fileID: 2307560814186585820}
   - component: {fileID: 2069896818738633901}
   - component: {fileID: 6931515259517804241}
-  - component: {fileID: 3317676237879881096}
   m_Layer: 20
   m_Name: Player
   m_TagString: Player
@@ -170,7 +169,6 @@ MonoBehaviour:
   groundTracker: {fileID: 3423007431658043641}
   canMove: 0
   canJump: 0
-  timescale: 1
 --- !u!114 &3423007431658043641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,33 +227,3 @@ MonoBehaviour:
   item: {fileID: 0}
   socket: {fileID: 6927315970538306801}
   groundTracker: {fileID: 3423007431658043641}
---- !u!114 &3317676237879881096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8801004962465848453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: a9ebaca35d319eb4d9cc65b669943db3, type: 3}
-  m_NotificationBehavior: 1
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}

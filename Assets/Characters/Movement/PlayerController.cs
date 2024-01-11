@@ -45,17 +45,7 @@ namespace SchizoQuest.Characters.Movement
             jumpInput.performed += OnJumpInput;
             jumpInput.canceled += OnJumpInput;
         }
-#region debug delete later
-        private float _peak;
-        private float _base;
-        private float _peakTimer;
-        [Range(0,2)]
-        public float timescale = 1;
-        private void Update()
-        {
-            Time.timeScale = timescale;
-        }
-#endregion
+
         private void FixedUpdate()
         {
             CheckGrounded();
@@ -140,7 +130,7 @@ namespace SchizoQuest.Characters.Movement
                 _jumpPressQueued = false;
                 if (TryExecuteJump())
                 {
-                    //Debug.Log($"Ground/coyote jump - frame {Time.frameCount}");
+                    //Debug.Log("Ground/coyote jump");
                     return;
                 }
             }
@@ -156,24 +146,6 @@ namespace SchizoQuest.Characters.Movement
                     _cutoff = true;
                     //Debug.Log("Early cutoff");
                 }
-                if (transform.position.y > _peak)
-                {
-                    _peak = transform.position.y;
-                    _peakTimer += Time.deltaTime;
-                }
-                else if (transform.position.y < _peak && _peakTimer > 0)
-                {
-                    //Debug.Log($"Actual peak time {_peakTimer}");
-                    _peakTimer = 0;
-                }
-            }
-            else
-            {
-                if (_peak != 0)
-                {
-                    //Debug.Log($"Actual peak {_peak - _base}");
-                }
-                _peak = 0;
             }
         }
 
@@ -221,6 +193,7 @@ namespace SchizoQuest.Characters.Movement
             }
             // Jump peak height = 1/2 * (v0 ^ 2 / gravity)
             // therefore v0 = sqrt(2 * height * gravity)
+            // also, just for fun - time to peak = v0 * gravity
 
             // gravity will be this while rising
             float gravScale = _defaultGravMulti * GetJumpGravityMulti();
@@ -229,19 +202,10 @@ namespace SchizoQuest.Characters.Movement
             float jumpSpeed = Mathf.Sqrt(2 * stats.peakHeight * gravity);
 
             rb.velocity += new Vector2(0, jumpSpeed);
-            /*
-            float calcPeakHeight = jumpSpeed * jumpSpeed / (2 * gravity);
-            // ut = 0.5at^2
-            // u = 0.5at
-            // t = 2ua
-            float calcTimeToPeak = 2 * jumpSpeed / gravity;
-            Debug.Log($"Jumping with gravity {gravity} (scale {gravScale}) (calc peak {calcPeakHeight})");
-            Debug.Log($"velocity {rb.velocity.y} ({jumpSpeed} added); calc time to peak {calcTimeToPeak}");
-            */
+
             _jumping = true;
             _jumpedThisFrame = true;
             _cutoff = false;
-            _base = transform.position.y;
             // no more coyote time after jumping
             _coyoteTimer = float.PositiveInfinity;
             _bhopTimer = float.PositiveInfinity;
