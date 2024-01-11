@@ -13,18 +13,16 @@ MonoBehaviour:
   m_Name: New Movement Stats
   m_EditorClassIdentifier: 
   maxHorizontalSpeed: 12
-  groundAcceleration: 60
-  idleDeceleration: 30
-  turnDecelerationMulti: 2
-  airAccelerationMulti: 0.5
-  peakHeight: 4
-  timeToPeak: 0.5
+  groundAcceleration: 120
+  idleDeceleration: 60
+  turnDecelerationMulti: 1.5
+  airAcceleration: 60
+  idleAirDeceleration: 60
+  peakHeight: 5
+  timeToPeak: 0.3
   extraJumps: 0
-  terminalVelocity: 0
-  jumpUpwardsGravityMulti: 2
-  earlyCutoffGravityMulti: 2
-  fallGravityMulti: 2
-  airJumpOverrideFallVelocity: 1
-  airJumpOverrideRiseVelocity: 1
+  earlyCutoffGravityMulti: 3
+  airResetFallVelocity: 1
+  airResetRiseVelocity: 1
   coyoteTime: 0.15
   bunnyhopBuffer: 0.15
