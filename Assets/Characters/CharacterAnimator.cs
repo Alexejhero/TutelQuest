@@ -1,7 +1,7 @@
 ﻿using System;
 using PowerTools;
+using SchizoQuest.Characters.Movement;
 using SchizoQuest.Game;
-using TarodevController;
 using UnityEngine;
 
 namespace SchizoQuest.Characters
@@ -17,7 +17,7 @@ namespace SchizoQuest.Characters
         public AnimationClip moveRightAnim;
         public bool flipLeftAnims;
         public bool flipRightAnims;
-        public PlayerController playerController;
+        public GroundTracker groundTracker;
 
         public virtual AnimationClip IdleFrontAnim => idleFrontAnim;
         public virtual AnimationClip IdleLeftAnim => idleLeftAnim;
@@ -81,10 +81,10 @@ namespace SchizoQuest.Characters
                     if (!_hintHidden)
                     {
                         _hintHidden = true;
-                        playerController.SendMessage("HideHint", HintType.WASD, SendMessageOptions.DontRequireReceiver);
+                        groundTracker.SendMessage("HideHint", HintType.WASD, SendMessageOptions.DontRequireReceiver);
                     }
 
-                    CurrentClip = playerController._grounded ? MoveLeftAnim : IdleLeftAnim;
+                    CurrentClip = groundTracker.isOnGround ? MoveLeftAnim : IdleLeftAnim;
                     _lastMoveDirection = -1;
                     SetFlip(FlipLeftAnims);
                 }
@@ -93,10 +93,10 @@ namespace SchizoQuest.Characters
                     if (!_hintHidden)
                     {
                         _hintHidden = true;
-                        playerController.SendMessage("HideHint", HintType.WASD, SendMessageOptions.DontRequireReceiver);
+                        groundTracker.SendMessage("HideHint", HintType.WASD, SendMessageOptions.DontRequireReceiver);
                     }
 
-                    CurrentClip = playerController._grounded ? MoveRightAnim : IdleRightAnim;
+                    CurrentClip = groundTracker.isOnGround ? MoveRightAnim : IdleRightAnim;
                     _lastMoveDirection = 1;
                     SetFlip(FlipRightAnims);
                 }

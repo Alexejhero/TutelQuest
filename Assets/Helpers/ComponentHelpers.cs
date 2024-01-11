@@ -19,10 +19,16 @@ namespace SchizoQuest.Helpers
             return component.gameObject.EnsureComponent<T>();
         }
 
-        public static T EnsureComponent<T>(this Component component, ref T field)
+        public static T EnsureComponent<T>(this Component component, ref T field, bool warnIfMissing = true)
             where T : Component
         {
-            if (!field) field = EnsureComponent<T>(component);
+            if (!field)
+            {
+                if (warnIfMissing)
+                    Debug.LogWarning($"{component.GetType().Name} ({component.name}) has a field of type {typeof(T).Name} that was not assigned!"
+                        + "\nReassigning automatically, this may create a new component");
+                field = EnsureComponent<T>(component);
+            }
             return field;
         }
     }

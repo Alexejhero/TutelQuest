@@ -9,7 +9,6 @@ namespace SchizoQuest.Characters.Movement
     {
         public MovementStats stats;
         public Rigidbody2D rb;
-        public Collider2D groundTestCollider;
         public GroundTracker groundTracker;
         public bool canMove;
         public bool canJump;
@@ -33,7 +32,6 @@ namespace SchizoQuest.Characters.Movement
         private void Awake()
         {
             this.EnsureComponent(ref rb);
-            if (!groundTestCollider) groundTestCollider = GetComponent<Collider2D>();
             this.EnsureComponent(ref groundTracker);
             _defaultGravMulti = _gravMultiShouldBe = rb.gravityScale;
             _input = new InputActions();
@@ -258,7 +256,7 @@ namespace SchizoQuest.Characters.Movement
         private void HandleHorizontal()
         {
             float moveProportion = _move.x;
-            if (!canMove) moveProportion = 0;
+            if (!canMove) return;
 
             if (Mathf.Approximately(moveProportion, 0))
             {

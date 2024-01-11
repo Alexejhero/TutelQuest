@@ -2,7 +2,6 @@ using System.Collections;
 using SchizoQuest.Characters.Movement;
 using SchizoQuest.Game;
 using SchizoQuest.Game.Items;
-using TarodevController;
 using UnityEngine;
 
 namespace SchizoQuest.Characters
@@ -13,8 +12,7 @@ namespace SchizoQuest.Characters
 
         public PlayerType playerType;
         public Respawnable respawn;
-        public PlayerController controller;
-        public PlayerController2 controller2;
+        public PlayerController2 controller;
         public Inventory inventory;
         public ParticleSystem characterSwitchParticleEffect;
         public Rigidbody2D rb;
@@ -89,12 +87,8 @@ namespace SchizoQuest.Characters
 
         private void ToggleMovement(bool active)
         {
-            controller.movementActive = active;
-            if (controller2)
-            {
-                controller2.canMove = active;
-                controller2.canJump = active;
-            }
+            controller.canMove = active;
+            controller.canJump = active;
         }
     }
 }
