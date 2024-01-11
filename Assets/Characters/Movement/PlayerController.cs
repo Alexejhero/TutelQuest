@@ -114,7 +114,11 @@ namespace SchizoQuest.Characters.Movement
 
         private float CalcGravity()
         {
-            float scale = _defaultGravMulti * GetJumpGravityMulti();
+            float scale = _defaultGravMulti;
+            if (!groundTracker.isOnGround || groundTracker.surfaceCollider.GetComponent<Rigidbody2D>()) // moving platform hack
+            {
+                scale *= GetJumpGravityMulti();
+            }
             if (_jumping && _cutoff && rb.velocity.y > 0.01f)
             {
                 scale *= stats.earlyCutoffGravityMulti;
