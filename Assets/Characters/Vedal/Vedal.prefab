@@ -735,7 +735,8 @@ MonoBehaviour:
   moveRightAnim: {fileID: 7400000, guid: 2336f992f0483974185a1b0e0ba2bd95, type: 2}
   flipLeftAnims: 1
   flipRightAnims: 0
-  groundTracker: {fileID: 4380412711607502666}
+  controller: {fileID: 6103963595262426845}
+  animationCoyoteTime: 0.1
 --- !u!1 &2700913443487111502
 GameObject:
   m_ObjectHideFlags: 0
@@ -1131,7 +1132,8 @@ MonoBehaviour:
   moveRightAnim: {fileID: 7400000, guid: 9ad6a46240ea64e48aa1c1ab514efd0d, type: 2}
   flipLeftAnims: 1
   flipRightAnims: 0
-  groundTracker: {fileID: 4380412711607502666}
+  controller: {fileID: 6103963595262426845}
+  animationCoyoteTime: 0.1
   tutelSlideAnim: {fileID: 7400000, guid: 8ca91d4672c5e6a459bea37b5bb41964, type: 2}
   tutelForm: {fileID: 6237045314539720047}
   slideFlipLeft: 0

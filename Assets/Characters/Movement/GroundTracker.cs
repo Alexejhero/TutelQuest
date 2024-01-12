@@ -8,10 +8,12 @@ namespace SchizoQuest.Characters.Movement
         public float maxSurfaceAngle = 45f;
         private float _savedMaxSurfaceAngle;
         private float minSurfaceCos;
+        [Header("Runtime Info")]
         public bool isOnGround;
         public Vector2 lastSurfacePoint;
         public Vector2 surfaceNormal;
         public Collider2D surfaceCollider;
+
         // cleared on FixedUpdate, (maybe) set in OnCollision****2D, then checked in Update
         // see https://docs.unity3d.com/Manual/ExecutionOrder.html
         // this does mean that changes are delayed until the next physics frame
@@ -74,10 +76,10 @@ namespace SchizoQuest.Characters.Movement
             return false;
         }
 #if DEBUG
-        [SerializeField] private bool debug;
+        [SerializeField] private bool debugGizmos;
         private void OnDrawGizmos()
         {
-            if (!debug) return;
+            if (!debugGizmos) return;
             Gizmos.color = isOnGround ? Color.green : Color.red;
             Gizmos.DrawRay(lastSurfacePoint, surfaceNormal * 2);
             Gizmos.DrawWireSphere(lastSurfacePoint, 0.2f);

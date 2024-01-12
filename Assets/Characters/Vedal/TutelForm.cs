@@ -71,6 +71,9 @@ namespace SchizoQuest.Characters.Vedal
 
                 controller.stats = tutelStats;
                 itemSlot.localPosition = new Vector3(0, tutelItemYPos, 0);
+                // neuter the "swap->jump before swap finishes->fly up" issue
+                // it's now a super advanced speedrun tech that's totally 100% intended
+                if (rb.velocity.y > 0) rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.2f);
 
                 if (IsDashing) StartCoroutine(CoDash()); // TODO: prevent swap to neuro
             }

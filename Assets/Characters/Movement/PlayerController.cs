@@ -15,6 +15,11 @@ namespace SchizoQuest.Characters.Movement
 
         private InputActions _input;
         private Vector2 _move;
+        /// <summary>
+        /// The latest directional input received.
+        /// </summary>
+        public Vector2 MoveInput => _move;
+
         private bool _jumpPressQueued;
         private bool _jumpHeld;
         private float _bhopTimer; // time since last jump press
@@ -25,6 +30,7 @@ namespace SchizoQuest.Characters.Movement
         private bool _jumping;
         private bool _cutoff;
         private bool _jumpedThisFrame; // hack because of the 1 frame delay on ground check
+        public bool IsJumping => _jumping;
 
         private float _defaultGravMulti;
         private float _gravMultiShouldBe; // detect outside changes
@@ -224,7 +230,6 @@ namespace SchizoQuest.Characters.Movement
         private void HandleHorizontal()
         {
             float moveProportion = _move.x;
-            if (!canMove) return;
 
             if (Mathf.Approximately(moveProportion, 0))
             {
@@ -234,6 +239,7 @@ namespace SchizoQuest.Characters.Movement
                 Accelerate(-rb.velocity.x / stats.maxHorizontalSpeed, deceleration);
                 return;
             }
+            if (!canMove) return;
             
             float acceleration = groundTracker.isOnGround
                 ? stats.groundAcceleration
