@@ -468,7 +468,7 @@ EdgeCollider2D:
   - {x: 32.639435, y: -1.7724502}
   - {x: 32.744263, y: -2.0598845}
   - {x: 32.72047, y: -2.5742018}
-  - {x: 32.3089, y: -6.3216324}
+  - {x: 31.521805, y: -13.077549}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -1159,8 +1159,8 @@ Transform:
   m_GameObject: {fileID: 2159581386249850078}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.005484, y: -6.455249, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 22.925482, y: -16.25, z: 0}
+  m_LocalScale: {x: 1.3624, y: 1.3624, z: 1.3624}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8820147338799471786}
@@ -5219,12 +5219,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 8820147338799471786}
     m_Modifications:
     - target: {fileID: 4551650674790544989, guid: 9399a4b3a64b7e147930fc4f2d3f0087, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.0872
+      objectReference: {fileID: 0}
+    - target: {fileID: 4551650674790544989, guid: 9399a4b3a64b7e147930fc4f2d3f0087, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7248
+      objectReference: {fileID: 0}
+    - target: {fileID: 4551650674790544989, guid: 9399a4b3a64b7e147930fc4f2d3f0087, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.3624
+      objectReference: {fileID: 0}
+    - target: {fileID: 4551650674790544989, guid: 9399a4b3a64b7e147930fc4f2d3f0087, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.13
+      value: 23.05
       objectReference: {fileID: 0}
     - target: {fileID: 4551650674790544989, guid: 9399a4b3a64b7e147930fc4f2d3f0087, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.62
+      value: -10.34
       objectReference: {fileID: 0}
     - target: {fileID: 4551650674790544989, guid: 9399a4b3a64b7e147930fc4f2d3f0087, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5264,7 +5276,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7948631832033328446, guid: 9399a4b3a64b7e147930fc4f2d3f0087, type: 3}
       propertyPath: m_Size.x
-      value: 3.14
+      value: 3.82
       objectReference: {fileID: 0}
     - target: {fileID: 7948631832033328446, guid: 9399a4b3a64b7e147930fc4f2d3f0087, type: 3}
       propertyPath: m_Offset.x
