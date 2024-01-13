@@ -27,21 +27,25 @@ namespace SchizoQuest.Characters.Vedal
 
         private ContactFilter2D _filter;
         private RaycastHit2D[] _raycasts;
+        private int _playerLayer;
         private void Awake()
         {
-            int collMask = Physics2D.GetLayerCollisionMask(gameObject.layer) & ~(1 << gameObject.layer);
+            _playerLayer = gameObject.layer;
             _filter = new ContactFilter2D()
             {
-                layerMask = collMask,
+                layerMask = GetCollMask(),
                 useLayerMask = true,
                 useTriggers = false,
             };
             _raycasts = new RaycastHit2D[1];
-            GetComponent<Respawnable>().OnReset += (r) => {
+            GetComponent<Respawnable>().OnResetFinish += (r) =>
+            {
                 // respawn as vedal
                 if (isAlt) SwapImmediate();
             };
         }
+
+        private int GetCollMask() => Physics2D.GetLayerCollisionMask(_playerLayer) & ~(1 << _playerLayer);
 
         protected override bool CanSwap(bool toAlt)
         {
@@ -94,6 +98,12 @@ namespace SchizoQuest.Characters.Vedal
 
             controller.enabled = true;
             IsDashing = false;
+        }
+
+        private void FixedUpdate()
+        {
+            // todo do this through an event on evil/neuro swap
+            _filter.layerMask = GetCollMask();
         }
 
         private void Update()

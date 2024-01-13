@@ -22,33 +22,30 @@ namespace SchizoQuest.Characters
         private void Awake()
         {
             _renderers = GetComponentsInChildren<SpriteRenderer>();
-            respawn.OnReset += (r) =>
+            respawn.OnResetBegin += (r) =>
             {
-                if (this == ActivePlayer)
+                if (this != ActivePlayer) return;
+                
+                rb.simulated = false;
+                controller.enabled = false;
+                dying = true;
+                EffectsManager.Instance.PlayEffect(EffectsManager.Effects.death, 1f);
+            };
+            respawn.OnResetFinish += (r) =>
+            {
+                if (inventory.item)
                 {
-                    rb.simulated = false;
-                    controller.enabled = false;
-                    dying = true;
-                    EffectsManager.Instance.PlayEffect(EffectsManager.Effects.death, 1f);
+                    Item item = inventory.item;
+                    inventory.DetachItem();
+                    Respawnable itemRespawn = item.GetComponent<Respawnable>();
+                    if (itemRespawn) itemRespawn.Respawn();
                 }
 
-                if (this == ActivePlayer) StartCoroutine(Coroutine());
-
-                if (!inventory.item) return;
-                Item item = inventory.item;
-                inventory.DetachItem();
-                Respawnable itemRespawn = item.GetComponent<Respawnable>();
-                if (itemRespawn) itemRespawn.Respawn();
-
-                return;
-
-                IEnumerator Coroutine()
-                {
-                    yield return new WaitForSeconds(1);
-                    rb.simulated = true;
-                    controller.enabled = true;
-                    dying = false;
-                }
+                if (this != ActivePlayer) return;
+                
+                rb.simulated = true;
+                controller.enabled = true;
+                dying = false;
             };
         }
 

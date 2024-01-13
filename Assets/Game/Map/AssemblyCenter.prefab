@@ -9238,7 +9238,7 @@ PolygonCollider2D:
       - {x: -0.60957396, y: -0.5852294}
       - {x: 0.6055304, y: -0.6055347}
       - {x: 0.71343994, y: -0.19543147}
-      - {x: 0.97306824, y: 0.047851562}
+      - {x: 0.7648163, y: 0.079405546}
       - {x: 0.82310486, y: 0.65912366}
       - {x: 0.700318, y: 0.8381754}
   m_UseDelaunayMesh: 0
@@ -11706,10 +11706,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeathPillar (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 8494663859555999913, guid: 661e035a15f071144887be0c083bb13f, type: 3}
-      propertyPath: m_Size.x
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12072,10 +12068,6 @@ PrefabInstance:
     - target: {fileID: 7200044476835458186, guid: 661e035a15f071144887be0c083bb13f, type: 3}
       propertyPath: m_Name
       value: DeathPillar
-      objectReference: {fileID: 0}
-    - target: {fileID: 8494663859555999913, guid: 661e035a15f071144887be0c083bb13f, type: 3}
-      propertyPath: m_Size.x
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8912150711233590312, guid: 661e035a15f071144887be0c083bb13f, type: 3}
       propertyPath: OverrideAttenuation
