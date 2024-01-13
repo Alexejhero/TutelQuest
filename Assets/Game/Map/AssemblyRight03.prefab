@@ -463,7 +463,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.32, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -474,7 +474,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.28, y: 1.28}
+  m_Size: {x: 1.96, y: 1.28}
   m_EdgeRadius: 0
 --- !u!1 &429120730259266587
 GameObject:
@@ -2220,7 +2220,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.059999764, y: 0.30405983, z: 0}
-  m_LocalScale: {x: 0.115789466, y: 0.1375, z: 1.1}
+  m_LocalScale: {x: 0.10019407, y: 0.1375, z: 1.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3192513950572586818}
@@ -2855,7 +2855,7 @@ Transform:
   m_GameObject: {fileID: 3126153724979233073}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -27.62, y: -6.19, z: 0}
+  m_LocalPosition: {x: -26.04, y: -6.19, z: 0}
   m_LocalScale: {x: 0.80608475, y: 0.80608475, z: 0.80608475}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6744,7 +6744,7 @@ Transform:
   m_GameObject: {fileID: 7427042964378363134}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.01, y: -2.58, z: 0}
+  m_LocalPosition: {x: -19.61, y: -2.58, z: 0}
   m_LocalScale: {x: 9.5, y: 8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6846,7 +6846,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.28, y: 1.2447596}
+  m_Size: {x: 1.1, y: 1.2447596}
   m_EdgeRadius: 0
 --- !u!68 &1850207175432663549
 EdgeCollider2D:
@@ -8448,7 +8448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 760237204281078110, guid: 661e035a15f071144887be0c083bb13f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27.36
+      value: -26.07
       objectReference: {fileID: 0}
     - target: {fileID: 760237204281078110, guid: 661e035a15f071144887be0c083bb13f, type: 3}
       propertyPath: m_LocalPosition.y
