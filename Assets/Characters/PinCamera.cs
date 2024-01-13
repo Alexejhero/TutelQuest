@@ -1,10 +1,12 @@
+using System.Linq;
 using SchizoQuest.Game;
+using SchizoQuest.Game.Mechanisms;
 using SchizoQuest.Helpers;
 using UnityEngine;
 
 namespace SchizoQuest.Characters
 {
-    public class PinCamera : MonoBehaviour
+    public class PinCamera : Trigger<Player>
     {
         public Collider2D collider_;
         public Transform pinTarget;
@@ -13,6 +15,7 @@ namespace SchizoQuest.Characters
         private bool isPinned;
 
         private float camDistFactor;
+        private int _playersInside;
         private void Start()
         {
             _switcher = MonoSingleton<CharacterSwitcher>.Instance;
@@ -20,20 +23,29 @@ namespace SchizoQuest.Characters
             camDistFactor = 0.5f * 0.5625f / tanFov;
         }
 
-        public void FixedUpdate()
+        protected override void OnEnter(Player target)
         {
-            foreach (var player in _switcher.availablePlayers)
+            _playersInside++;
+            UpdatePin();
+        }
+
+        protected override void OnExit(Player target)
+        {
+            _playersInside--;
+            UpdatePin();
+        }
+
+        private void UpdatePin()
+        {
+            if (_playersInside < _switcher.availablePlayers.Count)
             {
-                if (!Physics2D.IsTouching(player.controller.collider_, collider_))
-                {
-                    Unpin();
-                    return;
-                }
+                Unpin();
+                return;
             }
             if (!isPinned)
                 Pin();
             else
-                FrameBothPlayers();
+                FrameAllPlayers();
         }
 
         public void Pin()
@@ -50,13 +62,15 @@ namespace SchizoQuest.Characters
             Camera.main.transform.position = camPos;
         }
 
-        private void FrameBothPlayers()
+        private void FrameAllPlayers()
         {
-            Bounds bounds = new(Player.ActivePlayer.transform.position, Vector3.zero);
+            if (_switcher.availablePlayers.Count == 0)
+                return;
 
-            foreach (var player in _switcher.availablePlayers)
+            Bounds bounds = new(_switcher.availablePlayers[0].transform.position, Vector3.zero);
+            foreach (var player in _switcher.availablePlayers.Skip(1))
             {
-                bounds.Encapsulate(player.controller.collider_.bounds);
+                bounds.Encapsulate(player.transform.position);
             }
 
             Vector3 center = bounds.center;

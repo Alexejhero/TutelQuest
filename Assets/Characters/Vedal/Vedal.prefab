@@ -735,7 +735,8 @@ MonoBehaviour:
   moveRightAnim: {fileID: 7400000, guid: 2336f992f0483974185a1b0e0ba2bd95, type: 2}
   flipLeftAnims: 1
   flipRightAnims: 0
-  playerController: {fileID: 3632937848152495355}
+  controller: {fileID: 6103963595262426845}
+  animationCoyoteTime: 0.1
 --- !u!1 &2700913443487111502
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,7 +964,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 3934357359261474321}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 37ddcaed004c1d84bb46d0081325a45b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1131,7 +1132,8 @@ MonoBehaviour:
   moveRightAnim: {fileID: 7400000, guid: 9ad6a46240ea64e48aa1c1ab514efd0d, type: 2}
   flipLeftAnims: 1
   flipRightAnims: 0
-  playerController: {fileID: 3632937848152495355}
+  controller: {fileID: 6103963595262426845}
+  animationCoyoteTime: 0.1
   tutelSlideAnim: {fileID: 7400000, guid: 8ca91d4672c5e6a459bea37b5bb41964, type: 2}
   tutelForm: {fileID: 6237045314539720047}
   slideFlipLeft: 0
@@ -1535,22 +1537,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4281764129697944395, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
   m_PrefabInstance: {fileID: 1390113893569232819}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3632937848152495355 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2387018308218317640, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
-  m_PrefabInstance: {fileID: 1390113893569232819}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7595846727379018550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f61c64124c8575748994f087b9dc1b8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &4234630266564535879 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 2994542948100938228, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
   m_PrefabInstance: {fileID: 1390113893569232819}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4380412711607502666 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3423007431658043641, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
+  m_PrefabInstance: {fileID: 1390113893569232819}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7595846727379018550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a07fabb75586441938179ddefcc824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6103963595262426845 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5187882562295365998, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
+  m_PrefabInstance: {fileID: 1390113893569232819}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7595846727379018550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e76a1dbbc79053b41b59a9b03534fe39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7595846727379018550 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8801004962465848453, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
@@ -1573,15 +1586,14 @@ MonoBehaviour:
   altForm: {fileID: 3934357359261474321}
   smokePoof: {fileID: 4635165659735915814, guid: ecf4f11eb204d5d43841a47894315a6a, type: 3}
   swapDelay: 0.1
-  humanCollider: {fileID: 1756580890270707731}
-  tutelCollider: {fileID: 9060981612997884456}
-  humanStats: {fileID: 11400000, guid: a96127d8e62622d4f87704a0f4a3dcbe, type: 2}
-  tutelStats: {fileID: 11400000, guid: c1fa0c4c90abaed4a9c1ecdc45bc452f, type: 2}
+  humanStats: {fileID: 11400000, guid: 3eda00987f6e9c841b09666c8efd0021, type: 2}
+  tutelStats: {fileID: 11400000, guid: 64b91143414eefe4cbe934427577dfa6, type: 2}
   swapCollider: {fileID: 4221869057994858319}
   itemSlot: {fileID: 8316011149754893122}
   vedalItemYPos: 2
   tutelItemYPos: -0.1
-  controller: {fileID: 3632937848152495355}
+  controller: {fileID: 6103963595262426845}
+  groundTracker: {fileID: 4380412711607502666}
   rb: {fileID: 4234630266564535879}
 --- !u!114 &7751258292495854360
 MonoBehaviour:

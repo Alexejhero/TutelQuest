@@ -1,14 +1,14 @@
 using FMODUnity;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace SchizoQuest.Game.Mechanisms
 {
+    [RequireComponent(typeof(Rigidbody2D))]
     public class MovingBlock : Toggleable
     {
+        public Rigidbody2D rb;
         public Vector3 offset;
         public float speed;
-        [FormerlySerializedAs("scrapeSound")]
         public StudioEventEmitter moveSound;
         public bool makeSound;
         private Vector3 _offPosition;
@@ -20,12 +20,12 @@ namespace SchizoQuest.Game.Mechanisms
         }
 
         private Vector3 _velocity;
-        private void Update()
+        private void FixedUpdate()
         {
-            transform.position = Vector3.SmoothDamp(transform.position, isOn ? _onPosition : _offPosition, ref _velocity, 1f/speed);
+            Vector3.SmoothDamp(transform.position, isOn ? _onPosition : _offPosition, ref _velocity, 1f/speed);
+            rb.velocity = _velocity;
             if (makeSound && moveSound)
-                moveSound.SetParameter("Speed", _velocity.magnitude);
+                moveSound.SetParameter("Speed", rb.velocity.magnitude);
         }
-
     }
 }

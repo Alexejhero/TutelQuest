@@ -1,4 +1,6 @@
 using SchizoQuest.Characters;
+using SchizoQuest.Characters.Movement;
+using SchizoQuest.Helpers;
 using UnityEngine;
 
 namespace SchizoQuest.Game.Items
@@ -7,6 +9,7 @@ namespace SchizoQuest.Game.Items
     {
         public Item item;
         public Transform socket;
+        public GroundTracker groundTracker;
 
         private ContactFilter2D _filter;
         private RaycastHit2D[] _raycasts;
@@ -15,6 +18,7 @@ namespace SchizoQuest.Game.Items
 
         private void Awake()
         {
+            this.EnsureComponent(ref groundTracker);
             _raycasts = new RaycastHit2D[1];
             _filter = new ContactFilter2D()
             {
@@ -40,7 +44,7 @@ namespace SchizoQuest.Game.Items
         }
         public void Drop(Item carryable)
         {
-            if (!Player.ActivePlayer.controller._grounded) return;
+            if (!groundTracker.isOnGround) return;
             // drop at the player's feet
             int rays = Physics2D.Raycast(transform.position, Vector2.down, _filter, _raycasts, 3f);
             if (rays == 0)

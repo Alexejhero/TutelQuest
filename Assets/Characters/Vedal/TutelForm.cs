@@ -1,16 +1,14 @@
 using System.Collections;
+using SchizoQuest.Characters.Movement;
 using SchizoQuest.Game;
-using TarodevController;
 using UnityEngine;
 
 namespace SchizoQuest.Characters.Vedal
 {
     public sealed class TutelForm : CharacterAltForm
     {
-        public CapsuleCollider2D humanCollider;
-        public CapsuleCollider2D tutelCollider;
-        public ScriptableStats humanStats;
-        public ScriptableStats tutelStats;
+        public MovementStats humanStats;
+        public MovementStats tutelStats;
 
         public CapsuleCollider2D swapCollider;
 
@@ -20,21 +18,21 @@ namespace SchizoQuest.Characters.Vedal
         public float tutelItemYPos = -0.1f;
 
         public PlayerController controller;
+        public GroundTracker groundTracker;
         public Rigidbody2D rb;
 
         public bool IsDashing { get; private set; }
 
         private bool _hintHidden = false;
 
-        private int _collMask;
         private ContactFilter2D _filter;
         private RaycastHit2D[] _raycasts;
         private void Awake()
         {
-            _collMask = Physics2D.GetLayerCollisionMask(gameObject.layer) & ~(1 << gameObject.layer);
+            int collMask = Physics2D.GetLayerCollisionMask(gameObject.layer) & ~(1 << gameObject.layer);
             _filter = new ContactFilter2D()
             {
-                layerMask = _collMask,
+                layerMask = collMask,
                 useLayerMask = true,
                 useTriggers = false,
             };
@@ -50,7 +48,7 @@ namespace SchizoQuest.Characters.Vedal
             if (player.dying) return false;
 
             // swap to tutel - only on the ground
-            if (toAlt) return controller._grounded;
+            if (toAlt) return groundTracker.isOnGround;
             // swap to human - only when there's space above
 
             if (IsDashing) return false; // cannot swap while dashing
@@ -69,29 +67,32 @@ namespace SchizoQuest.Characters.Vedal
 
             if (isAlt)
             {
-                IsDashing = Mathf.Abs(Mathf.Abs(controller._frameVelocity.x) - controller.stats.MaxSpeed) <= 0.5f;
+                IsDashing = Mathf.Abs(rb.velocity.x) / controller.stats.maxHorizontalSpeed >= 0.8f;
 
-                player.controller.collider_ = tutelCollider;
-                player.controller.stats = tutelStats;
+                controller.stats = tutelStats;
                 itemSlot.localPosition = new Vector3(0, tutelItemYPos, 0);
+                // neuter the "swap->jump before swap finishes->fly up" issue
+                // it's now a super advanced speedrun tech that's totally 100% intended
+                if (rb.velocity.y > 0) rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.2f);
 
                 if (IsDashing) StartCoroutine(CoDash()); // TODO: prevent swap to neuro
             }
             else
             {
-                player.controller.collider_ = humanCollider;
-                player.controller.stats = humanStats;
+                controller.stats = humanStats;
                 itemSlot.localPosition = new Vector3(0, vedalItemYPos, 0);
             }
         }
 
         private IEnumerator CoDash()
         {
-            player.controller.enabled = false;
+            // "temporary" hack to match previous controller behaviour (no extra gravity while disabled)
+            controller.enabled = false;
+            rb.gravityScale = 1;
 
             yield return new WaitUntil(() => Mathf.Abs(rb.velocity.x) < 0.1f);
 
-            player.controller.enabled = true;
+            controller.enabled = true;
             IsDashing = false;
         }
 

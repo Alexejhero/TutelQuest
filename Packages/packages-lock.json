@@ -172,12 +172,6 @@
       "source": "embedded",
       "dependencies": {}
     },
-    "tarodevcontroller": {
-      "version": "file:Tarodev 2D Controller",
-      "depth": 0,
-      "source": "embedded",
-      "dependencies": {}
-    },
     "twodhandcraftedart": {
       "version": "file:Free Asset - 2D Handcrafted Art",
       "depth": 0,

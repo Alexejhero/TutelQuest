@@ -1968,6 +1968,7 @@ GameObject:
   - component: {fileID: 2775007296772023703}
   - component: {fileID: 3204455812466936700}
   - component: {fileID: 5784381921444515127}
+  - component: {fileID: 2142138752062418784}
   m_Layer: 0
   m_Name: PlatformSegment02 (1)
   m_TagString: Untagged
@@ -2050,7 +2051,52 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4948515276196277960}
-  m_Enabled: 0
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 2.1314044}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.28, y: 5.5428085}
+  m_EdgeRadius: 0
+--- !u!68 &2142138752062418784
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4948515276196277960}
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -2076,18 +2122,62 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.28}
-    newSize: {x: 1.28, y: 1.28}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.47205323, y: 4.775425}
+  - {x: -0.39570075, y: 4.7971053}
+  - {x: -0.38955665, y: 4.937143}
+  - {x: -0.38351896, y: 4.951587}
+  - {x: -0.35837954, y: 4.953798}
+  - {x: -0.35372683, y: 4.9248796}
+  - {x: -0.32289135, y: 4.922507}
+  - {x: -0.3185711, y: 4.9350295}
+  - {x: -0.28959394, y: 4.938185}
+  - {x: -0.27335465, y: 4.7691674}
+  - {x: -0.27179047, y: 5.3433576}
+  - {x: -0.26767704, y: 5.405538}
+  - {x: -0.26019704, y: 5.431643}
+  - {x: -0.25382692, y: 5.5512176}
+  - {x: -0.2463423, y: 5.5867095}
+  - {x: -0.23909591, y: 5.6724334}
+  - {x: -0.16533282, y: 5.6904845}
+  - {x: -0.15027168, y: 5.5953555}
+  - {x: -0.08683279, y: 5.6011376}
+  - {x: -0.07808197, y: 5.642982}
+  - {x: -0.06798527, y: 5.7452054}
+  - {x: -0.039862223, y: 5.7498345}
+  - {x: -0.032934487, y: 5.7200484}
+  - {x: -0.0051316195, y: 5.7168174}
+  - {x: 0.00075281877, y: 5.732948}
+  - {x: 0.026872775, y: 5.7239366}
+  - {x: 0.047965452, y: 5.5865474}
+  - {x: 0.20393604, y: 5.5454335}
+  - {x: 0.22072761, y: 5.6477036}
+  - {x: 0.2925351, y: 5.6507354}
+  - {x: 0.3085384, y: 5.5454707}
+  - {x: 0.44716284, y: 5.5609813}
+  - {x: 0.45910716, y: 5.2615542}
+  - {x: 0.48675755, y: 5.2021756}
+  - {x: 0.5021519, y: 4.8929152}
+  - {x: 0.5717188, y: 4.9062076}
+  - {x: 0.5800683, y: 4.965282}
+  - {x: 0.6231291, y: 4.9862475}
+  - {x: 0.6386476, y: 4.9099183}
+  - {x: 0.70470774, y: 4.9108453}
+  - {x: 0.7204476, y: 4.9209476}
+  - {x: 0.7272313, y: 4.7744784}
+  - {x: 0.72761667, y: 4.1276126}
+  - {x: 0.7195345, y: 3.355743}
+  - {x: 0.67176735, y: 3.3437886}
+  - {x: 0.6679159, y: 2.0092728}
+  - {x: 0.6679021, y: 2.0044997}
+  - {x: 0.65945846, y: 1.989155}
+  - {x: 0.6593818, y: 1.8804533}
+  - {x: 0.6411328, y: 1.7674901}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &5312077907922438689
 GameObject:
   m_ObjectHideFlags: 0

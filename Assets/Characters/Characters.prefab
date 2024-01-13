@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: a9ebaca35d319eb4d9cc65b669943db3, type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 1
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -97,10 +97,6 @@ PrefabInstance:
       propertyPath: evilSwitchParticleEffect
       value: 
       objectReference: {fileID: 6028195290277456185}
-    - target: {fileID: 8129344841148157964, guid: ecd49f0896f80a64abdea63df3eebb87, type: 3}
-      propertyPath: neuroEvilTransitionManager
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8413138110959230356, guid: ecd49f0896f80a64abdea63df3eebb87, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.3
@@ -141,8 +137,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4359227608483978930, guid: ecd49f0896f80a64abdea63df3eebb87, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 4319207525014697795, guid: ecd49f0896f80a64abdea63df3eebb87, type: 3}
     m_AddedGameObjects: []

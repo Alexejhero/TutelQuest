@@ -1,7 +1,7 @@
 ﻿using System;
 using PowerTools;
+using SchizoQuest.Characters.Movement;
 using SchizoQuest.Game;
-using TarodevController;
 using UnityEngine;
 
 namespace SchizoQuest.Characters
@@ -17,7 +17,10 @@ namespace SchizoQuest.Characters
         public AnimationClip moveRightAnim;
         public bool flipLeftAnims;
         public bool flipRightAnims;
-        public PlayerController playerController;
+        public PlayerController controller;
+        [Tooltip("Time to keep playing the moving animation after the player leaves the ground")]
+        public float animationCoyoteTime = 0.1f;
+        private float _animationCoyoteTimer;
 
         public virtual AnimationClip IdleFrontAnim => idleFrontAnim;
         public virtual AnimationClip IdleLeftAnim => idleLeftAnim;
@@ -26,6 +29,7 @@ namespace SchizoQuest.Characters
         public virtual AnimationClip MoveRightAnim => moveRightAnim;
         public virtual bool FlipLeftAnims => flipLeftAnims;
         public virtual bool FlipRightAnims => flipRightAnims;
+        public virtual Vector2 MoveInput => controller.MoveInput;
 
         private float _originalScaleX;
         private int _lastMoveDirection = 0;
@@ -52,9 +56,10 @@ namespace SchizoQuest.Characters
         protected virtual void Update()
         {
             Vector2 velocity = rb.velocity;
+            Vector2 input = MoveInput;
             if (Math.Abs(velocity.x) < 1 && Math.Abs(velocity.y) < 1)
             {
-                if (UnityEngine.Input.GetKey(KeyCode.S) || UnityEngine.Input.GetKey(KeyCode.DownArrow)) _lastMoveDirection = 0;
+                if (input.y < 0) _lastMoveDirection = 0;
 
                 switch (_lastMoveDirection)
                 {
@@ -76,31 +81,36 @@ namespace SchizoQuest.Characters
             }
             else
             {
-                if (velocity.x < 0)
+                if (input.x < 0)
                 {
                     if (!_hintHidden)
                     {
                         _hintHidden = true;
-                        playerController.SendMessage("HideHint", HintType.WASD, SendMessageOptions.DontRequireReceiver);
+                        controller.SendMessage("HideHint", HintType.WASD, SendMessageOptions.DontRequireReceiver);
                     }
 
-                    CurrentClip = playerController._grounded ? MoveLeftAnim : IdleLeftAnim;
+                    CurrentClip = _animationCoyoteTimer < animationCoyoteTime ? MoveLeftAnim : IdleLeftAnim;
                     _lastMoveDirection = -1;
                     SetFlip(FlipLeftAnims);
                 }
-                else if (velocity.x > 0)
+                else if (input.x > 0)
                 {
                     if (!_hintHidden)
                     {
                         _hintHidden = true;
-                        playerController.SendMessage("HideHint", HintType.WASD, SendMessageOptions.DontRequireReceiver);
+                        controller.SendMessage("HideHint", HintType.WASD, SendMessageOptions.DontRequireReceiver);
                     }
 
-                    CurrentClip = playerController._grounded ? MoveRightAnim : IdleRightAnim;
+                    CurrentClip = _animationCoyoteTimer < animationCoyoteTime ? MoveRightAnim : IdleRightAnim;
                     _lastMoveDirection = 1;
                     SetFlip(FlipRightAnims);
                 }
             }
+
+            if (controller.groundTracker.isOnGround)
+                _animationCoyoteTimer = 0;
+            else
+                _animationCoyoteTimer += Time.deltaTime;
         }
 
         protected void SetFlip(bool flip)

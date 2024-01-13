@@ -1,7 +1,7 @@
 using System.Collections;
+using SchizoQuest.Characters.Movement;
 using SchizoQuest.Game;
 using SchizoQuest.Game.Items;
-using TarodevController;
 using UnityEngine;
 
 namespace SchizoQuest.Characters
@@ -56,7 +56,7 @@ namespace SchizoQuest.Characters
         {
             Camera.main!.GetComponent<CameraController>().target = transform;
             ActivePlayer = this;
-            controller.movementActive = false;
+            ToggleMovement(false);
             StartCoroutine(WaitUntilCameraIsClose());
             SetSortOrder(1);
         }
@@ -67,7 +67,7 @@ namespace SchizoQuest.Characters
             yield return new WaitUntil(() => CameraController.currVelocity.magnitude < 5f);
             if (ActivePlayer != this) yield break;
 
-            controller.movementActive = true;
+            ToggleMovement(true);
             characterSwitchParticleEffect.Play();
         }
 
@@ -75,7 +75,7 @@ namespace SchizoQuest.Characters
         {
             characterSwitchParticleEffect.Stop();
             characterSwitchParticleEffect.Clear();
-            controller.movementActive = false;
+            ToggleMovement(false);
             SetSortOrder(-1);
         }
 
@@ -83,6 +83,12 @@ namespace SchizoQuest.Characters
         {
             foreach (var spriteRenderer in _renderers)
                 spriteRenderer.sortingOrder = order;
+        }
+
+        private void ToggleMovement(bool active)
+        {
+            controller.canMove = active;
+            controller.canJump = active;
         }
     }
 }
