@@ -13,8 +13,6 @@ namespace SchizoQuest.Characters
         private ParticleSystem _neuroSwitchParticleEffect;
         public float switchTransitionDuration = 0.5f;
 
-        //private Volume _evilVolume;
-
         private int _evilLayer;
         private int _neuroLayer;
         private int _playerLayer;
@@ -26,7 +24,6 @@ namespace SchizoQuest.Characters
         {
             _neuroSwitchParticleEffect = player.characterSwitchParticleEffect;
 
-            //_evilVolume = Camera.main!.GetComponent<Volume>();
             _evilLayer = LayerMask.NameToLayer("EvilOnly");
             _neuroLayer = LayerMask.NameToLayer("NeuroOnly");
             _playerLayer = LayerMask.NameToLayer("Player");
@@ -57,22 +54,7 @@ namespace SchizoQuest.Characters
             switcher.music.SetCharacter(player.playerType);
 
             UpdateLayerCollision();
-            //StartCoroutine(CoOnSwap());
         }
-
-        //private IEnumerator CoOnSwap()
-        //{
-        //    float startWeight = isAlt ? 0 : 1;
-        //    float endWeight = isAlt ? 1 : 0;
-
-        //    for (float t = 0; t < switchTransitionDuration / 2; t += Time.deltaTime)
-        //    {
-        //        _evilVolume.weight = Mathf.Lerp(startWeight, endWeight, t / switchTransitionDuration / 2);
-        //        yield return null;
-        //    }
-
-        //    _evilVolume.weight = endWeight;
-        //}
 
         private void UpdateLayerCollision()
         {

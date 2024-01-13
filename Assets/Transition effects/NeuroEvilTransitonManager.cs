@@ -108,11 +108,8 @@ namespace SchizoQuest.Transition_effects
                 yield return null;
             }
             Shader.SetGlobalFloat(phaseID, isEvil ? 1f : 0f);
-            if (isEvil)
-            {
-                mask.transform.localScale = 1000 * maskMaxSize * Vector3.one;
-            }
-            else { mask.transform.localScale = Vector3.zero; } // reset if application was frozen mid - expansion.
+
+            mask.transform.localScale = isEvil ? 1000 * maskMaxSize * Vector3.one : Vector3.zero;
         }
 
         private void Update()
