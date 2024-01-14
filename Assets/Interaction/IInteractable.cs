@@ -6,5 +6,6 @@ namespace SchizoQuest.Interaction
     {
         bool CanInteract(Player player);
         void Interact(Player player);
+        void DiscardAfterUse(Player player) { }
     }
 }

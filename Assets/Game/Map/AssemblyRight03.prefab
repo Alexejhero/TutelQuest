@@ -4330,6 +4330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 0
   plug: {fileID: 0}
+  effectManager: {fileID: 0}
 --- !u!1 &4663759431854534089
 GameObject:
   m_ObjectHideFlags: 0
@@ -9146,6 +9147,18 @@ PrefabInstance:
     - target: {fileID: 2354642769076009907, guid: 79197fb0e139ea24a9765e605f4d370a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086754266342473863, guid: 79197fb0e139ea24a9765e605f4d370a, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086754266342473863, guid: 79197fb0e139ea24a9765e605f4d370a, type: 3}
+      propertyPath: m_SortingOrder
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086754266342473863, guid: 79197fb0e139ea24a9765e605f4d370a, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1607219517
       objectReference: {fileID: 0}
     - target: {fileID: 4160848284496669286, guid: 79197fb0e139ea24a9765e605f4d370a, type: 3}
       propertyPath: m_SortingLayer

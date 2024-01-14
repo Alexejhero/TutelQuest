@@ -1,6 +1,7 @@
 using SchizoQuest.Characters;
 using SchizoQuest.Game.Items;
 using SchizoQuest.Interaction;
+using System.Collections;
 using UnityEngine;
 
 namespace SchizoQuest.Game.Mechanisms
@@ -19,7 +20,6 @@ namespace SchizoQuest.Game.Mechanisms
 
         public void CompoundInteract(Player player, Item other)
         {
-            effectIdle.Stop(false, ParticleSystemStopBehavior.StopEmitting);
             effectOnDestroy.Play();
             renderers = GetComponentsInChildren<SpriteRenderer>();
             foreach (var r in renderers) 
@@ -27,8 +27,20 @@ namespace SchizoQuest.Game.Mechanisms
                 r.enabled = false;
             }
             coll.enabled = false;
-            //gameObject.SetActive(false);
-            Destroy(player.inventory.item.gameObject);
+
+            DiscardAfterUse(player);
+            other.DiscardAfterUse(player);
+        }
+
+        public void DiscardAfterUse(Player player)
+        {
+            StartCoroutine(r());
+            IEnumerator r() 
+            {
+                effectIdle.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                yield return new WaitUntil(() => !effectIdle.isPlaying);
+                gameObject.SetActive(false);
+            }
         }
     }
 }
