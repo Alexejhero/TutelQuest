@@ -94,10 +94,10 @@
 	</object>
 	<object class="EventMixerMaster" id="{24ee59ac-c457-4cac-83af-d82c6cd278cc}">
 		<property name="volume">
-			<value>3</value>
+			<value>5</value>
 		</property>
 		<property name="pitch">
-			<value>10</value>
+			<value>2</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{b40cd31b-77cc-4111-bbe3-4259308ca00f}</destination>
@@ -127,11 +127,8 @@
 		<property name="delayType">
 			<value>0</value>
 		</property>
-		<property name="minimumTimeDelay">
-			<value>300</value>
-		</property>
 		<property name="maximumTimeDelay">
-			<value>600</value>
+			<value>100</value>
 		</property>
 		<relationship name="sounds">
 			<destination>{14cf830d-94c2-4fb0-b937-3c87353f05ee}</destination>
@@ -168,6 +165,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{5341c120-1e27-4665-86ca-6792d3e6bc28}">
+		<property name="volume">
+			<value>5</value>
+		</property>
 		<property name="name">
 			<value>leaves rustling</value>
 		</property>
