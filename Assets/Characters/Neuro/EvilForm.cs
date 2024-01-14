@@ -18,7 +18,7 @@ namespace SchizoQuest.Characters
         private int _playerLayer;
         public bool enableSwitching = true;
 
-        private bool _hintHidden;
+        private HintType _activeSwapHint;
 
         private void Awake()
         {
@@ -34,10 +34,10 @@ namespace SchizoQuest.Characters
 
         protected override void OnSwap()
         {
-            if (!_hintHidden)
+            if (_activeSwapHint != default)
             {
-                _hintHidden = true;
-                player.SendMessage("HideHint", HintType.F2, SendMessageOptions.DontRequireReceiver);
+                player.SendMessage("HideHint", _activeSwapHint, SendMessageOptions.DontRequireReceiver);
+                _activeSwapHint = default;
             }
 
             player.playerType = isAlt
@@ -54,6 +54,12 @@ namespace SchizoQuest.Characters
             switcher.music.SetCharacter(player.playerType);
 
             UpdateLayerCollision();
+        }
+
+        public void ShowHint(HintType type)
+        {
+            if (type is HintType.NeuroF or HintType.NeuroF_2)
+                _activeSwapHint = type;
         }
 
         private void UpdateLayerCollision()

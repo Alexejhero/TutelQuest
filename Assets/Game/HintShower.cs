@@ -8,10 +8,11 @@ namespace SchizoQuest.Game
     {
         WASD,
         Space,
-        F,
+        VedalF,
         E,
         C,
-        F2
+        NeuroF,
+        NeuroF_2,
     }
 
     public class HintShower : Trigger<Player>
@@ -21,6 +22,7 @@ namespace SchizoQuest.Game
         protected override void OnEnter(Player target)
         {
             target.SendMessage("ShowHint", hintType, SendMessageOptions.DontRequireReceiver);
+            Destroy(gameObject);
         }
 
         protected override void OnExit(Player target)

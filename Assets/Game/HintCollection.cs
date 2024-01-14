@@ -20,7 +20,7 @@ namespace SchizoQuest.Game
         {
             foreach (HintBehaviour hintBehaviour in hints.Where(h => h.myType == type))
             {
-                Destroy(hintBehaviour.gameObject);
+                hintBehaviour.gameObject.SetActive(false);
             }
 
             hints.RemoveAll(h => h.myType == type);

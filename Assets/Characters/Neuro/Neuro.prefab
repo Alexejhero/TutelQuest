@@ -282,6 +282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4930634389282198680}
   - component: {fileID: 5904283706140849334}
+  - component: {fileID: 3428647097405247418}
   - component: {fileID: 3524195528020061944}
   - component: {fileID: 8561920486827312249}
   m_Layer: 0
@@ -323,6 +324,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myType: 5
+--- !u!114 &3428647097405247418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7267120876308203257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dcf07fe0e2d43369c386e5cd2567a06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myType: 6
 --- !u!23 &3524195528020061944
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1000,6 +1014,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hints:
   - {fileID: 5904283706140849334}
+  - {fileID: 3428647097405247418}
 --- !u!50 &7360106311038818091 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 2994542948100938228, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}

@@ -66,7 +66,7 @@ namespace SchizoQuest.Characters.Vedal
             if (!_hintHidden)
             {
                 _hintHidden = true;
-                controller.SendMessage("HideHint", HintType.F, SendMessageOptions.DontRequireReceiver);
+                controller.SendMessage("HideHint", HintType.VedalF, SendMessageOptions.DontRequireReceiver);
             }
 
             if (isAlt)
