@@ -1595,6 +1595,7 @@ MonoBehaviour:
   controller: {fileID: 6103963595262426845}
   groundTracker: {fileID: 4380412711607502666}
   rb: {fileID: 4234630266564535879}
+  dashInputBuffer: 0.25
 --- !u!114 &7751258292495854360
 MonoBehaviour:
   m_ObjectHideFlags: 0
