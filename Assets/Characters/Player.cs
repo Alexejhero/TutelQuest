@@ -61,7 +61,7 @@ namespace SchizoQuest.Characters
         public IEnumerator WaitUntilCameraIsClose()
         {
             yield return new WaitUntil(() => CameraController.DistanceToActivePlayer < 50f);
-            yield return new WaitUntil(() => CameraController.currVelocity.magnitude < 5f);
+            yield return new WaitUntil(() => CameraController.currVelocity.magnitude < 10f);
             if (ActivePlayer != this) yield break;
 
             ToggleMovement(true);

@@ -111,7 +111,10 @@ namespace SchizoQuest.Characters.Movement
         private float CalcGravity()
         {
             float scale = _defaultGravMulti;
-            if (!groundTracker.isOnGround || groundTracker.surfaceCollider.GetComponent<Rigidbody2D>()) // moving platform hack
+            bool applyMidAirGravity = !groundTracker.isOnGround
+                || groundTracker.surfaceCollider.GetComponent<Rigidbody2D>() // moving platform hack
+                || _jumpedThisFrame;
+            if (applyMidAirGravity)
             {
                 scale *= GetJumpGravityMulti();
             }

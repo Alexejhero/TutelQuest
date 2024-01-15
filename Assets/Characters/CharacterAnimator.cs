@@ -1,6 +1,5 @@
 ﻿using System;
 using PowerTools;
-using SchizoQuest.Characters.Movement;
 using SchizoQuest.Game;
 using UnityEngine;
 
@@ -17,7 +16,7 @@ namespace SchizoQuest.Characters
         public AnimationClip moveRightAnim;
         public bool flipLeftAnims;
         public bool flipRightAnims;
-        public PlayerController controller;
+        public Player player;
         [Tooltip("Time to keep playing the moving animation after the player leaves the ground")]
         public float animationCoyoteTime = 0.1f;
         private float _animationCoyoteTimer;
@@ -29,7 +28,7 @@ namespace SchizoQuest.Characters
         public virtual AnimationClip MoveRightAnim => moveRightAnim;
         public virtual bool FlipLeftAnims => flipLeftAnims;
         public virtual bool FlipRightAnims => flipRightAnims;
-        public virtual Vector2 MoveInput => controller.MoveInput;
+        public virtual Vector2 MoveInput => player.controller.MoveInput;
 
         private float _originalScaleX;
         private int _lastMoveDirection = 0;
@@ -55,6 +54,7 @@ namespace SchizoQuest.Characters
 
         protected virtual void Update()
         {
+            if (player != Player.ActivePlayer) return;
             Vector2 velocity = rb.velocity;
             Vector2 input = MoveInput;
             if (Math.Abs(velocity.x) < 1 && Math.Abs(velocity.y) < 1)
@@ -86,7 +86,7 @@ namespace SchizoQuest.Characters
                     if (!_hintHidden)
                     {
                         _hintHidden = true;
-                        controller.SendMessage("HideHint", HintType.WASD, SendMessageOptions.DontRequireReceiver);
+                        player.SendMessage("HideHint", HintType.WASD, SendMessageOptions.DontRequireReceiver);
                     }
 
                     CurrentClip = _animationCoyoteTimer < animationCoyoteTime ? MoveLeftAnim : IdleLeftAnim;
@@ -98,7 +98,7 @@ namespace SchizoQuest.Characters
                     if (!_hintHidden)
                     {
                         _hintHidden = true;
-                        controller.SendMessage("HideHint", HintType.WASD, SendMessageOptions.DontRequireReceiver);
+                        player.SendMessage("HideHint", HintType.WASD, SendMessageOptions.DontRequireReceiver);
                     }
 
                     CurrentClip = _animationCoyoteTimer < animationCoyoteTime ? MoveRightAnim : IdleRightAnim;
@@ -107,7 +107,7 @@ namespace SchizoQuest.Characters
                 }
             }
 
-            if (controller.groundTracker.isOnGround)
+            if (player.controller.groundTracker.isOnGround)
                 _animationCoyoteTimer = 0;
             else
                 _animationCoyoteTimer += Time.deltaTime;

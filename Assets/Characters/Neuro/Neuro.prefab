@@ -270,7 +270,7 @@ MonoBehaviour:
   moveRightAnim: {fileID: 7400000, guid: c119c13f3fa72b04192b808f21a8638b, type: 2}
   flipLeftAnims: 0
   flipRightAnims: 0
-  controller: {fileID: 600552116727992241}
+  player: {fileID: 8866959914121868744}
   animationCoyoteTime: 0.1
 --- !u!1 &7267120876308203257
 GameObject:
@@ -696,7 +696,7 @@ MonoBehaviour:
   moveRightAnim: {fileID: 7400000, guid: b56675484fd961f4ab9a8e64622f9a22, type: 2}
   flipLeftAnims: 0
   flipRightAnims: 0
-  controller: {fileID: 600552116727992241}
+  player: {fileID: 8866959914121868744}
   animationCoyoteTime: 0.1
 --- !u!1 &8641902545239064781
 GameObject:
@@ -963,17 +963,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 3443322844577061069}
   m_SourcePrefab: {fileID: 100100000, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
---- !u!114 &600552116727992241 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5187882562295365998, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
-  m_PrefabInstance: {fileID: 5740569191512100575}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3857871987478843994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e76a1dbbc79053b41b59a9b03534fe39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3857871987478843994 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8801004962465848453, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
