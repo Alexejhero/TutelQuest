@@ -2840,6 +2840,7 @@ GameObject:
   - component: {fileID: 1678221700222642300}
   - component: {fileID: 3728237113572972377}
   - component: {fileID: 8717544555081716134}
+  - component: {fileID: 6200166349636321922}
   m_Layer: 13
   m_Name: PlatformSegmentNeuro
   m_TagString: Untagged
@@ -2945,14 +2946,12 @@ EdgeCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 4.6981273, y: -2.306075}
-  - {x: -5.78656, y: -2.146699}
-  - {x: -5.9895782, y: 0.34855366}
+  - {x: -5.8761525, y: 0.32909775}
   - {x: -4.9699707, y: 0.32529068}
   - {x: -4.8635406, y: 0.22989845}
   - {x: -3.2755737, y: 0.19597626}
@@ -2964,11 +2963,29 @@ EdgeCollider2D:
   - {x: 5.1365204, y: 0.35826302}
   - {x: 5.2370987, y: 0.59082603}
   - {x: 6.7680435, y: 0.5556822}
-  - {x: 6.789536, y: -0.4911089}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!251 &6200166349636321922
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3622353730739373541}
+  m_Enabled: 1
+  m_UseColliderMask: 0
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 200
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &3788003850154957167
 GameObject:
   m_ObjectHideFlags: 0

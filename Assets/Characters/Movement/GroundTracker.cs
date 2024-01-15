@@ -64,6 +64,8 @@ namespace SchizoQuest.Characters.Movement
             if (collision.contactCount == 0) return false;
             foreach (ContactPoint2D contact in collision.GetContacts())
             {
+                if (!contact.enabled) continue; // platform effectors
+                
                 Vector2 normal = contact.normal;
                 if (Vector2.Dot(Vector2.up, normal) >= minSurfaceCos)
                 {
