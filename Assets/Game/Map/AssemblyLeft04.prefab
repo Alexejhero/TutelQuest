@@ -631,7 +631,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8466954690297641444}
-  - component: {fileID: 6435184279328265575}
   - component: {fileID: 4154858600664387754}
   m_Layer: 0
   m_Name: PlatformSegment03 (12)
@@ -657,58 +656,6 @@ Transform:
   - {fileID: 2259815634770052994}
   m_Father: {fileID: 6530337268960931483}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &6435184279328265575
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 563322548380687563}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f289a265d361a544eb31abe587f2d56d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1.28, y: 1.28}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!61 &4154858600664387754
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -716,7 +663,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 563322548380687563}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -1051,7 +998,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9208969650015365054}
-  - component: {fileID: 6655871792768547842}
   - component: {fileID: 1152789308338419858}
   m_Layer: 0
   m_Name: PlatformSegment03 (11)
@@ -1076,58 +1022,6 @@ Transform:
   - {fileID: 732519586699151349}
   m_Father: {fileID: 6530337268960931483}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &6655871792768547842
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 957641119366086945}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f289a265d361a544eb31abe587f2d56d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1.28, y: 1.28}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!61 &1152789308338419858
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1135,7 +1029,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 957641119366086945}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -2823,7 +2717,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5709689055781146435}
-  - component: {fileID: 2413878778637852633}
   - component: {fileID: 1412793488699144790}
   m_Layer: 0
   m_Name: PlatformSegment03 (1)
@@ -2850,58 +2743,6 @@ Transform:
   - {fileID: 7851032233518057018}
   m_Father: {fileID: 6530337268960931483}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2413878778637852633
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2751026185466826540}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f289a265d361a544eb31abe587f2d56d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1.28, y: 1.28}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!61 &1412793488699144790
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6894,8 +6735,29 @@ EdgeCollider2D:
   - {x: -7.1158752, y: 7.0123196}
   - {x: -6.4218903, y: 7.272503}
   - {x: -5.7794037, y: 7.569603}
-  - {x: -1.3186035, y: 7.608204}
-  - {x: 6.344368, y: 7.3841133}
+  - {x: -1.8088226, y: 7.680829}
+  - {x: -1.890686, y: 10.079327}
+  - {x: -0.27825928, y: 10.0896225}
+  - {x: -0.0769043, y: 9.923641}
+  - {x: 1.6270905, y: 9.895258}
+  - {x: 1.7380676, y: 10.681484}
+  - {x: 2.1815338, y: 10.937925}
+  - {x: 2.5044098, y: 11.057215}
+  - {x: 2.7531128, y: 11.361944}
+  - {x: 3.0661469, y: 11.57826}
+  - {x: 3.2153625, y: 11.948257}
+  - {x: 3.4265747, y: 12.0834465}
+  - {x: 4.350403, y: 12.075554}
+  - {x: 5.063965, y: 11.9974575}
+  - {x: 6.193695, y: 11.997002}
+  - {x: 6.9989624, y: 11.918743}
+  - {x: 7.822876, y: 12.147978}
+  - {x: 9.047775, y: 12.123091}
+  - {x: 9.249115, y: 11.599762}
+  - {x: 10.04863, y: 11.5947}
+  - {x: 10.338501, y: 11.273302}
+  - {x: 10.60437, y: 10.734598}
+  - {x: 10.769096, y: 9.206873}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
