@@ -7,6 +7,16 @@ namespace SchizoQuest.Characters
 {
     public class CharacterAnimator : MonoBehaviour
     {
+        public enum AnimationType
+        {
+            None,
+            IdleFront,
+            IdleLeft,
+            IdleRight,
+            MoveLeft,
+            MoveRight
+        }
+
         public Rigidbody2D rb;
         public SpriteAnim animator;
         public AnimationClip idleFrontAnim;
@@ -19,6 +29,8 @@ namespace SchizoQuest.Characters
         public Player player;
         [Tooltip("Time to keep playing the moving animation after the player leaves the ground")]
         public float animationCoyoteTime = 0.1f;
+        public CharacterAnimator sisterAnimator;
+
         private float _animationCoyoteTimer;
 
         public virtual AnimationClip IdleFrontAnim => idleFrontAnim;
@@ -36,6 +48,8 @@ namespace SchizoQuest.Characters
 
         private bool _hintHidden;
 
+        public AnimationType CurrentAnimation { get; private set; }
+
         protected AnimationClip CurrentClip
         {
             get => _currentClip;
@@ -52,6 +66,11 @@ namespace SchizoQuest.Characters
             _originalScaleX = animator.transform.localScale.x;
         }
 
+        /*private void OnEnable()
+        {
+            if (sisterAnimator && sisterAnimator.CurrentAnimation != AnimationType.None) SetAnimation(sisterAnimator.CurrentAnimation);
+        }*/
+
         protected virtual void Update()
         {
             if (player != Player.ActivePlayer) return;
@@ -61,23 +80,14 @@ namespace SchizoQuest.Characters
             {
                 if (input.y < 0) _lastMoveDirection = 0;
 
-                switch (_lastMoveDirection)
+                AnimationType animationType = _lastMoveDirection switch
                 {
-                    case 0:
-                        CurrentClip = IdleFrontAnim;
-                        SetFlip(false);
-                        break;
+                    0 => AnimationType.IdleFront,
+                    < 0 => AnimationType.IdleLeft,
+                    > 0 => AnimationType.IdleRight,
+                };
 
-                    case < 0:
-                        CurrentClip = IdleLeftAnim;
-                        SetFlip(FlipLeftAnims);
-                        break;
-
-                    case > 0:
-                        CurrentClip = IdleRightAnim;
-                        SetFlip(FlipRightAnims);
-                        break;
-                }
+                SetAnimation(animationType);
             }
             else
             {
@@ -89,9 +99,7 @@ namespace SchizoQuest.Characters
                         player.SendMessage("HideHint", HintType.WASD, SendMessageOptions.DontRequireReceiver);
                     }
 
-                    CurrentClip = _animationCoyoteTimer < animationCoyoteTime ? MoveLeftAnim : IdleLeftAnim;
-                    _lastMoveDirection = -1;
-                    SetFlip(FlipLeftAnims);
+                    SetAnimation(AnimationType.MoveLeft);
                 }
                 else if (input.x > 0)
                 {
@@ -101,9 +109,7 @@ namespace SchizoQuest.Characters
                         player.SendMessage("HideHint", HintType.WASD, SendMessageOptions.DontRequireReceiver);
                     }
 
-                    CurrentClip = _animationCoyoteTimer < animationCoyoteTime ? MoveRightAnim : IdleRightAnim;
-                    _lastMoveDirection = 1;
-                    SetFlip(FlipRightAnims);
+                    SetAnimation(AnimationType.MoveRight);
                 }
             }
 
@@ -111,6 +117,45 @@ namespace SchizoQuest.Characters
                 _animationCoyoteTimer = 0;
             else
                 _animationCoyoteTimer += Time.deltaTime;
+        }
+
+        public void SetAnimation(AnimationType type)
+        {
+            switch (type)
+            {
+                case AnimationType.None:
+                case AnimationType.IdleFront:
+                    CurrentClip = IdleFrontAnim;
+                    SetFlip(false);
+                    break;
+
+                case AnimationType.IdleLeft:
+                    CurrentClip = IdleLeftAnim;
+                    SetFlip(FlipLeftAnims);
+                    break;
+
+                case AnimationType.IdleRight:
+                    CurrentClip = IdleRightAnim;
+                    SetFlip(FlipRightAnims);
+                    break;
+
+                case AnimationType.MoveLeft:
+                    CurrentClip = _animationCoyoteTimer < animationCoyoteTime ? MoveLeftAnim : IdleLeftAnim;
+                    _lastMoveDirection = -1;
+                    SetFlip(FlipLeftAnims);
+                    break;
+
+                case AnimationType.MoveRight:
+                    CurrentClip = _animationCoyoteTimer < animationCoyoteTime ? MoveRightAnim : IdleRightAnim;
+                    _lastMoveDirection = 1;
+                    SetFlip(FlipRightAnims);
+                    break;
+
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(type), type, null);
+            }
+
+            CurrentAnimation = type;
         }
 
         protected void SetFlip(bool flip)

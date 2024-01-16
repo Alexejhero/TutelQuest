@@ -1,5 +1,3 @@
-using System;
-using FMODUnity;
 using SchizoQuest.Characters;
 using SchizoQuest.Helpers;
 using UnityEngine;

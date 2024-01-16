@@ -1,8 +1,6 @@
-using System.Collections;
 using SchizoQuest.Game;
 using SchizoQuest.Transition_effects;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 namespace SchizoQuest.Characters
 {

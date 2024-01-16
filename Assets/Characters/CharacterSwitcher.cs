@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using FMODUnity;
 using JetBrains.Annotations;
 using SchizoQuest.Audio;
 using SchizoQuest.Game;

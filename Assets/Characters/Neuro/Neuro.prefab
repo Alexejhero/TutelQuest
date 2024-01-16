@@ -272,6 +272,7 @@ MonoBehaviour:
   flipRightAnims: 0
   player: {fileID: 8866959914121868744}
   animationCoyoteTime: 0.1
+  sisterAnimator: {fileID: 7626182894319527369}
 --- !u!1 &7267120876308203257
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,6 +699,7 @@ MonoBehaviour:
   flipRightAnims: 0
   player: {fileID: 8866959914121868744}
   animationCoyoteTime: 0.1
+  sisterAnimator: {fileID: 4949265687634105370}
 --- !u!1 &8641902545239064781
 GameObject:
   m_ObjectHideFlags: 0
