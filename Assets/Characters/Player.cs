@@ -25,7 +25,7 @@ namespace SchizoQuest.Characters
             respawn.OnResetBegin += (r) =>
             {
                 if (this != ActivePlayer) return;
-                
+
                 rb.simulated = false;
                 controller.enabled = false;
                 dying = true;
@@ -42,7 +42,7 @@ namespace SchizoQuest.Characters
                 }
 
                 if (this != ActivePlayer) return;
-                
+
                 rb.simulated = true;
                 controller.enabled = true;
                 dying = false;
@@ -61,7 +61,7 @@ namespace SchizoQuest.Characters
         public IEnumerator WaitUntilCameraIsClose()
         {
             yield return new WaitUntil(() => CameraController.DistanceToActivePlayer < 50f);
-            yield return new WaitUntil(() => CameraController.currVelocity.magnitude < 10f);
+            yield return new WaitUntil(() => CameraController.currVelocity.magnitude < 25f);
             if (ActivePlayer != this) yield break;
 
             ToggleMovement(true);

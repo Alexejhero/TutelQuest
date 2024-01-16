@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using FMODUnity;
+using JetBrains.Annotations;
 using SchizoQuest.Audio;
 using SchizoQuest.Game;
 using SchizoQuest.Helpers;
@@ -21,11 +22,6 @@ namespace SchizoQuest.Characters
 
         private bool _hintHidden;
 
-        protected override void Awake()
-        {
-            base.Awake();
-        }
-
         private void Start()
         {
             music = MonoSingleton<BackgroundMusic>.Instance;
@@ -38,6 +34,7 @@ namespace SchizoQuest.Characters
             AudioSystem.UpdateSfxMuteWhileSwitchingCharacters(_currentPlayer);
         }
 
+        [UsedImplicitly]
         public void OnSwitchCharacter()
         {
             if (GlobalTransformCooldown > 0) return;
