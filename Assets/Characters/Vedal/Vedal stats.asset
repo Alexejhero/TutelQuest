@@ -22,7 +22,7 @@ MonoBehaviour:
   timeToPeak: 0.3182
   extraJumps: 0
   earlyCutoffGravityMulti: 3
-  airResetFallVelocity: 1
-  airResetRiseVelocity: 1
+  resetFallVelocity: 1
+  resetRiseVelocity: 1
   coyoteTime: 0.15
   bunnyhopBuffer: 0.15

@@ -30,15 +30,14 @@ namespace SchizoQuest.Characters.Movement
         public int extraJumps;
         [Min(0), Tooltip("Gravity multiplier applied if the jump input is released early.")]
         public float earlyCutoffGravityMulti;
-        [Tooltip("Whether to reset velocity before applying air jump impulse if falling. Coyote time always resets.")]
-        public bool airResetFallVelocity = true;
-        [Tooltip("Whether to reset velocity before applying air jump impulse if rising.")]
-        public bool airResetRiseVelocity = true;
+        [Tooltip("Whether to reset velocity before applying jump impulse if falling. Coyote time always resets.")]
+        public bool resetFallVelocity = true;
+        [Tooltip("Whether to reset velocity before applying jump impulse if rising.")]
+        public bool resetRiseVelocity = true;
 
         [Header("Input Buffering")]
 
-        [Min(0), Tooltip("Allows to jump mid-air after leaving the ground if the input was pressed late within this time window (in seconds)")]
-        public float coyoteTime;
+        // pretend there's an infobox here saying "Coyote time is set on the Ground Tracker"
         [Min(0), Tooltip("Executes a jump immediately upon touching the ground if the input was pressed early within this time window (in seconds)")]
         public float bunnyhopBuffer;
     }

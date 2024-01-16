@@ -27,11 +27,7 @@ namespace SchizoQuest.Characters
         public bool flipLeftAnims;
         public bool flipRightAnims;
         public Player player;
-        [Tooltip("Time to keep playing the moving animation after the player leaves the ground")]
-        public float animationCoyoteTime = 0.1f;
         public CharacterAnimator sisterAnimator;
-
-        private float _animationCoyoteTimer;
 
         public virtual AnimationClip IdleFrontAnim => idleFrontAnim;
         public virtual AnimationClip IdleLeftAnim => idleLeftAnim;
@@ -41,6 +37,7 @@ namespace SchizoQuest.Characters
         public virtual bool FlipLeftAnims => flipLeftAnims;
         public virtual bool FlipRightAnims => flipRightAnims;
         public virtual Vector2 MoveInput => player.controller.MoveInput;
+        protected virtual bool IsGrounded => player.IsRecentlyGrounded;
 
         private float _originalScaleX;
         private int _lastMoveDirection = 0;
@@ -112,11 +109,6 @@ namespace SchizoQuest.Characters
                     SetAnimation(AnimationType.MoveRight);
                 }
             }
-
-            if (player.controller.groundTracker.isOnGround)
-                _animationCoyoteTimer = 0;
-            else
-                _animationCoyoteTimer += Time.deltaTime;
         }
 
         public void SetAnimation(AnimationType type)
@@ -140,13 +132,13 @@ namespace SchizoQuest.Characters
                     break;
 
                 case AnimationType.MoveLeft:
-                    CurrentClip = _animationCoyoteTimer < animationCoyoteTime ? MoveLeftAnim : IdleLeftAnim;
+                    CurrentClip = IsGrounded ? MoveLeftAnim : IdleLeftAnim;
                     _lastMoveDirection = -1;
                     SetFlip(FlipLeftAnims);
                     break;
 
                 case AnimationType.MoveRight:
-                    CurrentClip = _animationCoyoteTimer < animationCoyoteTime ? MoveRightAnim : IdleRightAnim;
+                    CurrentClip = IsGrounded ? MoveRightAnim : IdleRightAnim;
                     _lastMoveDirection = 1;
                     SetFlip(FlipRightAnims);
                     break;

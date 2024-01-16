@@ -44,7 +44,7 @@ namespace SchizoQuest.Game.Items
         }
         public void Drop(Item carryable)
         {
-            if (!groundTracker.isOnGround) return;
+            if (!groundTracker.IsRecentlyGrounded) return;
             // drop at the player's feet
             int rays = Physics2D.Raycast(transform.position, Vector2.down, _filter, _raycasts, 3f);
             if (rays == 0)

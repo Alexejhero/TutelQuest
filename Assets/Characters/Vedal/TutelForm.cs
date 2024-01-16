@@ -53,7 +53,7 @@ namespace SchizoQuest.Characters.Vedal
             if (player.dying) return false;
 
             // swap to tutel - only on the ground
-            if (toAlt) return groundTracker.isOnGround;
+            if (toAlt) return groundTracker.IsRecentlyGrounded;
             // swap to human - only when there's space above
 
             if (IsDashing) return false; // cannot swap while dashing

@@ -17,6 +17,8 @@ namespace SchizoQuest.Characters
         public ParticleSystem characterSwitchParticleEffect;
         public Rigidbody2D rb;
         public bool dying;
+        public bool IsGrounded => controller.groundTracker.IsGrounded;
+        public bool IsRecentlyGrounded => controller.groundTracker.IsRecentlyGrounded;
 
         private SpriteRenderer[] _renderers;
         private void Awake()

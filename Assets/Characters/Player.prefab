@@ -182,11 +182,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSurfaceAngle: 60
+  coyoteTime: 0.15
   isOnGround: 0
+  coyoteTimer: 0
   lastSurfacePoint: {x: 0, y: 0}
   surfaceNormal: {x: 0, y: 0}
   surfaceCollider: {fileID: 0}
-  debug: 0
+  debugGizmos: 0
 --- !u!114 &2307560814186585820
 MonoBehaviour:
   m_ObjectHideFlags: 0

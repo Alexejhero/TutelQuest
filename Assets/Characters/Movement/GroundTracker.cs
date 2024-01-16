@@ -8,8 +8,13 @@ namespace SchizoQuest.Characters.Movement
         public float maxSurfaceAngle = 45f;
         private float _savedMaxSurfaceAngle;
         private float minSurfaceCos;
+        public bool IsGrounded => isOnGround;
+        /// <summary>Grounded or in coyote time.</summary>
+        public bool IsRecentlyGrounded => isOnGround || coyoteTimer < coyoteTime;
+        public float coyoteTime = 0.15f;
         [Header("Runtime Info")]
-        public bool isOnGround;
+        [SerializeField] private bool isOnGround;
+        public float coyoteTimer;
         public Vector2 lastSurfacePoint;
         public Vector2 surfaceNormal;
         public Collider2D surfaceCollider;
@@ -29,6 +34,10 @@ namespace SchizoQuest.Characters.Movement
         private void Update()
         {
             isOnGround = _internalGroundCheck;
+            if (isOnGround)
+                coyoteTimer = 0;
+            else
+                coyoteTimer += Time.deltaTime;
         }
 
         private void RecalculateSurfaceCos()
@@ -82,7 +91,9 @@ namespace SchizoQuest.Characters.Movement
         private void OnDrawGizmos()
         {
             if (!debugGizmos) return;
-            Gizmos.color = isOnGround ? Color.green : Color.red;
+            Gizmos.color = isOnGround ? Color.green
+                : coyoteTimer < coyoteTime ? Color.yellow
+                : Color.red;
             Gizmos.DrawRay(lastSurfacePoint, surfaceNormal * 2);
             Gizmos.DrawWireSphere(lastSurfacePoint, 0.2f);
         }

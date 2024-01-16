@@ -13,24 +13,24 @@ namespace SchizoQuest.Characters.Movement
         public bool canMove;
         public bool canJump;
 
+        /// <summary>The latest directional input received.</summary>
+        public Vector2 MoveInput => _move;
+        public bool IsJumping => _jumping;
+        // by popular request
+        public bool IsGrounded => groundTracker.IsGrounded;
+        
         private InputActions _input;
         private Vector2 _move;
-        /// <summary>
-        /// The latest directional input received.
-        /// </summary>
-        public Vector2 MoveInput => _move;
 
         private bool _jumpPressQueued;
         private bool _jumpHeld;
         private float _bhopTimer; // time since last jump press
-        private float _coyoteTimer; // time since left ground
 
         private int _jumpsRemaining = 0;
         private bool _wasOnGround;
         private bool _jumping;
         private bool _cutoff;
         private bool _jumpedThisFrame; // hack because of the 1 frame delay on ground check
-        public bool IsJumping => _jumping;
 
         private float _defaultGravMulti;
         private float _gravMultiShouldBe; // detect outside changes
@@ -71,7 +71,7 @@ namespace SchizoQuest.Characters.Movement
             {
                 //Debug.Log("Jump pressed");
                 _jumpPressQueued = true;
-                if (!groundTracker.isOnGround)
+                if (!IsGrounded)
                     _bhopTimer = 0;
             }
             _jumpHeld = ctx.performed;
@@ -79,13 +79,19 @@ namespace SchizoQuest.Characters.Movement
 
         private void CheckGrounded()
         {
-            bool isOnGround = groundTracker.isOnGround;
-            if (isOnGround)
+            if (IsGrounded)
             {
-                _coyoteTimer = 0;
                 _cutoff = false;
-                if (!_jumpedThisFrame)
+                if (_jumpedThisFrame)
+                {
+                    // no more coyote time after jumping
+                    groundTracker.coyoteTimer = float.PositiveInfinity;
+                    _bhopTimer = float.PositiveInfinity;
+                }
+                else
+                {
                     _jumping = false;
+                }
                 if (!_wasOnGround)
                 {
                     if (!_jumping && _bhopTimer < stats.bunnyhopBuffer)
@@ -97,7 +103,7 @@ namespace SchizoQuest.Characters.Movement
                     _jumpsRemaining = stats.extraJumps;
                 }
             }
-            _wasOnGround = isOnGround;
+            _wasOnGround = IsGrounded;
         }
 
         private void AdjustGravity()
@@ -111,7 +117,7 @@ namespace SchizoQuest.Characters.Movement
         private float CalcGravity()
         {
             float scale = _defaultGravMulti;
-            bool applyMidAirGravity = !groundTracker.isOnGround
+            bool applyMidAirGravity = !IsGrounded
                 || groundTracker.surfaceCollider.GetComponent<Rigidbody2D>() // moving platform hack
                 || _jumpedThisFrame;
             if (applyMidAirGravity)
@@ -130,9 +136,6 @@ namespace SchizoQuest.Characters.Movement
             _bhopTimer += Time.deltaTime;
             if (_bhopTimer > stats.bunnyhopBuffer)
                 _bhopTimer = float.PositiveInfinity;
-            _coyoteTimer += Time.deltaTime;
-            if (_coyoteTimer > stats.coyoteTime)
-                _coyoteTimer = float.PositiveInfinity;
 
             if (_jumpPressQueued)
             {
@@ -162,18 +165,15 @@ namespace SchizoQuest.Characters.Movement
         {
             if (!canJump) return false;
 
-            bool resetVerticalSpeed = false;
-
-            if (!groundTracker.isOnGround)
+            bool resetFallVelocity = stats.resetFallVelocity;
+            bool resetRiseVelocity = stats.resetRiseVelocity;
+            if (!IsGrounded)
             {
-                float timeLeftForCoyote = stats.coyoteTime - _coyoteTimer;
-                bool doCoyoteJump = timeLeftForCoyote >= 0 && rb.velocity.y < 0;
+                bool doCoyoteJump = groundTracker.IsRecentlyGrounded;
                 bool doExtraJump = _jumpsRemaining > 0;
-                bool resetFallVelocity = stats.airResetFallVelocity;
-                bool resetRiseVelocity = stats.airResetRiseVelocity;
                 if (doCoyoteJump)
                 {
-                    //Debug.Log($"Coyote {timeLeftForCoyote}");
+                    //Debug.Log($"Coyote");
                     resetFallVelocity = true;
                 }
                 else if (doExtraJump)
@@ -186,9 +186,8 @@ namespace SchizoQuest.Characters.Movement
                     //Debug.Log("No more jumps");
                     return false;
                 }
-
-                resetVerticalSpeed = resetFallVelocity && rb.velocity.y < 0 || resetRiseVelocity && rb.velocity.y > 0;
             }
+            bool resetVerticalSpeed = resetFallVelocity && rb.velocity.y < 0 || resetRiseVelocity && rb.velocity.y > 0;
 
             ExecuteJump(resetVerticalSpeed);
             return true;
@@ -202,7 +201,7 @@ namespace SchizoQuest.Characters.Movement
             }
             // Jump peak height = 1/2 * (v0 ^ 2 / gravity)
             // therefore v0 = sqrt(2 * height * gravity)
-            // also, just for fun - time to peak = v0 * gravity
+            // also, just for fun: time to peak = v0 * gravity
 
             // gravity will be this while rising
             float gravScale = _defaultGravMulti * GetJumpGravityMulti();
@@ -215,9 +214,6 @@ namespace SchizoQuest.Characters.Movement
             _jumping = true;
             _jumpedThisFrame = true;
             _cutoff = false;
-            // no more coyote time after jumping
-            _coyoteTimer = float.PositiveInfinity;
-            _bhopTimer = float.PositiveInfinity;
         }
 
         // todo cache and check stats for changes (god i miss RxNet)
@@ -236,7 +232,7 @@ namespace SchizoQuest.Characters.Movement
 
             if (Mathf.Approximately(moveProportion, 0))
             {
-                float deceleration = groundTracker.isOnGround
+                float deceleration = IsGrounded
                     ? stats.idleDeceleration
                     : stats.idleAirDeceleration;
                 Accelerate(-rb.velocity.x / stats.maxHorizontalSpeed, deceleration);
@@ -244,7 +240,7 @@ namespace SchizoQuest.Characters.Movement
             }
             if (!canMove) return;
             
-            float acceleration = groundTracker.isOnGround
+            float acceleration = IsGrounded
                 ? stats.groundAcceleration
                 : stats.airAcceleration;
 

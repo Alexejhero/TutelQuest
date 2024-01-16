@@ -34,7 +34,7 @@ namespace SchizoQuest.Characters
         {
             if (_activeSwapHint != default)
             {
-                player.SendMessage("HideHint", _activeSwapHint, SendMessageOptions.DontRequireReceiver);
+                HideActiveSwapHint();
                 _activeSwapHint = default;
             }
 
@@ -58,6 +58,14 @@ namespace SchizoQuest.Characters
         {
             if (type is HintType.NeuroF or HintType.NeuroF_2)
                 _activeSwapHint = type;
+            
+            // already evil - ignore the hint
+            if (isAlt) HideActiveSwapHint();
+        }
+
+        private void HideActiveSwapHint()
+        {
+            player.SendMessage("HideHint", _activeSwapHint, SendMessageOptions.DontRequireReceiver);
         }
 
         private void UpdateLayerCollision()
