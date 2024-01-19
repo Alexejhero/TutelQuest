@@ -2,6 +2,7 @@ using System.Collections;
 using SchizoQuest.Characters.Movement;
 using SchizoQuest.Game;
 using SchizoQuest.Game.Items;
+using SchizoQuest.VFX.Transition;
 using UnityEngine;
 
 namespace SchizoQuest.Characters

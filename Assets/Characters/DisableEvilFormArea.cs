@@ -1,3 +1,4 @@
+using SchizoQuest.Characters.Neuro;
 using SchizoQuest.Game.Mechanisms;
 
 namespace SchizoQuest.Characters

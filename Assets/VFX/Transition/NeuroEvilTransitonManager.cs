@@ -1,14 +1,9 @@
-using UnityEngine;
-using SchizoQuest.Characters;
 using System.Collections;
-
-#if UNITY_EDITOR
-
+using SchizoQuest.Characters;
 using UnityEditor;
+using UnityEngine;
 
-#endif
-
-namespace SchizoQuest.Transition_effects
+namespace SchizoQuest.VFX.Transition
 {
     public class NeuroEvilTransitionManager : MonoBehaviour
     {

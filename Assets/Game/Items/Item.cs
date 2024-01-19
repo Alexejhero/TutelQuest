@@ -2,6 +2,7 @@ using System.Collections;
 using System.Linq;
 using SchizoQuest.Characters;
 using SchizoQuest.Interaction;
+using SchizoQuest.VFX.Particles;
 using UnityEngine;
 
 namespace SchizoQuest.Game.Items

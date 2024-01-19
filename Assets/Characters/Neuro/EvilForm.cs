@@ -1,8 +1,8 @@
 using SchizoQuest.Game;
-using SchizoQuest.Transition_effects;
+using SchizoQuest.VFX.Transition;
 using UnityEngine;
 
-namespace SchizoQuest.Characters
+namespace SchizoQuest.Characters.Neuro
 {
     public sealed class EvilForm : CharacterAltForm
     {

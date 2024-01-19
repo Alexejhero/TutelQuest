@@ -1,10 +1,10 @@
 using FMODUnity;
+using SchizoQuest.Characters;
+using SchizoQuest.Game.Mechanisms;
 using SchizoQuest.Helpers;
 using UnityEngine;
-using SchizoQuest.Game.Mechanisms;
-using SchizoQuest.Audio;
 
-namespace SchizoQuest.Characters
+namespace SchizoQuest.Audio
 {
     public class SetMusic : Trigger<Player>
     {

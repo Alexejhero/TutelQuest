@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace SchizoQuest.Particle_Effects.Smoke
+namespace SchizoQuest.VFX.Particles.Smoke
 {
     public class SmokePoof : MonoBehaviour
     {

@@ -2,7 +2,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-namespace SchizoQuest
+namespace SchizoQuest.VFX.Particles
 {
     [RequireComponent(typeof(SortingGroup))]
     public class ParticleSystemManager : MonoBehaviour

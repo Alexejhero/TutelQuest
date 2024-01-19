@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace SchizoQuest
+namespace SchizoQuest.VFX.Transition
 {
     public class EffectsManager : MonoBehaviour
     {

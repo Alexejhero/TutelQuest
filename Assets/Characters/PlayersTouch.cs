@@ -1,5 +1,6 @@
 using System.Collections;
 using SchizoQuest.Game.Mechanisms;
+using SchizoQuest.VFX.Transition;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
