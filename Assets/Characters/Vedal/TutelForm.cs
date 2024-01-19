@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using SchizoQuest.Characters.Movement;
 using SchizoQuest.Game;
+using SchizoQuest.Helpers;
 using UnityEngine;
 
 namespace SchizoQuest.Characters.Vedal
@@ -58,9 +59,16 @@ namespace SchizoQuest.Characters.Vedal
 
             if (IsDashing) return false; // cannot swap while dashing
 
+            // todo remove this garbage and use collision messages instead
+            // (make the human collider a trigger while in tutel form)
             int rays = swapCollider.Raycast(Vector2.up, _filter, _raycasts, 0.05f);
-            Debug.Log($"Swap human raycast {rays} {_raycasts[0].collider}");
-            return rays == 0;
+            if (rays == 0) return true;
+            
+            RaycastHit2D rc = _raycasts[0];
+            bool passThrough = Physics2DHelpers.WillPassThroughPlatform(rc.collider.GetComponent<PlatformEffector2D>(), rc.normal, rb);
+            if (!passThrough)
+                Debug.Log($"Swap to human blocked by {rc.collider}");
+            return passThrough;
         }
         protected override void OnSwap()
         {
@@ -127,16 +135,31 @@ namespace SchizoQuest.Characters.Vedal
             }
         }
 
-        private void Update()
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            CheckAutoswap(collision);
+        }
+
+        private void CheckAutoswap(Collision2D collision)
         {
             if (isAlt) return;
+            if (!groundTracker.IsGrounded || controller.IsJumping) return;
 
-            int rays = swapCollider.Raycast(Vector2.up, _filter, _raycasts, 0.05f);
-            if (rays > 0)
+            foreach (ContactPoint2D contact in collision.GetContacts())
             {
-                Debug.Log($"Autoswap tutel raycast {_raycasts[0].collider}");
-                StartCoroutine(PerformSwap());
+                if (!contact.enabled) continue;
+
+                Vector2 normal = contact.normal;
+                float angle = Vector2.SignedAngle(normal, -transform.up);
+
+                if (Math.Abs(angle) <= 5f)
+                {
+                    Debug.Log($"Autoswap tutel {collision.collider} {angle}");
+                    StartCoroutine(PerformSwap());
+                    break;
+                }
             }
+            return; // all contacts disabled or not colliding with a ceiling
         }
     }
 }
