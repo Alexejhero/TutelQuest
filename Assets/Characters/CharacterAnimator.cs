@@ -30,6 +30,10 @@ namespace SchizoQuest.Characters
         public Player player;
         public CharacterAnimator sisterAnimator;
 
+        [Header("Item Slot")]
+        public SpriteAnimNodes animNodes;
+        public Transform itemSlot;
+
         public virtual AnimationClip IdleFrontAnim => idleFrontAnim;
         public virtual AnimationClip IdleLeftAnim => idleLeftAnim;
         public virtual AnimationClip IdleRightAnim => idleRightAnim;
@@ -116,6 +120,12 @@ namespace SchizoQuest.Characters
 
                     SetAnimation(AnimationType.MoveRight);
                 }
+            }
+
+            if (itemSlot && animNodes)
+            {
+                animNodes.SetTransformFromNode(itemSlot, 0);
+                if (itemSlot.localScale.x < 0) itemSlot.localScale = new Vector3(-itemSlot.localScale.x, itemSlot.localScale.y, itemSlot.localScale.z);
             }
         }
 

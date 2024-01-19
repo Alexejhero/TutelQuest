@@ -571,6 +571,7 @@ GameObject:
   - component: {fileID: 1285062569510173494}
   - component: {fileID: 221877990298035068}
   - component: {fileID: 3575447737968351185}
+  - component: {fileID: 7303740026939534562}
   m_Layer: 20
   m_Name: human
   m_TagString: Untagged
@@ -736,8 +737,41 @@ MonoBehaviour:
   flipLeftAnims: 1
   flipRightAnims: 0
   player: {fileID: 2877221180265890980}
-  animationCoyoteTime: 0.1
   sisterAnimator: {fileID: 3968689627129918359}
+  animNodes: {fileID: 7303740026939534562}
+  itemSlot: {fileID: 8316011149754893122}
+--- !u!114 &7303740026939534562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118812293590621498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cf860f4296d4d04fb8c9e2b8c326c7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_node0: {x: 0, y: 0}
+  m_node1: {x: 0, y: 0}
+  m_node2: {x: 0, y: 0}
+  m_node3: {x: 0, y: 0}
+  m_node4: {x: 0, y: 0}
+  m_node5: {x: 0, y: 0}
+  m_node6: {x: 0, y: 0}
+  m_node7: {x: 0, y: 0}
+  m_node8: {x: 0, y: 0}
+  m_node9: {x: 0, y: 0}
+  m_ang0: 0
+  m_ang1: 0
+  m_ang2: 0
+  m_ang3: 0
+  m_ang4: 0
+  m_ang5: 0
+  m_ang6: 0
+  m_ang7: 0
+  m_ang8: 0
+  m_ang9: 0
 --- !u!1 &2700913443487111502
 GameObject:
   m_ObjectHideFlags: 0
@@ -1004,6 +1038,7 @@ GameObject:
   - component: {fileID: 8367673575781083876}
   - component: {fileID: 7551729679973657502}
   - component: {fileID: 3968689627129918359}
+  - component: {fileID: 7599791281532009095}
   m_Layer: 20
   m_Name: everything but collider
   m_TagString: Untagged
@@ -1134,12 +1169,45 @@ MonoBehaviour:
   flipLeftAnims: 1
   flipRightAnims: 0
   player: {fileID: 2877221180265890980}
-  animationCoyoteTime: 0.1
   sisterAnimator: {fileID: 3575447737968351185}
+  animNodes: {fileID: 7599791281532009095}
+  itemSlot: {fileID: 8316011149754893122}
   tutelSlideAnim: {fileID: 7400000, guid: 8ca91d4672c5e6a459bea37b5bb41964, type: 2}
   tutelForm: {fileID: 6237045314539720047}
   slideFlipLeft: 0
   slideFlipRight: 1
+--- !u!114 &7599791281532009095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3949740709267052627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cf860f4296d4d04fb8c9e2b8c326c7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_node0: {x: 0, y: 0}
+  m_node1: {x: 0, y: 0}
+  m_node2: {x: 0, y: 0}
+  m_node3: {x: 0, y: 0}
+  m_node4: {x: 0, y: 0}
+  m_node5: {x: 0, y: 0}
+  m_node6: {x: 0, y: 0}
+  m_node7: {x: 0, y: 0}
+  m_node8: {x: 0, y: 0}
+  m_node9: {x: 0, y: 0}
+  m_ang0: 0
+  m_ang1: 0
+  m_ang2: 0
+  m_ang3: 0
+  m_ang4: 0
+  m_ang5: 0
+  m_ang6: 0
+  m_ang7: 0
+  m_ang8: 0
+  m_ang9: 0
 --- !u!1 &5328240545296025836
 GameObject:
   m_ObjectHideFlags: 0
@@ -1591,9 +1659,6 @@ MonoBehaviour:
   humanStats: {fileID: 11400000, guid: 3eda00987f6e9c841b09666c8efd0021, type: 2}
   tutelStats: {fileID: 11400000, guid: 64b91143414eefe4cbe934427577dfa6, type: 2}
   swapCollider: {fileID: 4221869057994858319}
-  itemSlot: {fileID: 8316011149754893122}
-  vedalItemYPos: 2
-  tutelItemYPos: -0.1
   controller: {fileID: 6103963595262426845}
   groundTracker: {fileID: 4380412711607502666}
   rb: {fileID: 4234630266564535879}

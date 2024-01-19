@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 5139102770463784754}
   - component: {fileID: 2405337119709435250}
   - component: {fileID: 4949265687634105370}
+  - component: {fileID: 2823137884081421327}
   m_Layer: 20
   m_Name: eliv
   m_TagString: Untagged
@@ -271,8 +272,41 @@ MonoBehaviour:
   flipLeftAnims: 0
   flipRightAnims: 0
   player: {fileID: 8866959914121868744}
-  animationCoyoteTime: 0.1
   sisterAnimator: {fileID: 7626182894319527369}
+  animNodes: {fileID: 2823137884081421327}
+  itemSlot: {fileID: 3425089152628175406}
+--- !u!114 &2823137884081421327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5684121791463374519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cf860f4296d4d04fb8c9e2b8c326c7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_node0: {x: 0, y: 0}
+  m_node1: {x: 0, y: 0}
+  m_node2: {x: 0, y: 0}
+  m_node3: {x: 0, y: 0}
+  m_node4: {x: 0, y: 0}
+  m_node5: {x: 0, y: 0}
+  m_node6: {x: 0, y: 0}
+  m_node7: {x: 0, y: 0}
+  m_node8: {x: 0, y: 0}
+  m_node9: {x: 0, y: 0}
+  m_ang0: 0
+  m_ang1: 0
+  m_ang2: 0
+  m_ang3: 0
+  m_ang4: 0
+  m_ang5: 0
+  m_ang6: 0
+  m_ang7: 0
+  m_ang8: 0
+  m_ang9: 0
 --- !u!1 &7267120876308203257
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,6 +602,7 @@ GameObject:
   - component: {fileID: 4535481315686714748}
   - component: {fileID: 4006096251098555599}
   - component: {fileID: 7626182894319527369}
+  - component: {fileID: 3009267120871749824}
   m_Layer: 20
   m_Name: nuro
   m_TagString: Untagged
@@ -698,8 +733,41 @@ MonoBehaviour:
   flipLeftAnims: 0
   flipRightAnims: 0
   player: {fileID: 8866959914121868744}
-  animationCoyoteTime: 0.1
   sisterAnimator: {fileID: 4949265687634105370}
+  animNodes: {fileID: 3009267120871749824}
+  itemSlot: {fileID: 3425089152628175406}
+--- !u!114 &3009267120871749824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7921001887652105597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cf860f4296d4d04fb8c9e2b8c326c7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_node0: {x: 0, y: 0}
+  m_node1: {x: 0, y: 0}
+  m_node2: {x: 0, y: 0}
+  m_node3: {x: 0, y: 0}
+  m_node4: {x: 0, y: 0}
+  m_node5: {x: 0, y: 0}
+  m_node6: {x: 0, y: 0}
+  m_node7: {x: 0, y: 0}
+  m_node8: {x: 0, y: 0}
+  m_node9: {x: 0, y: 0}
+  m_ang0: 0
+  m_ang1: 0
+  m_ang2: 0
+  m_ang3: 0
+  m_ang4: 0
+  m_ang5: 0
+  m_ang6: 0
+  m_ang7: 0
+  m_ang8: 0
+  m_ang9: 0
 --- !u!1 &8641902545239064781
 GameObject:
   m_ObjectHideFlags: 0
@@ -965,6 +1033,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 3443322844577061069}
   m_SourcePrefab: {fileID: 100100000, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
+--- !u!4 &3425089152628175406 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6927315970538306801, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
+  m_PrefabInstance: {fileID: 5740569191512100575}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3857871987478843994 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8801004962465848453, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}

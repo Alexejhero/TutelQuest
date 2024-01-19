@@ -14,11 +14,6 @@ namespace SchizoQuest.Characters.Vedal
 
         public CapsuleCollider2D swapCollider;
 
-        public Transform itemSlot;
-
-        public float vedalItemYPos = 2;
-        public float tutelItemYPos = -0.1f;
-
         public PlayerController controller;
         public GroundTracker groundTracker;
         public Rigidbody2D rb;
@@ -40,7 +35,7 @@ namespace SchizoQuest.Characters.Vedal
                 useTriggers = false,
             };
             _raycasts = new RaycastHit2D[1];
-            GetComponent<Respawnable>().OnResetFinish += (r) =>
+            GetComponent<Respawnable>().OnResetFinish += _ =>
             {
                 // respawn as vedal
                 if (isAlt) SwapImmediate();
@@ -63,7 +58,7 @@ namespace SchizoQuest.Characters.Vedal
             // (make the human collider a trigger while in tutel form)
             int rays = swapCollider.Raycast(Vector2.up, _filter, _raycasts, 0.05f);
             if (rays == 0) return true;
-            
+
             RaycastHit2D rc = _raycasts[0];
             bool passThrough = Physics2DHelpers.WillPassThroughPlatform(rc.collider.GetComponent<PlatformEffector2D>(), rc.normal, rb);
             if (!passThrough)
@@ -83,7 +78,6 @@ namespace SchizoQuest.Characters.Vedal
                 IsDashing = Mathf.Abs(_dashBufferVelocity) / controller.stats.maxHorizontalSpeed >= 0.8f;
 
                 controller.stats = tutelStats;
-                itemSlot.localPosition = new Vector3(0, tutelItemYPos, 0);
                 // neuter the "swap->jump before swap finishes->fly up" issue
                 // it's now a super advanced speedrun tech that's totally 100% intended
                 if (rb.velocity.y > 0) rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.2f);
@@ -97,7 +91,6 @@ namespace SchizoQuest.Characters.Vedal
             else
             {
                 controller.stats = humanStats;
-                itemSlot.localPosition = new Vector3(0, vedalItemYPos, 0);
             }
         }
 
