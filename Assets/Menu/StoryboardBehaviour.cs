@@ -16,26 +16,20 @@ namespace SchizoQuest.Menu
         public float transitionLength;
         public AnimationCurve movementCurve;
         public AnimationCurve fadeCurve;
+        public AnimationCurve skipHoldTransparencyCurve;
+        public TMP_Text skipHoldText;
         public TitlescreenBehaviour titleScreen;
 
-        private float _timeout = 0;
         private int _currentPanel = -1;
-        private bool _ready = true;
 
         private InputActions _input;
+        private bool _gone;
 
         private void Awake()
         {
             _input = new InputActions();
 
-            // _input.UI.Submit.performed += TryAdvance;
-            // _input.UI.Submit.Enable();
-            //
-            // _input.UI.Click.performed += TryAdvance;
-            // _input.UI.Click.Enable();
-            //
-            // _input.UI.MainMenuAdvance.performed += TryAdvance;
-            // _input.UI.MainMenuAdvance.Enable();
+            _input.UI.AnyKey.Enable();
         }
 
         private IEnumerator Start()
@@ -51,30 +45,28 @@ namespace SchizoQuest.Menu
             yield return CoSwitchToTitleScreen();
         }
 
+        private float _skipHoldTime;
+
         private void Update()
         {
-            _timeout -= Time.deltaTime;
-        }
+            if (_gone) return;
 
-        private void TryAdvance(InputAction.CallbackContext ctx)
-        {
-            if (_ready && _timeout <= 0)
+            if (_input.UI.AnyKey.IsPressed()) _skipHoldTime += Time.deltaTime;
+            else _skipHoldTime = 0;
+
+            float a = skipHoldTransparencyCurve.Evaluate(_skipHoldTime);
+            skipHoldText.color = new Color(1, 1, 1, a);
+
+            if (a >= 1)
             {
-                if (_currentPanel < panels.Count - 1)
-                {
-                    StartCoroutine(CoAdvance());
-                }
-                else
-                {
-                    StartCoroutine(CoSwitchToTitleScreen());
-                }
+                _gone = true;
+                skipHoldText.gameObject.SetActive(false);
+                StartCoroutine(CoSwitchToTitleScreen());
             }
         }
 
         private IEnumerator CoAdvance()
         {
-            _ready = false;
-
             _currentPanel++;
 
             Image panel = panels[_currentPanel];
@@ -85,10 +77,13 @@ namespace SchizoQuest.Menu
 
             for (float t = 0; t < transitionLength; t += Time.deltaTime)
             {
-                // Fade in panel
-                color = panel.color;
-                color.a = Mathf.Lerp(0, 1, fadeCurve.Evaluate(t / transitionLength));
-                panel.color = color;
+                if (!_gone)
+                {
+                    // Fade in panel
+                    color = panel.color;
+                    color.a = Mathf.Lerp(0, 1, fadeCurve.Evaluate(t / transitionLength));
+                    panel.color = color;
+                }
 
                 // Move storyboard
                 position = storyboard.localPosition;
@@ -103,27 +98,25 @@ namespace SchizoQuest.Menu
 
             panel.color = color;
             storyboard.localPosition = position;
-
-            _timeout = 0.5f;
-            _ready = true;
         }
 
         private IEnumerator CoSwitchToTitleScreen()
         {
-            _ready = false;
-
             yield return new WaitForSeconds(0.5f);
 
             Image currentPanel = panels[_currentPanel];
-            Image lastPanel = panels[_currentPanel - 1];
+            Image lastPanel = panels[Mathf.Max(0, _currentPanel - 1)];
+
+            float currentStartingColor = currentPanel.color.a;
+            float lastStartingColor = lastPanel.color.a;
 
             for (float t = 0; t < 2; t += Time.deltaTime)
             {
                 Color colorCurrent = currentPanel.color;
                 Color colorLast = lastPanel.color;
 
-                colorCurrent.a = Mathf.Lerp(1, 0, t / 2);
-                colorLast.a = Mathf.Lerp(1, 0, t / 2);
+                colorCurrent.a = Mathf.Lerp(currentStartingColor, 0, t / 2);
+                colorLast.a = Mathf.Lerp(lastStartingColor, 0, t / 2);
 
                 currentPanel.color = colorCurrent;
                 lastPanel.color = colorLast;
