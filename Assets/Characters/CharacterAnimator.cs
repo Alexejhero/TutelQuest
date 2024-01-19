@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using PowerTools;
 using SchizoQuest.Game;
 using UnityEngine;
@@ -63,10 +64,17 @@ namespace SchizoQuest.Characters
             _originalScaleX = animator.transform.localScale.x;
         }
 
-        /*private void OnEnable()
+        private void OnEnable()
         {
-            if (sisterAnimator && sisterAnimator.CurrentAnimation != AnimationType.None) SetAnimation(sisterAnimator.CurrentAnimation);
-        }*/
+            if (sisterAnimator && sisterAnimator.CurrentAnimation != AnimationType.None) StartCoroutine(CoSetAnimation());
+            return;
+
+            IEnumerator CoSetAnimation()
+            {
+                yield return null; // need to wait for SpriteAnim to do its thing
+                SetAnimation(sisterAnimator.CurrentAnimation);
+            }
+        }
 
         protected virtual void Update()
         {
@@ -118,16 +126,19 @@ namespace SchizoQuest.Characters
                 case AnimationType.None:
                 case AnimationType.IdleFront:
                     CurrentClip = IdleFrontAnim;
+                    _lastMoveDirection = 0;
                     SetFlip(false);
                     break;
 
                 case AnimationType.IdleLeft:
                     CurrentClip = IdleLeftAnim;
+                    _lastMoveDirection = -1;
                     SetFlip(FlipLeftAnims);
                     break;
 
                 case AnimationType.IdleRight:
                     CurrentClip = IdleRightAnim;
+                    _lastMoveDirection = 1;
                     SetFlip(FlipRightAnims);
                     break;
 
