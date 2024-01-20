@@ -42,8 +42,7 @@ namespace SchizoQuest.Characters.Neuro
                 ? PlayerType.Evil
                 : PlayerType.Neuro;
 
-            neuroEvilTransitionManager.isEvil = IsAlt;
-            neuroEvilTransitionManager.Play(switchTransitionDuration);
+            neuroEvilTransitionManager.Play(IsAlt, switchTransitionDuration);
 
             player.characterSwitchParticleEffect = IsAlt
                 ? evilSwitchParticleEffect
@@ -58,7 +57,7 @@ namespace SchizoQuest.Characters.Neuro
         {
             if (type is HintType.NeuroF or HintType.NeuroF_2)
                 _activeSwapHint = type;
-            
+
             // already evil - ignore the hint
             if (IsAlt) HideActiveSwapHint();
         }

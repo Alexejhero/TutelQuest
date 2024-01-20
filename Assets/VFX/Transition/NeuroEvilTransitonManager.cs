@@ -30,8 +30,6 @@ namespace SchizoQuest.VFX.Transition
         public Color middleColorEvil = Color.red;
         public Color outsideColorEvil = Color.black;
 
-        public bool isEvil = false;
-
         #region ids
 
         private static readonly int playerPos = Shader.PropertyToID("_TRAN_PlayerPos");
@@ -84,7 +82,7 @@ namespace SchizoQuest.VFX.Transition
             }
         }
 
-        public void Play(float duration = 1f)
+        public void Play(bool isEvil, float duration = 1f)
         {
             StartCoroutine(PlayRoutine(duration, isEvil));
         }
