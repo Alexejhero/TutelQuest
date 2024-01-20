@@ -75,15 +75,12 @@ crashlytics-build.properties
 .idea
 
 ### FMOD
-# Never ignore DLLs in the FMOD subfolder.
-!/[Aa]ssets/Plugins/FMOD/**/lib/*
-
 # Don't ignore images and gizmos used by FMOD in the Unity Editor.
 !/[Aa]ssets/Gizmos/FMOD/*
 !/[Aa]ssets/Editor Default Resources/FMOD/*
 
 # Ignore the Cache folder since it is updated locally.
-/[Aa]ssets/Plugins/FMOD/Cache/*
+Packages/FMOD/FMOD/Cache
 
 # Ignore bank files in the StreamingAssets folder.
 /[Aa]ssets/StreamingAssets/**/*.bank
@@ -93,7 +90,9 @@ crashlytics-build.properties
 # Log files can be ignored.
 fmod_editor.log
 
-FMOD Project/.cache
+FMOD*Project/.cache
+FMOD*Project/.user
+FMOD*Project/.unsaved
 
 Packages/PowerSpriteAnimator/*
 !Packages/PowerSpriteAnimator/package.json
