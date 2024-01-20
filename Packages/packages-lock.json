@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.calci.assetlens": {
+      "version": "https://github.com/seonghwan-dev/assetlens.git#upm",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "acf9a180210ecfea30482e2ce96209b0a01a274b"
+    },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,
