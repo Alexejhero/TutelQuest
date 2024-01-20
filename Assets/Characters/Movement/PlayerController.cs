@@ -1,3 +1,4 @@
+using SchizoQuest.Game;
 using SchizoQuest.Helpers;
 using SchizoQuest.Input;
 using UnityEngine;
@@ -71,7 +72,7 @@ namespace SchizoQuest.Characters.Movement
             {
                 //Debug.Log("Jump pressed");
                 _jumpPressQueued = true;
-                if (!IsGrounded)
+                if (enabled && !IsGrounded)
                     _bhopTimer = 0;
             }
             _jumpHeld = ctx.performed;
