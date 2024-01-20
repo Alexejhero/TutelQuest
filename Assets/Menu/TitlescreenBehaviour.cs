@@ -1,8 +1,6 @@
 ﻿using System.Collections;
-using SchizoQuest.Input;
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -20,45 +18,12 @@ namespace SchizoQuest.Menu
         public GameObject optionsObject;
         public GameObject creditsObject;
 
-        private float _timeout;
-        private bool _ready = false;
-        private InputActions _input;
+        private bool _ready;
         private bool _isMainMenuDisplayed;
-
-        private void Awake()
-        {
-            _input = new InputActions();
-
-            /*_input.UI.Submit.performed += TryDisplayMainMenu;
-            _input.UI.Submit.Enable();
-
-            _input.UI.Click.performed += TryDisplayMainMenu;
-            _input.UI.Click.Enable();
-
-            _input.UI.MainMenuAdvance.performed += TryDisplayMainMenu;
-            _input.UI.MainMenuAdvance.Enable();*/
-        }
 
         private void Start()
         {
             StartCoroutine(CoFadeIn());
-        }
-
-        private void Update()
-        {
-            _timeout -= Time.deltaTime;
-        }
-
-        private void TryDisplayMainMenu(InputAction.CallbackContext ctx)
-        {
-            if (_ready && _timeout <= 0)
-            {
-                if (!_isMainMenuDisplayed)
-                {
-                    _isMainMenuDisplayed = true;
-                    StartCoroutine(CoDisplayMainMenu());
-                }
-            }
         }
 
         private IEnumerator CoFadeIn()
@@ -88,7 +53,6 @@ namespace SchizoQuest.Menu
             titleScreenImage.color = imageColor;
             titleText.color = textColor;
 
-            _timeout = 0.5f;
             _ready = true;
 
             yield return CoDisplayMainMenu();
@@ -116,7 +80,6 @@ namespace SchizoQuest.Menu
 
             rotationTransform.localPosition = position;
 
-            _timeout = 0.5f;
             _ready = true;
         }
 

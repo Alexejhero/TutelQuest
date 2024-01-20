@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using JetBrains.Annotations;
 using SchizoQuest.Characters;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace SchizoQuest.Interaction
 
         public Player player;
 
+        [UsedImplicitly]
         public void OnInteract()
         {
             if (!player.enabled) return;
