@@ -82,19 +82,20 @@ namespace SchizoQuest.Characters
 
         protected virtual void Update()
         {
+            // Characters face forward during ending cutscene
             if (player.winning)
             {
                 SetAnimation(AnimationType.IdleFront);
                 return;
             }
 
-            if (player != Player.ActivePlayer) return;
-
+            // Switch into idle anim if player is dying or if player is not moving
             Vector2 velocity = rb.velocity;
             Vector2 input = MoveInput;
             if (player.dying || (Math.Abs(velocity.x) < 1 && Math.Abs(velocity.y) < 1))
             {
-                if (!player.dying && input.y < 0) _lastMoveDirection = 0;
+                // Switch into front-facing anim if player presses S and is controlling the current character and isn't dying
+                if (!player.dying && player == Player.ActivePlayer && input.y < 0) _lastMoveDirection = 0;
 
                 AnimationType animationType = _lastMoveDirection switch
                 {
@@ -104,8 +105,12 @@ namespace SchizoQuest.Characters
                 };
 
                 SetAnimation(animationType);
+
+                return;
             }
-            else
+
+            // We only want to handle inputs for the active player
+            if (player == Player.ActivePlayer)
             {
                 if (input.x < 0)
                 {
