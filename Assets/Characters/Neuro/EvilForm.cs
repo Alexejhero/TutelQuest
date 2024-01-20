@@ -38,14 +38,14 @@ namespace SchizoQuest.Characters.Neuro
                 _activeSwapHint = default;
             }
 
-            player.playerType = isAlt
+            player.playerType = IsAlt
                 ? PlayerType.Evil
                 : PlayerType.Neuro;
 
-            neuroEvilTransitionManager.isEvil = isAlt;
+            neuroEvilTransitionManager.isEvil = IsAlt;
             neuroEvilTransitionManager.Play(switchTransitionDuration);
 
-            player.characterSwitchParticleEffect = isAlt
+            player.characterSwitchParticleEffect = IsAlt
                 ? evilSwitchParticleEffect
                 : _neuroSwitchParticleEffect;
 
@@ -60,7 +60,7 @@ namespace SchizoQuest.Characters.Neuro
                 _activeSwapHint = type;
             
             // already evil - ignore the hint
-            if (isAlt) HideActiveSwapHint();
+            if (IsAlt) HideActiveSwapHint();
         }
 
         private void HideActiveSwapHint()
@@ -70,8 +70,8 @@ namespace SchizoQuest.Characters.Neuro
 
         private void UpdateLayerCollision()
         {
-            Physics2D.IgnoreLayerCollision(_evilLayer, _playerLayer, !isAlt);
-            Physics2D.IgnoreLayerCollision(_neuroLayer, _playerLayer, isAlt);
+            Physics2D.IgnoreLayerCollision(_evilLayer, _playerLayer, !IsAlt);
+            Physics2D.IgnoreLayerCollision(_neuroLayer, _playerLayer, IsAlt);
         }
     }
 }

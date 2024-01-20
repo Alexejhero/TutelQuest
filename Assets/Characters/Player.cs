@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using SchizoQuest.Characters.Movement;
 using SchizoQuest.Game;
@@ -18,6 +19,7 @@ namespace SchizoQuest.Characters
         public ParticleSystem characterSwitchParticleEffect;
         public Rigidbody2D rb;
         public bool dying;
+        [NonSerialized] public bool winning;
         public bool IsGrounded => controller.groundTracker.IsGrounded;
         public bool IsRecentlyGrounded => controller.groundTracker.IsRecentlyGrounded;
 

@@ -82,12 +82,19 @@ namespace SchizoQuest.Characters
 
         protected virtual void Update()
         {
+            if (player.winning)
+            {
+                SetAnimation(AnimationType.IdleFront);
+                return;
+            }
+
             if (player != Player.ActivePlayer) return;
+
             Vector2 velocity = rb.velocity;
             Vector2 input = MoveInput;
-            if (Math.Abs(velocity.x) < 1 && Math.Abs(velocity.y) < 1)
+            if (player.dying || (Math.Abs(velocity.x) < 1 && Math.Abs(velocity.y) < 1))
             {
-                if (input.y < 0) _lastMoveDirection = 0;
+                if (!player.dying && input.y < 0) _lastMoveDirection = 0;
 
                 AnimationType animationType = _lastMoveDirection switch
                 {

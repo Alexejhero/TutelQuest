@@ -1,4 +1,5 @@
 using System.Collections;
+using JetBrains.Annotations;
 using SchizoQuest.Helpers;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ namespace SchizoQuest.Characters
 {
     public abstract class CharacterAltForm : MonoBehaviour
     {
-        protected bool isAlt;
+        public bool IsAlt { get; protected set; }
 
         protected CharacterSwitcher switcher;
         public Player player;
@@ -21,13 +22,14 @@ namespace SchizoQuest.Characters
         {
             switcher = MonoSingleton<CharacterSwitcher>.Instance;
         }
-        
+
+        [UsedImplicitly]
         public void OnSwapForm()
         {
             if (!player.enabled) return;
-            if (!CanSwap(!isAlt)) return;
+            if (!CanSwap(!IsAlt)) return;
             if (switcher.GlobalTransformCooldown > 0) return;
-            
+
             StartCoroutine(PerformSwap());
         }
         public IEnumerator PerformSwap()
@@ -44,9 +46,9 @@ namespace SchizoQuest.Characters
 
         protected void SwapImmediate()
         {
-            isAlt = !isAlt;
-            altForm.SetActive(isAlt);
-            regularForm.SetActive(!isAlt);
+            IsAlt = !IsAlt;
+            altForm.SetActive(IsAlt);
+            regularForm.SetActive(!IsAlt);
             _swapping = false;
             OnSwap();
         }

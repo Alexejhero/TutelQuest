@@ -38,7 +38,7 @@ namespace SchizoQuest.Characters.Vedal
             GetComponent<Respawnable>().OnResetFinish += _ =>
             {
                 // respawn as vedal
-                if (isAlt) SwapImmediate();
+                if (IsAlt) SwapImmediate();
             };
         }
 
@@ -73,7 +73,7 @@ namespace SchizoQuest.Characters.Vedal
                 controller.SendMessage("HideHint", HintType.VedalF, SendMessageOptions.DontRequireReceiver);
             }
 
-            if (isAlt)
+            if (IsAlt)
             {
                 IsDashing = Mathf.Abs(_dashBufferVelocity) / controller.stats.maxHorizontalSpeed >= 0.8f;
 
@@ -135,7 +135,7 @@ namespace SchizoQuest.Characters.Vedal
 
         private void CheckAutoswap(Collision2D collision)
         {
-            if (isAlt) return;
+            if (IsAlt) return;
             if (!groundTracker.IsGrounded || controller.IsJumping) return;
 
             foreach (ContactPoint2D contact in collision.GetContacts())

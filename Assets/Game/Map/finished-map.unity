@@ -713,7 +713,7 @@ MonoBehaviour:
     Path: event:/music/center
   Event: 
   PlayEvent: 0
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 1
