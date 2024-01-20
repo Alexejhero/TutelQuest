@@ -20,6 +20,7 @@ namespace SchizoQuest.Characters.Neuro
 
         private void Awake()
         {
+            neuroEvilTransitionManager.NeuroTransform = transform;
             _neuroSwitchParticleEffect = player.characterSwitchParticleEffect;
 
             _evilLayer = LayerMask.NameToLayer("EvilOnly");

@@ -30,6 +30,8 @@ namespace SchizoQuest.VFX.Transition
         public Color middleColorEvil = Color.red;
         public Color outsideColorEvil = Color.black;
 
+        public Transform NeuroTransform { set; private get; }
+
         #region ids
 
         private static readonly int playerPos = Shader.PropertyToID("_TRAN_PlayerPos");
@@ -107,7 +109,7 @@ namespace SchizoQuest.VFX.Transition
 
         private void Update()
         {
-            Shader.SetGlobalVector(playerPos, Camera.main.WorldToScreenPoint(Player.ActivePlayer.transform.position));
+            Shader.SetGlobalVector(playerPos, Camera.main.WorldToScreenPoint(NeuroTransform.position));
         }
     }
 }
