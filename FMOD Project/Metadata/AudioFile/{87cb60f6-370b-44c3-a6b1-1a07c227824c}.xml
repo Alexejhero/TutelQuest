@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{87cb60f6-370b-44c3-a6b1-1a07c227824c}">
 		<property name="assetPath">
-			<value>sfx/interactive/water-stream-river-flow-loop-111889.mp3</value>
+			<value>sfx/interactive/platform/water-stream-river-flow-loop-111889.mp3</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

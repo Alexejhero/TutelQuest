@@ -1,3 +1,4 @@
+using FMODUnity;
 using SchizoQuest.Characters;
 using SchizoQuest.Game.Items;
 using SchizoQuest.Interaction;
@@ -11,7 +12,10 @@ namespace SchizoQuest.Game.Mechanisms
         public SpriteRenderer[] renderers;
         public Collider2D coll;
         public ParticleSystem effectIdle;
+        public StudioEventEmitter ambientSfx;
+        [Space]
         public ParticleSystem effectOnDestroy;
+        public StudioEventEmitter sfxOnDestroy;
 
         public bool CanCompoundInteract(Player player, Item other)
         {
@@ -20,7 +24,9 @@ namespace SchizoQuest.Game.Mechanisms
 
         public void CompoundInteract(Player player, Item other)
         {
+            ambientSfx.Stop();
             effectOnDestroy.Play();
+            sfxOnDestroy.Play();
             renderers = GetComponentsInChildren<SpriteRenderer>();
             foreach (var r in renderers) 
             {
