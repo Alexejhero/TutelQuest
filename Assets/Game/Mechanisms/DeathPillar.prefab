@@ -274,7 +274,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8066420984590661706}
   m_Layer: 3
-  m_Name: GameObject
+  m_Name: OffState (do not delete)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
