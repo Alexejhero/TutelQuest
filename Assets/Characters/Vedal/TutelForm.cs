@@ -133,9 +133,14 @@ namespace SchizoQuest.Characters.Vedal
             CheckAutoswap(collision);
         }
 
+        private void OnCollisionStay2D(Collision2D collision)
+        {
+            CheckAutoswap(collision);
+        }
+
         private void CheckAutoswap(Collision2D collision)
         {
-            if (IsAlt) return;
+            if (IsAlt || IsSwapping) return;
             if (!groundTracker.IsGrounded || controller.IsJumping) return;
 
             foreach (ContactPoint2D contact in collision.GetContacts())
@@ -147,12 +152,21 @@ namespace SchizoQuest.Characters.Vedal
 
                 if (Math.Abs(angle) <= 5f)
                 {
-                    Debug.Log($"Autoswap tutel {collision.collider} {angle}");
+                    Debug.Log($"Autoswap tutel {collision.collider} contact point {contact.point}");
+                    _contactPoint = contact.point;
                     StartCoroutine(PerformSwap());
                     break;
                 }
             }
             return; // all contacts disabled or not colliding with a ceiling
         }
+        private Vector3 _contactPoint;
+#if DEBUG
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(_contactPoint, 0.3f);
+        }
+#endif
     }
 }

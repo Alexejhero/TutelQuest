@@ -17,6 +17,7 @@ namespace SchizoQuest.Characters
 
         public float swapDelay = 0.100f;
         private bool _swapping;
+        protected bool IsSwapping => _swapping;
 
         protected virtual void Start()
         {
