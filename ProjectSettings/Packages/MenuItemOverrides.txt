@@ -1,0 +1,25 @@
+Jobs/Burst/
+
+,True,False,False,0,True
+
+
+Services/
+
+,True,False,False,0,True
+
+
+FMOD/
+Tools/FMOD/
+,False,True,False,0,False
+
+
+SCHIZO/Save All Assets
+Tools/Save All Assets
+,False,True,True,-2000,False
+
+
+Tools/Asset Lens/Missing/Find Missing Components In Opened Scenes.
+Tools/Asset Lens/Find Missing Components in Opened Scenes
+,False,True,False,0,True
+
+

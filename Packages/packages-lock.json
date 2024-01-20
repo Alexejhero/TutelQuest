@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.5pdev.menu-item-overrides": {
+      "version": "https://github.com/Alexejhero/Menu-Item-Overrides.git?path=/Assets/MenuItemOverrides",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "53757d60e8fa2abcbf1a35976417dbaad5e26f96"
+    },
     "com.calci.assetlens": {
       "version": "https://github.com/alexejheroarchive/assetlens.git#upm",
       "depth": 0,
