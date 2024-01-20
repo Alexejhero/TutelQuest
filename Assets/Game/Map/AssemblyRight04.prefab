@@ -4203,7 +4203,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7523901145516870147}
-  - component: {fileID: 937768426953014491}
+  - component: {fileID: 4474121240379770440}
   m_Layer: 0
   m_Name: PlatformSegment02
   m_TagString: Untagged
@@ -4227,8 +4227,8 @@ Transform:
   - {fileID: 8249477655500596621}
   m_Father: {fileID: 7526480000774247180}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &937768426953014491
-BoxCollider2D:
+--- !u!68 &4474121240379770440
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4259,19 +4259,20 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.24, y: 0.45}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.28}
-    newSize: {x: 1.28, y: 1.28}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.4, y: 1.82}
+  m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.28848267, y: -0.5569929}
+  - {x: -1.0754089, y: 1.3138703}
+  - {x: -0.9581604, y: 1.3812982}
+  - {x: 0.78015137, y: 1.3811587}
+  - {x: 1.5111084, y: 1.4000736}
+  - {x: 1.644989, y: 1.3566226}
+  - {x: 0.8384094, y: -0.5499423}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &8628155131575806393
 GameObject:
   m_ObjectHideFlags: 0

@@ -2944,7 +2944,7 @@ Transform:
   m_GameObject: {fileID: 7119176930292769748}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.809998, y: 10.431, z: 0}
+  m_LocalPosition: {x: 9.809998, y: 9.681, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3043,11 +3043,14 @@ EdgeCollider2D:
   - {x: -2.6898575, y: 2.3002434}
   - {x: -0.12812424, y: 2.327218}
   - {x: 5.1639442, y: 2.088852}
-  - {x: 5.526745, y: 2.4311104}
-  - {x: 6.377945, y: 2.4871855}
-  - {x: 6.8807755, y: 2.1608047}
-  - {x: 6.6909447, y: 1.0234423}
-  - {x: 6.5007935, y: -0.24682617}
+  - {x: 5.382801, y: 2.3064346}
+  - {x: 6.8345337, y: 2.1675615}
+  - {x: 6.8465347, y: 1.7726917}
+  - {x: 6.6021423, y: 1.474453}
+  - {x: 6.713772, y: 0.90929127}
+  - {x: 5.9364777, y: 0.6526985}
+  - {x: 5.160446, y: 0.6620436}
+  - {x: 5.27932, y: -0.008167267}
   - {x: 2.62995, y: -0.23844051}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
@@ -3115,8 +3118,8 @@ MonoBehaviour:
   - {fileID: 6806790340738573888}
   isTimerOn: 1
   intervalOn: 2
-  intervalOff: 1.15
-  offset: 5.7
+  intervalOff: 4
+  offset: 0
 --- !u!1 &7453885580201170117
 GameObject:
   m_ObjectHideFlags: 0
