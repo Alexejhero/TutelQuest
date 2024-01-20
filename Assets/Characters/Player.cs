@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using SchizoQuest.Characters.Movement;
+using SchizoQuest.Characters.Vedal;
 using SchizoQuest.Game;
 using SchizoQuest.Game.Items;
 using SchizoQuest.VFX.Transition;
@@ -19,7 +20,11 @@ namespace SchizoQuest.Characters
         public ParticleSystem characterSwitchParticleEffect;
         public Rigidbody2D rb;
         public bool dying;
-        [NonSerialized] public bool winning;
+
+        // Scuffed but who cares, this is basically only used to communicate with CharacterAnimator
+        public bool Winning { get; set; }
+        public bool Locked => GetComponent<TutelForm>()?.IsDashing ?? false;
+
         public bool IsGrounded => controller.groundTracker.IsGrounded;
         public bool IsRecentlyGrounded => controller.groundTracker.IsRecentlyGrounded;
 
