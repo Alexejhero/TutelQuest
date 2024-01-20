@@ -159,6 +159,12 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
+    "fmod": {
+      "version": "file:FMOD",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "powerspriteanimator": {
       "version": "file:PowerSpriteAnimator",
       "depth": 0,
