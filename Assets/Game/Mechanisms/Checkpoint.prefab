@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerInterval: 0
+  ignoreTriggers: 0
   available: {fileID: 3191922975113590071}
   taken: {fileID: 3523564258234174247}
 --- !u!61 &1775353627518803329
@@ -168,7 +169,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 01b156368252a9e4c8a22faf8f395401, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.51432276, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
