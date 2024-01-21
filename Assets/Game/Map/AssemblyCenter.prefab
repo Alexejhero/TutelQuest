@@ -5194,6 +5194,7 @@ GameObject:
   - component: {fileID: 2270688896122629802}
   - component: {fileID: 7399371085091585119}
   - component: {fileID: 7491277200451869638}
+  - component: {fileID: 7820613737269140834}
   m_Layer: 13
   m_Name: StairsNeuro
   m_TagString: Untagged
@@ -5229,10 +5230,10 @@ PlatformEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RotationalOffset: 0
+  m_RotationalOffset: -22.5
   m_UseOneWay: 1
   m_UseOneWayGrouping: 1
-  m_SurfaceArc: 180
+  m_SurfaceArc: 225
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -5268,7 +5269,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: -0.034103394, y: -0.27366352}
+  m_Offset: {x: -0.023086548, y: -0.27366352}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -5279,7 +5280,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.016693, y: 6.6225452}
+  m_Size: {x: 3.9946594, y: 6.6225452}
   m_EdgeRadius: 0
 --- !u!61 &7399371085091585119
 BoxCollider2D:
@@ -5313,7 +5314,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: -1.3611755, y: 6.453615}
+  m_Offset: {x: -1.3611755, y: 6.449794}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -5324,7 +5325,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.3748169, y: 6.832512}
+  m_Size: {x: 1.3748169, y: 6.8401546}
   m_EdgeRadius: 0
 --- !u!61 &7491277200451869638
 BoxCollider2D:
@@ -5371,6 +5372,47 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.1730042, y: 0.9669132}
   m_EdgeRadius: 0
+--- !u!68 &7820613737269140834
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302239338023304604}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -2.0402832, y: 3.189227}
+  - {x: -2.061432, y: -3.4942245}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &5335930284651250994
 GameObject:
   m_ObjectHideFlags: 0
