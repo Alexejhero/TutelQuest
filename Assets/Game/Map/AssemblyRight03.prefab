@@ -6597,6 +6597,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7961969809687347551}
     m_Modifications:
+    - target: {fileID: 7420544856607886803, guid: fb46253e30a665042b9e419135f60d5d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.92
+      objectReference: {fileID: 0}
     - target: {fileID: 7569329718862359105, guid: fb46253e30a665042b9e419135f60d5d, type: 3}
       propertyPath: m_Name
       value: Door
