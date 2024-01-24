@@ -4,7 +4,7 @@ namespace SchizoQuest.Editor
 {
     public static class SaveAllAssets
     {
-        [MenuItem("SCHIZO/Save All Assets")]
+        [MenuItem("Tools/Save All Assets", false, -1000)]
         public static void Save()
         {
             AssetDatabase.SaveAssets();
