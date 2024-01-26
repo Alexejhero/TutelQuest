@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using SchizoQuest.Characters.Movement;
 using SchizoQuest.Characters.Vedal;

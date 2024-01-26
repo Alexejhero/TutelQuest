@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8337613622537684320}
   - component: {fileID: 4205522132642057608}
   - component: {fileID: 7589676436413931465}
+  - component: {fileID: 6423933310686303340}
   m_Layer: 0
   m_Name: Characters
   m_TagString: Untagged
@@ -81,6 +82,28 @@ MonoBehaviour:
   - {fileID: 5580527245097492188}
   - {fileID: 4206252254551930202}
   enableSwitching: 1
+--- !u!114 &6423933310686303340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7528141543748926353}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89465e218bcb93441b9cf193d0ff18ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeOutTime: 0.25
+  fadeInTime: 0.25
+  fadeSnapshot:
+    Guid:
+      Data1: 902439226
+      Data2: 1169940850
+      Data3: -1105424998
+      Data4: 955259791
+    Path: snapshot:/faders/mute_interactive
+  audioListener: {fileID: 0}
 --- !u!1001 &4706922639398813842
 PrefabInstance:
   m_ObjectHideFlags: 0

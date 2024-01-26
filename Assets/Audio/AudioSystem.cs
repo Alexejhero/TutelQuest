@@ -1,7 +1,5 @@
 using FMOD.Studio;
 using FMODUnity;
-using SchizoQuest.Characters;
-using SchizoQuest.Game;
 using UnityEngine;
 
 namespace SchizoQuest.Audio
@@ -23,23 +21,31 @@ namespace SchizoQuest.Audio
             get => PlayerPrefs.GetFloat("SfxVolume", 1f);
             set => PlayerPrefs.SetFloat("SfxVolume", value);
         }
-        public static float SavedVoiceVolume
-        {
-            get => PlayerPrefs.GetFloat("VoiceVolume", 1f);
-            set => PlayerPrefs.SetFloat("VoiceVolume", value);
-        }
 
         private static VCA masterVCA;
         private static VCA musicVCA;
         private static VCA sfxVCA;
-        private static VCA voiceVCA;
 
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         private static void Initialize()
         {
-            if (!masterVCA.isValid()) masterVCA = RuntimeManager.GetVCA("vca:/master");
-            if (!musicVCA.isValid()) musicVCA = RuntimeManager.GetVCA("vca:/music");
-            if (!sfxVCA.isValid()) sfxVCA = RuntimeManager.GetVCA("vca:/sfx");
-            if (!voiceVCA.isValid()) voiceVCA = RuntimeManager.GetVCA("vca:/voice");
+            if (!masterVCA.isValid())
+            {
+                masterVCA = RuntimeManager.GetVCA("vca:/master");
+                masterVCA.setVolume(SavedMasterVolume);
+            }
+
+            if (!musicVCA.isValid())
+            {
+                musicVCA = RuntimeManager.GetVCA("vca:/music");
+                musicVCA.setVolume(SavedMusicVolume);
+            }
+
+            if (!sfxVCA.isValid())
+            {
+                sfxVCA = RuntimeManager.GetVCA("vca:/sfx");
+                sfxVCA.setVolume(SavedSfxVolume);
+            }
         }
 
         public static void SetMasterVolume(float volume)
@@ -61,19 +67,6 @@ namespace SchizoQuest.Audio
             Initialize();
             sfxVCA.setVolume(volume);
             SavedSfxVolume = volume;
-        }
-
-        public static void SetVoiceVolume(float volume)
-        {
-            Initialize();
-            voiceVCA.setVolume(volume);
-            SavedVoiceVolume = volume;
-        }
-
-        public static void UpdateSfxMuteWhileSwitchingCharacters(Player currentPlayer)
-        {
-            var dist = CameraController.DistanceToActivePlayer;
-            RuntimeManager.StudioSystem.setParameterByName("Distance to Active Character", dist);
         }
     }
 }

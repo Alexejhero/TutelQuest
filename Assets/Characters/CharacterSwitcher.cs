@@ -30,7 +30,6 @@ namespace SchizoQuest.Characters
         private void Update()
         {
             GlobalTransformCooldown -= Time.deltaTime;
-            AudioSystem.UpdateSfxMuteWhileSwitchingCharacters(_currentPlayer);
         }
 
         [UsedImplicitly]
@@ -58,6 +57,7 @@ namespace SchizoQuest.Characters
             _currentPlayer.enabled = true;
             GlobalTransformCooldown = 0.75f;
             music.SetCharacter(_currentPlayer.playerType);
+            BroadcastMessage("OnSwitch", SendMessageOptions.DontRequireReceiver);
         }
     }
 }
