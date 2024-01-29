@@ -31,8 +31,9 @@ namespace SchizoQuest.Game
         public void Update()
         {
             Vector2 fov = new(cam.fieldOfView, 0);
-            cam.fieldOfView = Vector2.SmoothDamp(fov, IsInPauseMenu ? TargetFov : NormalFov, ref _currentFovVelocity, smoothTime, Mathf.Infinity, Time.deltaTime).x;
 
+            // smoothTime * 10 to roughly accommodate for slower fixed update
+            cam.fieldOfView = Vector2.SmoothDamp(fov, IsInPauseMenu ? TargetFov : NormalFov, ref _currentFovVelocity, smoothTime * 10f, Mathf.Infinity, Time.fixedDeltaTime).x;
             Vector3 desiredCamPos = target.position;
             desiredCamPos.x = IsInPauseMenu ? desiredCamPos.x + pauseMenuXOffset : desiredCamPos.x;
             Vector3 camPos = transform.position;
@@ -40,7 +41,9 @@ namespace SchizoQuest.Game
             var direction = desiredCamPos - camPos;
             if (direction.magnitude > maxDistance)
                 camPos = desiredCamPos - direction.normalized * maxDistance;
-            camPos = Vector3.SmoothDamp(camPos, desiredCamPos, ref currVelocity, smoothTime);
+
+            // smoothTime * 10 to roughly accommodate for slower fixed update
+            camPos = Vector3.SmoothDamp(camPos, desiredCamPos, ref currVelocity, smoothTime * 10f, Mathf.Infinity, Time.fixedDeltaTime);
             transform.position = camPos;
         }
     }

@@ -1864,9 +1864,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 576913224606708169}
         m_TargetAssemblyTypeName: SchizoQuest.PauseMenuBehaviour, Assembly-CSharp
-        m_MethodName: ToggleOptions
+        m_MethodName: OnCancel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

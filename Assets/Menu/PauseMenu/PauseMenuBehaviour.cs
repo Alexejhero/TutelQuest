@@ -76,12 +76,12 @@ namespace SchizoQuest
             IsOpen = !IsOpen;
             MonoSingleton<CameraController>.Instance.IsInPauseMenu = IsOpen;
             options.gameObject.SetActive(IsOpen);
-            //Timescale.Instance.timescale = IsOpen? 0 : 1;
+            Timescale.Instance.timescale = IsOpen? 0 : 1;
         }
 
         private void Update()
         {
-            _phase = Mathf.Lerp(_phase, IsOpen ? 1 : 0, Time.deltaTime * transitionSpeed);
+            _phase = Mathf.Lerp(_phase, IsOpen ? 1 : 0, Time.fixedDeltaTime * (transitionSpeed / 10f));
             backgroundMaterial.material.SetFloat(phaseID, _phase);
         }
 
