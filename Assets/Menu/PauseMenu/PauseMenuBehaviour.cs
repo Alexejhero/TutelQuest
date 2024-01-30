@@ -1,7 +1,10 @@
+using SchizoQuest.Characters;
 using SchizoQuest.Game;
 using SchizoQuest.Helpers;
 using SchizoQuest.Menu;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace SchizoQuest
@@ -57,6 +60,31 @@ namespace SchizoQuest
             ToggleOptions();
         }
 
+        public void ButtonQuit()
+        {
+            Application.Quit();
+        }
+
+        public void ButtonToCheckpoint()
+        {
+            ToggleOptions();
+            if (!Player.ActivePlayer.dying) Player.ActivePlayer.respawn.Respawn();
+            StartCoroutine(LockUntilReset());
+        }
+
+        public void ButtonRestart()
+        {
+            ForceCloseAndPreventOpening();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        private IEnumerator LockUntilReset()
+        {
+            _isLocked = true;
+            yield return new WaitUntil(() => !Player.ActivePlayer.dying);
+            _isLocked = false;
+        }
+
         public void ForceCloseAndPreventOpening(bool preventOpening = true)
         {
             if (IsOpen)
@@ -76,7 +104,7 @@ namespace SchizoQuest
             IsOpen = !IsOpen;
             MonoSingleton<CameraController>.Instance.IsInPauseMenu = IsOpen;
             options.gameObject.SetActive(IsOpen);
-            Timescale.Instance.timescale = IsOpen? 0 : 1;
+            Timescale.Instance.timescale = IsOpen ? 0 : 1;
         }
 
         private void Update()
@@ -87,6 +115,7 @@ namespace SchizoQuest
 
         private void OnDisable()
         {
+            IsOpen = false;
             backgroundMaterial.material.SetFloat(phaseID, 0);
         }
     }

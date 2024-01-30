@@ -36,18 +36,28 @@ namespace SchizoQuest.Characters.Movement
         private float _defaultGravMulti;
         private float _gravMultiShouldBe; // detect outside changes
 
+        private InputAction moveInput;
+        private InputAction jumpInput;
+
         private void Awake()
         {
             this.EnsureComponent(ref rb);
             this.EnsureComponent(ref groundTracker);
             _defaultGravMulti = _gravMultiShouldBe = rb.gravityScale;
+
             _input = new InputActions();
             _input.Player.Enable();
-            InputAction moveInput = _input.Player.Move;
+
+            moveInput = _input.Player.Move;
+            jumpInput = _input.Player.Jump;
+        }
+
+        private void OnEnable()
+        {
             moveInput.started += OnMoveInput;
             moveInput.performed += OnMoveInput;
             moveInput.canceled += OnMoveInput;
-            InputAction jumpInput = _input.Player.Jump;
+
             jumpInput.started += OnJumpInput;
             jumpInput.performed += OnJumpInput;
             jumpInput.canceled += OnJumpInput;
@@ -268,6 +278,21 @@ namespace SchizoQuest.Characters.Movement
             }
 
             rb.velocity += new Vector2(deltaV, 0);
+        }
+
+        private void OnDisable()
+        {
+            moveInput.started -= OnMoveInput;
+            moveInput.performed -= OnMoveInput;
+            moveInput.canceled -= OnMoveInput;
+            jumpInput.started -= OnJumpInput;
+            jumpInput.performed -= OnJumpInput;
+            jumpInput.canceled -= OnJumpInput;
+            
+            _move = Vector2.zero;
+            _jumpPressQueued = false;
+            _jumpHeld = false;
+            _jumping = false;
         }
     }
 }

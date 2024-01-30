@@ -20,6 +20,7 @@ namespace SchizoQuest.Characters
             {
                 TutelForm tutel = target.GetComponentInChildren<TutelForm>() ?? GetComponentInParent<Player>().GetComponentInChildren<TutelForm>();
                 EvilForm evil = GetComponentInParent<Player>().GetComponentInChildren<EvilForm>() ?? target.GetComponentInChildren<EvilForm>();
+                PauseMenuBehaviour.Instance.ForceCloseAndPreventOpening();
 
                 float swapTime = 0;
                 if (tutel.IsAlt)
