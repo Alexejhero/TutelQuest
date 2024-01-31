@@ -4,6 +4,9 @@
 		<property name="builtBanksSeparateAssets">
 			<value>true</value>
 		</property>
+		<property name="builtBanksSeparateStreams">
+			<value>true</value>
+		</property>
 		<relationship name="masterEventFolder">
 			<destination>{a31da935-7b8f-4dbc-a39d-fa87830ab7cc}</destination>
 		</relationship>
