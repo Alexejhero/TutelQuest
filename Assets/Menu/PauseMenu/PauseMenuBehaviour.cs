@@ -109,7 +109,7 @@ namespace SchizoQuest
 
         private void Update()
         {
-            _phase = Mathf.Lerp(_phase, IsOpen ? 1 : 0, Time.fixedDeltaTime * (transitionSpeed / 10f));
+            _phase = Mathf.Lerp(_phase, IsOpen ? 1 : 0, Time.unscaledDeltaTime * transitionSpeed );
             backgroundMaterial.material.SetFloat(phaseID, _phase);
         }
 

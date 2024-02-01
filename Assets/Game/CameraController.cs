@@ -13,7 +13,7 @@ namespace SchizoQuest.Game
         public float normalFov = 60f;
         public float pauseMenuFov = 30f;
 
-        // using Vector2 for .SmoothDamp to match the tracking smoothing behaviour 
+        // using Vector2 for .SmoothDamp to match the tracking smoothing behaviour
         private Vector2 TargetFov => new(pauseMenuFov, 0);
         private Vector2 NormalFov => new(normalFov, 0);
         private static Vector2 _currentFovVelocity = Vector2.zero;
@@ -32,8 +32,7 @@ namespace SchizoQuest.Game
         {
             Vector2 fov = new(cam.fieldOfView, 0);
 
-            // smoothTime * 10 to roughly accommodate for slower fixed update
-            cam.fieldOfView = Vector2.SmoothDamp(fov, IsInPauseMenu ? TargetFov : NormalFov, ref _currentFovVelocity, smoothTime * 10f, Mathf.Infinity, Time.fixedDeltaTime).x;
+            cam.fieldOfView = Vector2.SmoothDamp(fov, IsInPauseMenu ? TargetFov : NormalFov, ref _currentFovVelocity, smoothTime, Mathf.Infinity, Time.unscaledDeltaTime).x;
             Vector3 desiredCamPos = target.position;
             desiredCamPos.x = IsInPauseMenu ? desiredCamPos.x + pauseMenuXOffset : desiredCamPos.x;
             Vector3 camPos = transform.position;
@@ -41,9 +40,7 @@ namespace SchizoQuest.Game
             var direction = desiredCamPos - camPos;
             if (direction.magnitude > maxDistance)
                 camPos = desiredCamPos - direction.normalized * maxDistance;
-
-            // smoothTime * 10 to roughly accommodate for slower fixed update
-            camPos = Vector3.SmoothDamp(camPos, desiredCamPos, ref currVelocity, smoothTime * 10f, Mathf.Infinity, Time.fixedDeltaTime);
+            camPos = Vector3.SmoothDamp(camPos, desiredCamPos, ref currVelocity, smoothTime, Mathf.Infinity, Time.unscaledDeltaTime);
             transform.position = camPos;
         }
     }
