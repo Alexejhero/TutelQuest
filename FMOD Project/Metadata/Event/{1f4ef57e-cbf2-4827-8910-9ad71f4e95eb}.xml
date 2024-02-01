@@ -5,7 +5,7 @@
 			<value>wind</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>0</value>
 		</property>
 		<relationship name="folder">
 			<destination>{92c54b5f-3d90-4948-b60b-ce10d2451831}</destination>
@@ -129,7 +129,6 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{b350acb1-f069-426b-abfe-702f1bd75f64}">
 		<relationship name="effects">
-			<destination>{e6f86f86-180c-466a-9988-0f83903b25c2}</destination>
 			<destination>{c189b9b0-e22a-479f-b2c0-99432f41dcb1}</destination>
 		</relationship>
 	</object>
@@ -141,11 +140,6 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{d535f26e-bbf4-4c23-b9b3-01948c9ddaa7}" />
-	<object class="PannerEffect" id="{e6f86f86-180c-466a-9988-0f83903b25c2}">
-		<property name="overridingOutputFormat">
-			<value>1</value>
-		</property>
-	</object>
 	<object class="MixerBusFader" id="{c189b9b0-e22a-479f-b2c0-99432f41dcb1}" />
 	<object class="MixerBusFader" id="{d8fb6ce9-d9b6-40a5-986c-766c4e92886a}" />
 </objects>

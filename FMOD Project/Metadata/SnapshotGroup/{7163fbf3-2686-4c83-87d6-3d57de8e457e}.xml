@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="SnapshotGroup" id="{7163fbf3-2686-4c83-87d6-3d57de8e457e}">
+		<property name="name">
+			<value>faders</value>
+		</property>
+		<relationship name="items">
+			<destination>{35ca213a-e172-45bb-9a8d-1cbe8f1bf038}</destination>
+		</relationship>
+	</object>
+</objects>

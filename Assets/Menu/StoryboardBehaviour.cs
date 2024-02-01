@@ -104,25 +104,27 @@ namespace SchizoQuest.Menu
         {
             yield return new WaitForSeconds(0.5f);
 
-            Image currentPanel = panels[_currentPanel];
-            Image lastPanel = panels[Mathf.Max(0, _currentPanel - 1)];
+            if (_currentPanel >= 0) {
+                Image currPanel = panels[_currentPanel];
+                Image prevPanel = panels[Mathf.Max(0, _currentPanel - 1)];
 
-            float currentStartingColor = currentPanel.color.a;
-            float lastStartingColor = lastPanel.color.a;
+                Color currPanelColor = currPanel.color;
+                Color prevPanelColor = prevPanel.color;
 
-            for (float t = 0; t < 2; t += Time.deltaTime)
-            {
-                Color colorCurrent = currentPanel.color;
-                Color colorLast = lastPanel.color;
+                float durationFactor = 1 / transitionLength;
 
-                colorCurrent.a = Mathf.Lerp(currentStartingColor, 0, t / 2);
-                colorLast.a = Mathf.Lerp(lastStartingColor, 0, t / 2);
+                while (currPanelColor.a + prevPanelColor.a > 0)
+                {
+                    currPanelColor.a -= Time.deltaTime * durationFactor;
+                    prevPanelColor.a -= Time.deltaTime * durationFactor;
 
-                currentPanel.color = colorCurrent;
-                lastPanel.color = colorLast;
+                    currPanel.color = currPanelColor;
+                    prevPanel.color = prevPanelColor;
 
-                yield return null;
+                    yield return null;
+                }
             }
+
 
             storyboard.gameObject.SetActive(false);
             titleScreen.gameObject.SetActive(true);

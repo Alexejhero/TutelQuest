@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8073860442114877445}
+  - component: {fileID: 177952345884046489}
   m_Layer: 0
   m_Name: button
   m_TagString: Untagged
@@ -33,6 +34,37 @@ Transform:
   - {fileID: 3807818500819125670}
   m_Father: {fileID: 2610693940499496680}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &177952345884046489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151021670673871637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1433891314
+      Data2: 1170354946
+      Data3: -1905160519
+      Data4: -952462746
+    Path: event:/sfx/interactive/button/release
+  Event: 
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 10
+  OverrideMaxDistance: 50
 --- !u!1 &2820049574336666885
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,6 +74,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2911643020502407048}
+  - component: {fileID: 4036371165154048833}
   m_Layer: 0
   m_Name: pressed
   m_TagString: Untagged
@@ -66,6 +99,37 @@ Transform:
   - {fileID: 5995112558963668807}
   m_Father: {fileID: 2610693940499496680}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4036371165154048833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2820049574336666885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -187873081
+      Data2: 1283186880
+      Data3: -800740694
+      Data4: 635123018
+    Path: event:/sfx/interactive/button/press
+  Event: 
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 10
+  OverrideMaxDistance: 50
 --- !u!1 &2964440390629169714
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,6 +454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerInterval: 0
+  ignoreTriggers: 1
   activates: {fileID: 6026609256010599841}
   plateObjects: {fileID: 8742638606928551172}
 --- !u!114 &8742638606928551172
