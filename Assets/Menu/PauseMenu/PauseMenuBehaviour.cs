@@ -105,6 +105,7 @@ namespace SchizoQuest
             MonoSingleton<CameraController>.Instance.IsInPauseMenu = IsOpen;
             options.gameObject.SetActive(IsOpen);
             Timescale.Instance.timescale = IsOpen ? 0 : 1;
+            Player.ActivePlayer.Winning = IsOpen;
         }
 
         private void Update()
