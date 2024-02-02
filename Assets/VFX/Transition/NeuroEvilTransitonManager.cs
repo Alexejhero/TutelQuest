@@ -1,6 +1,4 @@
 using System.Collections;
-using SchizoQuest.Characters;
-using UnityEditor;
 using UnityEngine;
 
 namespace SchizoQuest.VFX.Transition
@@ -46,24 +44,8 @@ namespace SchizoQuest.VFX.Transition
 
         private void Awake()
         {
-#if UNITY_EDITOR
-            EditorApplication.playModeStateChanged += ClearEffectOnStopIfPausedMidEffect;
-#endif
             Shader.SetGlobalFloat(phaseID, 0f);
         }
-
-#if UNITY_EDITOR
-
-        private void ClearEffectOnStopIfPausedMidEffect(PlayModeStateChange state)
-        {
-            if (state == PlayModeStateChange.ExitingPlayMode)
-            {
-                Shader.SetGlobalFloat(phaseID, 0f);
-                EditorApplication.playModeStateChanged -= ClearEffectOnStopIfPausedMidEffect;
-            }
-        }
-
-#endif
 
         private void SetProps(bool isEvil)
         {
@@ -91,12 +73,12 @@ namespace SchizoQuest.VFX.Transition
 
         private IEnumerator PlayRoutine(float duration, bool isEvil)
         {
-            for (float t = 0; t < duration; t += Time.deltaTime)
+            for (float t = 0; t < duration; t += Time.unscaledDeltaTime)
             {
                 _phase = t / duration;
                 _phase = isEvil ? _phase : 1 - _phase;
                 _phase = phaseCurve.Evaluate(_phase);
-                mask.transform.localScale = Mathf.Abs(Mathf.Clamp01(_phase)) * maskMaxSize * Vector3.one;
+                mask.transform.localScale = _phase * maskMaxSize * Vector3.one;
 
                 SetProps(isEvil);
                 Shader.SetGlobalFloat(phaseID, _phase);
@@ -110,6 +92,11 @@ namespace SchizoQuest.VFX.Transition
         private void Update()
         {
             Shader.SetGlobalVector(playerPos, Camera.main.WorldToScreenPoint(NeuroTransform.position));
+        }
+
+        private void OnDisable()
+        {
+            Shader.SetGlobalFloat(phaseID, 0f);
         }
     }
 }
