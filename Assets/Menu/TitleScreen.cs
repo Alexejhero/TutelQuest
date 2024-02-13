@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace SchizoQuest.Menu
 {
-    public class TitlescreenBehaviour : MonoBehaviour
+    public class TitleScreen : MenuStage
     {
         public Transform rotationTransform;
         public Graphic titleScreenImage;
@@ -19,7 +19,6 @@ namespace SchizoQuest.Menu
         public GameObject creditsObject;
 
         private bool _ready;
-        private bool _isMainMenuDisplayed;
 
         private void Start()
         {

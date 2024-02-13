@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using SchizoQuest.Input;
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 namespace SchizoQuest.Menu
 {
-    public class StoryboardBehaviour : MonoBehaviour
+    public class Storyboard : MenuStage
     {
         public Transform storyboard;
         public List<Image> panels;
@@ -18,7 +17,6 @@ namespace SchizoQuest.Menu
         public AnimationCurve fadeCurve;
         public AnimationCurve skipHoldTransparencyCurve;
         public TMP_Text skipHoldText;
-        public TitlescreenBehaviour titleScreen;
 
         private int _currentPanel = -1;
 
@@ -104,7 +102,8 @@ namespace SchizoQuest.Menu
         {
             yield return new WaitForSeconds(0.5f);
 
-            if (_currentPanel >= 0) {
+            if (_currentPanel >= 0)
+            {
                 Image currPanel = panels[_currentPanel];
                 Image prevPanel = panels[Mathf.Max(0, _currentPanel - 1)];
 
@@ -125,9 +124,7 @@ namespace SchizoQuest.Menu
                 }
             }
 
-
-            storyboard.gameObject.SetActive(false);
-            titleScreen.gameObject.SetActive(true);
+            Done();
         }
     }
 }

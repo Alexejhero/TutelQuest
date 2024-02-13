@@ -1134,6 +1134,7 @@ GameObject:
   - component: {fileID: 594178157}
   - component: {fileID: 594178156}
   - component: {fileID: 594178155}
+  - component: {fileID: 594178159}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1229,6 +1230,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &594178159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594178154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f5350c0e10da1f4e96889b1e13c43a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stages:
+  - {fileID: 1647424921}
+  - {fileID: 1941851955}
+  - {fileID: 852838827}
 --- !u!1 &688172293
 GameObject:
   m_ObjectHideFlags: 0
@@ -3731,7 +3748,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1647424920
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3765,7 +3782,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beginText: {fileID: 1723483774}
-  next: {fileID: 1941851955}
 --- !u!1 &1693182105
 GameObject:
   m_ObjectHideFlags: 0
@@ -4681,7 +4697,6 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   skipHoldText: {fileID: 360764746}
-  titleScreen: {fileID: 852838827}
 --- !u!114 &1941851956
 MonoBehaviour:
   m_ObjectHideFlags: 0

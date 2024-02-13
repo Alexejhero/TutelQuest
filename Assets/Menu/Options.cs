@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace SchizoQuest.Menu
 {
-    public class OptionsBehaviour : MonoBehaviour
+    public class Options : MonoBehaviour
     {
         public Slider masterVolumeSlider;
         public Slider musicVolumeSlider;

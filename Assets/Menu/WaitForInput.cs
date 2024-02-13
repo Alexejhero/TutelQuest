@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using SchizoQuest.Input;
 using TMPro;
 using UnityEngine;
 
 namespace SchizoQuest.Menu
 {
-    public class BeginBehaviour : MonoBehaviour
+    public class WaitForInput : MenuStage
     {
         private InputActions _input;
         public TMP_Text beginText;
-        public StoryboardBehaviour next;
 
         private void Awake()
         {
@@ -38,8 +36,7 @@ namespace SchizoQuest.Menu
                 yield return null;
             }
 
-            next.gameObject.SetActive(true);
-            gameObject.SetActive(false);
+            Done();
         }
     }
 }
