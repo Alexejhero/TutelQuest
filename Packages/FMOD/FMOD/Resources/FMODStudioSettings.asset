@@ -504,8 +504,10 @@ MonoBehaviour:
   - Master
   Banks:
   - Master.assets
+  - Master.streams
   - Music
   - Music.assets
+  - Music.streams
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
