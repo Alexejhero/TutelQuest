@@ -29,6 +29,7 @@ namespace SchizoQuest.Characters
         {
             if (!player.enabled) return;
             if (!CanSwap(!IsAlt)) return;
+            if (PauseMenuBehaviour.IsOpen) return;
             if (switcher.GlobalTransformCooldown > 0) return;
 
             StartCoroutine(PerformSwap());

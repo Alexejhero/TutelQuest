@@ -98,7 +98,7 @@ namespace SchizoQuest.Characters
                 spriteRenderer.sortingOrder = order;
         }
 
-        private void ToggleMovement(bool active)
+        public void ToggleMovement(bool active)
         {
             controller.canMove = active;
             controller.canJump = active;

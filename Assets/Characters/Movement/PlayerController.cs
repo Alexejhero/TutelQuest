@@ -78,6 +78,7 @@ namespace SchizoQuest.Characters.Movement
 
         public void OnJumpInput(InputAction.CallbackContext ctx)
         {
+            if (PauseMenuBehaviour.IsOpen) return;
             if (ctx.started)
             {
                 //Debug.Log("Jump pressed");

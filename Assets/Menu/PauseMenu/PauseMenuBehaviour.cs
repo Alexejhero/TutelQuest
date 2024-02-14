@@ -92,9 +92,10 @@ namespace SchizoQuest
         private void OnIsOpenChanged()
         {
             options.gameObject.SetActive(IsOpen);
-            Timescale.Instance.timescale = IsOpen ? 0 : 1;
+            Time.timeScale = IsOpen ? 0 : 1;
             // forces idle anim (facing the camera)
             Player.ActivePlayer.Winning = IsOpen;
+            Player.ActivePlayer.ToggleMovement(!IsOpen);
         }
 
         private void Update()
