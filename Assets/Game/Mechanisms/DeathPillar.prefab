@@ -586,6 +586,7 @@ MonoBehaviour:
   speed: 5
   moveSound: {fileID: 8912150711233590312}
   makeSound: 0
+  soundSpeedMulti: 1
 --- !u!114 &3598715636389785526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -635,8 +636,8 @@ MonoBehaviour:
   AllowNonRigidbodyDoppler: 0
   Params: []
   OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
+  OverrideMinDistance: 10
+  OverrideMaxDistance: 35
 --- !u!1 &8107121459296716823
 GameObject:
   m_ObjectHideFlags: 0

@@ -3302,6 +3302,7 @@ MonoBehaviour:
   speed: 0.8
   moveSound: {fileID: 3576419914672762695}
   makeSound: 1
+  soundSpeedMulti: 1
 --- !u!114 &3576419914672762695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3331,8 +3332,8 @@ MonoBehaviour:
   AllowNonRigidbodyDoppler: 0
   Params: []
   OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
+  OverrideMinDistance: 10
+  OverrideMaxDistance: 35
 --- !u!50 &6934848212723842682
 Rigidbody2D:
   serializedVersion: 4
@@ -4013,6 +4014,7 @@ MonoBehaviour:
   speed: 3
   moveSound: {fileID: 675769804215347137}
   makeSound: 1
+  soundSpeedMulti: 1
 --- !u!61 &2696692699882069661
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4337,6 +4339,7 @@ MonoBehaviour:
   speed: 2
   moveSound: {fileID: 0}
   makeSound: 1
+  soundSpeedMulti: 1
 --- !u!114 &394835911026679748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4366,8 +4369,8 @@ MonoBehaviour:
   AllowNonRigidbodyDoppler: 0
   Params: []
   OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
+  OverrideMinDistance: 10
+  OverrideMaxDistance: 35
 --- !u!50 &6439808655813260699
 Rigidbody2D:
   serializedVersion: 4
@@ -6924,6 +6927,7 @@ MonoBehaviour:
   speed: 1
   moveSound: {fileID: 0}
   makeSound: 0
+  soundSpeedMulti: 1
 --- !u!114 &903695327769515743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7844,6 +7848,7 @@ MonoBehaviour:
   speed: 1
   moveSound: {fileID: 0}
   makeSound: 0
+  soundSpeedMulti: 1
 --- !u!114 &8210026324195697009
 MonoBehaviour:
   m_ObjectHideFlags: 0

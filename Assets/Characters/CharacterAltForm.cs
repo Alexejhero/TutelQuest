@@ -21,7 +21,7 @@ namespace SchizoQuest.Characters
 
         protected virtual void Start()
         {
-            switcher = MonoSingleton<CharacterSwitcher>.Instance;
+            switcher = CharacterSwitcher.Instance;
         }
 
         [UsedImplicitly]

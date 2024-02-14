@@ -1984,7 +1984,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerInterval: 0
   ignoreTriggers: 0
-  disablesSwitching: 0
+  type: 1
 --- !u!61 &1618179308364714761
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3324,7 +3324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerInterval: 0
   ignoreTriggers: 0
-  disablesSwitching: 1
+  type: 0
 --- !u!1 &5706479522421115453
 GameObject:
   m_ObjectHideFlags: 0

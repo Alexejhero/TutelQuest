@@ -18,7 +18,7 @@ namespace SchizoQuest.Characters
         private int _playersInside;
         private void Start()
         {
-            _switcher = MonoSingleton<CharacterSwitcher>.Instance;
+            _switcher = CharacterSwitcher.Instance;
             float tanFov = Mathf.Tan(Camera.main.fieldOfView * Mathf.Deg2Rad * 0.5f);
             camDistFactor = 0.5f * 0.5625f / tanFov;
         }
@@ -50,12 +50,12 @@ namespace SchizoQuest.Characters
 
         public void Pin()
         {
-            MonoSingleton<CameraController>.Instance.target = pinTarget.transform;
+            CameraController.Instance.target = pinTarget.transform;
             isPinned = true;
         }
         public void Unpin()
         {
-            MonoSingleton<CameraController>.Instance.target = Player.ActivePlayer.transform;
+            CameraController.Instance.target = Player.ActivePlayer.transform;
             isPinned = false;
             Vector3 camPos = Camera.main.transform.position;
             camPos.z = -20f;

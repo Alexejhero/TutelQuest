@@ -41,7 +41,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _PAUS_Angle: 2.9
+    - _PAUS_Angle: 166
     - _PAUS_HorizBalance: 1.7
     - _PAUS_HorizOffset: -0.11
     - _PAUS_Phase: 0

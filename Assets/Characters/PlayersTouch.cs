@@ -18,9 +18,10 @@ namespace SchizoQuest.Characters
 
             IEnumerator CoOnEnter()
             {
-                TutelForm tutel = target.GetComponentInChildren<TutelForm>() ?? GetComponentInParent<Player>().GetComponentInChildren<TutelForm>();
-                EvilForm evil = GetComponentInParent<Player>().GetComponentInChildren<EvilForm>() ?? target.GetComponentInChildren<EvilForm>();
-                PauseMenuBehaviour.Instance.ForceCloseAndPreventOpening();
+                TutelForm tutel = CharacterSwitcher.Instance.availablePlayers[0].GetComponentInChildren<TutelForm>();
+                EvilForm evil = CharacterSwitcher.Instance.availablePlayers[1].GetComponentInChildren<EvilForm>();
+                PauseMenuBehaviour.Instance.Close();
+                PauseMenuBehaviour.Instance.canToggle = false;
 
                 float swapTime = 0;
                 if (tutel.IsAlt)
@@ -34,7 +35,7 @@ namespace SchizoQuest.Characters
                     swapTime = 1;
                 }
 
-                MonoSingleton<CharacterSwitcher>.Instance.availablePlayers.ForEach(p =>
+                CharacterSwitcher.Instance.availablePlayers.ForEach(p =>
                 {
                     p.rb.simulated = false;
                     p.rb.velocity = Vector2.zero;

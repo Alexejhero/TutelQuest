@@ -2,7 +2,6 @@ using SchizoQuest.Characters;
 using SchizoQuest.Game;
 using SchizoQuest.Helpers;
 using SchizoQuest.Menu;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -11,7 +10,7 @@ namespace SchizoQuest
 {
     public class PauseMenuBehaviour : MonoSingleton<PauseMenuBehaviour>
     {
-        public OptionsBehaviour options;
+        public Options options;
         public Image backgroundMaterial;
 
         public Color color = Color.black;
@@ -20,12 +19,12 @@ namespace SchizoQuest
         [Range(-1, 1f)]
         public float horizontalOffset = 0f;
 
-        [Range(1.5708f, Mathf.PI)]
-        public float angle = 3f;
+        [Range(90, 180)]
+        public float angle = 166f;
 
         private float _phase = 0f;
-        public static bool IsOpen { private set; get; }
-        private bool _isLocked = false;
+        public static bool IsOpen { get; private set; }
+        internal bool canToggle = true;
 
         #region IDs
 
@@ -49,15 +48,14 @@ namespace SchizoQuest
             SetParameters();
         }
 
-        protected override void Awake()
+        private void Start()
         {
-            base.Awake();
             SetParameters();
         }
 
         public void OnCancel()
         {
-            ToggleOptions();
+            ToggleOpen();
         }
 
         public void ButtonQuit()
@@ -67,56 +65,47 @@ namespace SchizoQuest
 
         public void ButtonToCheckpoint()
         {
-            ToggleOptions();
-            if (!Player.ActivePlayer.dying) Player.ActivePlayer.respawn.Respawn();
-            StartCoroutine(LockUntilReset());
+            Player.ActivePlayer.respawn.Respawn();
         }
 
-        public void ButtonRestart()
+        public void ButtonToMenu()
         {
-            ForceCloseAndPreventOpening();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            Close();
+            MainMenu.skipNextIntro = true;
+            SceneManager.LoadScene(0);
         }
 
-        private IEnumerator LockUntilReset()
-        {
-            _isLocked = true;
-            yield return new WaitUntil(() => !Player.ActivePlayer.dying);
-            _isLocked = false;
-        }
-
-        public void ForceCloseAndPreventOpening(bool preventOpening = true)
+        public void Close(bool force = false)
         {
             if (IsOpen)
-            {
-                ToggleOptions();
-            }
-            if (!_isLocked && preventOpening)
-            {
-                _isLocked = true;
-            }
+                ToggleOpen(force);
         }
 
-        public void ToggleOptions()
+        public void ToggleOpen(bool force = false)
         {
-            if (_isLocked) return;
+            if (!canToggle && !force) return;
 
             IsOpen = !IsOpen;
-            MonoSingleton<CameraController>.Instance.IsInPauseMenu = IsOpen;
+            OnIsOpenChanged();
+        }
+
+        private void OnIsOpenChanged()
+        {
             options.gameObject.SetActive(IsOpen);
             Timescale.Instance.timescale = IsOpen ? 0 : 1;
+            // forces idle anim (facing the camera)
             Player.ActivePlayer.Winning = IsOpen;
         }
 
         private void Update()
         {
-            _phase = Mathf.Lerp(_phase, IsOpen ? 1 : 0, Time.unscaledDeltaTime * transitionSpeed );
+            _phase = Mathf.Lerp(_phase, IsOpen ? 1 : 0, Time.unscaledDeltaTime * transitionSpeed);
             backgroundMaterial.material.SetFloat(phaseID, _phase);
         }
 
         private void OnDisable()
         {
-            IsOpen = false;
+            Close(true);
             backgroundMaterial.material.SetFloat(phaseID, 0);
         }
     }

@@ -23,7 +23,7 @@ namespace SchizoQuest.Characters
 
         private void Start()
         {
-            music = MonoSingleton<BackgroundMusic>.Instance;
+            music = BackgroundMusic.Instance;
             SwitchTo(_currentIndex);
         }
 

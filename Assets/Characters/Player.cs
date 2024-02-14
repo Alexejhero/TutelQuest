@@ -38,6 +38,8 @@ namespace SchizoQuest.Characters
             {
                 if (this != ActivePlayer) return;
 
+                PauseMenuBehaviour.Instance.Close();
+                PauseMenuBehaviour.Instance.canToggle = false;
                 rb.simulated = false;
                 controller.enabled = false;
                 dying = true;
@@ -56,6 +58,7 @@ namespace SchizoQuest.Characters
 
                 if (this != ActivePlayer) return;
 
+                PauseMenuBehaviour.Instance.canToggle = true;
                 rb.simulated = true;
                 controller.enabled = true;
                 dying = false;

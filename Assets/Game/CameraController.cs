@@ -8,7 +8,6 @@ namespace SchizoQuest.Game
     {
         public Camera cam;
         public Transform target;
-        public bool IsInPauseMenu { set; private get; } = false;
         public float pauseMenuXOffset = -1f;
         public float normalFov = 60f;
         public float pauseMenuFov = 30f;
@@ -27,6 +26,7 @@ namespace SchizoQuest.Game
 
         internal static Vector3 currVelocity = Vector3.zero;
         internal static float DistanceToActivePlayer => Vector3.Distance(Player.ActivePlayer.transform.position, Camera.main.transform.position);
+        private static bool IsInPauseMenu => PauseMenuBehaviour.IsOpen;
 
         public void Update()
         {

@@ -1,16 +1,22 @@
 using SchizoQuest.Game.Mechanisms;
-using SchizoQuest.Helpers;
+using UnityEngine;
 
 namespace SchizoQuest.Characters
 {
     public sealed class ControlCharacterSwitchingArea : Trigger<Player>
     {
-        public bool disablesSwitching;
+        private enum Type {
+            Disable,
+            Enable
+        }
+
+        [SerializeField]
+        private Type type;
         protected override void OnEnter(Player target)
         {
-            CharacterSwitcher switcher = MonoSingleton<CharacterSwitcher>.Instance;
-            switcher.enableSwitching = !disablesSwitching;
-            if (!disablesSwitching)
+            CharacterSwitcher switcher = CharacterSwitcher.Instance;
+            switcher.enableSwitching = type == Type.Enable;
+            if (type == Type.Enable)
             {
                 foreach (var trigger in FindObjectsOfType<ControlCharacterSwitchingArea>())
                     Destroy(trigger);

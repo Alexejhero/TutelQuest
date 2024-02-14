@@ -6293,7 +6293,7 @@ MonoBehaviour:
   rb: {fileID: 9080355131835533371}
   offset: {x: 0, y: -16.28, z: 0}
   speed: 0.8
-  moveSound: {fileID: 0}
+  moveSound: {fileID: 1687680005578294824}
   makeSound: 1
   soundSpeedMulti: 1
 --- !u!114 &1687680005578294824
@@ -6325,8 +6325,8 @@ MonoBehaviour:
   AllowNonRigidbodyDoppler: 0
   Params: []
   OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
+  OverrideMinDistance: 10
+  OverrideMaxDistance: 35
 --- !u!50 &9080355131835533371
 Rigidbody2D:
   serializedVersion: 4

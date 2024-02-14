@@ -794,6 +794,7 @@ MonoBehaviour:
   speed: 0.8
   moveSound: {fileID: 680151306396562397}
   makeSound: 1
+  soundSpeedMulti: 1
 --- !u!114 &680151306396562397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -823,8 +824,8 @@ MonoBehaviour:
   AllowNonRigidbodyDoppler: 0
   Params: []
   OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
+  OverrideMinDistance: 10
+  OverrideMaxDistance: 35
 --- !u!50 &7703773763519491541
 Rigidbody2D:
   serializedVersion: 4

@@ -23,7 +23,7 @@ namespace SchizoQuest.Audio
 
         private void Start()
         {
-            _music = MonoSingleton<BackgroundMusic>.Instance;
+            _music = BackgroundMusic.Instance;
         }
 
         protected override void OnEnter(Player target) => _playersInCollider++;
