@@ -1,4 +1,5 @@
 using System.Collections;
+using FMODUnity;
 using SchizoQuest.Characters.Movement;
 using SchizoQuest.Characters.Vedal;
 using SchizoQuest.Game;
@@ -18,7 +19,9 @@ namespace SchizoQuest.Characters
         public Inventory inventory;
         public ParticleSystem characterSwitchParticleEffect;
         public Rigidbody2D rb;
+        [HideInInspector]
         public bool dying;
+        public StudioEventEmitter deathSound;
 
         // Scuffed but who cares, this is basically only used to communicate with CharacterAnimator
         public bool Winning { get; set; }
@@ -38,6 +41,7 @@ namespace SchizoQuest.Characters
                 rb.simulated = false;
                 controller.enabled = false;
                 dying = true;
+                if (deathSound) deathSound.Play();
                 EffectsManager.Instance.PlayEffect(EffectsManager.Effects.death, 1f);
             };
             respawn.OnResetFinish += (r) =>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{ba5ce00c-7cf3-409e-8ee0-98923778394c}">
+		<property name="assetPath">
+			<value>sfx/player/glitch06-02.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.43535147392290252</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{3bd57463-a52d-409f-ae3e-3406e94e72ba}</destination>
+		</relationship>
+	</object>
+</objects>
