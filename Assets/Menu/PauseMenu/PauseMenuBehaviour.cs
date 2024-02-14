@@ -1,6 +1,6 @@
 using SchizoQuest.Characters;
-using SchizoQuest.Game;
 using SchizoQuest.Helpers;
+using SchizoQuest.Input;
 using SchizoQuest.Menu;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -24,7 +24,9 @@ namespace SchizoQuest
 
         private float _phase = 0f;
         public static bool IsOpen { get; private set; }
-        internal bool canToggle = true;
+        internal bool canToggle;
+
+        private InputActions _input;
 
         #region IDs
 
@@ -48,14 +50,24 @@ namespace SchizoQuest
             SetParameters();
         }
 
-        private void Start()
+        protected override void Awake()
         {
+            base.Awake();
+            canToggle = true;
+            _input = new InputActions();
+            _input.Player.PauseMenu.started += _ => OnPauseMenu();
+            _input.UI.Cancel.started += _ => OnCancel();
             SetParameters();
+        }
+
+        public void OnPauseMenu()
+        {
+            ToggleOpen();
         }
 
         public void OnCancel()
         {
-            ToggleOpen();
+            Close();
         }
 
         public void ButtonQuit()
@@ -104,10 +116,19 @@ namespace SchizoQuest
             backgroundMaterial.material.SetFloat(phaseID, _phase);
         }
 
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+            _input.UI.Enable();
+            _input.Player.Enable();
+        }
+
         private void OnDisable()
         {
             Close(true);
             backgroundMaterial.material.SetFloat(phaseID, 0);
+            _input.UI.Disable();
+            _input.Player.Disable();
         }
     }
 }

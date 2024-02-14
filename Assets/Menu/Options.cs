@@ -1,5 +1,6 @@
 ﻿using SchizoQuest.Audio;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace SchizoQuest.Menu
@@ -10,6 +11,8 @@ namespace SchizoQuest.Menu
         public Slider musicVolumeSlider;
         public Slider sfxVolumeSlider;
 
+        public Button backButton;
+
         public void Start()
         {
             masterVolumeSlider.value = AudioSystem.SavedMasterVolume;
@@ -19,6 +22,16 @@ namespace SchizoQuest.Menu
             masterVolumeSlider.onValueChanged.AddListener(AudioSystem.SetMasterVolume);
             musicVolumeSlider.onValueChanged.AddListener(AudioSystem.SetMusicVolume);
             sfxVolumeSlider.onValueChanged.AddListener(AudioSystem.SetSfxVolume);
+        }
+
+        public void OnCancel()
+        {
+            backButton.onClick.Invoke();
+        }
+
+        public void OnEnable()
+        {
+            backButton.Select();
         }
     }
 }

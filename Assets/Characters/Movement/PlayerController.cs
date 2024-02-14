@@ -1,4 +1,4 @@
-using SchizoQuest.Game;
+using System;
 using SchizoQuest.Helpers;
 using SchizoQuest.Input;
 using UnityEngine;
@@ -242,7 +242,7 @@ namespace SchizoQuest.Characters.Movement
         {
             float moveProportion = _move.x;
 
-            if (Mathf.Approximately(moveProportion, 0))
+            if (Mathf.Abs(moveProportion) < 0.1f) // todo configurable deadzone (surely in a future patch (clueless))
             {
                 float deceleration = IsGrounded
                     ? stats.idleDeceleration
@@ -269,9 +269,10 @@ namespace SchizoQuest.Characters.Movement
         private void Accelerate(float proportion, float acceleration)
         {
             float deltaV = proportion * acceleration * Time.deltaTime;
+            float maxSpeed = stats.maxHorizontalSpeed * Math.Abs(proportion);
             if (Mathf.Sign(proportion) == Mathf.Sign(rb.velocity.x))
             {
-                float delta = stats.maxHorizontalSpeed - Mathf.Abs(rb.velocity.x);
+                float delta = maxSpeed - Mathf.Abs(rb.velocity.x);
                 if (delta < 0.01f) return;
                 // Min() on magnitude while preserving sign
                 if (Mathf.Abs(deltaV) > delta)

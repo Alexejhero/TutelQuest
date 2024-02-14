@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -17,6 +18,7 @@ namespace SchizoQuest.Menu
 
         public GameObject optionsObject;
         public GameObject creditsObject;
+        public Selectable defaultSelectedUIElement;
 
         private bool _ready;
 
@@ -80,6 +82,8 @@ namespace SchizoQuest.Menu
             rotationTransform.localPosition = position;
 
             _ready = true;
+
+            defaultSelectedUIElement.Select();
         }
 
         public void PlayPressed()
@@ -93,6 +97,7 @@ namespace SchizoQuest.Menu
             _ready = false;
             creditsObject.SetActive(false);
             optionsObject.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(optionsObject);
             StartCoroutine(FlipRoutine(0, 89.9f));
         }
 
@@ -102,6 +107,7 @@ namespace SchizoQuest.Menu
             _ready = false;
             optionsObject.SetActive(false);
             creditsObject.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(creditsObject);
             StartCoroutine(FlipRoutine(0, 89.9f));
         }
 

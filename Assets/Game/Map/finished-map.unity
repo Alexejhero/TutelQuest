@@ -236,6 +236,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be7ed91b54aa1aa499c14542325d9caf, type: 3}
+--- !u!114 &454919298 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6185018200352943790, guid: 46826f485e417a0499a6c36323fe3eac, type: 3}
+  m_PrefabInstance: {fileID: 2071551892}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &498222988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1791,6 +1802,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 38.11
       objectReference: {fileID: 0}
+    - target: {fileID: 4205522132642057608, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
+      propertyPath: m_UIInputModule
+      value: 
+      objectReference: {fileID: 454919298}
     - target: {fileID: 4809490840050660992, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
       propertyPath: m_LocalPosition.x
       value: 89.3
@@ -2062,14 +2077,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 731036913518101387, guid: 46826f485e417a0499a6c36323fe3eac, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 71.79999
-      objectReference: {fileID: 0}
-    - target: {fileID: 731036913518101387, guid: 46826f485e417a0499a6c36323fe3eac, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 72.59999
-      objectReference: {fileID: 0}
     - target: {fileID: 3067081008304789747, guid: 46826f485e417a0499a6c36323fe3eac, type: 3}
       propertyPath: m_Name
       value: PauseMenu
@@ -2158,18 +2165,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 113931826}
-    - target: {fileID: 4535640466362016520, guid: 46826f485e417a0499a6c36323fe3eac, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 126.899994
-      objectReference: {fileID: 0}
-    - target: {fileID: 7171450820050515607, guid: 46826f485e417a0499a6c36323fe3eac, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 15.723877
-      objectReference: {fileID: 0}
-    - target: {fileID: 8945856474840396471, guid: 46826f485e417a0499a6c36323fe3eac, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 49.10199
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
