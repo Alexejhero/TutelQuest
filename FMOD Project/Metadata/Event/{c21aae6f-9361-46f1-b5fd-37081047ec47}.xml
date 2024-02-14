@@ -86,6 +86,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{e090e051-d47d-4e7c-9d2e-02c3253ed54c}">
+		<property name="volume">
+			<value>-5.5</value>
+		</property>
 		<relationship name="modulators">
 			<destination>{05e944d1-882d-49c8-b11a-f7ea11ed734a}</destination>
 		</relationship>
@@ -146,6 +149,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{b8dcc97e-50fc-43fa-b7fc-b8cc033f5247}">
+		<property name="volume">
+			<value>-6</value>
+		</property>
 		<property name="name">
 			<value>layer2</value>
 		</property>
@@ -164,19 +170,19 @@
 			<value>pitch</value>
 		</property>
 		<property name="attackTime">
-			<value>500</value>
+			<value>700</value>
 		</property>
 		<property name="attackShape">
 			<value>-0.142313629</value>
 		</property>
 		<property name="peakValue">
-			<value>-27</value>
+			<value>-41</value>
 		</property>
 		<property name="holdTime">
 			<value>0</value>
 		</property>
 		<property name="decayTime">
-			<value>560</value>
+			<value>800</value>
 		</property>
 		<property name="releaseTime">
 			<value>420</value>
@@ -303,7 +309,7 @@
 			<value>1</value>
 		</property>
 		<property name="curveShape">
-			<value>-0.436915666</value>
+			<value>-0.462176323</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{9b827ec1-e2bb-430d-a932-fb37c8af60a7}">

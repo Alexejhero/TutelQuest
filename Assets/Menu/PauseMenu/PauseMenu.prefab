@@ -1660,12 +1660,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 0
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnUp: {fileID: 7293938647797840136}
+    m_SelectOnDown: {fileID: 7293938647797840136}
+    m_SelectOnLeft: {fileID: 7293938647797840136}
+    m_SelectOnRight: {fileID: 7293938647797840136}
   m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1761,6 +1761,7 @@ MonoBehaviour:
   masterVolumeSlider: {fileID: 8909022962679393990}
   musicVolumeSlider: {fileID: 7004957901126984727}
   sfxVolumeSlider: {fileID: 2690671994649335620}
+  backButton: {fileID: 4297017549005566166}
 --- !u!1 &6623077149618362454
 GameObject:
   m_ObjectHideFlags: 0

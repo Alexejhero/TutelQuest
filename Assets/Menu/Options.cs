@@ -28,10 +28,5 @@ namespace SchizoQuest.Menu
         {
             backButton.onClick.Invoke();
         }
-
-        public void OnEnable()
-        {
-            backButton.Select();
-        }
     }
 }
