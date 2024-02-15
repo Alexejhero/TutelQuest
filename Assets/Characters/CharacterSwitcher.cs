@@ -5,6 +5,7 @@ using SchizoQuest.Audio;
 using SchizoQuest.Game;
 using SchizoQuest.Helpers;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace SchizoQuest.Characters
 {
@@ -13,7 +14,7 @@ namespace SchizoQuest.Characters
         public float GlobalTransformCooldown { get; set; } = 1;
 
         public List<Player> availablePlayers;
-        private Player _currentPlayer;
+        public Player CurrentPlayer { get; private set; }
         private int _currentIndex;
         [NonSerialized]
         public BackgroundMusic music;
@@ -43,10 +44,10 @@ namespace SchizoQuest.Characters
             if (!_hintHidden)
             {
                 _hintHidden = true;
-                _currentPlayer.SendMessage("HideHint", HintType.C, SendMessageOptions.DontRequireReceiver);
+                CurrentPlayer.SendMessage("HideHint", HintType.C, SendMessageOptions.DontRequireReceiver);
             }
 
-            _currentPlayer.enabled = false;
+            CurrentPlayer.enabled = false;
             _currentIndex++;
             _currentIndex %= availablePlayers.Count;
             SwitchTo(_currentIndex);
@@ -54,10 +55,10 @@ namespace SchizoQuest.Characters
 
         private void SwitchTo(int index)
         {
-            _currentPlayer = availablePlayers[index];
-            _currentPlayer.enabled = true;
+            CurrentPlayer = availablePlayers[index];
+            CurrentPlayer.enabled = true;
             GlobalTransformCooldown = 0.75f;
-            music.SetCharacter(_currentPlayer.playerType);
+            music.SetCharacter(CurrentPlayer.playerType);
             BroadcastMessage("OnSwitch", SendMessageOptions.DontRequireReceiver);
         }
     }
