@@ -105,12 +105,8 @@ namespace SchizoQuest.Characters
                 };
 
                 SetAnimation(animationType);
-
-                return;
             }
-
-            // We only want to handle inputs for the active player
-            if (player == Player.ActivePlayer)
+            else if (player == Player.ActivePlayer) // We only want to handle inputs for the active player
             {
                 if (input.x < 0)
                 {
