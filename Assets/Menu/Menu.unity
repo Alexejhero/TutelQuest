@@ -694,10 +694,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 522346843}
+    m_SelectOnDown: {fileID: 1706623490}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -895,10 +895,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 2062230212}
+    m_SelectOnDown: {fileID: 392497141}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -1136,6 +1136,7 @@ GameObject:
   - component: {fileID: 594178155}
   - component: {fileID: 594178159}
   - component: {fileID: 594178160}
+  - component: {fileID: 594178161}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1247,6 +1248,8 @@ MonoBehaviour:
   - {fileID: 1647424921}
   - {fileID: 1941851955}
   - {fileID: 852838827}
+  music: {fileID: 594178161}
+  playMusicAfter: {fileID: 1647424921}
 --- !u!114 &594178160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1277,6 +1280,37 @@ MonoBehaviour:
   m_DefaultActionMap: UI
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &594178161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594178154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -591745910
+      Data2: 1271503985
+      Data3: -1002978378
+      Data4: -1810885965
+    Path: event:/music/menu
+  Event: 
+  PlayEvent: 0
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 1
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &688172293
 GameObject:
   m_ObjectHideFlags: 0
@@ -1753,7 +1787,9 @@ MonoBehaviour:
     m_RotationOrder: 4
   optionsObject: {fileID: 1169123652}
   creditsObject: {fileID: 1914011893}
-  defaultSelectedUIElement: {fileID: 7516066788574701992}
+  focusOnOpen: {fileID: 7516066788574701992}
+  optionsButton: {fileID: 1356497733163777280}
+  creditsButton: {fileID: 990140890}
 --- !u!1 &870872166
 GameObject:
   m_ObjectHideFlags: 0
@@ -1880,7 +1916,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -1912,7 +1948,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 852838827}
-        m_TargetAssemblyTypeName: SchizoQuest.Menu.TitlescreenBehaviour, Assembly-CSharp
+        m_TargetAssemblyTypeName: SchizoQuest.Menu.TitleScreen, Assembly-CSharp
         m_MethodName: BackPressed
         m_Mode: 1
         m_Arguments:
@@ -2057,10 +2093,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 2
+    m_Mode: 4
     m_WrapAround: 1
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 1356497733163777280}
+    m_SelectOnDown: {fileID: 397475861614259561}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -2068,7 +2104,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.8627451, g: 0.8627451, b: 0.8627451, a: 1}
     m_PressedColor: {r: 0.74509805, g: 0.74509805, b: 0.74509805, a: 1}
-    m_SelectedColor: {r: 0.8627451, g: 0.8627451, b: 0.8627451, a: 1}
+    m_SelectedColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
     m_DisabledColor: {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -2089,7 +2125,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 852838827}
-        m_TargetAssemblyTypeName: SchizoQuest.Menu.TitlescreenBehaviour, Assembly-CSharp
+        m_TargetAssemblyTypeName: SchizoQuest.Menu.TitleScreen, Assembly-CSharp
         m_MethodName: CreditsPressed
         m_Mode: 1
         m_Arguments:
@@ -3902,12 +3938,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 392497141}
+    m_SelectOnDown: {fileID: 2062230212}
     m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnRight: {fileID: 392497141}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -3934,7 +3970,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 852838827}
-        m_TargetAssemblyTypeName: SchizoQuest.Menu.TitlescreenBehaviour, Assembly-CSharp
+        m_TargetAssemblyTypeName: SchizoQuest.Menu.TitleScreen, Assembly-CSharp
         m_MethodName: BackPressed
         m_Mode: 1
         m_Arguments:
@@ -4568,7 +4604,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1941851954}
   - component: {fileID: 1941851955}
-  - component: {fileID: 1941851956}
   m_Layer: 5
   m_Name: Storyboard
   m_TagString: Untagged
@@ -4730,37 +4765,6 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   skipHoldText: {fileID: 360764746}
---- !u!114 &1941851956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1941851953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -591745910
-      Data2: 1271503985
-      Data3: -1002978378
-      Data4: -1810885965
-    Path: event:/music/menu
-  Event: 
-  PlayEvent: 1
-  StopEvent: 2
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  AllowNonRigidbodyDoppler: 1
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1 &1950234366
 GameObject:
   m_ObjectHideFlags: 0
@@ -4911,7 +4915,7 @@ MonoBehaviour:
   m_ScrollWheelAction: {fileID: 5696526583022023655, guid: a9ebaca35d319eb4d9cc65b669943db3, type: 3}
   m_TrackedDevicePositionAction: {fileID: -4043544448680712257, guid: a9ebaca35d319eb4d9cc65b669943db3, type: 3}
   m_TrackedDeviceOrientationAction: {fileID: -1184062208876885902, guid: a9ebaca35d319eb4d9cc65b669943db3, type: 3}
-  m_DeselectOnBackgroundClick: 1
+  m_DeselectOnBackgroundClick: 0
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
 --- !u!1 &2062230210
@@ -4966,10 +4970,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 1706623490}
+    m_SelectOnDown: {fileID: 522346843}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -5017,10 +5021,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 2
-    m_WrapAround: 1
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_Mode: 4
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 990140890}
+    m_SelectOnDown: {fileID: 7516066788574701992}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -5028,7 +5032,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.8627451, g: 0.8627451, b: 0.8627451, a: 1}
     m_PressedColor: {r: 0.74509805, g: 0.74509805, b: 0.74509805, a: 1}
-    m_SelectedColor: {r: 0.8627451, g: 0.8627451, b: 0.8627451, a: 1}
+    m_SelectedColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
     m_DisabledColor: {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -5049,7 +5053,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 852838827}
-        m_TargetAssemblyTypeName: SchizoQuest.Menu.TitlescreenBehaviour, Assembly-CSharp
+        m_TargetAssemblyTypeName: SchizoQuest.Menu.TitleScreen, Assembly-CSharp
         m_MethodName: QuitPressed
         m_Mode: 1
         m_Arguments:
@@ -5073,10 +5077,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 2
-    m_WrapAround: 1
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_Mode: 4
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 7516066788574701992}
+    m_SelectOnDown: {fileID: 990140890}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -5084,7 +5088,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.8627451, g: 0.8627451, b: 0.8627451, a: 1}
     m_PressedColor: {r: 0.74509805, g: 0.74509805, b: 0.74509805, a: 1}
-    m_SelectedColor: {r: 0.8627451, g: 0.8627451, b: 0.8627451, a: 1}
+    m_SelectedColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
     m_DisabledColor: {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -5105,7 +5109,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 852838827}
-        m_TargetAssemblyTypeName: SchizoQuest.Menu.TitlescreenBehaviour, Assembly-CSharp
+        m_TargetAssemblyTypeName: SchizoQuest.Menu.TitleScreen, Assembly-CSharp
         m_MethodName: SettingsPressed
         m_Mode: 1
         m_Arguments:
@@ -5571,10 +5575,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 2
+    m_Mode: 4
     m_WrapAround: 1
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 397475861614259561}
+    m_SelectOnDown: {fileID: 1356497733163777280}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -5582,7 +5586,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.8627451, g: 0.8627451, b: 0.8627451, a: 1}
     m_PressedColor: {r: 0.74509805, g: 0.74509805, b: 0.74509805, a: 1}
-    m_SelectedColor: {r: 0.8627451, g: 0.8627451, b: 0.8627451, a: 1}
+    m_SelectedColor: {r: 0.799, g: 0.799, b: 0.799, a: 1}
     m_DisabledColor: {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -5603,7 +5607,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 852838827}
-        m_TargetAssemblyTypeName: SchizoQuest.Menu.TitlescreenBehaviour, Assembly-CSharp
+        m_TargetAssemblyTypeName: SchizoQuest.Menu.TitleScreen, Assembly-CSharp
         m_MethodName: PlayPressed
         m_Mode: 1
         m_Arguments:

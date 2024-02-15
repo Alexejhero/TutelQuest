@@ -18,9 +18,13 @@ namespace SchizoQuest.Menu
 
         public GameObject optionsObject;
         public GameObject creditsObject;
-        public Selectable defaultSelectedUIElement;
+        public Selectable focusOnOpen;
+        public Selectable optionsButton;
+        public Selectable creditsButton;
 
         private bool _ready;
+        private Selectable _selectOnReturn;
+        private GameObject _currentPage;
 
         private void Start()
         {
@@ -83,7 +87,7 @@ namespace SchizoQuest.Menu
 
             _ready = true;
 
-            defaultSelectedUIElement.Select();
+            focusOnOpen.Select();
         }
 
         public void PlayPressed()
@@ -94,28 +98,58 @@ namespace SchizoQuest.Menu
         public void SettingsPressed()
         {
             if (!_ready) return;
-            _ready = false;
-            creditsObject.SetActive(false);
-            optionsObject.SetActive(true);
-            EventSystem.current.SetSelectedGameObject(optionsObject);
-            StartCoroutine(FlipRoutine(0, 89.9f));
+            _selectOnReturn = optionsButton;
+            StartCoroutine(Open(optionsObject));
         }
 
         public void CreditsPressed()
         {
             if (!_ready) return;
-            _ready = false;
-            optionsObject.SetActive(false);
-            creditsObject.SetActive(true);
-            EventSystem.current.SetSelectedGameObject(creditsObject);
-            StartCoroutine(FlipRoutine(0, 89.9f));
+            _selectOnReturn = creditsButton;
+            StartCoroutine(Open(creditsObject));
         }
 
         public void BackPressed()
         {
-            if (_ready) return;
+            if (!_ready) return;
+            StartCoroutine(Close());
+        }
+
+        private IEnumerator Open(GameObject page)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+            if (_currentPage && _currentPage != page)
+            {
+                yield return Close();
+            }
+            _ready = false;
+            page.SetActive(true);
+            if (!_currentPage) // won't flip if we're already on the desired page
+            {
+                yield return FlipRoutine(0, 89.9f);
+            }
+            _currentPage = page;
+            page.GetComponentInChildren<Selectable>().Select();
             _ready = true;
-            StartCoroutine(FlipRoutine(89.9f, 0));
+        }
+
+        private IEnumerator Close()
+        {
+            _ready = false;
+            if (_currentPage)
+            {
+                yield return FlipRoutine(89.9f, 0);
+                _currentPage.SetActive(false);
+                _currentPage = null;
+            }
+            if (!_selectOnReturn) _selectOnReturn = focusOnOpen;
+            _selectOnReturn.Select();
+            _ready = true;
+        }
+
+        public void OnCancel()
+        {
+            BackPressed();
         }
 
         public void QuitPressed()

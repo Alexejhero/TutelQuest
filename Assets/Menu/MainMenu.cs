@@ -1,31 +1,39 @@
 using System.Collections.Generic;
+using FMODUnity;
 using SchizoQuest.Helpers;
+using UnityEngine;
 
 namespace SchizoQuest.Menu
 {
     public sealed class MainMenu : MonoSingleton<MainMenu>
     {
         public static bool skipNextIntro;
-        public List<MenuStage> stages;
+        [SerializeField]
+        private List<MenuStage> stages;
         internal MenuStage currentStage;
+        public StudioEventEmitter music;
+        public MenuStage playMusicAfter;
+        private int _playMusicAfter;
 
         private void Start()
         {
-            SetStage(stages[skipNextIntro ? 2 : 0]);
+            _playMusicAfter = stages.IndexOf(playMusicAfter);
+            SetStage(skipNextIntro ? 2 : 0);
             skipNextIntro = false;
         }
 
-        public void SetStage(MenuStage stage)
+        public void SetStage(int i)
         {
             if (currentStage) Deactivate(currentStage);
-            Activate(stage);
+            i %= stages.Count;
+            if (i > _playMusicAfter && !music.IsPlaying()) music.Play();
+            Activate(stages[i]);
         }
 
         public void NextStage()
         {
             int i = stages.IndexOf(currentStage);
-            if (i + 1 >= stages.Count) return;
-            SetStage(stages[i+1]);
+            SetStage(i+1);
         }
 
         private void Deactivate(MenuStage stage)
@@ -39,6 +47,12 @@ namespace SchizoQuest.Menu
             stage.gameObject.SetActive(true);
             currentStage = stage;
             stage.OnDone += NextStage;
+        }
+
+        public void OnCancel()
+        {
+            if (!currentStage) return;
+            currentStage.SendMessage(nameof(OnCancel), SendMessageOptions.DontRequireReceiver);
         }
     }
 }
