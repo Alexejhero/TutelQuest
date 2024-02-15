@@ -12,6 +12,7 @@ namespace SchizoQuest
     {
         public Options options;
         public Image backgroundMaterial;
+        public Selectable focusOnOpen;
 
         public Color color = Color.black;
         public float transitionSpeed = 5f;
@@ -108,6 +109,7 @@ namespace SchizoQuest
             // forces idle anim (facing the camera)
             Player.ActivePlayer.Winning = IsOpen;
             Player.ActivePlayer.ToggleMovement(!IsOpen);
+            if (IsOpen) focusOnOpen.Select();
         }
 
         private void Update()
