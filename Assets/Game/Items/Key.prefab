@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 1305550763311759597}
   - component: {fileID: 7366493645527995015}
   - component: {fileID: 6753121006200629408}
+  - component: {fileID: 6915477209868879049}
+  - component: {fileID: 8408150160985694443}
+  - component: {fileID: 2957704397520695724}
   m_Layer: 23
   m_Name: Key
   m_TagString: Untagged
@@ -51,6 +54,9 @@ MonoBehaviour:
   itemType: 0
   plug: {fileID: 0}
   effectManager: {fileID: 0}
+  pickupSound: {fileID: 6915477209868879049}
+  dropSound: {fileID: 8408150160985694443}
+  useSound: {fileID: 2957704397520695724}
 --- !u!61 &7366493645527995015
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -108,6 +114,99 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 785f47124e6b08342922e3994e097c1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6915477209868879049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7214493326992007778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -440614201
+      Data2: 1175639531
+      Data3: 1090000053
+      Data4: 805363379
+    Path: event:/sfx/interactive/items/key/pickup
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &8408150160985694443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7214493326992007778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1202171235
+      Data2: 1334377178
+      Data3: 419696062
+      Data4: -1311335710
+    Path: event:/sfx/interactive/items/key/drop
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &2957704397520695724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7214493326992007778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -419019740
+      Data2: 1331972368
+      Data3: -489531259
+      Data4: 1432793101
+    Path: event:/sfx/interactive/items/key/use
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &8366024077329317700
 GameObject:
   m_ObjectHideFlags: 0

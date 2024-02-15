@@ -15,6 +15,7 @@ namespace SchizoQuest.Game.Items
         public ParticleSystemManager effectManager;
         public StudioEventEmitter pickupSound;
         public StudioEventEmitter dropSound;
+        public StudioEventEmitter useSound;
         private int _effectSavedLayer;
         private Collider2D _collider;
         private SpriteRenderer[] _renderers;
@@ -75,6 +76,8 @@ namespace SchizoQuest.Game.Items
         public void DiscardAfterUse(Player player)
         {
             if (player.inventory.item == this) { player.inventory.Drop(this); }
+            if (dropSound) dropSound.Stop();
+            if (useSound) useSound.Play();
 
             StartCoroutine(r());
             IEnumerator r()

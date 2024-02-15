@@ -50,6 +50,8 @@ namespace SchizoQuest.Characters.Movement
 
             moveInput = _input.Player.Move;
             jumpInput = _input.Player.Jump;
+
+            _bhopTimer = float.PositiveInfinity;
         }
 
         private void OnEnable()
