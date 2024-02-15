@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Linq;
+using FMODUnity;
 using SchizoQuest.Characters;
 using SchizoQuest.Interaction;
 using SchizoQuest.VFX.Particles;
@@ -12,6 +13,8 @@ namespace SchizoQuest.Game.Items
         public ItemType itemType;
         public Transform plug;
         public ParticleSystemManager effectManager;
+        public StudioEventEmitter pickupSound;
+        public StudioEventEmitter dropSound;
         private int _effectSavedLayer;
         private Collider2D _collider;
         private SpriteRenderer[] _renderers;
@@ -46,6 +49,7 @@ namespace SchizoQuest.Game.Items
 
         public void OnPickedUp()
         {
+            if (pickupSound) pickupSound.Play();
             int layerInFront = SortingLayer.NameToID("InFrontOfPlayer");
             _isTrigger = _collider.isTrigger;
             _collider.isTrigger = true;
@@ -58,6 +62,7 @@ namespace SchizoQuest.Game.Items
 
         public void OnDropped()
         {
+            if (dropSound) dropSound.Play();
             _collider.isTrigger = _isTrigger;
             if (effectManager != null) { effectManager.SortingLayer = _effectSavedLayer; }
             for (int i = 0; i < _renderers.Length; i++)

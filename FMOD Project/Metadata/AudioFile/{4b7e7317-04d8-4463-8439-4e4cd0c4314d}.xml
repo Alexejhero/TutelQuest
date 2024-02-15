@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{4b7e7317-04d8-4463-8439-4e4cd0c4314d}">
+		<property name="assetPath">
+			<value>sfx/interactive/items/bottle/glassware-02.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.3716326530612245</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{3bd57463-a52d-409f-ae3e-3406e94e72ba}</destination>
+		</relationship>
+	</object>
+</objects>
