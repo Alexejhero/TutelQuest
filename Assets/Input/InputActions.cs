@@ -197,6 +197,17 @@ namespace SchizoQuest.Input
                 },
                 {
                     ""name"": """",
+                    ""id"": ""1016b2d4-7ca1-47fe-80f7-c025032c6d99"",
+                    ""path"": ""<Gamepad>/dpad"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Main"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""a9980301-f8e1-4d6d-aaa6-e6251a303d3e"",
                     ""path"": ""<Keyboard>/f"",
                     ""interactions"": """",
@@ -232,6 +243,17 @@ namespace SchizoQuest.Input
                     ""name"": """",
                     ""id"": ""fb467d1c-81b9-40f9-8203-8697ba6cc6a0"",
                     ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Main"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1718b97a-fbee-4d03-927b-cc47fb063c38"",
+                    ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Main"",
