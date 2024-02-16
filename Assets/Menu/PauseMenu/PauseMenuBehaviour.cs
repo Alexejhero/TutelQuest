@@ -61,13 +61,19 @@ namespace SchizoQuest
             SetParameters();
         }
 
+        private bool _closing;
         public void OnPauseMenu()
         {
+            // keyboard menu binds (Esc/Backspace) are assigned to both PauseMenu and Cancel
+            // and we can't toggle from Cancel b/c it's double bound to SwapForm on gamepad
+            if (_closing) return;
             ToggleOpen();
         }
 
+        // this is only here to let gamepad exit with the B button
         public void OnCancel()
         {
+            if (IsOpen) _closing = true;
             Close();
         }
 
@@ -116,6 +122,7 @@ namespace SchizoQuest
         {
             _phase = Mathf.Lerp(_phase, IsOpen ? 1 : 0, Time.unscaledDeltaTime * transitionSpeed);
             backgroundMaterial.material.SetFloat(phaseID, _phase);
+            _closing = false;
         }
 
         protected override void OnEnable()
