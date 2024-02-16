@@ -1,3 +1,4 @@
+using SchizoQuest.Audio;
 using SchizoQuest.Characters;
 using SchizoQuest.Helpers;
 using SchizoQuest.Input;
@@ -115,6 +116,7 @@ namespace SchizoQuest
             // forces idle anim (facing the camera)
             Player.ActivePlayer.Winning = IsOpen;
             Player.ActivePlayer.ToggleMovement(!IsOpen);
+            AudioSystem.PauseSfx(IsOpen);
             if (IsOpen) focusOnOpen.Select();
         }
 
