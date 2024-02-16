@@ -88,6 +88,7 @@ namespace SchizoQuest.Menu
             _ready = true;
 
             focusOnOpen.Select();
+            _selectOnReturn = focusOnOpen;
         }
 
         public void PlayPressed()
@@ -142,8 +143,8 @@ namespace SchizoQuest.Menu
                 _currentPage.SetActive(false);
                 _currentPage = null;
             }
-            if (!_selectOnReturn) _selectOnReturn = focusOnOpen;
             _selectOnReturn.Select();
+            _selectOnReturn = focusOnOpen;
             _ready = true;
         }
 

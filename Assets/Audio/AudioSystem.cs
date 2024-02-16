@@ -77,6 +77,7 @@ namespace SchizoQuest.Audio
 
         public static void PauseSfx(bool paused)
         {
+            Initialize();
             sfxBus.setPaused(paused);
         }
     }
