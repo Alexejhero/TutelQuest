@@ -1836,7 +1836,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8846437439110297614}
   - component: {fileID: 7865596592900306630}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: structure_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1908,7 +1908,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 2
+  m_MaskInteraction: 1
   m_SpriteSortPoint: 0
 --- !u!1 &2874528536228853773
 GameObject:
@@ -5105,7 +5105,7 @@ GameObject:
   - component: {fileID: 3772185472984515525}
   - component: {fileID: 6326683937060387902}
   - component: {fileID: 6044514961594501051}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: BlocksNeuro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
