@@ -138,6 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 313558383}
   - component: {fileID: 313558384}
+  - component: {fileID: 313558385}
   m_Layer: 0
   m_Name: Globals
   m_TagString: Untagged
@@ -175,6 +176,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timescale: 1
+--- !u!114 &313558385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313558382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f993c75c575276143ab564074eb4b428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ctrlClickTogglesMechanisms: 1
 --- !u!1001 &406720650
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -245,17 +259,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a92b77997c3b7fc45afea83723583d96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &454919298 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6185018200352943790, guid: 46826f485e417a0499a6c36323fe3eac, type: 3}
-  m_PrefabInstance: {fileID: 2071551892}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &498222988
@@ -1679,10 +1682,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 38.11
       objectReference: {fileID: 0}
-    - target: {fileID: 4205522132642057608, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
-      propertyPath: m_UIInputModule
-      value: 
-      objectReference: {fileID: 454919298}
     - target: {fileID: 4809490840050660992, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
       propertyPath: m_LocalPosition.x
       value: -105.38

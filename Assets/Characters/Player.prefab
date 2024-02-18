@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 3423007431658043641}
   - component: {fileID: 2307560814186585820}
   - component: {fileID: 2069896818738633901}
+  - component: {fileID: 1377089929542892216}
   - component: {fileID: 6931515259517804241}
   m_Layer: 20
   m_Name: Player
@@ -152,6 +153,7 @@ MonoBehaviour:
   characterSwitchParticleEffect: {fileID: 0}
   rb: {fileID: 2994542948100938228}
   dying: 0
+  deathSound: {fileID: 0}
 --- !u!114 &5187882562295365998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,6 +216,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3794102725898009367}
+--- !u!114 &1377089929542892216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8801004962465848453}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7678c955ac9548048915143873f98fa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 2994542948100938228}
+  player: {fileID: 3794102725898009367}
+  controller: {fileID: 5187882562295365998}
+  flySpeed: 20
 --- !u!114 &6931515259517804241
 MonoBehaviour:
   m_ObjectHideFlags: 0
