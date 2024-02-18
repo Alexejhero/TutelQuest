@@ -18,7 +18,7 @@ namespace SchizoQuest.Characters
             switcher.enableSwitching = type == Type.Enable;
             if (type == Type.Enable)
             {
-                foreach (var trigger in FindObjectsOfType<ControlCharacterSwitchingArea>())
+                foreach (ControlCharacterSwitchingArea trigger in FindObjectsOfType<ControlCharacterSwitchingArea>())
                     Destroy(trigger);
             }
         }

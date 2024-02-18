@@ -68,7 +68,7 @@ namespace SchizoQuest.Characters
                 return;
 
             Bounds bounds = new(_switcher.availablePlayers[0].transform.position, Vector3.zero);
-            foreach (var player in _switcher.availablePlayers.Skip(1))
+            foreach (Player player in _switcher.availablePlayers.Skip(1))
             {
                 bounds.Encapsulate(player.transform.position);
             }

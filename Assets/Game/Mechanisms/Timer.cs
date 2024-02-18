@@ -4,36 +4,42 @@ namespace SchizoQuest.Game.Mechanisms
 {
     public class Timer : Switch
     {
-        public bool isTimerOn;
-
         public float intervalOn;
         public float intervalOff;
         public float offset;
-        private float _nextPulseTime;
+        private float _timer;
 
-        private void Awake()
+        private void OnEnable()
         {
-            _nextPulseTime = Time.time + offset;
+            Init();
         }
 
         public override void Toggle()
         {
-            isTimerOn = !isTimerOn;
+            enabled = !enabled;
+        }
+
+        private void Init()
+        {
+            _timer = offset;
             NextTimer();
         }
 
         private void NextTimer()
         {
-            _nextPulseTime = Time.time + (isOn ? intervalOn : intervalOff);
+            // adding makes negative offsets work
+            // it also slightly enhances precision
+            _timer += isOn ? intervalOn : intervalOff;
         }
 
         public void Update()
         {
-            if (!isTimerOn) return;
-            if (Time.time < _nextPulseTime) return;
-
-            NextTimer();
-            base.Toggle();
+            _timer -= Time.deltaTime;
+            if (_timer <= 0)
+            {
+                NextTimer();
+                base.Toggle();
+            }
         }
     }
 }

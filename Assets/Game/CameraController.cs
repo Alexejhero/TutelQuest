@@ -37,7 +37,7 @@ namespace SchizoQuest.Game
             desiredCamPos.x = IsInPauseMenu ? desiredCamPos.x + pauseMenuXOffset : desiredCamPos.x;
             Vector3 camPos = transform.position;
             desiredCamPos.z = camPos.z;
-            var direction = desiredCamPos - camPos;
+            Vector3 direction = desiredCamPos - camPos;
             if (direction.magnitude > maxDistance)
                 camPos = desiredCamPos - direction.normalized * maxDistance;
             camPos = Vector3.SmoothDamp(camPos, desiredCamPos, ref currVelocity, smoothTime, Mathf.Infinity, Time.unscaledDeltaTime);

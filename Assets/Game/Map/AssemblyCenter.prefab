@@ -4196,7 +4196,6 @@ MonoBehaviour:
   isOn: 0
   activates:
   - {fileID: 3838773324402441319}
-  isTimerOn: 1
   intervalOn: 3
   intervalOff: 3
   offset: 0
@@ -6875,7 +6874,6 @@ MonoBehaviour:
   isOn: 0
   activates:
   - {fileID: 1190156525665372680}
-  isTimerOn: 1
   intervalOn: 3
   intervalOff: 5
   offset: 0
@@ -7723,7 +7721,6 @@ MonoBehaviour:
   isOn: 0
   activates:
   - {fileID: 8771891085311518366}
-  isTimerOn: 1
   intervalOn: 3
   intervalOff: 5
   offset: 0

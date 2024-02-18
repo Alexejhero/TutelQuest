@@ -36,7 +36,7 @@ namespace SchizoQuest.Game.Mechanisms
             if (ignoreTriggers && other.isTrigger) return;
             TTarget target = other.GetComponentInParent<TTarget>();
             if (!target) return;
-            var idx = _entered.IndexOf(other);
+            int idx = _entered.IndexOf(other);
             if (idx < 0) return;
             _entered.RemoveSwap(idx);
 

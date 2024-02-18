@@ -94,7 +94,7 @@ namespace SchizoQuest.Characters
 
         private void SetSortOrder(int order)
         {
-            foreach (var spriteRenderer in _renderers)
+            foreach (SpriteRenderer spriteRenderer in _renderers)
                 spriteRenderer.sortingOrder = order;
         }
 

@@ -603,7 +603,6 @@ MonoBehaviour:
   activates:
   - {fileID: 1566959748471156186}
   - {fileID: 3827659906711732246}
-  isTimerOn: 1
   intervalOn: 2
   intervalOff: 1
   offset: 0
