@@ -2286,7 +2286,7 @@ MonoBehaviour:
     Path: event:/sfx/ambient/leaves
   Event: 
   PlayEvent: 1
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -4736,7 +4736,7 @@ MonoBehaviour:
     Path: event:/sfx/ambient/water
   Event: 
   PlayEvent: 1
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0

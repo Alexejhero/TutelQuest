@@ -629,7 +629,7 @@ MonoBehaviour:
     Path: event:/sfx/interactive/movingblock/stone
   Event: 
   PlayEvent: 1
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0

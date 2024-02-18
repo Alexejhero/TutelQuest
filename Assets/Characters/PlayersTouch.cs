@@ -1,4 +1,5 @@
 using System.Collections;
+using SchizoQuest.Audio;
 using SchizoQuest.Characters.Neuro;
 using SchizoQuest.Characters.Vedal;
 using SchizoQuest.Game.Mechanisms;
@@ -48,6 +49,7 @@ namespace SchizoQuest.Characters
 
                 EffectsManager.Instance.PlayEffect(EffectsManager.Effects.gameFinish, 2f);
                 yield return new WaitForSeconds(1.8f);
+                AudioSystem.PauseSfx(true);
                 SceneManager.LoadScene("End");
             }
         }

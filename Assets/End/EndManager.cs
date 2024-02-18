@@ -1,4 +1,5 @@
 using System.Collections;
+using SchizoQuest.Audio;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,6 +22,7 @@ namespace SchizoQuest.End
 
             yield return new WaitForSeconds(4.5f);
 
+            AudioSystem.PauseSfx(false);
             Application.Quit();
         }
     }
