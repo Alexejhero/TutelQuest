@@ -63,6 +63,9 @@
 		<relationship name="modules">
 			<destination>{440f0ca4-1602-4735-a377-83f878e4a840}</destination>
 		</relationship>
+		<relationship name="excludedPlatforms">
+			<destination>{0d893483-3130-43bc-b9a8-65126519177e}</destination>
+		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{5bfc0b0e-38db-4177-9b03-82a25eb012fb}</destination>
 		</relationship>
@@ -100,7 +103,7 @@
 	<object class="MixerBusPanner" id="{3aa03b3d-ca78-449b-99d2-1fe23b3f0b3a}" />
 	<object class="MultiSound" id="{440f0ca4-1602-4735-a377-83f878e4a840}">
 		<property name="length">
-			<value>0.25</value>
+			<value>0.12</value>
 		</property>
 		<property name="looping">
 			<value>true</value>
@@ -133,7 +136,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{5bfc0b0e-38db-4177-9b03-82a25eb012fb}">
 		<property name="volume">
-			<value>-6</value>
+			<value>-10</value>
 		</property>
 		<property name="name">
 			<value>keyboard</value>

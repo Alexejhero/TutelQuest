@@ -136,7 +136,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{0b421878-80d3-4d44-a066-e546a1b7ee9d}">
 		<property name="volume">
-			<value>-6</value>
+			<value>-10</value>
 		</property>
 		<property name="name">
 			<value>keyboard</value>
@@ -164,6 +164,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{c73d2c49-2b8b-4736-ba3c-a38c350ca0b9}">
+		<property name="volume">
+			<value>6</value>
+		</property>
 		<property name="name">
 			<value>pickup</value>
 		</property>

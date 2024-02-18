@@ -13,7 +13,7 @@ namespace SchizoQuest.Audio
         }
         public static float SavedMusicVolume
         {
-            get => PlayerPrefs.GetFloat("MusicVolume", 1f);
+            get => PlayerPrefs.GetFloat("MusicVolume", 0.75f);
             set => PlayerPrefs.SetFloat("MusicVolume", value);
         }
         public static float SavedSfxVolume
