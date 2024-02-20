@@ -1,8 +1,6 @@
-using SchizoQuest.Characters;
-using SchizoQuest.Characters.Movement;
 using UnityEngine;
 
-namespace SchizoQuest.Movement
+namespace SchizoQuest.Characters.Movement
 {
     [RequireComponent(typeof(Rigidbody2D))]
     public sealed class Noclip : MonoBehaviour
@@ -13,7 +11,7 @@ namespace SchizoQuest.Movement
         public float flySpeed;
         private void Start()
         {
-            if (!Debug.isDebugBuild) Destroy(this);
+            if (!Application.isEditor) Destroy(this);
         }
         private void OnEnable()
         {

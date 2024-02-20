@@ -4,13 +4,13 @@ using FMODUnity;
 using SchizoQuest.Game;
 using UnityEngine;
 
-namespace SchizoQuest.Audio
+namespace SchizoQuest.Characters
 {
     public sealed class CharacterSwitchAudioFade : MonoBehaviour
     {
         public float fadeOutTime = 0.5f;
         public float fadeInTime = 0.5f;
-        
+
         public EventReference fadeSnapshot;
         private EventInstance _fadeSnapshot;
         public StudioListener audioListener;
@@ -22,7 +22,7 @@ namespace SchizoQuest.Audio
             _fadeSnapshot = RuntimeManager.CreateInstance(fadeSnapshot);
             if (!audioListener) audioListener = FindObjectOfType<StudioListener>();
         }
-        
+
         private void Update()
         {
             if (!_fadeSnapshot.hasHandle()) return;
@@ -47,7 +47,7 @@ namespace SchizoQuest.Audio
             _fadeDirection = 0; // hold muted
             yield return new WaitUntil(() => CameraController.DistanceToActivePlayer < 50f);
             _fadeDirection = -1; // fade back in
-            audioListener.transform.SetParent(Camera.main.transform, false);
+            audioListener.transform.SetParent(Camera.main!.transform, false);
             audioListener.transform.localPosition = Vector3.zero;
             yield return new WaitUntil(() => _fade <= 0);
             enabled = false;
@@ -60,7 +60,7 @@ namespace SchizoQuest.Audio
 
         private void OnDisable()
         {
-            _fadeSnapshot.stop(STOP_MODE.IMMEDIATE);
+            _fadeSnapshot.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         }
 
         private void OnDestroy()

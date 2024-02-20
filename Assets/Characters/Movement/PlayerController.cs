@@ -1,6 +1,7 @@
 using System;
 using SchizoQuest.Helpers;
 using SchizoQuest.Input;
+using SchizoQuest.Menu.PauseMenu;
 using UnityEngine;
 using UnityEngine.InputSystem;
 

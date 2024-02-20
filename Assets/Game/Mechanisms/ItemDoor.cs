@@ -4,6 +4,7 @@ using SchizoQuest.Game.Items;
 using SchizoQuest.Interaction;
 using SchizoQuest.VFX;
 using System.Collections;
+using SchizoQuest.VFX.Materials.Door;
 using UnityEngine;
 
 namespace SchizoQuest.Game.Mechanisms

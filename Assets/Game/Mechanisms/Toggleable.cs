@@ -20,7 +20,7 @@ namespace SchizoQuest.Game.Mechanisms
 
         private void DevToggle()
         {
-            if (!Debug.isDebugBuild || !DevTools.Instance.ctrlClickTogglesMechanisms) return;
+            if (!Application.isEditor || !DevTools.Instance.ctrlClickTogglesMechanisms) return;
             // Ctrl + Click
             if (Keyboard.current?.ctrlKey.isPressed ?? false)
                 Toggle();

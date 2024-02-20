@@ -2,12 +2,11 @@ using SchizoQuest.Audio;
 using SchizoQuest.Characters;
 using SchizoQuest.Helpers;
 using SchizoQuest.Input;
-using SchizoQuest.Menu;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace SchizoQuest
+namespace SchizoQuest.Menu.PauseMenu
 {
     public class PauseMenuBehaviour : MonoSingleton<PauseMenuBehaviour>
     {

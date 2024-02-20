@@ -4,6 +4,7 @@ using SchizoQuest.Characters.Movement;
 using SchizoQuest.Characters.Vedal;
 using SchizoQuest.Game;
 using SchizoQuest.Game.Items;
+using SchizoQuest.Menu.PauseMenu;
 using SchizoQuest.VFX.Transition;
 using UnityEngine;
 

@@ -1,7 +1,7 @@
 using SchizoQuest.Characters;
 using UnityEngine;
 
-namespace SchizoQuest
+namespace SchizoQuest.VFX.Particles.MovingBlock
 {
     public class MovingBlockParticles : MonoBehaviour
     {

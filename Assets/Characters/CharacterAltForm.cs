@@ -1,6 +1,7 @@
 using System.Collections;
 using JetBrains.Annotations;
 using SchizoQuest.Helpers;
+using SchizoQuest.Menu.PauseMenu;
 using UnityEngine;
 
 namespace SchizoQuest.Characters

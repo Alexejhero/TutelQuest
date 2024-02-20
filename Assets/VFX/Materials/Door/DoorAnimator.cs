@@ -1,7 +1,7 @@
 using PowerTools;
 using UnityEngine;
 
-namespace SchizoQuest.VFX
+namespace SchizoQuest.VFX.Materials.Door
 {
     public class DoorAnimator : MonoBehaviour
     {

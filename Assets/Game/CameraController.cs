@@ -1,5 +1,6 @@
 using SchizoQuest.Characters;
 using SchizoQuest.Helpers;
+using SchizoQuest.Menu.PauseMenu;
 using UnityEngine;
 
 namespace SchizoQuest.Game

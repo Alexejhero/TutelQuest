@@ -9,7 +9,7 @@ namespace SchizoQuest.Game.Mechanisms
         public bool ctrlClickTogglesMechanisms;
         private void Start()
         {
-            if (!Debug.isDebugBuild) return;
+            if (!Application.isEditor) return;
             Camera.main.EnsureComponent<Physics2DRaycaster>();
         }
     }
