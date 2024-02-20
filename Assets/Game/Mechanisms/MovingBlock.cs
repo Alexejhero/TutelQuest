@@ -1,5 +1,6 @@
 using FMODUnity;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace SchizoQuest.Game.Mechanisms
 {
@@ -15,6 +16,10 @@ namespace SchizoQuest.Game.Mechanisms
         public float soundSpeedMulti = 1f;
         private Vector3 _offPosition;
         private Vector3 _onPosition;
+
+        [FormerlySerializedAs("moveToOnPositionDelay")] public float moveToOffPositionDelay = 0;
+        private float _currentMoveToOffPositionDelay;
+
         private void Awake()
         {
             _offPosition = transform.position;
@@ -24,7 +29,24 @@ namespace SchizoQuest.Game.Mechanisms
         private Vector3 _velocity;
         private void FixedUpdate()
         {
-            Vector3.SmoothDamp(transform.position, isOn ? _onPosition : _offPosition, ref _velocity, 1f/speed);
+            bool isOnTarget = isOn;
+
+            if (!isOn)
+            {
+                if (_currentMoveToOffPositionDelay > 0)
+                {
+                    _currentMoveToOffPositionDelay -= Time.fixedDeltaTime;
+                    _velocity = Vector3.zero;
+                    isOnTarget = true;
+                }
+            }
+            else
+            {
+                float multiplier = Vector3.Distance(transform.position, _offPosition) / Vector3.Distance(_offPosition, _onPosition);
+                _currentMoveToOffPositionDelay = moveToOffPositionDelay * multiplier;
+            }
+
+            Vector3.SmoothDamp(transform.position, isOnTarget ? _onPosition : _offPosition, ref _velocity, 1f/speed);
             rb.velocity = _velocity;
             if (makeSound && moveSound)
                 moveSound.SetParameter("Speed", _velocity.magnitude * soundSpeedMulti);

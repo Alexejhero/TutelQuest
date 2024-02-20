@@ -1700,11 +1700,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4809490840050660992, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -105.38
+      value: 99.8
       objectReference: {fileID: 0}
     - target: {fileID: 4809490840050660992, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.52
+      value: 16.8
       objectReference: {fileID: 0}
     - target: {fileID: 6423933310686303340, guid: c378f28816be15f4e8552c2652f88d33, type: 3}
       propertyPath: audioListener
