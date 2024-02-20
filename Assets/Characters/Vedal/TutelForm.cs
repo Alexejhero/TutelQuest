@@ -75,18 +75,14 @@ namespace SchizoQuest.Characters.Vedal
 
             if (IsAlt)
             {
-                IsDashing = Mathf.Abs(_dashBufferVelocity) / controller.stats.maxHorizontalSpeed >= 0.8f;
+                IsDashing = Mathf.Abs(rb.velocity.x) / controller.stats.maxHorizontalSpeed >= 0.8f;
 
                 controller.stats = tutelStats;
                 // neuter the "swap->jump before swap finishes->fly up" issue
                 // it's now a super advanced speedrun tech that's totally 100% intended
                 if (rb.velocity.y > 0) rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.2f);
 
-                if (IsDashing)
-                {
-                    rb.velocity = new Vector2(_dashBufferVelocity, rb.velocity.y);
-                    StartCoroutine(CoDash()); // TODO: prevent swap to neuro
-                }
+                if (IsDashing) StartCoroutine(CoDash()); // TODO: prevent swap to neuro
             }
             else
             {
@@ -106,26 +102,10 @@ namespace SchizoQuest.Characters.Vedal
             IsDashing = false;
         }
 
-        // input buffer for tutel dash - max speed within X seconds
-        // makes the dash slightly more lenient to e.g. being stopped by a wall
-        private float _dashBufferVelocity;
-        private float _dashBufferTimestamp;
-        public float dashInputBuffer = 0.25f;
         private void FixedUpdate()
         {
             // todo do this through an event on evil/neuro swap
             _filter.layerMask = GetCollMask();
-
-            if (_dashBufferVelocity != 0 && Time.time - _dashBufferTimestamp > dashInputBuffer)
-            {
-                _dashBufferVelocity = 0;
-            }
-
-            if (Math.Abs(rb.velocity.x) > Math.Abs(_dashBufferVelocity))
-            {
-                _dashBufferVelocity = rb.velocity.x;
-                _dashBufferTimestamp = Time.time;
-            }
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
