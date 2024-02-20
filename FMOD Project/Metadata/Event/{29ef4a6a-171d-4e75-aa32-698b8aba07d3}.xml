@@ -110,7 +110,7 @@
 	<object class="MixerBusPanner" id="{0f596972-bce9-4548-9823-797781b12e23}" />
 	<object class="MultiSound" id="{a2599433-6682-4413-9874-9db765e62c6f}">
 		<property name="start">
-			<value>0.059999999999999998</value>
+			<value>0.050000000000000003</value>
 		</property>
 		<property name="length">
 			<value>0.50192743764172332</value>
@@ -124,7 +124,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{9c09b471-50eb-4763-8e58-32d61e9c322c}">
 		<property name="volume">
-			<value>-6</value>
+			<value>-20</value>
 		</property>
 		<property name="name">
 			<value>clink</value>
@@ -141,7 +141,7 @@
 	</object>
 	<object class="MultiSound" id="{00266e2f-e127-446b-92e3-ee179feb8f34}">
 		<property name="start">
-			<value>0.059999999999999998</value>
+			<value>0.050000000000000003</value>
 		</property>
 		<property name="length">
 			<value>0.37231249999999999</value>
@@ -193,6 +193,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{8d2e292b-bb18-46e1-9b22-a790068109b6}">
+		<property name="volume">
+			<value>-7</value>
+		</property>
 		<property name="name">
 			<value>place</value>
 		</property>
