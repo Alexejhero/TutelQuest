@@ -4457,7 +4457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1566959748471156186, guid: 661e035a15f071144887be0c083bb13f, type: 3}
       propertyPath: moveToOffPositionDelay
-      value: 0.9
+      value: 0.88
       objectReference: {fileID: 0}
     - target: {fileID: 3598715636389785526, guid: 661e035a15f071144887be0c083bb13f, type: 3}
       propertyPath: offset
@@ -4641,7 +4641,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1566959748471156186, guid: 661e035a15f071144887be0c083bb13f, type: 3}
       propertyPath: moveToOffPositionDelay
-      value: 0.7
+      value: 0.66
       objectReference: {fileID: 0}
     - target: {fileID: 3598715636389785526, guid: 661e035a15f071144887be0c083bb13f, type: 3}
       propertyPath: offset
@@ -4771,7 +4771,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1566959748471156186, guid: 661e035a15f071144887be0c083bb13f, type: 3}
       propertyPath: moveToOffPositionDelay
-      value: 1.3
+      value: 1.32
       objectReference: {fileID: 0}
     - target: {fileID: 3598715636389785526, guid: 661e035a15f071144887be0c083bb13f, type: 3}
       propertyPath: offset
@@ -4893,7 +4893,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1566959748471156186, guid: 661e035a15f071144887be0c083bb13f, type: 3}
       propertyPath: moveToOffPositionDelay
-      value: 0.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3598715636389785526, guid: 661e035a15f071144887be0c083bb13f, type: 3}
       propertyPath: offset
@@ -5015,7 +5015,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1566959748471156186, guid: 661e035a15f071144887be0c083bb13f, type: 3}
       propertyPath: moveToOffPositionDelay
-      value: 0.5
+      value: 0.44
       objectReference: {fileID: 0}
     - target: {fileID: 3598715636389785526, guid: 661e035a15f071144887be0c083bb13f, type: 3}
       propertyPath: offset
@@ -5215,7 +5215,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1566959748471156186, guid: 661e035a15f071144887be0c083bb13f, type: 3}
       propertyPath: moveToOffPositionDelay
-      value: 0.3
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 3598715636389785526, guid: 661e035a15f071144887be0c083bb13f, type: 3}
       propertyPath: offset
