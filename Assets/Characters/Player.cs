@@ -25,7 +25,7 @@ namespace SchizoQuest.Characters
         public StudioEventEmitter deathSound;
 
         // Scuffed but who cares, this is basically only used to communicate with CharacterAnimator
-        public bool Winning { get; set; }
+        public bool ForceFacingFront { get; set; }
         public bool Locked => GetComponent<TutelForm>()?.IsDashing ?? false;
 
         public bool IsGrounded => controller.groundTracker.IsGrounded;

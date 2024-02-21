@@ -43,7 +43,7 @@ namespace SchizoQuest.Characters
                     p.rb.velocity = Vector2.zero;
                     p.controller.enabled = false;
                     p.dying = true;
-                    p.Winning = true;
+                    p.ForceFacingFront = true;
                 });
 
                 yield return new WaitForSeconds(swapTime);

@@ -112,8 +112,7 @@ namespace SchizoQuest.Menu.PauseMenu
         {
             options.gameObject.SetActive(IsOpen);
             Time.timeScale = IsOpen ? 0 : 1;
-            // forces idle anim (facing the camera)
-            Player.ActivePlayer.Winning = IsOpen;
+            // Player.ActivePlayer.ForceFacingFront = IsOpen;
             Player.ActivePlayer.ToggleMovement(!IsOpen);
             AudioSystem.PauseSfx(IsOpen);
             if (IsOpen) focusOnOpen.Select();

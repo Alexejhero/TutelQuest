@@ -83,7 +83,7 @@ namespace SchizoQuest.Characters
         protected virtual void Update()
         {
             // Characters face forward during ending cutscene
-            if (player.Winning)
+            if (player.ForceFacingFront)
             {
                 SetAnimation(AnimationType.IdleFront);
                 return;
