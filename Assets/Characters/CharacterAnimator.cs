@@ -92,7 +92,7 @@ namespace SchizoQuest.Characters
             // Switch into idle anim if player is dying or if player is not moving, and if their animation isnt locked
             Vector2 velocity = rb.velocity;
             Vector2 input = MoveInput;
-            if (!player.Locked && (player.dying || (Math.Abs(velocity.x) < 1 && Math.Abs(velocity.y) < 1)))
+            if (!player.Locked && (player.dying || (Math.Abs(velocity.x) < 1/* && Math.Abs(velocity.y) < 1*/)))
             {
                 // Switch into front-facing anim if player presses S and is controlling the current character and isn't dying
                 if (!player.dying && player == Player.ActivePlayer && input.y < 0) _lastMoveDirection = 0;
