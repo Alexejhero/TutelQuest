@@ -5018,8 +5018,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1607219517
-  m_SortingLayer: -1
+  m_SortingLayerID: -2111657811
+  m_SortingLayer: 3
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: dcf839c44a8f8a4409c41c9043f4db4e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5650,6 +5650,10 @@ PrefabInstance:
     - target: {fileID: 7569329718862359105, guid: fb46253e30a665042b9e419135f60d5d, type: 3}
       propertyPath: m_Name
       value: DoorSegment
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387091227108988937, guid: fb46253e30a665042b9e419135f60d5d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.3799999
       objectReference: {fileID: 0}
     - target: {fileID: 8879533826300533236, guid: fb46253e30a665042b9e419135f60d5d, type: 3}
       propertyPath: m_LocalPosition.x

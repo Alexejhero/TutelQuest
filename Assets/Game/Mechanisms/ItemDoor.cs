@@ -2,20 +2,27 @@ using FMODUnity;
 using SchizoQuest.Characters;
 using SchizoQuest.Game.Items;
 using SchizoQuest.Interaction;
-using SchizoQuest.VFX;
 using System.Collections;
 using SchizoQuest.VFX.Materials.Door;
 using UnityEngine;
+using UnityEngine.Serialization;
+using PowerTools;
 
 namespace SchizoQuest.Game.Mechanisms
 {
     public class ItemDoor : MonoBehaviour, ICompoundInteractable<Item>
     {
-        public DoorAnimator animator;
-        public Collider2D coll;
+        public GameObject doorObject;
+        [FormerlySerializedAs("coll")]
+        public Collider2D doorCollider;
+        [FormerlySerializedAs("animator")]
+        public DoorAnimator doorAnimator;
+        [Space]
+        public SpriteAnim consoleAnim;
+        public AnimationClip consoleOpen;
+        [Space]
         public StudioEventEmitter ambientSfx;
 
-        [Space]
         public StudioEventEmitter sfxOnDestroy;
 
         public bool CanCompoundInteract(Player player, Item other)
@@ -25,10 +32,6 @@ namespace SchizoQuest.Game.Mechanisms
 
         public void CompoundInteract(Player player, Item other)
         {
-            ambientSfx.Stop();
-            sfxOnDestroy.Play();
-            coll.enabled = false;
-
             DiscardAfterUse(player);
             other.DiscardAfterUse(player);
         }
@@ -38,9 +41,14 @@ namespace SchizoQuest.Game.Mechanisms
             StartCoroutine(r());
             IEnumerator r()
             {
-                animator.PlayOpen();
-                yield return new WaitUntil(() => animator.IsOpen);
-                gameObject.SetActive(false);
+                ambientSfx.Stop();
+                sfxOnDestroy.Play();
+
+                doorCollider.enabled = false;
+                doorAnimator.PlayOpen();
+                if (consoleAnim) consoleAnim.Play(consoleOpen);
+                yield return new WaitUntil(() => doorAnimator.IsOpen);
+                doorObject.SetActive(false);
             }
         }
     }
