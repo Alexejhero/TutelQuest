@@ -5,7 +5,6 @@ using SchizoQuest.Interaction;
 using System.Collections;
 using SchizoQuest.VFX.Materials.Door;
 using UnityEngine;
-using UnityEngine.Serialization;
 using PowerTools;
 
 namespace SchizoQuest.Game.Mechanisms
@@ -13,9 +12,7 @@ namespace SchizoQuest.Game.Mechanisms
     public class ItemDoor : MonoBehaviour, ICompoundInteractable<Item>
     {
         public GameObject doorObject;
-        [FormerlySerializedAs("coll")]
         public Collider2D doorCollider;
-        [FormerlySerializedAs("animator")]
         public DoorAnimator doorAnimator;
         [Space]
         public SpriteAnim consoleAnim;

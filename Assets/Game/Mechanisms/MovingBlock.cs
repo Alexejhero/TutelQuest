@@ -1,6 +1,5 @@
 using FMODUnity;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace SchizoQuest.Game.Mechanisms
 {
@@ -12,12 +11,12 @@ namespace SchizoQuest.Game.Mechanisms
         public float speed;
         public StudioEventEmitter moveSound;
         public bool makeSound;
-        [Tooltip("This is a multiplier applied to the move speed, which controls sound volume. Raise this for \"slow and heavy\" moving blocks.")]
+        [Tooltip("Raising this makes the move sound louder at lower speeds. Suitable for \"slow and heavy\" moving blocks.")]
         public float soundSpeedMulti = 1f;
         private Vector3 _offPosition;
         private Vector3 _onPosition;
 
-        [FormerlySerializedAs("moveToOnPositionDelay")] public float moveToOffPositionDelay = 0;
+        public float moveToOffPositionDelay = 0;
         private float _currentMoveToOffPositionDelay;
 
         private void Awake()
