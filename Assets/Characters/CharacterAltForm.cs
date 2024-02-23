@@ -7,7 +7,7 @@ namespace SchizoQuest.Characters
 {
     public abstract class CharacterAltForm : MonoBehaviour
     {
-        public bool IsAlt { get; protected set; }
+        public virtual bool IsAlt { get; protected set; }
 
         protected CharacterSwitcher switcher;
         public Player player;

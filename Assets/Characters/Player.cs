@@ -20,18 +20,18 @@ namespace SchizoQuest.Characters
         public Inventory inventory;
         public ParticleSystem characterSwitchParticleEffect;
         public Rigidbody2D rb;
-        [HideInInspector]
-        public bool dying;
+        [HideInInspector] public bool dying;
         public StudioEventEmitter deathSound;
+        public CharacterAltForm altForm;
 
-        // Scuffed but who cares, this is basically only used to communicate with CharacterAnimator
         public bool ForceFacingFront { get; set; }
-        public bool Locked => GetComponent<TutelForm>()?.IsDashing ?? false;
+        public bool Locked => altForm is TutelForm {IsDashing: true};
 
         public bool IsGrounded => controller.groundTracker.IsGrounded;
         public bool IsRecentlyGrounded => controller.groundTracker.IsRecentlyGrounded;
 
         private SpriteRenderer[] _renderers;
+
         private void Awake()
         {
             _renderers = GetComponentsInChildren<SpriteRenderer>();

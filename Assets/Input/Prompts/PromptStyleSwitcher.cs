@@ -9,15 +9,10 @@ namespace SchizoQuest.Input.Prompts
         public GameObject kenneyOutline;
         public GameObject kenneyOutlineColor;
 
-        private void OnEnable()
+        private void Awake()
         {
             PromptStyleManager.Instance.OnStyleChange += OnStyleChange;
             OnStyleChange(PromptStyleManager.Instance.style);
-        }
-
-        private void OnDisable()
-        {
-            PromptStyleManager.Instance.OnStyleChange -= OnStyleChange;
         }
 
         private void OnStyleChange(PromptStyleManager.Style style)

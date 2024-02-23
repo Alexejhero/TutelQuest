@@ -9,6 +9,8 @@ namespace SchizoQuest.Characters.Vedal
 {
     public sealed class TutelForm : CharacterAltForm
     {
+        public Action<bool, bool> OnChange;
+
         public MovementStats humanStats;
         public MovementStats tutelStats;
 
@@ -18,7 +20,27 @@ namespace SchizoQuest.Characters.Vedal
         public GroundTracker groundTracker;
         public Rigidbody2D rb;
 
-        public bool IsDashing { get; private set; }
+        private bool _isAlt;
+        public override bool IsAlt
+        {
+            get => _isAlt;
+            protected set
+            {
+                _isAlt = value;
+                OnChange?.Invoke(IsAlt, IsDashing);
+            }
+        }
+
+        private bool _isDashing;
+        public bool IsDashing
+        {
+            get => _isDashing;
+            private set
+            {
+                _isDashing = value;
+                OnChange?.Invoke(IsAlt, IsDashing);
+            }
+        }
 
         private bool _hintHidden = false;
 
