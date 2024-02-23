@@ -28,3 +28,13 @@ Tools/Menu Item Overrides​
 ,False,True,True,1000,False
 
 
+Window/Asset Lens/
+Tools/Asset Lens/
+,False,True,False,0,True
+
+
+Window/PowerSprite Animator
+Tools/PowerSprite Animator
+,False,True,False,0,True
+
+
