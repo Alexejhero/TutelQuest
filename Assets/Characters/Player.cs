@@ -35,7 +35,7 @@ namespace SchizoQuest.Characters
         private void Awake()
         {
             _renderers = GetComponentsInChildren<SpriteRenderer>();
-            respawn.OnResetBegin += (r) =>
+            respawn.OnResetBegin += _ =>
             {
                 if (this != ActivePlayer) return;
 
@@ -47,7 +47,7 @@ namespace SchizoQuest.Characters
                 if (deathSound) deathSound.Play();
                 EffectsManager.Instance.PlayEffect(EffectsManager.Effects.death, 1f);
             };
-            respawn.OnResetFinish += (r) =>
+            respawn.OnResetFinish += _ =>
             {
                 if (inventory.item)
                 {
@@ -108,9 +108,9 @@ namespace SchizoQuest.Characters
 
         private IEnumerator FaceForwardsOnRespawn()
         {
-            Winning = true;
+            ForceFacingFront = true;
             yield return null;
-            Winning = false;
+            ForceFacingFront = false;
         }
     }
 }

@@ -198,7 +198,7 @@ MonoBehaviour:
       Data2: 1253274355
       Data3: 1780902582
       Data4: 743990325
-    Path: event:/sfx/interactive/pit/thorns
+    Path: event:/sfx/player/pitfall/thorns
   Event: 
   PlayEvent: 5
   StopEvent: 0
