@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 
-namespace SchizoQuest.Input
+namespace SchizoQuest.Input.Prompts
 {
     public sealed class PromptStyleSwitcher : MonoBehaviour
     {
-        public GameObject jstatz;
         public GameObject kenneyFull;
         public GameObject kenneyFullColor;
         public GameObject kenneyOutline;
@@ -23,7 +22,6 @@ namespace SchizoQuest.Input
 
         private void OnStyleChange(PromptStyleManager.Style style)
         {
-            jstatz.SetActive(false);
             kenneyFull.SetActive(false);
             kenneyFullColor.SetActive(false);
             kenneyOutline.SetActive(false);
@@ -31,9 +29,6 @@ namespace SchizoQuest.Input
 
             switch (style)
             {
-                case PromptStyleManager.Style.Jstatz:
-                    jstatz.SetActive(true);
-                    break;
                 case PromptStyleManager.Style.KenneyFull:
                     kenneyFull.SetActive(true);
                     break;

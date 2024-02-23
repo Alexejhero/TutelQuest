@@ -3,6 +3,7 @@ using FMOD.Studio;
 using FMODUnity;
 using SchizoQuest.Game;
 using UnityEngine;
+using FMODStopMode = FMOD.Studio.STOP_MODE; // sometimes it cries cuz of duplicate definitions and other times it cries cuz full qualifier is redundant. this is the fix.
 
 namespace SchizoQuest.Characters
 {
@@ -60,7 +61,7 @@ namespace SchizoQuest.Characters
 
         private void OnDisable()
         {
-            _fadeSnapshot.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            _fadeSnapshot.stop(FMODStopMode.IMMEDIATE);
         }
 
         private void OnDestroy()

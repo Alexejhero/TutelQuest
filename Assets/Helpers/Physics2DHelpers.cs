@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using UnityEngine;
 
@@ -18,7 +19,7 @@ namespace SchizoQuest.Helpers
         public static bool WillPassThroughPlatform(PlatformEffector2D platform, Vector2 normal, Rigidbody2D rb)
         {
             if (!platform) return false;
-            
+
             Rigidbody2D platformRb = platform.GetComponent<Rigidbody2D>();
             Vector2 platformVelocity = platformRb ? platformRb.velocity : Vector2.zero;
             return WillPassThroughPlatform(platform, normal, rb.velocity - platformVelocity);
@@ -43,7 +44,7 @@ namespace SchizoQuest.Helpers
         public static Vector2 Rotate(this Vector2 v, float degrees, bool clockwise = true)
         {
             if (!clockwise) degrees = -degrees;
-            
+
             float radian = degrees * Mathf.Deg2Rad;
             float sin = Mathf.Sin(radian);
             float cos = Mathf.Cos(radian);
@@ -57,6 +58,7 @@ namespace SchizoQuest.Helpers
         /// <param name="colliders">Colliders to encapsulate.</param>
         /// <param name="center">Center from which to make the bounds. Defaults to the center of the first collider (or <see cref="Vector3.zero"/> if none were provided).</param>
         /// <returns>A <see cref="Bounds"/> that encloses the given <paramref name="colliders"/> around the given <paramref name="center"/>.</returns>
+        [SuppressMessage("ReSharper", "PossibleMultipleEnumeration")]
         public static Bounds Encapsulate(this IEnumerable<Collider2D> colliders, Vector3? center = null)
         {
             if (center is null)

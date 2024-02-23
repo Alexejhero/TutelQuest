@@ -2,7 +2,7 @@
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Users;
 
-namespace SchizoQuest.Input
+namespace SchizoQuest.Input.Prompts
 {
     public sealed class SwappingInputPrompt : MonoBehaviour
     {

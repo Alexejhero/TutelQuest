@@ -1,13 +1,12 @@
 ﻿using System;
 using SchizoQuest.Helpers;
 
-namespace SchizoQuest.Input
+namespace SchizoQuest.Input.Prompts
 {
     public sealed class PromptStyleManager : MonoSingleton<PromptStyleManager>
     {
         public enum Style
         {
-            Jstatz,
             KenneyFull,
             KenneyFullColor,
             KenneyOutline,

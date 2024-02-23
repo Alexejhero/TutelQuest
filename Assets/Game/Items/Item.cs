@@ -79,11 +79,13 @@ namespace SchizoQuest.Game.Items
             if (dropSound) dropSound.Stop();
             if (useSound) useSound.Play();
 
-            StartCoroutine(r());
-            IEnumerator r()
+            StartCoroutine(CoDiscardAfterUse());
+            return;
+
+            IEnumerator CoDiscardAfterUse()
             {
                 _collider.enabled = false;
-                foreach (SpriteRenderer r in _renderers) 
+                foreach (SpriteRenderer r in _renderers)
                 {
                     r.enabled = false;
                 }
