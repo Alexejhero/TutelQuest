@@ -63,6 +63,7 @@ namespace SchizoQuest.Characters
                 rb.simulated = true;
                 controller.enabled = true;
                 dying = false;
+                StartCoroutine(FaceForwardsOnRespawn());
             };
         }
 
@@ -103,6 +104,13 @@ namespace SchizoQuest.Characters
         {
             controller.canMove = active;
             controller.canJump = active;
+        }
+
+        private IEnumerator FaceForwardsOnRespawn()
+        {
+            Winning = true;
+            yield return null;
+            Winning = false;
         }
     }
 }

@@ -64,6 +64,9 @@
 		<relationship name="modules">
 			<destination>{48e9bcdc-c65f-44fb-b7d7-050c07ee1ecf}</destination>
 		</relationship>
+		<relationship name="excludedPlatforms">
+			<destination>{0d893483-3130-43bc-b9a8-65126519177e}</destination>
+		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{747e58fe-c195-443a-9653-f18108d41287}</destination>
 		</relationship>
@@ -110,7 +113,7 @@
 	<object class="MixerBusPanner" id="{d3a9dbf9-aea5-411b-bafb-58a62d3c546f}" />
 	<object class="MultiSound" id="{48e9bcdc-c65f-44fb-b7d7-050c07ee1ecf}">
 		<property name="start">
-			<value>0.12</value>
+			<value>0.050000000000000003</value>
 		</property>
 		<property name="length">
 			<value>0.50192743764172332</value>
@@ -124,7 +127,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{747e58fe-c195-443a-9653-f18108d41287}">
 		<property name="volume">
-			<value>-6</value>
+			<value>-80</value>
 		</property>
 		<property name="name">
 			<value>clink</value>
@@ -141,7 +144,7 @@
 	</object>
 	<object class="MultiSound" id="{429c063a-46e7-4476-976f-8b00724c5626}">
 		<property name="start">
-			<value>0.12</value>
+			<value>0.050000000000000003</value>
 		</property>
 		<property name="length">
 			<value>0.37231249999999999</value>
@@ -156,7 +159,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{9c74dc06-76aa-4ee8-9333-d0c702a48615}">
 		<property name="volume">
-			<value>-6</value>
+			<value>-10</value>
 		</property>
 		<property name="name">
 			<value>bottle</value>
@@ -185,7 +188,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{b83ce7e5-c45b-4dbe-b2f3-0c86d4736f77}">
 		<property name="volume">
-			<value>10</value>
+			<value>6</value>
 		</property>
 		<property name="name">
 			<value>pickup</value>

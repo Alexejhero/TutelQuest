@@ -47,11 +47,20 @@ namespace SchizoQuest.Characters
             SwapImmediate();
         }
 
-        protected void SwapImmediate()
+        protected void SwapImmediate() => StartCoroutine(SwapInnerCoro());
+        private IEnumerator SwapInnerCoro()
         {
             IsAlt = !IsAlt;
-            altForm.SetActive(IsAlt);
-            regularForm.SetActive(!IsAlt);
+            // doing it like this fixes pressure plates w/ tutel swap bc tutel forms have their own colliders
+            // otherwise the previous collider will exit triggers before the new one re-enters them
+            // which makes pressure plates un-press for a physics frame (or sometimes several 🙃)
+            // also did you know that "OnTriggerEnter2D" gets sent late by a physics frame
+            // yay unity i love unity
+            GameObject toEnable = IsAlt ? altForm : regularForm;
+            GameObject toDisable = IsAlt ? regularForm : altForm;
+            toEnable.SetActive(true);
+            yield return new WaitForFixedUpdate();
+            toDisable.SetActive(false);
             _swapping = false;
             OnSwap();
         }

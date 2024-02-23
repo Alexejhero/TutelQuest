@@ -3393,6 +3393,7 @@ MonoBehaviour:
   moveSound: {fileID: 3576419914672762695}
   makeSound: 1
   soundSpeedMulti: 1
+  moveToOffPositionDelay: 0
 --- !u!114 &3576419914672762695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4105,6 +4106,7 @@ MonoBehaviour:
   moveSound: {fileID: 675769804215347137}
   makeSound: 1
   soundSpeedMulti: 1
+  moveToOffPositionDelay: 0
 --- !u!61 &2696692699882069661
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6859,6 +6861,7 @@ MonoBehaviour:
   moveSound: {fileID: 0}
   makeSound: 0
   soundSpeedMulti: 1
+  moveToOffPositionDelay: 0
 --- !u!114 &903695327769515743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7706,6 +7709,7 @@ MonoBehaviour:
   moveSound: {fileID: 0}
   makeSound: 0
   soundSpeedMulti: 1
+  moveToOffPositionDelay: 0
 --- !u!114 &8210026324195697009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8961,7 +8965,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8879533826300533236, guid: fb46253e30a665042b9e419135f60d5d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -28.660004
+      value: -25.359985
       objectReference: {fileID: 0}
     - target: {fileID: 8879533826300533236, guid: fb46253e30a665042b9e419135f60d5d, type: 3}
       propertyPath: m_LocalPosition.y
