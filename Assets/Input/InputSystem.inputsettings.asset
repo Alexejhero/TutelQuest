@@ -15,6 +15,7 @@ MonoBehaviour:
   m_SupportedDevices:
   - Keyboard
   - Mouse
+  - Pointer
   - Gamepad
   - Joystick
   m_UpdateMode: 1

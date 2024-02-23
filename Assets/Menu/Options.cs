@@ -1,6 +1,5 @@
 ﻿using SchizoQuest.Audio;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace SchizoQuest.Menu

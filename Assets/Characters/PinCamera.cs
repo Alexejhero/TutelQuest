@@ -1,7 +1,6 @@
 using System.Linq;
 using SchizoQuest.Game;
 using SchizoQuest.Game.Mechanisms;
-using SchizoQuest.Helpers;
 using UnityEngine;
 
 namespace SchizoQuest.Characters

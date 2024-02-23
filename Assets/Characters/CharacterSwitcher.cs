@@ -6,7 +6,6 @@ using SchizoQuest.Game;
 using SchizoQuest.Helpers;
 using SchizoQuest.Menu.PauseMenu;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace SchizoQuest.Characters
 {

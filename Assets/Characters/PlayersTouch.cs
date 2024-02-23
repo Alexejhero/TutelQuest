@@ -3,7 +3,6 @@ using SchizoQuest.Audio;
 using SchizoQuest.Characters.Neuro;
 using SchizoQuest.Characters.Vedal;
 using SchizoQuest.Game.Mechanisms;
-using SchizoQuest.Helpers;
 using SchizoQuest.Menu.PauseMenu;
 using SchizoQuest.VFX.Transition;
 using UnityEngine;

@@ -1,7 +1,6 @@
 using FMODUnity;
 using SchizoQuest.Characters;
 using SchizoQuest.Game.Mechanisms;
-using SchizoQuest.Helpers;
 using UnityEngine;
 
 namespace SchizoQuest.Audio
