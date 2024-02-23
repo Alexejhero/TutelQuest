@@ -2160,10 +2160,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 201420643741839135, guid: c9cd348d94c22aa48a712e13279bed4f, type: 3}
-      propertyPath: m_SortingLayer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 8513634248435685752, guid: c9cd348d94c22aa48a712e13279bed4f, type: 3}
       propertyPath: m_Name
       value: AssemblyLeft01
