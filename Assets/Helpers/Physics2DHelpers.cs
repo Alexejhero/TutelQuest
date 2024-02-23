@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace SchizoQuest.Helpers
@@ -48,6 +49,28 @@ namespace SchizoQuest.Helpers
             float cos = Mathf.Cos(radian);
 
             return new Vector2(v.x * cos - v.y * sin, v.x * sin + v.y * cos);
+        }
+
+        /// <summary>
+        /// Aggregates the given colliders into a <see cref="Bounds"/> object that encloses them around the given <paramref name="center"/>.
+        /// </summary>
+        /// <param name="colliders">Colliders to encapsulate.</param>
+        /// <param name="center">Center from which to make the bounds. Defaults to the center of the first collider (or <see cref="Vector3.zero"/> if none were provided).</param>
+        /// <returns>A <see cref="Bounds"/> that encloses the given <paramref name="colliders"/> around the given <paramref name="center"/>.</returns>
+        public static Bounds Encapsulate(this IEnumerable<Collider2D> colliders, Vector3? center = null)
+        {
+            if (center is null)
+            {
+                Collider2D first = colliders.FirstOrDefault();
+                center = first ? first.bounds.center : Vector3.zero;
+            }
+            Bounds bounds = new(center.Value, Vector3.zero);
+            foreach (Collider2D coll in colliders)
+            {
+                if (!coll.isActiveAndEnabled) continue;
+                bounds.Encapsulate(coll.bounds);
+            }
+            return bounds;
         }
     }
 }
