@@ -1195,7 +1195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hints:
   - {fileID: 5509370110268849637}
-  - {fileID: 5509370110268849637}
+  - {fileID: 4649190929252215405}
 --- !u!50 &7360106311038818091 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 2994542948100938228, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
