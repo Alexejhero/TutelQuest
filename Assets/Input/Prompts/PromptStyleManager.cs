@@ -1,8 +1,10 @@
 ﻿using System;
 using SchizoQuest.Helpers;
+using UnityEngine;
 
 namespace SchizoQuest.Input.Prompts
 {
+    [DefaultExecutionOrder(-1000)]
     public sealed class PromptStyleManager : MonoSingleton<PromptStyleManager>
     {
         public enum Style
