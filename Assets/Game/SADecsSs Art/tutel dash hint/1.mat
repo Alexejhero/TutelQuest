@@ -48,6 +48,6 @@ Material:
     m_Floats:
     - _GlowTexBlend: 0
     m_Colors:
-    - _GlowEffectMultiply: {r: 2.1185474, g: 2.0504692, b: 1.0292943, a: 1}
+    - _GlowEffectMultiply: {r: 0.7490196, g: 0.7249503, b: 0.36391047, a: 1}
     - _GlowMultiply: {r: 3.9999998, g: 3.5648987, b: 1.9811319, a: 1}
   m_BuildTextureStacks: []

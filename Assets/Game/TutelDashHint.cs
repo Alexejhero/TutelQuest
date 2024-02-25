@@ -1,45 +1,44 @@
-using System.Collections;
-using UnityEngine;
 using SchizoQuest.Characters;
-using SchizoQuest.Game.Mechanisms;
+using SchizoQuest.Characters.Vedal;
+using UnityEngine;
 
-namespace SchizoQuest
+namespace SchizoQuest.Game
 {
-    [RequireComponent(typeof(Collider2D))]
-    public class TutelDashHint : Trigger<Player>
+    public sealed class TutelDashHint : MonoBehaviour
     {
-        public SpriteRenderer[] hintRenderers;
+        private TutelForm _tutelForm;
+
+        public float enableDistance = 17f;
+        public LightUpBlock[] hints;
         public AnimationCurve curve;
         public float hintDuration = 0.8f;
-        public float hintInterval = 0.4f;
 
-        private IEnumerator PlayRoutine(SpriteRenderer ren, float startTime)
+        private void SetHint(int index, bool on)
         {
-            yield return new WaitUntil(() => Time.time >= startTime);
+            float blend = on ? 1f : 0f;
+            if (hints[index].TargetBlend != blend) hints[index].SetBlend(blend, hintDuration, curve);
+        }
 
-            for (float t = -hintDuration; t < hintDuration; t += Time.deltaTime)
+        private void Update()
+        {
+            if (!_tutelForm && CharacterSwitcher.Instance.CurrentPlayer.GetComponent<TutelForm>() is { } tutelForm) _tutelForm = tutelForm;
+        }
+
+        private void LateUpdate()
+        {
+            if (Vector2.Distance(_tutelForm.transform.position, transform.position) > enableDistance)
             {
-                ren.material.SetFloat("_GlowTexBlend", curve.Evaluate(1 - Mathf.Abs(t / hintDuration)));
-                yield return null;
+                bool passed = _tutelForm.transform.position.x > transform.position.x;
+
+                SetHint(0, passed);
+                SetHint(1, passed);
+                SetHint(2, passed);
+                return;
             }
-            ren.material.SetFloat("_GlowTexBlend", 0f);
-        }
 
-        public void PlayHints()
-        {
-            for (int i = 0; i < hintRenderers.Length; i++)
-            {
-                StartCoroutine(PlayRoutine(hintRenderers[i], Time.time + hintInterval * i));
-            }
-        }
-
-        protected override void OnEnter(Player target)
-        {
-            PlayHints();
-        }
-
-        protected override void OnExit(Player target)
-        {
+            SetHint(0, _tutelForm.IsDashing || !_tutelForm.IsAlt);
+            SetHint(1, _tutelForm.IsDashing || (!_tutelForm.IsAlt && Mathf.Abs(_tutelForm.rb.velocity.x) / _tutelForm.controller.stats.maxHorizontalSpeed >= 0.8f));
+            SetHint(2, _tutelForm.IsDashing);
         }
     }
 }

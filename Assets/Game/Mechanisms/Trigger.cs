@@ -16,7 +16,7 @@ namespace SchizoQuest.Game.Mechanisms
         {
             _entered = new List<Collider2D>(2);
         }
-    
+
         public void OnTriggerEnter2D(Collider2D other)
         {
             if (!other.isActiveAndEnabled) return;
@@ -26,7 +26,7 @@ namespace SchizoQuest.Game.Mechanisms
 
             if (Time.time < nextTriggerTime) return;
             nextTriggerTime = Time.time + triggerInterval;
-            
+
             _entered.Add(other);
             OnEnter(target);
         }
@@ -43,7 +43,7 @@ namespace SchizoQuest.Game.Mechanisms
             OnExit(target);
         }
 
-        protected abstract void OnEnter(TTarget target);
-        protected abstract void OnExit(TTarget target);
+        protected virtual void OnEnter(TTarget target) {}
+        protected virtual void OnExit(TTarget target) {}
     }
 }
