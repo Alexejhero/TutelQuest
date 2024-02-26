@@ -1,5 +1,6 @@
 using FMOD.Studio;
 using FMODUnity;
+using SchizoQuest.Characters;
 using UnityEngine;
 
 namespace SchizoQuest.Audio
@@ -89,6 +90,11 @@ namespace SchizoQuest.Audio
             SetMasterVolume(DEFAULT_VOLUME_MASTER);
             SetMusicVolume(DEFAULT_VOLUME_MUSIC);
             SetSfxVolume(DEFAULT_VOLUME_SFX);
+        }
+
+        public static void SetCharacter(PlayerType character)
+        {
+            RuntimeManager.StudioSystem.setParameterByName("Character", character.ValueIndex());
         }
     }
 }

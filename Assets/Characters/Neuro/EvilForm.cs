@@ -1,3 +1,4 @@
+using SchizoQuest.Audio;
 using SchizoQuest.Game;
 using SchizoQuest.VFX.Transition;
 using UnityEngine;
@@ -49,7 +50,8 @@ namespace SchizoQuest.Characters.Neuro
                 ? evilSwitchParticleEffect
                 : _neuroSwitchParticleEffect;
 
-            switcher.music.SetCharacter(player.playerType);
+            AudioSystem.SetCharacter(player.playerType);
+            OnFormSwapRegistry.OnFormSwap(player.playerType, IsAlt);
 
             UpdateLayerCollision();
         }

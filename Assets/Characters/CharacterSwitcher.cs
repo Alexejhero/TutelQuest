@@ -16,15 +16,12 @@ namespace SchizoQuest.Characters
         public List<Player> availablePlayers;
         public Player CurrentPlayer { get; private set; }
         private int _currentIndex;
-        [NonSerialized]
-        public BackgroundMusic music;
         public bool enableSwitching = true;
 
         private bool _hintHidden;
 
         private void Start()
         {
-            music = BackgroundMusic.Instance;
             SwitchTo(_currentIndex);
         }
 
@@ -58,7 +55,7 @@ namespace SchizoQuest.Characters
             CurrentPlayer = availablePlayers[index];
             CurrentPlayer.enabled = true;
             GlobalTransformCooldown = 0.75f;
-            music.SetCharacter(CurrentPlayer.playerType);
+            AudioSystem.SetCharacter(CurrentPlayer.playerType);
             BroadcastMessage("OnSwitch", SendMessageOptions.DontRequireReceiver);
         }
     }

@@ -12,11 +12,17 @@
 		</relationship>
 	</object>
 	<object class="GameParameter" id="{a66af254-84bd-488a-a876-eee5483f4f47}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
 		<property name="initialValue">
 			<value>0</value>
 		</property>
 		<property name="seekSpeed">
 			<value>2</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
 		</property>
 		<relationship name="automators">
 			<destination>{8fb48fa5-8e2a-45e8-85f2-a6564d9ef894}</destination>
@@ -37,6 +43,7 @@
 		<relationship name="automationPoints">
 			<destination>{518e506d-948e-4756-be9b-60688654a9b0}</destination>
 			<destination>{e457be9d-d5fc-451e-b664-0c3907b1e392}</destination>
+			<destination>{d41cf392-467c-4715-a268-03d2bbe7d8f6}</destination>
 		</relationship>
 	</object>
 	<object class="AutomationPoint" id="{518e506d-948e-4756-be9b-60688654a9b0}">
@@ -50,6 +57,14 @@
 	<object class="AutomationPoint" id="{e457be9d-d5fc-451e-b664-0c3907b1e392}">
 		<property name="position">
 			<value>1</value>
+		</property>
+		<property name="value">
+			<value>0</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{d41cf392-467c-4715-a268-03d2bbe7d8f6}">
+		<property name="position">
+			<value>2</value>
 		</property>
 		<property name="value">
 			<value>0</value>
