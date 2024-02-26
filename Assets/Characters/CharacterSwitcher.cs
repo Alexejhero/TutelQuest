@@ -23,6 +23,7 @@ namespace SchizoQuest.Characters
         private void Start()
         {
             SwitchTo(_currentIndex);
+            Player.ActivePlayer.SkipNextSwitchParticles = true;
         }
 
         private void Update()

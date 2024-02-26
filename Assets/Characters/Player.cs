@@ -1,6 +1,5 @@
 using System.Collections;
 using FMODUnity;
-using SchizoQuest.Audio;
 using SchizoQuest.Characters.Movement;
 using SchizoQuest.Characters.Vedal;
 using SchizoQuest.Game;
@@ -33,6 +32,7 @@ namespace SchizoQuest.Characters
         public bool IsRecentlyGrounded => controller.groundTracker.IsRecentlyGrounded;
 
         private SpriteRenderer[] _renderers;
+        public bool SkipNextSwitchParticles { get; set; }
 
         private void Awake()
         {
@@ -85,6 +85,11 @@ namespace SchizoQuest.Characters
             if (ActivePlayer != this) yield break;
 
             ToggleMovement(true);
+            if (SkipNextSwitchParticles)
+            {
+                SkipNextSwitchParticles = false;
+                yield break;
+            }
             characterSwitchParticleEffect.Play();
             if (switchDingleBingle) switchDingleBingle.Play();
         }
