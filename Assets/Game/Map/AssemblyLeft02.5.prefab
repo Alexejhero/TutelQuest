@@ -1005,6 +1005,7 @@ MonoBehaviour:
   moveSound: {fileID: 197045370916046446}
   makeSound: 1
   soundSpeedMulti: 1
+  moveToOffPositionDelay: 0
 --- !u!61 &5928733669308672798
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1778,7 +1779,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &779533117248480775
 Transform:
   m_ObjectHideFlags: 0
@@ -3900,6 +3901,7 @@ MonoBehaviour:
   moveSound: {fileID: 3425916448564531006}
   makeSound: 1
   soundSpeedMulti: 1
+  moveToOffPositionDelay: 0
 --- !u!61 &8410159267068003708
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -292,10 +292,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1310795711}
     - target: {fileID: 5761464847647720764, guid: 9f8b947821c8d644dabe396e2f77588b, type: 3}
-      propertyPath: activates.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5761464847647720764, guid: 9f8b947821c8d644dabe396e2f77588b, type: 3}
       propertyPath: activates.Array.data[1]
       value: 
       objectReference: {fileID: 1904522323}
@@ -594,7 +590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6365675488694644073, guid: 9847577560c2e9f42b3a4677ea47ead4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -37.4
+      value: -28.340004
       objectReference: {fileID: 0}
     - target: {fileID: 6365675488694644073, guid: 9847577560c2e9f42b3a4677ea47ead4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -708,10 +704,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4129764781506638700, guid: 03e6d6d8e91cbfc4a803b7cd21f0e3cb, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5006909336181670390, guid: 03e6d6d8e91cbfc4a803b7cd21f0e3cb, type: 3}
       propertyPath: m_Name
       value: AssemblyLeft02.5
@@ -1438,10 +1430,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1974892267928710543, guid: 46826f485e417a0499a6c36323fe3eac, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -267.31738
-      objectReference: {fileID: 0}
     - target: {fileID: 3067081008304789747, guid: 46826f485e417a0499a6c36323fe3eac, type: 3}
       propertyPath: m_Name
       value: PauseMenu
@@ -1628,7 +1616,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8820147338799471786, guid: c9cd348d94c22aa48a712e13279bed4f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -86.6
+      value: -77.54
       objectReference: {fileID: 0}
     - target: {fileID: 8820147338799471786, guid: c9cd348d94c22aa48a712e13279bed4f, type: 3}
       propertyPath: m_LocalPosition.y
