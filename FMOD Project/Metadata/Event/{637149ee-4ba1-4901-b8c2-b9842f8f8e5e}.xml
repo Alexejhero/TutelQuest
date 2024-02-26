@@ -138,7 +138,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{4d669166-607e-4275-bbed-6c262fd0407b}">
 		<property name="volume">
-			<value>-4</value>
+			<value>-6</value>
 		</property>
 		<property name="name">
 			<value>Glitch</value>

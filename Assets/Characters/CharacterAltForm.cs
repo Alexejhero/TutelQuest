@@ -1,4 +1,5 @@
 using System.Collections;
+using FMODUnity;
 using JetBrains.Annotations;
 using SchizoQuest.Menu.PauseMenu;
 using UnityEngine;
@@ -14,6 +15,7 @@ namespace SchizoQuest.Characters
         public GameObject regularForm;
         public GameObject altForm;
         public GameObject smokePoof;
+        public StudioEventEmitter swapSound;
 
         public float swapDelay = 0.100f;
         private bool _swapping;
@@ -40,7 +42,8 @@ namespace SchizoQuest.Characters
             _swapping = true;
             switcher.GlobalTransformCooldown = 0.75f;
 
-            Instantiate(smokePoof, transform);
+            if (smokePoof) Instantiate(smokePoof, transform);
+            if (swapSound) swapSound.Play();
             yield return new WaitForSeconds(swapDelay);
 
             SwapImmediate();

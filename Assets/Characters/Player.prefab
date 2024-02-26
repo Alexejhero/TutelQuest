@@ -48,6 +48,8 @@ GameObject:
   - component: {fileID: 2307560814186585820}
   - component: {fileID: 2069896818738633901}
   - component: {fileID: 1377089929542892216}
+  - component: {fileID: 7129356754583488372}
+  - component: {fileID: 7728318407079460978}
   - component: {fileID: 6931515259517804241}
   m_Layer: 20
   m_Name: Player
@@ -151,9 +153,11 @@ MonoBehaviour:
   controller: {fileID: 5187882562295365998}
   inventory: {fileID: 6931515259517804241}
   characterSwitchParticleEffect: {fileID: 0}
+  switchDingleBingle: {fileID: 7728318407079460978}
   rb: {fileID: 2994542948100938228}
   dying: 0
   deathSound: {fileID: 0}
+  altForm: {fileID: 0}
 --- !u!114 &5187882562295365998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,6 +236,68 @@ MonoBehaviour:
   player: {fileID: 3794102725898009367}
   controller: {fileID: 5187882562295365998}
   flySpeed: 20
+--- !u!114 &7129356754583488372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8801004962465848453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1265625437
+      Data2: 1238451444
+      Data3: 1358830257
+      Data4: -1014629717
+    Path: event:/sfx/player/swap
+  Event: 
+  PlayEvent: 0
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &7728318407079460978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8801004962465848453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -131705424
+      Data2: 1279526185
+      Data3: -1178529910
+      Data4: 1757332725
+    Path: event:/sfx/player/switch
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!114 &6931515259517804241
 MonoBehaviour:
   m_ObjectHideFlags: 0

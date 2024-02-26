@@ -1,5 +1,4 @@
 using FMODUnity;
-using SchizoQuest.Characters;
 using SchizoQuest.Helpers;
 using UnityEngine;
 
@@ -20,12 +19,6 @@ namespace SchizoQuest.Audio
                 track.Play();
                 track.SetParameter("Fade", 1);
             }
-        }
-
-        public void SetCharacter(PlayerType character)
-        {
-            if (track && track.IsPlaying())
-                track.SetParameter("Character", character.ValueIndex());
         }
 
         public StudioEventEmitter GetTrack() => track;

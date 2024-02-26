@@ -103,8 +103,9 @@ MonoBehaviour:
       Data2: 1169940850
       Data3: -1105424998
       Data4: 955259791
-    Path: snapshot:/faders/mute_interactive
-  audioListener: {fileID: 0}
+    Path: snapshot:/faders/mute_sfx
+  vedalListener: {fileID: 583343737687018967}
+  neuroListener: {fileID: 1120375159048304229}
 --- !u!114 &8713397542097964733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,6 +206,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 3946593334315327673}
   m_SourcePrefab: {fileID: 100100000, guid: ecd49f0896f80a64abdea63df3eebb87, type: 3}
+--- !u!114 &1120375159048304229 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5682986886493288183, guid: ecd49f0896f80a64abdea63df3eebb87, type: 3}
+  m_PrefabInstance: {fileID: 4706922639398813842}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &3860466389485280518 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8413138110959230356, guid: ecd49f0896f80a64abdea63df3eebb87, type: 3}
@@ -328,6 +340,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: {x: -97.11, y: 9.52, z: 0}
   onlyInBuild: 1
+--- !u!114 &583343737687018967 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7099791311416252335, guid: c3fc4b60d9cc12c4cab95878ac4103a1, type: 3}
+  m_PrefabInstance: {fileID: 7683126246289857144}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4809490840050660992 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2891677041724271864, guid: c3fc4b60d9cc12c4cab95878ac4103a1, type: 3}

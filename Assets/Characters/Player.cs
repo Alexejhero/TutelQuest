@@ -19,6 +19,7 @@ namespace SchizoQuest.Characters
         public PlayerController controller;
         public Inventory inventory;
         public ParticleSystem characterSwitchParticleEffect;
+        public StudioEventEmitter switchDingleBingle;
         public Rigidbody2D rb;
         [HideInInspector] public bool dying;
         public StudioEventEmitter deathSound;
@@ -31,6 +32,7 @@ namespace SchizoQuest.Characters
         public bool IsRecentlyGrounded => controller.groundTracker.IsRecentlyGrounded;
 
         private SpriteRenderer[] _renderers;
+        public bool SkipNextSwitchParticles { get; set; }
 
         private void Awake()
         {
@@ -83,7 +85,13 @@ namespace SchizoQuest.Characters
             if (ActivePlayer != this) yield break;
 
             ToggleMovement(true);
+            if (SkipNextSwitchParticles)
+            {
+                SkipNextSwitchParticles = false;
+                yield break;
+            }
             characterSwitchParticleEffect.Play();
+            if (switchDingleBingle) switchDingleBingle.Play();
         }
 
         public void OnDisable()

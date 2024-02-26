@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{6d6eddb6-3c1a-499b-839f-a167b72f1875}">
 		<property name="assetPath">
-			<value>sfx/player/glitch06-01.ogg</value>
+			<value>sfx/player/death/glitch06-01.ogg</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
