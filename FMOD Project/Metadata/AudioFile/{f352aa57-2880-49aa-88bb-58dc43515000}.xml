@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{f352aa57-2880-49aa-88bb-58dc43515000}">
 		<property name="assetPath">
-			<value>chimes-01.ogg</value>
+			<value>sfx/player/switch/chimes-01.ogg</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>24</value>
