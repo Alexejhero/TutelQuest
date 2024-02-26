@@ -24,7 +24,7 @@ namespace SchizoQuest.Game.Mechanisms
 
         public bool CanCompoundInteract(Player player, Item other)
         {
-            return player.inventory.item == other && other.itemType == ItemType.Key;
+            return other && player.inventory.item == other && other.itemType == ItemType.Key;
         }
 
         public void CompoundInteract(Player player, Item other)

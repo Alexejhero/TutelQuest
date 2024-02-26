@@ -290,6 +290,7 @@ GameObject:
   - component: {fileID: 5946587423241830279}
   - component: {fileID: 3240058184153247893}
   - component: {fileID: 4034197036956629228}
+  - component: {fileID: 6102473120980630723}
   m_Layer: 23
   m_Name: Console
   m_TagString: Untagged
@@ -462,6 +463,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.15, y: 7.3}
   m_EdgeRadius: 0
+--- !u!114 &6102473120980630723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7385927661151859512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9f0579bc9ca6d84e909a62936c94850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerInterval: 0
+  ignoreTriggers: 1
+  interactWith: {fileID: 3240058184153247893}
 --- !u!1 &7569329718862359105
 GameObject:
   m_ObjectHideFlags: 0
