@@ -1150,6 +1150,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 3443322844577061069}
   m_SourcePrefab: {fileID: 100100000, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
+--- !u!114 &3267934863991916971 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7129356754583488372, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
+  m_PrefabInstance: {fileID: 5740569191512100575}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3857871987478843994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &3425089152628175406 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6927315970538306801, guid: 285cc00e0081d4146a5e7a73908b5775, type: 3}
@@ -1176,6 +1187,7 @@ MonoBehaviour:
   regularForm: {fileID: 7921001887652105597}
   altForm: {fileID: 5684121791463374519}
   smokePoof: {fileID: 4635165659735915814, guid: ecf4f11eb204d5d43841a47894315a6a, type: 3}
+  swapSound: {fileID: 3267934863991916971}
   swapDelay: 0.1
   evilSwitchParticleEffect: {fileID: 2472505819947592442, guid: 8d325820475c9b347ac37753db9b2634, type: 3}
   neuroEvilTransitionManager: {fileID: 0}

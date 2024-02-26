@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{c3acaa1a-314e-4089-9a02-ac962e1659d1}">
+	<object class="AudioFile" id="{c1d0a5f4-44c4-41b2-91e8-8fb1aa92d574}">
 		<property name="assetPath">
-			<value>sfx/player/death/glitch03-02.ogg</value>
+			<value>sfx/player/swap/whoosh-01.ogg</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>44.0999985</value>
+			<value>48</value>
 		</property>
 		<property name="channelCount">
 			<value>1</value>
 		</property>
 		<property name="length">
-			<value>0.65637188208616781</value>
+			<value>0.16235416666666666</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{3bd57463-a52d-409f-ae3e-3406e94e72ba}</destination>

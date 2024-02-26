@@ -1,5 +1,6 @@
 using System.Collections;
 using FMODUnity;
+using SchizoQuest.Audio;
 using SchizoQuest.Characters.Movement;
 using SchizoQuest.Characters.Vedal;
 using SchizoQuest.Game;
@@ -19,6 +20,7 @@ namespace SchizoQuest.Characters
         public PlayerController controller;
         public Inventory inventory;
         public ParticleSystem characterSwitchParticleEffect;
+        public StudioEventEmitter switchDingleBingle;
         public Rigidbody2D rb;
         [HideInInspector] public bool dying;
         public StudioEventEmitter deathSound;
@@ -84,6 +86,7 @@ namespace SchizoQuest.Characters
 
             ToggleMovement(true);
             characterSwitchParticleEffect.Play();
+            if (switchDingleBingle) switchDingleBingle.Play();
         }
 
         public void OnDisable()
