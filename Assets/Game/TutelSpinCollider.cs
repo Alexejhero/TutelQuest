@@ -6,13 +6,9 @@ namespace SchizoQuest.Game
 {
     public sealed class TutelSpinCollider : MonoBehaviour
     {
-        private Collider2D _collider;
+        [SerializeField]
+        private Collider2D targetCollider;
         private TutelForm _tutelForm;
-
-        private void Awake()
-        {
-            _collider = GetComponent<Collider2D>();
-        }
 
         private void Update()
         {
@@ -21,7 +17,7 @@ namespace SchizoQuest.Game
                 _tutelForm = tutelForm;
             }
 
-            _collider.enabled = _tutelForm.IsDashing;
+            targetCollider.enabled = _tutelForm.IsDashing;
         }
     }
 }
