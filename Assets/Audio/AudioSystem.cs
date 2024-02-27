@@ -29,6 +29,7 @@ namespace SchizoQuest.Audio
         private static VCA masterVCA;
         private static VCA musicVCA;
         private static VCA sfxVCA;
+        private static Bus masterBus;
         private static Bus sfxBus;
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
@@ -50,6 +51,11 @@ namespace SchizoQuest.Audio
             {
                 sfxVCA = RuntimeManager.GetVCA("vca:/sfx");
                 sfxVCA.setVolume(SavedSfxVolume);
+            }
+
+            if (!masterBus.isValid())
+            {
+                masterBus = RuntimeManager.GetBus("bus:/");
             }
 
             if (!sfxBus.isValid())
@@ -95,6 +101,12 @@ namespace SchizoQuest.Audio
         public static void SetCharacter(PlayerType character)
         {
             RuntimeManager.StudioSystem.setParameterByName("Character", character.ValueIndex());
+        }
+
+        public static void StopAll()
+        {
+            Initialize();
+            masterBus.stopAllEvents(STOP_MODE.IMMEDIATE);
         }
     }
 }

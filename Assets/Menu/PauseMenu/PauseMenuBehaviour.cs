@@ -90,6 +90,7 @@ namespace SchizoQuest.Menu.PauseMenu
         public void ButtonToMenu()
         {
             Close();
+            AudioSystem.StopAll();
             MainMenu.skipNextIntro = true;
             SceneManager.LoadScene(0);
         }
