@@ -1554,8 +1554,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 91.579, y: 0.0000038146973}
-  m_SizeDelta: {x: 1059.325, y: 380.843}
+  m_AnchoredPosition: {x: 31.488, y: 50.402}
+  m_SizeDelta: {x: 939.144, y: 639.522}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &843456700
 MonoBehaviour:
@@ -1577,28 +1577,50 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Development by AlexejheroDev, budwheizzah, Govorunb and w1n7er
+  m_text: '<b>CREATED FOR NEURO-SAMA BIRTHDAY GAME JAM</b>
 
-    Environment
-    art by SADecsSs
+    <size=60%>28.12.2023
+    - 31.12.2023</size>
 
-    Character art and storyboards by camila
 
-    Character animations
-    by AshenGlister
+    Development and map design by AlexejheroDev, budwheizzah,
+    Govorunb and w1n7er
 
-    Title screen animation by happikoi
+    Environment art by SADecsSs
+
+    Character art and storyboards
+    by camila
+
+    Character animations by AshenGlister
 
     Music by DarthRael
 
-    Sound
-    effects from Pixabay and OpenGameArt
+
+    Title
+    screen animation by happikoi
+
+    Sound effects from Pixabay and OpenGameArt
+
+    Using
+    FMOD by Firelight Technologies and PowerSprite Animator by PowerHoof
 
 
-    <b>CREATED FOR NEURO-SAMA BIRTHDAY
-    GAMEJAM</b>
+    ---
 
-    <size=60%>28.12.2023 - 31.12.2023</size>'
+
+    POST-JAM
+    UPDATE
+
+    <size=60%>??.03.2023</size>
+
+
+    Input prompts by kenney
+
+    Additional
+    storyboards by arronon
+
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1625,8 +1647,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1641,7 +1663,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
