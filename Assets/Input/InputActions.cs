@@ -481,7 +481,18 @@ namespace SchizoQuest.Input
                     ""path"": ""*/{Submit}"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard and Mouse;Xbox Controller;PlayStation Controller;Switch Controller"",
+                    ""groups"": ""Keyboard and Mouse;Xbox Controller;PlayStation Controller"",
+                    ""action"": ""Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c77028ec-a3ad-460a-ae1b-fe13fdd9db10"",
+                    ""path"": ""<SwitchProControllerHID>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Switch Controller"",
                     ""action"": ""Click"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -774,11 +785,22 @@ namespace SchizoQuest.Input
                 },
                 {
                     ""name"": """",
+                    ""id"": ""919cb16c-a892-41d4-a678-61bb064de1bc"",
+                    ""path"": ""<SwitchProControllerHID>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Switch Controller"",
+                    ""action"": ""Submit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""a72219a5-4db2-4a2b-b6aa-35a07c39f1e3"",
                     ""path"": ""<Gamepad>/{Cancel}"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Xbox Controller;Switch Controller;PlayStation Controller"",
+                    ""groups"": ""Xbox Controller;PlayStation Controller"",
                     ""action"": ""Cancel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -790,6 +812,17 @@ namespace SchizoQuest.Input
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""Cancel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1826b30f-e9fb-4451-91e0-25e546cd7ec1"",
+                    ""path"": ""<SwitchProControllerHID>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Switch Controller"",
                     ""action"": ""Cancel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
