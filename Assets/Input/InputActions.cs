@@ -778,7 +778,7 @@ namespace SchizoQuest.Input
                     ""path"": ""*/{Submit}"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard and Mouse;Xbox Controller;PlayStation Controller;Switch Controller"",
+                    ""groups"": ""Keyboard and Mouse;Xbox Controller;PlayStation Controller"",
                     ""action"": ""Submit"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
