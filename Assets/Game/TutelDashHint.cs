@@ -10,13 +10,12 @@ namespace SchizoQuest.Game
 
         public float enableDistance = 17f;
         public LightUpBlock[] hints;
-        public AnimationCurve curve;
         public float hintDuration = 0.8f;
 
         private void SetHint(int index, bool on)
         {
             float blend = on ? 1f : 0f;
-            if (hints[index].TargetBlend != blend) hints[index].SetBlend(blend, hintDuration, curve);
+            if (hints[index].TargetBlend != blend) hints[index].SetBlend(blend, hintDuration);
         }
 
         private void Update()

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace SchizoQuest.VFX.Transition
 {
-    public class EffectsManager : MonoBehaviour
+    public sealed class EffectsManager : MonoBehaviour
     {
         public enum Effects
         {

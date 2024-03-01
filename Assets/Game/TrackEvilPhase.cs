@@ -1,4 +1,3 @@
-using System;
 using SchizoQuest.Characters;
 using UnityEngine;
 using UnityEngine.Events;

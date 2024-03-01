@@ -15,6 +15,7 @@ namespace SchizoQuest.Menu
         public float targetY;
         public AnimationCurve movementCurve;
         public AnimationCurve fadeInCurve;
+        public PlayButtonTransition playButtonTransition;
 
         public GameObject optionsObject;
         public GameObject creditsObject;
@@ -93,7 +94,15 @@ namespace SchizoQuest.Menu
 
         public void PlayPressed()
         {
-            SceneManager.LoadScene("finished-map");
+            _ready = false;
+            StartCoroutine(CoPlayPressed());
+            return;
+
+            IEnumerator CoPlayPressed()
+            {
+                yield return playButtonTransition.DoGameStartEffect(1);
+                SceneManager.LoadScene("finished-map");
+            }
         }
 
         public void SettingsPressed()

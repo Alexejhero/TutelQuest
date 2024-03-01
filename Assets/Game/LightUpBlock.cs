@@ -13,13 +13,11 @@ namespace SchizoQuest.Game
         private float _endingBlend;
         private float _currentTime;
         private float _transitionTime;
-        private AnimationCurve _curve;
 
-        public void SetBlend(float blend, float time, AnimationCurve curve)
+        public void SetBlend(float blend, float time)
         {
             _startingBlend = spriteRenderer.material.GetFloat(blendPropertyName);
             _endingBlend = blend;
-            _curve = curve;
 
             _currentTime = 0;
             _transitionTime = _startingBlend != _endingBlend ? time : 0;
@@ -32,7 +30,7 @@ namespace SchizoQuest.Game
 
             float value = Mathf.Lerp(_startingBlend, _endingBlend, _currentTime / _transitionTime);
 
-            spriteRenderer.material.SetFloat(blendPropertyName, /*_curve.Evaluate(*/value/*)*/);
+            spriteRenderer.material.SetFloat(blendPropertyName, value);
         }
     }
 }
