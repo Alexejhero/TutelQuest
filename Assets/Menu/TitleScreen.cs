@@ -100,7 +100,9 @@ namespace SchizoQuest.Menu
 
             IEnumerator CoPlayPressed()
             {
-                yield return playButtonTransition.DoGameStartEffect(1);
+                MainMenu.Instance.music.SetParameter("Release", playButtonTransition.duration);
+                MainMenu.Instance.music.Stop(); // will fade out over ^this many seconds
+                yield return playButtonTransition.DoGameStartEffect();
                 SceneManager.LoadScene("finished-map");
             }
         }
