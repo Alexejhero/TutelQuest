@@ -11,7 +11,7 @@ namespace SchizoQuest.End
 
         public IEnumerator Start()
         {
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(1.75f);
             for (float t = 0; t < 4; t += Time.deltaTime)
             {
                 image.color = new Color(1, 1, 1, t / 4);
@@ -20,7 +20,7 @@ namespace SchizoQuest.End
 
             image.color = Color.white;
 
-            yield return new WaitForSeconds(4.5f);
+            yield return new WaitForSeconds(5.75F);
 
             AudioSystem.PauseSfx(false);
             Application.Quit();
