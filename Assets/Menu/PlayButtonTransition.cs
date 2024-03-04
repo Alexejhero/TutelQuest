@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using SchizoQuest.Helpers;
 using UnityEngine;
 
 namespace SchizoQuest.Menu
@@ -13,13 +14,12 @@ namespace SchizoQuest.Menu
 
         public IEnumerator DoGameStartEffect()
         {
-            for (float t = 0f; t < duration; t += Time.deltaTime)
+            yield return CommonCoroutines.DoOverTime(duration, t =>
             {
                 float gameStartValue = t / duration;
                 Shader.SetGlobalColor(gameFinishColorID, Color.white);
                 Shader.SetGlobalFloat(gameFinishID, alphaCurve.Evaluate(gameStartValue));
-                yield return null;
-            }
+            });
         }
     }
 }

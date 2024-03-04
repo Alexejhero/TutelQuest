@@ -1,4 +1,5 @@
 using System.Collections;
+using SchizoQuest.Helpers;
 using UnityEngine;
 
 namespace SchizoQuest.VFX.Transition
@@ -73,7 +74,7 @@ namespace SchizoQuest.VFX.Transition
 
         private IEnumerator PlayRoutine(float duration, bool isEvil)
         {
-            for (float t = 0; t < duration; t += Time.unscaledDeltaTime)
+            yield return CommonCoroutines.DoOverRealTime(duration, t =>
             {
                 _phase = t / duration;
                 _phase = isEvil ? _phase : 1 - _phase;
@@ -82,8 +83,7 @@ namespace SchizoQuest.VFX.Transition
 
                 SetProps(isEvil);
                 Shader.SetGlobalFloat(phaseID, _phase);
-                yield return null;
-            }
+            });
             Shader.SetGlobalFloat(phaseID, isEvil ? 1f : 0f);
 
             mask.transform.localScale = isEvil ? 1000 * maskMaxSize * Vector3.one : Vector3.zero;

@@ -1,4 +1,5 @@
 using System.Collections;
+using SchizoQuest.Helpers;
 using UnityEngine;
 
 namespace SchizoQuest.VFX.Transition
@@ -133,38 +134,35 @@ namespace SchizoQuest.VFX.Transition
 
         private IEnumerator DoDeathEffect(float duration)
         {
-            for (float t = 0f; t < duration; t += Time.deltaTime)
+            yield return CommonCoroutines.DoOverTime(duration, t =>
             {
                 float deathEffectValue = 1 - (t / duration);
                 Shader.SetGlobalColor(deathFadeColorID, Color.Lerp(deathEffectFadeColor, Color.white, deathEffectCurve.Evaluate(deathEffectValue)));
                 Shader.SetGlobalFloat(deathFadeID, deathEffectCurve.Evaluate(deathEffectValue));
                 Shader.SetGlobalFloat(deathFadeOffsetID, deathEffectCurve.Evaluate(deathEffectValue) * deathEffectDistplacement + (1 - deathEffectDistplacement));
-                yield return null;
-            }
+            });
             ResetValues(Effects.death);
         }
 
         private IEnumerator DoGameFinishEffect(float duration)
         {
-            for (float t = 0; t < duration; t += Time.deltaTime)
+            yield return CommonCoroutines.DoOverRealTime(duration, t =>
             {
                 float gameFinishValue = 1 - (t / duration);
                 Shader.SetGlobalColor(gameFinishColorID, gameFinishEffectColor);
                 Shader.SetGlobalFloat(gameFinishID, 1 - gameFinishCurve.Evaluate(gameFinishValue));
-                yield return null;
-            }
+            });
             ResetValues(Effects.gameFinish);
         }
 
         private IEnumerator DoGameStartEffect(float duration)
         {
-            for (float t = 0f; t < duration; t += Time.deltaTime)
+            yield return CommonCoroutines.DoOverRealTime(duration, t =>
             {
                 float gameStartValue = 1 - (t / duration);
                 Shader.SetGlobalColor(gameFinishColorID, gameStartEffectColor);
                 Shader.SetGlobalFloat(gameFinishID, gameStartCurve.Evaluate(gameStartValue));
-                yield return null;
-            }
+            });
             ResetValues(Effects.gameFinish);
         }
     }

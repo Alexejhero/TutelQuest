@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using SchizoQuest.Helpers;
 using SchizoQuest.Input;
 using TMPro;
 using UnityEngine;
@@ -73,7 +74,7 @@ namespace SchizoQuest.Menu
             Color color = default;
             Vector3 position = default;
 
-            for (float t = 0; t < transitionLength; t += Time.deltaTime)
+            yield return CommonCoroutines.DoOverTime(transitionLength, t =>
             {
                 if (!_gone)
                 {
@@ -87,9 +88,7 @@ namespace SchizoQuest.Menu
                 position = storyboard.localPosition;
                 position.y = Mathf.Lerp(oldYPos, storyboardYPositions[_currentPanel], movementCurve.Evaluate(t / transitionLength));
                 storyboard.localPosition = position;
-
-                yield return null;
-            }
+            });
 
             color.a = 1;
             position.y = storyboardYPositions[_currentPanel];

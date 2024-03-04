@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using SchizoQuest.End;
+using SchizoQuest.Helpers;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -40,21 +41,23 @@ namespace SchizoQuest.Menu
             Color imageColor = default;
             Color textColor = default;
 
-            for (float t = 0; t < 3; t += Time.deltaTime)
+            int fadeDuration = 3;
+            float fullFadeValue = Mathf.Clamp01(fadeInCurve.Evaluate(fadeDuration));
+            yield return CommonCoroutines.DoOverTime(fadeDuration, t =>
             {
+                float currFadeValue = Mathf.Clamp01(fadeInCurve.Evaluate(t / fadeDuration));
+
                 // Fade in panel
                 imageColor = titleScreenImage.color;
-                imageColor.a = Mathf.Lerp(0, 1, fadeInCurve.Evaluate(t / 3));
+                imageColor.a = currFadeValue;
                 titleScreenImage.color = imageColor;
 
                 textColor = titleText.color;
-                textColor.a = Mathf.Lerp(0, 1, fadeInCurve.Evaluate(t / 3) / fadeInCurve.Evaluate(3));
+                textColor.a = currFadeValue / fullFadeValue;
                 titleText.color = textColor;
+            });
 
-                yield return null;
-            }
-
-            imageColor.a = fadeInCurve.Evaluate(3);
+            imageColor.a = fullFadeValue;
             textColor.a = 1;
 
             titleScreenImage.color = imageColor;
@@ -73,15 +76,13 @@ namespace SchizoQuest.Menu
 
             Vector3 position = default;
 
-            for (float t = 0; t < 1; t += Time.deltaTime)
+            yield return CommonCoroutines.DoOverTime(1, t =>
             {
                 // Move storyboard
                 position = rotationTransform.localPosition;
                 position.y = Mathf.Lerp(oldYPos, targetY, movementCurve.Evaluate(t));
                 rotationTransform.localPosition = position;
-
-                yield return null;
-            }
+            });
 
             position.y = targetY;
 
@@ -175,14 +176,12 @@ namespace SchizoQuest.Menu
         {
             Vector3 angles = default;
 
-            for (float t = 0; t < 1; t += Time.deltaTime)
+            yield return CommonCoroutines.DoOverTime(1, t =>
             {
                 angles = rotationTransform.transform.eulerAngles;
                 angles.y = Mathf.Lerp(from, to, t);
                 rotationTransform.transform.eulerAngles = angles;
-
-                yield return null;
-            }
+            });
 
             angles.y = to;
             rotationTransform.transform.eulerAngles = angles;

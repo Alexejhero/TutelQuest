@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using SchizoQuest.Helpers;
 using SchizoQuest.Input;
 using TMPro;
 using UnityEngine;
@@ -29,12 +30,8 @@ namespace SchizoQuest.Menu
 
         private IEnumerator CoBegin()
         {
-            for (float t = 0; t < 1; t += Time.deltaTime)
-            {
-                beginText.color = Color.Lerp(Color.white, Color.clear, t);
-
-                yield return null;
-            }
+            yield return CommonCoroutines.DoOverTime(1,
+                t => beginText.color = Color.Lerp(Color.white, Color.clear, t));
 
             Done();
         }
