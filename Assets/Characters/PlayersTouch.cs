@@ -2,7 +2,6 @@ using System.Collections;
 using SchizoQuest.Audio;
 using SchizoQuest.Characters.Neuro;
 using SchizoQuest.Characters.Vedal;
-using SchizoQuest.End;
 using SchizoQuest.Game.Mechanisms;
 using SchizoQuest.Menu;
 using SchizoQuest.Menu.PauseMenu;
