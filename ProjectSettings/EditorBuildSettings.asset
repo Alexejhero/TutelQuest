@@ -11,9 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Map/finished-map.unity
     guid: 4b903e6649303e6489766c3fa5c51cff
-  - enabled: 1
-    path: Assets/End/End.unity
-    guid: a70472fb9a49ba14d97ddeec791470c8
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: d682270aa4204544ba8d81666154f767, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 44965964921789e468a05899dc1f3d71, type: 2}
