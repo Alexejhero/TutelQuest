@@ -78,6 +78,8 @@
 		</relationship>
 		<relationship name="markers">
 			<destination>{5b439084-9fd4-4284-8f8f-5ece5e680bf1}</destination>
+			<destination>{89d99b41-600e-40dc-be64-4a1b46ab5d4f}</destination>
+			<destination>{a41a8057-542b-4c21-a412-1a667ec87fce}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{cd16f223-7169-4786-b339-33854f8414ce}">
@@ -150,15 +152,40 @@
 			<destination>{881d5e07-6113-49cc-a93e-5851c2f1a1d3}</destination>
 		</relationship>
 	</object>
+	<object class="NamedMarker" id="{89d99b41-600e-40dc-be64-4a1b46ab5d4f}">
+		<property name="position">
+			<value>28</value>
+		</property>
+		<property name="name">
+			<value>ending</value>
+		</property>
+		<relationship name="timeline">
+			<destination>{bc444881-df29-4730-979f-3891c92f0ce2}</destination>
+		</relationship>
+		<relationship name="markerTrack">
+			<destination>{881d5e07-6113-49cc-a93e-5851c2f1a1d3}</destination>
+		</relationship>
+	</object>
+	<object class="TransitionMarker" id="{a41a8057-542b-4c21-a412-1a667ec87fce}">
+		<property name="position">
+			<value>70</value>
+		</property>
+		<relationship name="timeline">
+			<destination>{bc444881-df29-4730-979f-3891c92f0ce2}</destination>
+		</relationship>
+		<relationship name="markerTrack">
+			<destination>{881d5e07-6113-49cc-a93e-5851c2f1a1d3}</destination>
+		</relationship>
+		<relationship name="destination">
+			<destination>{89d99b41-600e-40dc-be64-4a1b46ab5d4f}</destination>
+		</relationship>
+	</object>
 	<object class="ADSRModulator" id="{fb0277ff-c52a-4f46-a6dc-52186f42e208}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>volume</value>
 		</property>
 		<property name="initialValue">
 			<value>-80</value>
-		</property>
-		<property name="attackTime">
-			<value>500</value>
 		</property>
 		<property name="finalValue">
 			<value>-80</value>

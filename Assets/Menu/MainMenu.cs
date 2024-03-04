@@ -7,7 +7,13 @@ namespace SchizoQuest.Menu
 {
     public sealed class MainMenu : MonoSingleton<MainMenu>
     {
-        public static bool skipNextIntro;
+        public enum StartStage
+        {
+            Beginning = 0,   // funny
+            TitleScreen = 2, // funnier
+            Ending = 3,      // funniest
+        }
+        public static StartStage startStage;
         [SerializeField]
         private List<MenuStage> stages;
         internal MenuStage currentStage;
@@ -18,8 +24,8 @@ namespace SchizoQuest.Menu
         private void Start()
         {
             _playMusicAfter = stages.IndexOf(playMusicAfter);
-            SetStage(skipNextIntro ? 2 : 0);
-            skipNextIntro = false;
+            SetStage((int)startStage);
+            startStage = default;
         }
 
         public void SetStage(int i)
@@ -32,6 +38,15 @@ namespace SchizoQuest.Menu
 
         public void NextStage()
         {
+            if (currentStage)
+            {
+                int customNext = stages.IndexOf(currentStage.nextStage);
+                if (customNext >= 0)
+                {
+                    SetStage(customNext);
+                    return;
+                }
+            }
             int i = stages.IndexOf(currentStage);
             SetStage(i+1);
         }

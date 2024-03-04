@@ -91,7 +91,7 @@ namespace SchizoQuest.Menu.PauseMenu
         {
             Close();
             AudioSystem.StopAll();
-            MainMenu.skipNextIntro = true;
+            MainMenu.startStage = MainMenu.StartStage.TitleScreen;
             SceneManager.LoadScene(0);
         }
 

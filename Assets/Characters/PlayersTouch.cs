@@ -2,7 +2,9 @@ using System.Collections;
 using SchizoQuest.Audio;
 using SchizoQuest.Characters.Neuro;
 using SchizoQuest.Characters.Vedal;
+using SchizoQuest.End;
 using SchizoQuest.Game.Mechanisms;
+using SchizoQuest.Menu;
 using SchizoQuest.Menu.PauseMenu;
 using SchizoQuest.VFX.Transition;
 using UnityEngine;
@@ -43,14 +45,20 @@ namespace SchizoQuest.Characters
                     p.controller.enabled = false;
                     p.dying = true;
                     p.ForceFacingFront = true;
+                    if (p.inventory.item is { itemType: Game.Items.ItemType.Rum })
+                    {
+                        EndManager.GotRum = true;
+                    }
                 });
 
                 yield return new WaitForSeconds(swapTime);
 
                 EffectsManager.Instance.PlayEffect(EffectsManager.Effects.gameFinish, 2f);
                 yield return new WaitForSeconds(1.8f);
+                
                 AudioSystem.PauseSfx(true);
-                SceneManager.LoadScene("End");
+                MainMenu.startStage = MainMenu.StartStage.Ending;
+                SceneManager.LoadScene(0);
             }
         }
 

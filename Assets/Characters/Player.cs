@@ -1,5 +1,6 @@
 using System.Collections;
 using FMODUnity;
+using SchizoQuest.Audio;
 using SchizoQuest.Characters.Movement;
 using SchizoQuest.Characters.Vedal;
 using SchizoQuest.Game;
@@ -36,6 +37,7 @@ namespace SchizoQuest.Characters
 
         private void Awake()
         {
+            AudioSystem.PauseSfx(false);
             _renderers = GetComponentsInChildren<SpriteRenderer>();
             respawn.OnResetBegin += _ =>
             {

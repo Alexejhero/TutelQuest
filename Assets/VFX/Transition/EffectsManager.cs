@@ -76,6 +76,11 @@ namespace SchizoQuest.VFX.Transition
             PlayEffect(Effects.gameStart, gameStartEffectDuration);
         }
 
+        private void OnDestroy()
+        {
+            ResetValues(Effects.all);
+        }
+
         private void ResetValues(Effects effect)
         {
             switch (effect)
