@@ -33,7 +33,7 @@ namespace SchizoQuest.Menu
 
             image.color = Color.white;
             hidingBackground.SetActive(false);
-            
+
             yield return new WaitForSeconds(8F - fadeOutTime);
 
             yield return CommonCoroutines.DoOverTime(fadeOutTime,

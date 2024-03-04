@@ -104,7 +104,6 @@ namespace SchizoQuest.Menu
                 MainMenu.Instance.music.SetParameter("Release", playButtonTransition.duration);
                 MainMenu.Instance.music.Stop(); // will fade out over ^this many seconds
                 yield return playButtonTransition.DoGameStartEffect();
-                EndManager.GotRum = false;
                 SceneManager.LoadScene("finished-map");
             }
         }

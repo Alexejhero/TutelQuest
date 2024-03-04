@@ -5,6 +5,7 @@ using SchizoQuest.Characters.Movement;
 using SchizoQuest.Characters.Vedal;
 using SchizoQuest.Game;
 using SchizoQuest.Game.Items;
+using SchizoQuest.Menu;
 using SchizoQuest.Menu.PauseMenu;
 using SchizoQuest.VFX.Transition;
 using UnityEngine;
@@ -37,6 +38,7 @@ namespace SchizoQuest.Characters
 
         private void Awake()
         {
+            EndManager.GotRum = false;
             AudioSystem.PauseSfx(false);
             _renderers = GetComponentsInChildren<SpriteRenderer>();
             respawn.OnResetBegin += _ =>
