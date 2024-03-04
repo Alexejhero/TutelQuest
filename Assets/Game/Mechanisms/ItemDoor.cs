@@ -1,7 +1,6 @@
 using FMODUnity;
 using SchizoQuest.Characters;
 using SchizoQuest.Game.Items;
-using SchizoQuest.Interaction;
 using System.Collections;
 using SchizoQuest.VFX.Materials.Door;
 using UnityEngine;
@@ -9,7 +8,7 @@ using PowerTools;
 
 namespace SchizoQuest.Game.Mechanisms
 {
-    public class ItemDoor : MonoBehaviour, ICompoundInteractable<Item>
+    public class ItemDoor : MonoBehaviour
     {
         public GameObject doorObject;
         public Collider2D doorCollider;

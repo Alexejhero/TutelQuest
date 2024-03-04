@@ -2,7 +2,7 @@ using System.Collections;
 using System.Linq;
 using FMODUnity;
 using SchizoQuest.Characters;
-using SchizoQuest.Interaction;
+using SchizoQuest.Game.Interaction;
 using SchizoQuest.VFX.Particles;
 using UnityEngine;
 

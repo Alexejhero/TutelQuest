@@ -1,6 +1,6 @@
 ﻿using SchizoQuest.Characters;
 
-namespace SchizoQuest.Interaction
+namespace SchizoQuest.Game.Interaction
 {
     public interface IInteractable
     {

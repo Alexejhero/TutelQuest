@@ -4,7 +4,7 @@ using JetBrains.Annotations;
 using SchizoQuest.Characters;
 using UnityEngine;
 
-namespace SchizoQuest.Interaction
+namespace SchizoQuest.Game.Interaction
 {
     public class InteractionManager : MonoBehaviour
     {
@@ -34,21 +34,6 @@ namespace SchizoQuest.Interaction
                 .ToList();
 
             Debug.Log($"Found {ordered.Count()} usable interactables");
-
-            foreach (IInteractable interactable in ordered)
-            {
-                if (interactable is ICompoundInteractable compound)
-                {
-                    foreach (IInteractable other in ordered)
-                    {
-                        if (compound.GetOtherType().IsInstanceOfType(other) && compound.CanCompoundInteract(player, other))
-                        {
-                            compound.CompoundInteract(player, other);
-                            return;
-                        }
-                    }
-                }
-            }
 
             ordered.FirstOrDefault()?.Interact(player);
         }

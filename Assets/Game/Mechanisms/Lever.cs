@@ -1,5 +1,5 @@
 ﻿using SchizoQuest.Characters;
-using SchizoQuest.Interaction;
+using SchizoQuest.Game.Interaction;
 using UnityEngine;
 
 namespace SchizoQuest.Game.Mechanisms
