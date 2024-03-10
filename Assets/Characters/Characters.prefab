@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4205522132642057608}
   - component: {fileID: 7589676436413931465}
   - component: {fileID: 6423933310686303340}
-  - component: {fileID: 8713397542097964733}
   m_Layer: 0
   m_Name: Characters
   m_TagString: Untagged
@@ -95,48 +94,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89465e218bcb93441b9cf193d0ff18ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeOutTime: 0.25
-  fadeInTime: 0.25
-  fadeSnapshot:
-    Guid:
-      Data1: 902439226
-      Data2: 1169940850
-      Data3: -1105424998
-      Data4: 955259791
-    Path: snapshot:/faders/mute_sfx
+  fadeTime: 0.5
   vedalListener: {fileID: 583343737687018967}
   neuroListener: {fileID: 1120375159048304229}
---- !u!114 &8713397542097964733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7528141543748926353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -1038438801
-      Data2: 1190237025
-      Data3: 137887157
-      Data4: 1206667024
-    Path: event:/sfx/player/death
-  Event: 
-  PlayEvent: 0
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  AllowNonRigidbodyDoppler: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1001 &4706922639398813842
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -193,10 +153,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8866959914121868744, guid: ecd49f0896f80a64abdea63df3eebb87, type: 3}
-      propertyPath: deathSound
-      value: 
-      objectReference: {fileID: 8713397542097964733}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 4319207525014697795, guid: ecd49f0896f80a64abdea63df3eebb87, type: 3}
@@ -265,10 +221,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8337613622537684320}
     m_Modifications:
-    - target: {fileID: 2877221180265890980, guid: c3fc4b60d9cc12c4cab95878ac4103a1, type: 3}
-      propertyPath: deathSound
-      value: 
-      objectReference: {fileID: 8713397542097964733}
     - target: {fileID: 2891677041724271864, guid: c3fc4b60d9cc12c4cab95878ac4103a1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -97.11
@@ -318,7 +270,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7595846727379018550, guid: c3fc4b60d9cc12c4cab95878ac4103a1, type: 3}
-      insertIndex: -1
+      insertIndex: 13
       addedObject: {fileID: 4682768223814825593}
   m_SourcePrefab: {fileID: 100100000, guid: c3fc4b60d9cc12c4cab95878ac4103a1, type: 3}
 --- !u!1 &285464862063802702 stripped
