@@ -139,6 +139,8 @@ namespace SchizoQuest.Characters
 
         public void SetAnimation(AnimationType type)
         {
+            if (Time.timeScale == 0) return;
+
             switch (type)
             {
                 case AnimationType.None:
