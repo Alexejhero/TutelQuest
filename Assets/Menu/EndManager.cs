@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace SchizoQuest.Menu
 {
-    public class EndManager : MenuStage
+    public sealed class EndManager : MenuStage
     {
         public static bool GotRum { get; set; }
         public Image image;

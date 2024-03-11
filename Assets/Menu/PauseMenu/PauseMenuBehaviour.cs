@@ -1,3 +1,4 @@
+using System.Collections;
 using SchizoQuest.Audio;
 using SchizoQuest.Characters;
 using SchizoQuest.Helpers;
@@ -28,6 +29,9 @@ namespace SchizoQuest.Menu.PauseMenu
         internal bool canToggle;
 
         private InputActions _input;
+        private bool _stopEverything;
+
+        [SerializeField] private Image returnToMainMenuOverlay;
 
         #region IDs
 
@@ -73,26 +77,46 @@ namespace SchizoQuest.Menu.PauseMenu
         // this is only here to let gamepad exit with the B button
         public void OnCancel()
         {
+            if (_stopEverything) return;
             if (IsOpen) _closing = true;
             Close();
         }
 
         public void ButtonQuit()
         {
+            if (_stopEverything) return;
             Application.Quit();
         }
 
         public void ButtonToCheckpoint()
         {
+            if (_stopEverything) return;
             Player.ActivePlayer.respawn.Respawn();
         }
 
         public void ButtonToMenu()
         {
-            Close();
+            if (_stopEverything) return;
+
+            _stopEverything = true;
+            returnToMainMenuOverlay.gameObject.SetActive(true);
+            canToggle = false;
             AudioSystem.StopAll();
-            MainMenu.startStage = MainMenu.StartStage.TitleScreen;
-            SceneManager.LoadScene(0);
+            StartCoroutine(CoButtonToMenu());
+            return;
+
+            IEnumerator CoButtonToMenu()
+            {
+                yield return CommonCoroutines.DoOverTime(1f, time =>
+                {
+                    returnToMainMenuOverlay.color = new Color(0, 0, 0, time);
+                }, true);
+
+                returnToMainMenuOverlay.color = Color.black;
+
+                MainMenu.startStage = MainMenu.StartStage.TitleScreen;
+                SceneManager.LoadScene(0);
+            }
         }
 
         public void Close(bool force = false)
