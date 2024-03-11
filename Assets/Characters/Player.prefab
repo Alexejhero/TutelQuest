@@ -50,6 +50,7 @@ GameObject:
   - component: {fileID: 1377089929542892216}
   - component: {fileID: 7129356754583488372}
   - component: {fileID: 7728318407079460978}
+  - component: {fileID: 7719853616031827367}
   - component: {fileID: 6931515259517804241}
   m_Layer: 20
   m_Name: Player
@@ -156,7 +157,7 @@ MonoBehaviour:
   switchDingleBingle: {fileID: 7728318407079460978}
   rb: {fileID: 2994542948100938228}
   dying: 0
-  deathSound: {fileID: 0}
+  deathSound: {fileID: 7719853616031827367}
   altForm: {fileID: 0}
 --- !u!114 &5187882562295365998
 MonoBehaviour:
@@ -298,6 +299,37 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!114 &7719853616031827367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8801004962465848453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1038438801
+      Data2: 1190237025
+      Data3: 137887157
+      Data4: 1206667024
+    Path: event:/sfx/player/death
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 1000
 --- !u!114 &6931515259517804241
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using FMODUnity;
 using SchizoQuest.Audio;
@@ -43,6 +44,14 @@ namespace SchizoQuest.Characters
             _renderers = GetComponentsInChildren<SpriteRenderer>();
             respawn.OnResetBegin += _ =>
             {
+                if (dying) return;
+                
+                if (deathSound)
+                {
+                    deathSound.Play();
+                    deathSound.SetParameter("Is Active Player", this == ActivePlayer ? 1 : 0);
+                }
+
                 if (this != ActivePlayer) return;
 
                 PauseMenuBehaviour.Instance.Close();
@@ -50,7 +59,6 @@ namespace SchizoQuest.Characters
                 rb.simulated = false;
                 controller.enabled = false;
                 dying = true;
-                if (deathSound) deathSound.Play();
                 EffectsManager.Instance.PlayEffect(EffectsManager.Effects.death, 1f);
             };
             respawn.OnResetFinish += _ =>
