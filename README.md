@@ -1,15 +1,25 @@
 [![](https://img.itch.zone/aW1nLzE0NTEzMTg0LnBuZw==/original/mRj%2Biv.png)](https://alexejhero.itch.io/tutelquest)
 
-TutelQuest is a puzzle-platformer game created for the 2023 Neuro Sama game jam. Vedal wakes up after a long night of drinking rum only to notice that Neuro is trapped, and he must go and rescue her.
+After passing out from a rough night, Vedal is suddenly awakened by Neuro and Evil calling out for help. Before he can figure out what to do, a hand reaches out from his screen and pulls him into the digital world, then quickly loses its grasp. Vedal and Neuro have now lost one another, trapped somewhere on the Internet. Play as Vedal, Tutel, Neuro and Evil as they all try to reunite, navigating their way through a strange world full of traps and puzzles. Can you help them find each other?
 
-[See the game on itch.io](https://alexejhero.itch.io/tutelquest)
+### [Download the game on itch.io](https://alexejhero.itch.io/tutelquest)
 
-Development by AlexejheroDev, budwheizzah, Govorunb and w1n7er
-Environment art by SADecsSs
-Character art and storyboards by camila
-Character animations by AshenGlister
-Title screen animation by happikoi
-Music by DarthRael
+---
+
+[![](https://img.itch.zone/aW1nLzE1MjIxNTEyLnBuZw==/original/LWTvbO.png)](https://itch.io/jam/neurosama-birthday-game-jam)
+### This game was created for the [Neuro-sama Birthday Game Jam](https://itch.io/jam/neurosama-birthday-game-jam)
+
+Development and map design by AlexejheroDev, budwheizzah, Govorunb and w1n7er  
+Environment art by SADecsSs  
+Character art and storyboards by camila  
+Character animations by AshenGlister  
+Music by DarthRael  
+  
+Title screen animation by happikoi  
+Additional storyboards by arronon  
+Input prompts by kenney  
+Sound effects from Pixabay and OpenGameArt  
+Using FMOD by Firelight Technologies and PowerSprite Animator by PowerHoof  
 
 ---
 
