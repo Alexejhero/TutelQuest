@@ -1654,7 +1654,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<b>CREATED FOR NEURO-SAMA BIRTHDAY GAME JAM</b>
+  m_text: '<b>CREATED FOR THE NEURO-SAMA BIRTHDAY GAME JAM</b>
 
     <size=60%>28.12.2023
     - 31.12.2023</size>
@@ -1685,8 +1685,8 @@ MonoBehaviour:
     ---
 
 
-    POST-JAM
-    UPDATE
+    <b>POST-JAM
+    UPDATE</b>
 
     <size=60%>??.03.2023</size>
 
