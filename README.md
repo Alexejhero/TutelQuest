@@ -7,7 +7,7 @@ After passing out from a rough night, Vedal is suddenly awakened by Neuro and Ev
 ---
 
 [![](https://img.itch.zone/aW1nLzE1MjIxNTEyLnBuZw==/original/LWTvbO.png)](https://itch.io/jam/neurosama-birthday-game-jam)
-### This game was created for the [Neuro-sama Birthday Game Jam](https://itch.io/jam/neurosama-birthday-game-jam)
+### This game won 1st place in the [Neuro-sama Birthday Game Jam](https://itch.io/jam/neurosama-birthday-game-jam)
 
 Development and map design by AlexejheroDev, budwheizzah, Govorunb and w1n7er  
 Environment art by SADecsSs  
