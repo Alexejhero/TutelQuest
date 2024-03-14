@@ -1,6 +1,6 @@
 [![](https://img.itch.zone/aW1nLzE0NTEzMTg0LnBuZw==/original/mRj%2Biv.png)](https://alexejhero.itch.io/tutelquest)
 
-After passing out from a rough night, Vedal is suddenly awakened by Neuro and Evil calling out for help. Before he can figure out what to do, a hand reaches out from his screen and pulls him into the digital world, then quickly loses its grasp. Vedal and Neuro have now lost one another, trapped somewhere on the Internet. Play as Vedal, Tutel, Neuro and Evil as they all try to reunite, navigating their way through a strange world full of traps and puzzles. Can you help them find each other?
+After passing out from a rough night, Vedal is suddenly awakened by Neuro calling out for help. Before he can figure out what to do, a hand reaches out from his screen and pulls him into the digital world, then quickly loses its grasp. Vedal and Neuro have now lost one another, trapped somewhere on the Internet. Play as Vedal, navigating your way through a strange world full of traps and puzzles. Can you help him find Neuro?
 
 ### [Download the game on itch.io](https://alexejhero.itch.io/tutelquest)
 
